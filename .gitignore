@@ -1,0 +1,22 @@
+# Add any directories, files, or patterns you don't want to be tracked by version control
+*.class
+*.iml
+.classpath
+.DS_Store
+.idea/
+.gradle/
+.project
+.settings/
+bin/
+out/
+build/
+classes/
+logs/
+classes/
+target/
+test-output/
+selenium-config/
+caches/
+allure-results/
+allure-report/
+resources/
