@@ -12,11 +12,11 @@ out/
 build/
 classes/
 logs/
-classes/
 target/
 test-output/
 selenium-config/
 caches/
 allure-results/
 allure-report/
-resources/
+resources/testdata/
+resources/testfiles/
