@@ -2,9 +2,9 @@ package dk.byggeweb.desktop.companyspace;
 
 import dk.byggeweb.infrastructure.steps.GeneralSteps;
 import dk.byggeweb.infrastructure.test.DesktopTestBase;
-import dk.byggeweb.objects.pages.desktop.HomePage;
-import dk.byggeweb.objects.pages.desktop.companyspace.CompanySpacePage;
-import dk.byggeweb.objects.pages.desktop.companyspace.SharedFoldersPage;
+import dk.byggeweb.objects.desktop.HomePage;
+import dk.byggeweb.objects.desktop.companyspace.CompanySpacePage;
+import dk.byggeweb.objects.desktop.companyspace.SharedFoldersPage;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 

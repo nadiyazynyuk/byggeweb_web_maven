@@ -2,10 +2,10 @@ package dk.byggeweb.project.workspace.files.upload;
 
 import dk.byggeweb.infrastructure.steps.GeneralSteps;
 import dk.byggeweb.infrastructure.test.ProjectTestBase;
-import dk.byggeweb.objects.pages.desktop.HomePage;
-import dk.byggeweb.objects.pages.desktop.personalspace.MyFoldersPage;
-import dk.byggeweb.objects.pages.desktop.personalspace.PersonalSpacePage;
-import dk.byggeweb.objects.pages.project.ProjectHomePage;
+import dk.byggeweb.objects.desktop.HomePage;
+import dk.byggeweb.objects.desktop.personalspace.MyFoldersPage;
+import dk.byggeweb.objects.desktop.personalspace.PersonalSpacePage;
+import dk.byggeweb.objects.project.ProjectHomePage;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 

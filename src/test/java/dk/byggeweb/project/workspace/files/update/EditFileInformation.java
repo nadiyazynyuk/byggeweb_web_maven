@@ -2,8 +2,8 @@ package dk.byggeweb.project.workspace.files.update;
 
 import dk.byggeweb.infrastructure.steps.GeneralSteps;
 import dk.byggeweb.infrastructure.test.ProjectTestBase;
-import dk.byggeweb.objects.pages.project.ProjectHomePage;
-import dk.byggeweb.objects.pages.project.workspace.panels.FileInformationPanel;
+import dk.byggeweb.objects.project.ProjectHomePage;
+import dk.byggeweb.objects.project.workspace.panels.FileInformationPanel;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 

@@ -3,13 +3,13 @@ package dk.byggeweb.desktop.navigation;
 import com.codeborne.selenide.WebDriverRunner;
 import dk.byggeweb.infrastructure.steps.GeneralSteps;
 import dk.byggeweb.infrastructure.test.DesktopTestBase;
-import dk.byggeweb.objects.pages.desktop.HomePage;
-import dk.byggeweb.objects.pages.desktop.applications.ApplicationsPage;
-import dk.byggeweb.objects.pages.desktop.communication.CommunicationPage;
-import dk.byggeweb.objects.pages.desktop.companyspace.CompanySpacePage;
-import dk.byggeweb.objects.pages.desktop.personalspace.PersonalSpacePage;
-import dk.byggeweb.objects.pages.desktop.portfolio.PortfolioPage;
-import dk.byggeweb.objects.pages.desktop.support.SupportCenterPage;
+import dk.byggeweb.objects.desktop.HomePage;
+import dk.byggeweb.objects.desktop.applications.ApplicationsPage;
+import dk.byggeweb.objects.desktop.communication.CommunicationPage;
+import dk.byggeweb.objects.desktop.companyspace.CompanySpacePage;
+import dk.byggeweb.objects.desktop.personalspace.PersonalSpacePage;
+import dk.byggeweb.objects.desktop.portfolio.PortfolioPage;
+import dk.byggeweb.objects.desktop.support.SupportCenterPage;
 import org.testng.annotations.Test;
 
 public class BasicNavigation extends DesktopTestBase {

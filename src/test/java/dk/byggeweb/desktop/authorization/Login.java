@@ -2,9 +2,9 @@ package dk.byggeweb.desktop.authorization;
 
 import com.codeborne.selenide.Selenide;
 import dk.byggeweb.infrastructure.test.DesktopTestBase;
-import dk.byggeweb.objects.pages.desktop.HomePage;
-import dk.byggeweb.objects.pages.desktop.authorization.LoginPage;
-import dk.byggeweb.objects.pages.desktop.authorization.RequestPasswordPage;
+import dk.byggeweb.objects.desktop.HomePage;
+import dk.byggeweb.objects.desktop.authorization.LoginPage;
+import dk.byggeweb.objects.desktop.authorization.RequestPasswordPage;
 import org.testng.annotations.Test;
 
 public class Login extends DesktopTestBase {

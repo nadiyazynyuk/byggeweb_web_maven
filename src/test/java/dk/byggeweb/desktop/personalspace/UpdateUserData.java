@@ -2,9 +2,9 @@ package dk.byggeweb.desktop.personalspace;
 
 import dk.byggeweb.infrastructure.steps.GeneralSteps;
 import dk.byggeweb.infrastructure.test.DesktopTestBase;
-import dk.byggeweb.objects.pages.desktop.HomePage;
-import dk.byggeweb.objects.pages.desktop.personalspace.MySettingsPage;
-import dk.byggeweb.objects.pages.desktop.personalspace.PersonalSpacePage;
+import dk.byggeweb.objects.desktop.HomePage;
+import dk.byggeweb.objects.desktop.personalspace.MySettingsPage;
+import dk.byggeweb.objects.desktop.personalspace.PersonalSpacePage;
 import org.testng.annotations.Test;
 
 public class UpdateUserData extends DesktopTestBase {

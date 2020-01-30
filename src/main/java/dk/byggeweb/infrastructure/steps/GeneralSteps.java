@@ -1,8 +1,8 @@
 package dk.byggeweb.infrastructure.steps;
 
 import com.codeborne.selenide.Selenide;
-import dk.byggeweb.objects.pages.desktop.HomePage;
-import dk.byggeweb.objects.pages.desktop.authorization.LoginPage;
+import dk.byggeweb.objects.desktop.HomePage;
+import dk.byggeweb.objects.desktop.authorization.LoginPage;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;

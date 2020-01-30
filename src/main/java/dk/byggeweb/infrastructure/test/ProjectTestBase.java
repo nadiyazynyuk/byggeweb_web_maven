@@ -1,9 +1,9 @@
 package dk.byggeweb.infrastructure.test;
 
 import dk.byggeweb.infrastructure.test.testdata.model.ProjectTestDataModel;
-import dk.byggeweb.objects.pages.project.ProjectHomePage;
-import dk.byggeweb.objects.pages.project.workspace.modals.FileInformationEditPopup;
-import dk.byggeweb.objects.pages.project.workspace.panels.WorkspaceContentPanel;
+import dk.byggeweb.objects.project.ProjectHomePage;
+import dk.byggeweb.objects.project.workspace.modals.FileInformationEditPopup;
+import dk.byggeweb.objects.project.workspace.panels.WorkspaceContentPanel;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 

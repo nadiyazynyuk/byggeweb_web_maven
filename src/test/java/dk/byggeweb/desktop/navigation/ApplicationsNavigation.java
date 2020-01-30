@@ -2,8 +2,8 @@ package dk.byggeweb.desktop.navigation;
 
 import dk.byggeweb.infrastructure.steps.GeneralSteps;
 import dk.byggeweb.infrastructure.test.DesktopTestBase;
-import dk.byggeweb.objects.pages.desktop.HomePage;
-import dk.byggeweb.objects.pages.desktop.applications.*;
+import dk.byggeweb.objects.desktop.HomePage;
+import dk.byggeweb.objects.desktop.applications.*;
 import org.testng.annotations.Test;
 
 public class ApplicationsNavigation extends DesktopTestBase {

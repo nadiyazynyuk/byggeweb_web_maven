@@ -2,7 +2,7 @@ package dk.byggeweb.project;
 
 import dk.byggeweb.infrastructure.steps.GeneralSteps;
 import dk.byggeweb.infrastructure.test.ProjectTestBase;
-import dk.byggeweb.objects.pages.project.ProjectHomePage;
+import dk.byggeweb.objects.project.ProjectHomePage;
 import org.testng.annotations.Test;
 
 public class LaunchProject extends ProjectTestBase {
