@@ -4,7 +4,7 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import dk.byggeweb.infrastructure.environment.EnvironmentProperties;
-import dk.byggeweb.infrastructure.testdata.JaxbDataReader;
+import dk.byggeweb.infrastructure.test.testdata.JaxbDataReader;
 import org.openqa.selenium.Dimension;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;

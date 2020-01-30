@@ -1,6 +1,6 @@
 package dk.byggeweb.infrastructure.test;
 
-import dk.byggeweb.infrastructure.testdata.model.DesktopTestDataModel;
+import dk.byggeweb.infrastructure.test.testdata.model.DesktopTestDataModel;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 

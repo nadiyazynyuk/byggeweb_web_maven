@@ -1,7 +1,7 @@
 package dk.byggeweb.objects.pages.desktop;
 
 import com.codeborne.selenide.SelenideElement;
-import dk.byggeweb.objects.infrastructure.PageBase;
+import dk.byggeweb.objects.pages.PageBase;
 import io.qameta.allure.Step;
 import lombok.Getter;
 import org.testng.Assert;

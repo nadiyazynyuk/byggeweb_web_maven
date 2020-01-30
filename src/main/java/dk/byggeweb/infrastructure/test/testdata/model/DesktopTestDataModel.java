@@ -1,4 +1,4 @@
-package dk.byggeweb.infrastructure.testdata.model;
+package dk.byggeweb.infrastructure.test.testdata.model;
 
 import lombok.Getter;
 

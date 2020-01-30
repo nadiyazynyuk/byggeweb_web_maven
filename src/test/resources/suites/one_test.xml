@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="One test">
+
+    <test name="Desktop authorization test">
+        <parameter name="testData" value="desktop/authorization/userLoginTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.desktop.authorization.Login"/>
+        </classes>
+    </test>
+
+</suite>

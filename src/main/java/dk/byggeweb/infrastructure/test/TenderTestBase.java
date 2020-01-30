@@ -1,6 +1,6 @@
 package dk.byggeweb.infrastructure.test;
 
-import dk.byggeweb.infrastructure.testdata.model.TenderTestDataModel;
+import dk.byggeweb.infrastructure.test.testdata.model.TenderTestDataModel;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 

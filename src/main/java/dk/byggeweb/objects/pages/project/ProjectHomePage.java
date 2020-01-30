@@ -1,7 +1,7 @@
 package dk.byggeweb.objects.pages.project;
 
 import com.codeborne.selenide.SelenideElement;
-import dk.byggeweb.objects.infrastructure.PageBase;
+import dk.byggeweb.objects.pages.PageBase;
 import dk.byggeweb.objects.pages.project.communication.panels.CommunicationNodesPanel;
 import dk.byggeweb.objects.pages.project.distributionspace.panels.DistributionSpaceNodesPanel;
 import dk.byggeweb.objects.pages.project.log.panels.LogNodesPanel;

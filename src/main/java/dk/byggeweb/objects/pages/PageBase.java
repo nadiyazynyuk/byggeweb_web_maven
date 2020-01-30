@@ -1,4 +1,4 @@
-package dk.byggeweb.objects.infrastructure;
+package dk.byggeweb.objects.pages;
 
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
