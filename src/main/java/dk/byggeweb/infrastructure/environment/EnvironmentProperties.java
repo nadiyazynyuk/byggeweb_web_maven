@@ -14,7 +14,7 @@ public class EnvironmentProperties {
         mainProperties = new Properties();
         FileInputStream in = null;
         try {
-            String mainPropertiesFilePath = "resources/main.properties";
+            String mainPropertiesFilePath = "src/main/resources/main.properties";
             in = new FileInputStream(mainPropertiesFilePath);
             mainProperties.load(in);
             in.close();
