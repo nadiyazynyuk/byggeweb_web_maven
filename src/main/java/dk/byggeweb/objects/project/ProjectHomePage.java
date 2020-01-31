@@ -29,6 +29,7 @@ public class ProjectHomePage extends PageBase {
     public LogNodesPanel logNodesPanel;
     public PersonalOverviewsNodesPanel personalOverviewsNodesPanel;
 
+    private SelenideElement projectTitleLabel = $(byXpath("//div[@class='WMP_Title']"));
     private SelenideElement projectInformation = $(byXpath("//span[@class='x-btn-inner x-btn-inner-default-small' and contains(text(), 'Project information')]"));
     private SelenideElement workspace = $(byXpath("//span[@class='x-btn-inner x-btn-inner-default-small' and contains(text(), 'Workspace')]"));
     private SelenideElement publicationSpace = $(byXpath("//span[@class='x-btn-inner x-btn-inner-default-small' and contains(text(), 'Publication space')]"));

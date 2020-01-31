@@ -6,6 +6,7 @@ import com.codeborne.selenide.WebDriverRunner;
 import dk.byggeweb.infrastructure.environment.EnvironmentProperties;
 import dk.byggeweb.infrastructure.test.testdata.JaxbDataReader;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 
@@ -22,10 +23,11 @@ public abstract class TestBase {
         Configuration.baseUrl = EnvironmentProperties.getInstance().getProperty("desktopBaseUrl");
         Configuration.timeout = EnvironmentProperties.getInstance().getIntProperty("defaultTimeout");
 
-        //IE
-//        DesiredCapabilities caps = DesiredCapabilities.internetExplorer();
-//        caps.setCapability("initialBrowserUrl", Configuration.baseUrl);
-//        Configuration.browserCapabilities.merge(caps);
+        if(EnvironmentProperties.getInstance().getProperty("browser").equals("ie")) {
+        DesiredCapabilities caps = DesiredCapabilities.internetExplorer();
+            caps.setCapability("initialBrowserUrl", Configuration.baseUrl);
+            Configuration.browserCapabilities.merge(caps);
+        }
 
         Selenide.open("/");
         WebDriverRunner.getWebDriver().manage().window().setSize(new Dimension(1600, 1200));

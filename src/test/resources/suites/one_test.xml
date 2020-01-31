@@ -2,10 +2,10 @@
 
 <suite name="One test">
 
-    <test name="Desktop authorization test">
-        <parameter name="testData" value="desktop/authorization/userLoginTestData.xml"/>
+    <test name="Project launch test">
+        <parameter name="testData" value="project/launchProjectTestData.xml"/>
         <classes>
-            <class name="dk.byggeweb.desktop.authorization.Login"/>
+            <class name="dk.byggeweb.project.LaunchProject"/>
         </classes>
     </test>
 
