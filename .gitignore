@@ -18,5 +18,3 @@ selenium-config/
 caches/
 allure-results/
 allure-report/
-resources/testdata/
-resources/testfiles/
