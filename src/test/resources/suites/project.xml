@@ -87,4 +87,11 @@
         </classes>
     </test>
 
+    <test name="Lock/unlock file test">
+        <parameter name="testData" value="project/workspace/lockFileTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.workspace.files.update.LockFile"/>
+        </classes>
+    </test>
+
 </suite>

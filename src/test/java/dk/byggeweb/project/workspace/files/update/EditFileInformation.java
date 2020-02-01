@@ -14,7 +14,7 @@ public class EditFileInformation extends ProjectTestBase {
     // https://itwofm.atlassian.net/browse/TSB-22
 
     @BeforeClass
-    public void uploadFileIfNotPresent() {
+    public void prepareData() {
         GeneralSteps.loginAsVerifiedUser(data.getUserName(), data.getPassword(), data.getName());
         GeneralSteps.launchProject(data.getProjectLink());
 

@@ -9,9 +9,9 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public abstract class ModalBase {
 
-    private SelenideElement okButton = $(byXpath("//input[@type='button' and @value='OK']"));
-    private SelenideElement cancelButton = $(byXpath("//input[@type='button' and @value='Cancel']"));
-    private SelenideElement nextButton = $(byXpath("//input[@type='submit' and @value='Next']"));
-    private SelenideElement closeButton = $(byXpath("//input[@type='button' and @value='Close window']"));
+    private SelenideElement okButton = $(byXpath("//input[@value='OK']"));
+    private SelenideElement cancelButton = $(byXpath("//input[@value='Cancel']"));
+    private SelenideElement nextButton = $(byXpath("//input[@value='Next']"));
+    private SelenideElement closeButton = $(byXpath("//input[@value='Close window']"));
 
 }

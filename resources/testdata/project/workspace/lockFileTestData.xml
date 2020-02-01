@@ -7,9 +7,8 @@
     <projectLink>https://testserver.byggeweb.dk/controller?cmd=company7.project.login&amp;project=2763</projectLink>
     <projectName>AutoLegoFactory</projectName>
     <folderName>Project</folderName>
-    <folder1Name>Folder A</folder1Name>
-    <folder2Name>Folder B</folder2Name>
-    <testFileName>TestCøpyFile</testFileName>
-    <fileToUploadPath>resources/testfiles/TestCøpyFile.pdf</fileToUploadPath>
+    <testFileName>TestLockFile</testFileName>
+    <fileToUploadPath>resources/testfiles/TestLockFile.pdf</fileToUploadPath>
+    <lockComment>This file is locked by </lockComment>
 
 </testdata>

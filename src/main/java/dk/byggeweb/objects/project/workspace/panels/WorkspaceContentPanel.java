@@ -6,9 +6,9 @@ import dk.byggeweb.objects.project.ProjectHomePage;
 import dk.byggeweb.objects.project.workspace.modals.*;
 import io.qameta.allure.Step;
 import lombok.Getter;
-import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 
@@ -33,7 +33,11 @@ public class WorkspaceContentPanel extends ProjectHomePage {
     private SelenideElement fileMonitorButton = $(byXpath("//span[@data-locator='locator-btn-file_watch_toggle']"));
 
     private SelenideElement getFileByName(String name) {
-        return $(By.xpath("//tr[@class='  x-grid-row']//*[contains(text(),'" + name + "')]"));
+        return $(byXpath("//tr[@class='  x-grid-row']//*[contains(text(),'" + name + "')]"));
+    }
+
+    private SelenideElement getFileContainsLockIcon(String name) {
+        return $(byXpath("//img[@class='lock-tipp']/parent::div/parent::td/parent::tr/td/div[contains(text(), '" + name + "')]"));
     }
 
     @Step("Select file")
@@ -117,6 +121,26 @@ public class WorkspaceContentPanel extends ProjectHomePage {
         switchToLastTab();
     }
 
+    @Step("Lock file")
+    public void lockFile(String fileName, String comment) {
+        clickOnFile(fileName);
+        fileLockButton.click();
+        switchToNewWindow();
+        FileLockPopup fileLockPopup = new FileLockPopup();
+        fileLockPopup.lockFileWithComment(comment);
+        switchToLastTab();
+    }
+
+    @Step("Unlock file")
+    public void unlockFile(String fileName) {
+        clickOnFile(fileName);
+        fileLockButton.click();
+        switchToNewWindow();
+        FileLockPopup fileLockPopup = new FileLockPopup();
+        fileLockPopup.unlockFile();
+        switchToLastTab();
+    }
+
     @Step("Verify file is present in the list")
     public void verifyFileIsPresent(String name) {
         getFileByName(name).shouldHave(text(name));
@@ -130,6 +154,20 @@ public class WorkspaceContentPanel extends ProjectHomePage {
     @Step("Verify data is present in table")
     public void verifyDataIsPresentInTable(String name) {
         getFileByName(name).shouldHave(text(name));
+    }
+
+    @Step("Verify lock icon is present (file is locked)")
+    public void verifyFileIsLocked(String name) {
+        getFileContainsLockIcon(name).shouldBe(visible);
+    }
+
+    @Step("Verify lock icon is not present (file is unlocked)")
+    public void verifyFileIsUnlocked(String name) {
+        getFileContainsLockIcon(name).shouldNotBe(visible);
+    }
+
+    public boolean isFileLocked(String name) {
+        return getFileContainsLockIcon(name).isDisplayed();
     }
 
     public WorkspaceContentPanel() {
