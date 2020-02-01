@@ -85,6 +85,11 @@ public class WorkspaceNodesPanel extends ProjectHomePage {
         new FolderInformationPanel(folderName);
     }
 
+    @Step("Navigate to Monitored files")
+    public void navigateToMonitoredFiles() {
+        monitoredFilesNode.click();
+    }
+
     public WorkspaceNodesPanel() {
         super();
     }

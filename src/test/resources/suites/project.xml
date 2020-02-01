@@ -94,4 +94,11 @@
         </classes>
     </test>
 
+    <test name="Start/stop file monitoring test">
+        <parameter name="testData" value="project/workspace/monitorFileTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.workspace.files.update.MonitorFile"/>
+        </classes>
+    </test>
+
 </suite>

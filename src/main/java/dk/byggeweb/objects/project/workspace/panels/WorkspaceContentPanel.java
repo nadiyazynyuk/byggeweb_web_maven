@@ -131,9 +131,10 @@ public class WorkspaceContentPanel extends ProjectHomePage {
         switchToLastTab();
     }
 
-    @Step("Monitor file")
-    public void monitorFile(String filename) {
-
+    @Step("Start to monitor file")
+    public void startMonitorFile(String filename) {
+        clickOnFile(filename);
+        fileMonitorButton.click();
     }
 
     @Step("Verify file is present in the list")
