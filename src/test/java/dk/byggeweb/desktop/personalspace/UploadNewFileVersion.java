@@ -1,8 +1,6 @@
 package dk.byggeweb.desktop.personalspace;
 
-import dk.byggeweb.infrastructure.steps.GeneralSteps;
 import dk.byggeweb.infrastructure.test.DesktopTestBase;
-import dk.byggeweb.objects.desktop.HomePage;
 import dk.byggeweb.objects.desktop.personalspace.MyFoldersPage;
 import dk.byggeweb.objects.desktop.personalspace.PersonalSpacePage;
 import org.testng.annotations.BeforeClass;
@@ -16,7 +14,6 @@ public class UploadNewFileVersion extends DesktopTestBase {
 
     @BeforeClass
     public void deleteFileIfExist() {
-        HomePage homePage = GeneralSteps.loginAsVerifiedUser(data.getUserName(), data.getPassword(), data.getName());
         homePage.navigateToPersonalSpace();
         PersonalSpacePage personalSpacePage = new PersonalSpacePage();
         personalSpacePage.navigateToMyFolders();

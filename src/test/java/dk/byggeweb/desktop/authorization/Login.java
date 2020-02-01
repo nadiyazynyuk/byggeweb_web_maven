@@ -12,6 +12,7 @@ public class Login extends DesktopTestBase {
     // https://itwofm.atlassian.net/browse/TSB-17
     @Test(description = "Login in Byggeweb desktop")
     public void loginAsValidUser() {
+        Selenide.open("/");
         LoginPage loginPage = new LoginPage();
         loginPage.login(data.getUserName(), data.getPassword());
         HomePage homePage = new HomePage();

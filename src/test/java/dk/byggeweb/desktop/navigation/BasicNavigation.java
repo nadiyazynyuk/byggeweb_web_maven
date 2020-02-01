@@ -1,9 +1,7 @@
 package dk.byggeweb.desktop.navigation;
 
 import com.codeborne.selenide.WebDriverRunner;
-import dk.byggeweb.infrastructure.steps.GeneralSteps;
 import dk.byggeweb.infrastructure.test.DesktopTestBase;
-import dk.byggeweb.objects.desktop.HomePage;
 import dk.byggeweb.objects.desktop.applications.ApplicationsPage;
 import dk.byggeweb.objects.desktop.communication.CommunicationPage;
 import dk.byggeweb.objects.desktop.companyspace.CompanySpacePage;
@@ -18,8 +16,6 @@ public class BasicNavigation extends DesktopTestBase {
 
     @Test(description = "Basic navigation through main sections")
     public void basicNavigation() {
-        HomePage homePage = GeneralSteps.loginAsVerifiedUser(data.getUserName(), data.getPassword(), data.getName());
-
         homePage.navigateToPersonalSpace();
         PersonalSpacePage personalSpacePage = new PersonalSpacePage();
         personalSpacePage.verifyPageIsLoaded(personalSpacePage.getDesktopLink());

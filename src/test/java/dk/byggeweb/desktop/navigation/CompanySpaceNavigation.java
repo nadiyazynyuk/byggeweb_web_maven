@@ -1,8 +1,6 @@
 package dk.byggeweb.desktop.navigation;
 
-import dk.byggeweb.infrastructure.steps.GeneralSteps;
 import dk.byggeweb.infrastructure.test.DesktopTestBase;
-import dk.byggeweb.objects.desktop.HomePage;
 import dk.byggeweb.objects.desktop.companyspace.*;
 import org.testng.annotations.Test;
 
@@ -12,7 +10,6 @@ public class CompanySpaceNavigation extends DesktopTestBase {
 
     @Test(description = "Navigation through Company space sections")
     public void companySpaceNavigation() {
-        HomePage homePage = GeneralSteps.loginAsVerifiedUser(data.getUserName(), data.getPassword(), data.getName());
         homePage.navigateToCompanySpace();
         CompanySpacePage companySpacePage = new CompanySpacePage();
 

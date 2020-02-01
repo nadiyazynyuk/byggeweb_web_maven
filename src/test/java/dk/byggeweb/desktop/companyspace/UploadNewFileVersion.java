@@ -1,8 +1,6 @@
 package dk.byggeweb.desktop.companyspace;
 
-import dk.byggeweb.infrastructure.steps.GeneralSteps;
 import dk.byggeweb.infrastructure.test.DesktopTestBase;
-import dk.byggeweb.objects.desktop.HomePage;
 import dk.byggeweb.objects.desktop.companyspace.CompanySpacePage;
 import dk.byggeweb.objects.desktop.companyspace.SharedFoldersPage;
 import org.testng.annotations.BeforeClass;
@@ -16,7 +14,6 @@ public class UploadNewFileVersion extends DesktopTestBase {
 
     @BeforeClass
     public void deleteFileIfExist() {
-        HomePage homePage = GeneralSteps.loginAsVerifiedUser(data.getUserName(), data.getPassword(), data.getName());
         homePage.navigateToCompanySpace();
         CompanySpacePage companySpacePage = new CompanySpacePage();
         companySpacePage.navigateToSharedFolders();

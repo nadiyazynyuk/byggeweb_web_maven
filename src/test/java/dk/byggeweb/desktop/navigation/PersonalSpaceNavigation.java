@@ -1,8 +1,6 @@
 package dk.byggeweb.desktop.navigation;
 
-import dk.byggeweb.infrastructure.steps.GeneralSteps;
 import dk.byggeweb.infrastructure.test.DesktopTestBase;
-import dk.byggeweb.objects.desktop.HomePage;
 import dk.byggeweb.objects.desktop.personalspace.*;
 import org.testng.annotations.Test;
 
@@ -12,7 +10,6 @@ public class PersonalSpaceNavigation extends DesktopTestBase {
 
     @Test(description = "Navigation through Personal space sections")
     public void personalSpaceNavigation() {
-        HomePage homePage = GeneralSteps.loginAsVerifiedUser(data.getUserName(), data.getPassword(), data.getName());
         homePage.navigateToPersonalSpace();
         PersonalSpacePage personalSpacePage = new PersonalSpacePage();
 
