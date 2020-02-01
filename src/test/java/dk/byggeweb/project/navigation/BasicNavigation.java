@@ -9,8 +9,6 @@ public class BasicNavigation extends ProjectTestBase {
 
     @Test(description = "Navigation through all modules")
     public void basicNavigation() {
-        GeneralSteps.loginAsVerifiedUser(data.getUserName(), data.getPassword(), data.getName());
-        GeneralSteps.launchProject(data.getProjectLink());
         ProjectHomePage projectHomePage = new ProjectHomePage(data.getProjectName());
         projectHomePage.verifyProjectTitle(data.getProjectName());
 

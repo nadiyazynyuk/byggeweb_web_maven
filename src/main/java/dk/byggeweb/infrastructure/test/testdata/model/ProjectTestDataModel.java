@@ -91,8 +91,4 @@ public class ProjectTestDataModel {
     @Getter
     private String renameFolderName;
 
-    @XmlElement
-    @Getter
-    private String lockComment;
-
 }

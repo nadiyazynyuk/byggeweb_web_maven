@@ -15,9 +15,6 @@ public class EditFileInformation extends ProjectTestBase {
 
     @BeforeClass
     public void prepareData() {
-        GeneralSteps.loginAsVerifiedUser(data.getUserName(), data.getPassword(), data.getName());
-        GeneralSteps.launchProject(data.getProjectLink());
-
         projectHomePage = new ProjectHomePage(data.getProjectName());
         projectHomePage.navigateToWorkspaceModule();
         uploadFileIfNotPresentInWorkspaceFolder(data.getFolderName(), data.getFileToUploadPath(), data.getTestFileName());

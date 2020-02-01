@@ -1,6 +1,5 @@
 package dk.byggeweb.project.workspace.files.open;
 
-import dk.byggeweb.infrastructure.steps.GeneralSteps;
 import dk.byggeweb.infrastructure.test.ProjectTestBase;
 import dk.byggeweb.objects.project.ProjectHomePage;
 import dk.byggeweb.objects.project.workspace.modals.FileInformationEditPopup;
@@ -15,10 +14,7 @@ public class OpenFileVersion extends ProjectTestBase {
 
     @BeforeClass
     public void deleteFileIfExists() {
-        GeneralSteps.loginAsVerifiedUser(data.getUserName(), data.getPassword(), data.getName());
-        GeneralSteps.launchProject(data.getProjectLink());
-
-        ProjectHomePage projectHomePage = new ProjectHomePage(data.getProjectName());
+        projectHomePage = new ProjectHomePage(data.getProjectName());
         projectHomePage.navigateToWorkspaceModule();
         projectHomePage.getWorkspaceNodesPanel().clickOnFolder(data.getFolderName());
 

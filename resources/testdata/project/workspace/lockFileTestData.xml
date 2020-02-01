@@ -9,6 +9,5 @@
     <folderName>Project</folderName>
     <testFileName>TestLockFile</testFileName>
     <fileToUploadPath>resources/testfiles/TestLockFile.pdf</fileToUploadPath>
-    <lockComment>This file is locked by </lockComment>
 
 </testdata>

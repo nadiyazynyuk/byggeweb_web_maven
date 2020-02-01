@@ -121,24 +121,19 @@ public class WorkspaceContentPanel extends ProjectHomePage {
         switchToLastTab();
     }
 
-    @Step("Lock file")
-    public void lockFile(String fileName, String comment) {
-        clickOnFile(fileName);
-        fileLockButton.click();
-        switchToNewWindow();
-        FileLockPopup fileLockPopup = new FileLockPopup();
-        fileLockPopup.lockFileWithComment(comment);
-        switchToLastTab();
-    }
-
-    @Step("Unlock file")
-    public void unlockFile(String fileName) {
+    @Step("Lock/Unlock file")
+    public void lockFile(String fileName) {
         clickOnFile(fileName);
         fileLockButton.click();
         switchToNewWindow();
         FileLockPopup fileLockPopup = new FileLockPopup();
         fileLockPopup.unlockFile();
         switchToLastTab();
+    }
+
+    @Step("Monitor file")
+    public void monitorFile(String filename) {
+
     }
 
     @Step("Verify file is present in the list")
