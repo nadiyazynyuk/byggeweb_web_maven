@@ -1,7 +1,6 @@
 package dk.byggeweb.project.workspace.files.delete;
 
 import dk.byggeweb.infrastructure.test.ProjectTestBase;
-import dk.byggeweb.objects.project.ProjectHomePage;
 import dk.byggeweb.objects.project.workspace.modals.FileInformationEditPopup;
 import dk.byggeweb.objects.project.workspace.panels.WorkspaceContentPanel;
 import org.testng.annotations.BeforeClass;
@@ -13,7 +12,6 @@ public class DeleteFile extends ProjectTestBase {
 
     @BeforeClass
     public void prepareData() {
-        projectHomePage = new ProjectHomePage(data.getProjectName());
         projectHomePage.navigateToWorkspaceModule();
         projectHomePage.getWorkspaceNodesPanel().clickOnFolder(data.getFolderName());
 

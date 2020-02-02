@@ -1,8 +1,6 @@
 package dk.byggeweb.project.workspace.folders;
 
-import dk.byggeweb.infrastructure.steps.GeneralSteps;
 import dk.byggeweb.infrastructure.test.ProjectTestBase;
-import dk.byggeweb.objects.project.ProjectHomePage;
 import dk.byggeweb.objects.project.workspace.panels.WorkspaceNodesPanel;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -13,7 +11,6 @@ public class CreateNewFolder extends ProjectTestBase {
 
     @BeforeClass
     public void deleteFolderIfExists() {
-        projectHomePage = new ProjectHomePage(data.getProjectName());
         projectHomePage.navigateToWorkspaceModule();
         projectHomePage.getWorkspaceNodesPanel().clickOnFolder(data.getFolderName());
 

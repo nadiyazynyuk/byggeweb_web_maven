@@ -1,8 +1,6 @@
 package dk.byggeweb.project.workspace.files.delete;
 
-import dk.byggeweb.infrastructure.steps.GeneralSteps;
 import dk.byggeweb.infrastructure.test.ProjectTestBase;
-import dk.byggeweb.objects.project.ProjectHomePage;
 import dk.byggeweb.objects.project.workspace.panels.RecycleBinContentPanel;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -13,7 +11,6 @@ public class RestoreFileFromRecycleBin extends ProjectTestBase {
 
     @BeforeClass
     public void prepareData() {
-        projectHomePage = new ProjectHomePage(data.getProjectName());
         projectHomePage.navigateToWorkspaceModule();
 
         deleteFileIfPresentInWorkspaceFolder("Recycle bin", data.getTestFileName());

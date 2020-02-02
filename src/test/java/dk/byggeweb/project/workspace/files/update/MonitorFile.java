@@ -1,7 +1,6 @@
 package dk.byggeweb.project.workspace.files.update;
 
 import dk.byggeweb.infrastructure.test.ProjectTestBase;
-import dk.byggeweb.objects.project.ProjectHomePage;
 import dk.byggeweb.objects.project.workspace.panels.MonitoredFilesContentPanel;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -14,7 +13,6 @@ public class MonitorFile extends ProjectTestBase {
 
     @BeforeClass
     public void prepareData() {
-        projectHomePage = new ProjectHomePage(data.getProjectName());
         projectHomePage.navigateToWorkspaceModule();
         projectHomePage.getWorkspaceNodesPanel().navigateToMonitoredFiles();
         monitoredFilesContentPanel = new MonitoredFilesContentPanel("Monitored files");

@@ -1,7 +1,6 @@
 package dk.byggeweb.project.workspace.files.open;
 
 import dk.byggeweb.infrastructure.test.ProjectTestBase;
-import dk.byggeweb.objects.project.ProjectHomePage;
 import dk.byggeweb.objects.project.workspace.modals.FileInformationEditPopup;
 import dk.byggeweb.objects.project.workspace.panels.FileInformationPanel;
 import dk.byggeweb.objects.project.workspace.panels.WorkspaceContentPanel;
@@ -14,7 +13,6 @@ public class OpenFileVersion extends ProjectTestBase {
 
     @BeforeClass
     public void deleteFileIfExists() {
-        projectHomePage = new ProjectHomePage(data.getProjectName());
         projectHomePage.navigateToWorkspaceModule();
         projectHomePage.getWorkspaceNodesPanel().clickOnFolder(data.getFolderName());
 

@@ -2,10 +2,9 @@
 
 <suite name="Byggeweb Project UI tests">
 
-    <test name="Project launch test">
+    <test name="Project navigation tests">
         <parameter name="testData" value="project/launchProjectTestData.xml"/>
         <classes>
-            <class name="dk.byggeweb.project.LaunchProject"/>
             <class name="dk.byggeweb.project.navigation.BasicNavigation"/>
         </classes>
     </test>

@@ -1,8 +1,6 @@
 package dk.byggeweb.project.workspace.files.delete;
 
-import dk.byggeweb.infrastructure.steps.GeneralSteps;
 import dk.byggeweb.infrastructure.test.ProjectTestBase;
-import dk.byggeweb.objects.project.ProjectHomePage;
 import dk.byggeweb.objects.project.workspace.modals.FileInformationEditPopup;
 import dk.byggeweb.objects.project.workspace.panels.RecycleBinContentPanel;
 import dk.byggeweb.objects.project.workspace.panels.WorkspaceContentPanel;
@@ -15,7 +13,6 @@ public class DeleteFileViaRecycleBin extends ProjectTestBase {
 
     @BeforeClass
     public void prepareData() {
-        projectHomePage = new ProjectHomePage(data.getProjectName());
         projectHomePage.navigateToWorkspaceModule();
         projectHomePage.getWorkspaceNodesPanel().clickOnFolder(data.getFolderName());
 

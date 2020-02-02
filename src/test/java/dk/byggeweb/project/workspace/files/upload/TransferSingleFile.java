@@ -1,5 +1,6 @@
 package dk.byggeweb.project.workspace.files.upload;
 
+import com.codeborne.selenide.Selenide;
 import dk.byggeweb.infrastructure.steps.GeneralSteps;
 import dk.byggeweb.infrastructure.test.ProjectTestBase;
 import dk.byggeweb.objects.desktop.HomePage;
@@ -17,6 +18,7 @@ public class TransferSingleFile extends ProjectTestBase {
 
     @BeforeClass
     public void prepareData() {
+        Selenide.open("/");
         homePage = GeneralSteps.loginAsVerifiedUser(data.getUserName(), data.getPassword(), data.getName());
         uploadFileInPersonalSpace(data.getTestFileName(), data.getFileToUploadPath());
 

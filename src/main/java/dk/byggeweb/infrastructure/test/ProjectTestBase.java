@@ -16,10 +16,12 @@ public abstract class ProjectTestBase extends TestBase {
 
     @Parameters("testData")
     @BeforeClass
-    public void setUp(String testData) {
+    public void launchProject(String testData) {
         data = getXmlObject(testData, ProjectTestDataModel.class);
+
         GeneralSteps.loginAsVerifiedUser(data.getUserName(), data.getPassword(), data.getName());
         GeneralSteps.launchProject(data.getProjectLink());
+        projectHomePage = new ProjectHomePage(data.getProjectName());
     }
 
     public void uploadFileIfNotPresentInWorkspaceFolder(String folderName, String filePath, String fileName) {
