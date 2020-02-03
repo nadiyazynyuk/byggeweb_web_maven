@@ -3,7 +3,7 @@ package dk.byggeweb.project.workspace.files.open;
 import dk.byggeweb.infrastructure.test.ProjectTestBase;
 import dk.byggeweb.objects.project.workspace.modals.FileInformationEditPopup;
 import dk.byggeweb.objects.project.workspace.panels.FileInformationPanel;
-import dk.byggeweb.objects.project.workspace.panels.WorkspaceContentPanel;
+import dk.byggeweb.objects.project.workspace.panels.FolderContentPanel;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -14,13 +14,13 @@ public class OpenFileVersion extends ProjectTestBase {
     @BeforeClass
     public void deleteFileIfExists() {
         projectHomePage.navigateToWorkspaceModule();
-        projectHomePage.getWorkspaceNodesPanel().clickOnFolder(data.getFolderName());
+        projectHomePage.getWorkspaceNodesPanel().navigateToFolder(data.getFolderName());
 
-        workspaceContentPanel = new WorkspaceContentPanel(data.getFolderName());
+        folderContentPanel = new FolderContentPanel(data.getFolderName());
 
         while (true) {
             try {
-                workspaceContentPanel.deleteFile(data.getTestFileName());
+                folderContentPanel.deleteFile(data.getTestFileName());
             } catch (com.codeborne.selenide.ex.ElementNotFound e) {
                 break;
             }
@@ -29,30 +29,30 @@ public class OpenFileVersion extends ProjectTestBase {
 
     @Test(description = "Upload first file version into Project root folder")
     public void uploadFirstFileVersion() {
-        workspaceContentPanel.enhancedUploadSingleFile(data.getFileV1ToUploadPath());
+        folderContentPanel.enhancedUploadSingleFile(data.getFileV1ToUploadPath());
         FileInformationEditPopup fileInformationEditPopup = new FileInformationEditPopup();
         fileInformationEditPopup.closeEditFileInformation();
-        workspaceContentPanel.verifyFileIsPresent(data.getTestFileName());
+        folderContentPanel.verifyFileIsPresent(data.getTestFileName());
     }
 
     @Test(dependsOnMethods = "uploadFirstFileVersion", description = "Upload second file version into Project root folder")
     public void uploadSecondFileVersion() {
-        workspaceContentPanel.enhancedUploadSingleFile(data.getFileV2ToUploadPath());
+        folderContentPanel.enhancedUploadSingleFile(data.getFileV2ToUploadPath());
         FileInformationEditPopup fileInformationEditPopup = new FileInformationEditPopup();
         fileInformationEditPopup.closeEditFileInformation();
-        workspaceContentPanel.verifyFileIsPresent(data.getTestFileName());
+        folderContentPanel.verifyFileIsPresent(data.getTestFileName());
     }
 
     @Test(dependsOnMethods = "uploadSecondFileVersion", description = "Open latest file version")
     public void openLatestFileVersion() {
-        workspaceContentPanel.clickOnFile(data.getTestFileName());
+        folderContentPanel.clickOnFile(data.getTestFileName());
         FileInformationPanel fileInformationPanelTab = new FileInformationPanel(data.getTestFileName());
         fileInformationPanelTab.openFile(data.getFileV2Content());
     }
 
     @Test(dependsOnMethods = "openLatestFileVersion", description = "Open first file version")
     public void openFirstFileVersion() {
-        workspaceContentPanel.clickOnFile(data.getTestFileName());
+        folderContentPanel.clickOnFile(data.getTestFileName());
         FileInformationPanel fileInformationPanelTab = new FileInformationPanel(data.getTestFileName());
         fileInformationPanelTab.selectFileVersion(data.getFileV1VersionIndex());
         fileInformationPanelTab.openPreviousFileVersion(data.getFileV1Content());

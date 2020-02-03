@@ -15,7 +15,7 @@ public class MonitorFile extends ProjectTestBase {
     public void prepareData() {
         projectHomePage.navigateToWorkspaceModule();
         projectHomePage.getWorkspaceNodesPanel().navigateToMonitoredFiles();
-        monitoredFilesContentPanel = new MonitoredFilesContentPanel("Monitored files");
+        monitoredFilesContentPanel = new MonitoredFilesContentPanel();
         while (true) {
             try {
                 monitoredFilesContentPanel.stopMonitorFile(data.getTestFileName());
@@ -29,9 +29,9 @@ public class MonitorFile extends ProjectTestBase {
 
     @Test(description = "Start file monitoring")
     public void monitorFile() {
-        workspaceContentPanel.startMonitorFile(data.getTestFileName());
+        folderContentPanel.startMonitorFile(data.getTestFileName());
         projectHomePage.getWorkspaceNodesPanel().navigateToMonitoredFiles();
-        monitoredFilesContentPanel = new MonitoredFilesContentPanel("Monitored files");
+        monitoredFilesContentPanel = new MonitoredFilesContentPanel();
         monitoredFilesContentPanel.verifyFileIsPresent(data.getTestFileName());
     }
 

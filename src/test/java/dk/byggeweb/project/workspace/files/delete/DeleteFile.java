@@ -2,7 +2,7 @@ package dk.byggeweb.project.workspace.files.delete;
 
 import dk.byggeweb.infrastructure.test.ProjectTestBase;
 import dk.byggeweb.objects.project.workspace.modals.FileInformationEditPopup;
-import dk.byggeweb.objects.project.workspace.panels.WorkspaceContentPanel;
+import dk.byggeweb.objects.project.workspace.panels.FolderContentPanel;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -13,19 +13,19 @@ public class DeleteFile extends ProjectTestBase {
     @BeforeClass
     public void prepareData() {
         projectHomePage.navigateToWorkspaceModule();
-        projectHomePage.getWorkspaceNodesPanel().clickOnFolder(data.getFolderName());
+        projectHomePage.getWorkspaceNodesPanel().navigateToFolder(data.getFolderName());
 
-        workspaceContentPanel = new WorkspaceContentPanel(data.getFolderName());
-        workspaceContentPanel.enhancedUploadSingleFile(getAbsolutePath(data.getFileToUploadPath()));
+        folderContentPanel = new FolderContentPanel(data.getFolderName());
+        folderContentPanel.enhancedUploadSingleFile(getAbsolutePath(data.getFileToUploadPath()));
         FileInformationEditPopup fileInformationEditPopup = new FileInformationEditPopup();
         fileInformationEditPopup.closeEditFileInformation();
-        workspaceContentPanel.verifyFileIsPresent(data.getTestFileName());
+        folderContentPanel.verifyFileIsPresent(data.getTestFileName());
     }
 
     @Test(description = "Delete file permanently")
     public void deleteFile() {
-        workspaceContentPanel.deleteFile(data.getTestFileName());
-        workspaceContentPanel.verifyFileIsNotPresent(data.getTestFileName());
+        folderContentPanel.deleteFile(data.getTestFileName());
+        folderContentPanel.verifyFileIsNotPresent(data.getTestFileName());
     }
 
 }

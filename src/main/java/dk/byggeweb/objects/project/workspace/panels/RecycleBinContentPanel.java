@@ -1,12 +1,17 @@
 package dk.byggeweb.objects.project.workspace.panels;
 
+import com.codeborne.selenide.SelenideElement;
 import dk.byggeweb.objects.project.workspace.modals.FileDeletePopup;
 import dk.byggeweb.objects.project.workspace.modals.FileMovePopup;
 import io.qameta.allure.Step;
 
-import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selectors.byXpath;
+import static com.codeborne.selenide.Selenide.$;
 
 public class RecycleBinContentPanel extends WorkspaceContentPanel {
+
+    private SelenideElement panelTitle = $(byXpath("//div[contains(@class, 'x-title-text x-title-text-default') and contains(text(), 'Recycle bin')]"));
 
     @Step("Delete file")
     public void deleteFile(String fileName) {
@@ -29,8 +34,8 @@ public class RecycleBinContentPanel extends WorkspaceContentPanel {
         verifyFileIsNotPresent(fileName);
     }
 
-    public RecycleBinContentPanel(String title) {
-        getPanelTitle().shouldHave(text(title));
+    public RecycleBinContentPanel() {
+        panelTitle.shouldBe(visible);
     }
 
 }

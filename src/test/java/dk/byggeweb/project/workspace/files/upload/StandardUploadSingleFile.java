@@ -2,7 +2,7 @@ package dk.byggeweb.project.workspace.files.upload;
 
 import dk.byggeweb.infrastructure.test.ProjectTestBase;
 import dk.byggeweb.objects.project.workspace.modals.FileInformationEditPopup;
-import dk.byggeweb.objects.project.workspace.panels.WorkspaceContentPanel;
+import dk.byggeweb.objects.project.workspace.panels.FolderContentPanel;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -13,13 +13,13 @@ public class StandardUploadSingleFile extends ProjectTestBase {
     @BeforeClass
     public void deleteFileIfExists() {
         projectHomePage.navigateToWorkspaceModule();
-        projectHomePage.getWorkspaceNodesPanel().clickOnFolder(data.getFolderName());
+        projectHomePage.getWorkspaceNodesPanel().navigateToFolder(data.getFolderName());
 
-        workspaceContentPanel = new WorkspaceContentPanel(data.getFolderName());
+        folderContentPanel = new FolderContentPanel(data.getFolderName());
 
         while (true) {
             try {
-                workspaceContentPanel.deleteFile(data.getTestFileName());
+                folderContentPanel.deleteFile(data.getTestFileName());
             } catch (com.codeborne.selenide.ex.ElementNotFound e) {
                 break;
             }
@@ -28,9 +28,9 @@ public class StandardUploadSingleFile extends ProjectTestBase {
 
     @Test(description = "Standard upload file into Project root folder")
     public void uploadFile() {
-        workspaceContentPanel.standardUploadSingleFile(getAbsolutePath(data.getFileToUploadPath()));
+        folderContentPanel.standardUploadSingleFile(getAbsolutePath(data.getFileToUploadPath()));
         FileInformationEditPopup fileInformationEditPopup = new FileInformationEditPopup();
         fileInformationEditPopup.closeEditFileInformation();
-        workspaceContentPanel.verifyFileIsPresent(data.getTestFileName());
+        folderContentPanel.verifyFileIsPresent(data.getTestFileName());
     }
 }

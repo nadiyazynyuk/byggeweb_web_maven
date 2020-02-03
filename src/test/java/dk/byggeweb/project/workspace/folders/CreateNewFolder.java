@@ -12,11 +12,11 @@ public class CreateNewFolder extends ProjectTestBase {
     @BeforeClass
     public void deleteFolderIfExists() {
         projectHomePage.navigateToWorkspaceModule();
-        projectHomePage.getWorkspaceNodesPanel().clickOnFolder(data.getFolderName());
+        projectHomePage.getWorkspaceNodesPanel().navigateToFolder(data.getFolderName());
 
         while (true) {
             try {
-                projectHomePage.getWorkspaceNodesPanel().clickOnFolder(data.getCreateFolderName());
+                projectHomePage.getWorkspaceNodesPanel().navigateToFolder(data.getCreateFolderName());
                 projectHomePage.getWorkspaceNodesPanel().deleteFolder(data.getFolderName());
             } catch (com.codeborne.selenide.ex.ElementNotFound e) {
                 break;
@@ -25,7 +25,7 @@ public class CreateNewFolder extends ProjectTestBase {
 
         while (true) {
             try {
-                projectHomePage.getWorkspaceNodesPanel().clickOnFolder(data.getRenameFolderName());
+                projectHomePage.getWorkspaceNodesPanel().navigateToFolder(data.getRenameFolderName());
                 projectHomePage.getWorkspaceNodesPanel().deleteFolder(data.getFolderName());
             } catch (com.codeborne.selenide.ex.ElementNotFound e) {
                 break;
@@ -35,7 +35,7 @@ public class CreateNewFolder extends ProjectTestBase {
 
     @Test(description = "Create folder in root folder")
     public void createFolder() {
-        projectHomePage.getWorkspaceNodesPanel().clickOnFolder(data.getFolderName());
+        projectHomePage.getWorkspaceNodesPanel().navigateToFolder(data.getFolderName());
         WorkspaceNodesPanel workspaceNodesPanel = new WorkspaceNodesPanel(data.getFolderName());
         workspaceNodesPanel.createFolder(data.getCreateFolderName());
         workspaceNodesPanel.verifyFolderIsPresent(data.getCreateFolderName());
@@ -43,7 +43,7 @@ public class CreateNewFolder extends ProjectTestBase {
 
     @Test(dependsOnMethods = "createFolder", description = "Rename folder")
     public void renameFolder() {
-        projectHomePage.getWorkspaceNodesPanel().clickOnFolder(data.getCreateFolderName());
+        projectHomePage.getWorkspaceNodesPanel().navigateToFolder(data.getCreateFolderName());
         WorkspaceNodesPanel workspaceNodesPanel = new WorkspaceNodesPanel(data.getCreateFolderName());
         workspaceNodesPanel.renameFolder(data.getRenameFolderName());
         workspaceNodesPanel.verifyFolderIsPresent(data.getRenameFolderName());
@@ -51,7 +51,7 @@ public class CreateNewFolder extends ProjectTestBase {
 
     @Test(dependsOnMethods = "renameFolder", description = "Delete folder")
     public void deleteFolder() {
-        projectHomePage.getWorkspaceNodesPanel().clickOnFolder(data.getRenameFolderName());
+        projectHomePage.getWorkspaceNodesPanel().navigateToFolder(data.getRenameFolderName());
         WorkspaceNodesPanel workspaceNodesPanel = new WorkspaceNodesPanel(data.getRenameFolderName());
         workspaceNodesPanel.deleteFolder(data.getRenameFolderName());
         workspaceNodesPanel.verifyFolderIsNotPresent(data.getRenameFolderName());

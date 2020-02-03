@@ -6,6 +6,7 @@
         <parameter name="testData" value="project/launchProjectTestData.xml"/>
         <classes>
             <class name="dk.byggeweb.project.navigation.BasicNavigation"/>
+            <class name="dk.byggeweb.project.navigation.WorkspaceNavigation"/>
         </classes>
     </test>
 

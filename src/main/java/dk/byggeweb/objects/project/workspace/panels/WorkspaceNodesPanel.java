@@ -40,7 +40,7 @@ public class WorkspaceNodesPanel extends ProjectHomePage {
     private SelenideElement downloadFilesFromFolderButton = $(byXpath("//span[@data-locator='locator-btn-download_dir']"));
 
     @Step("Select folder")
-    public void clickOnFolder(String name) {
+    public void navigateToFolder(String name) {
         getFolderByName(name).click();
     }
 
@@ -85,9 +85,34 @@ public class WorkspaceNodesPanel extends ProjectHomePage {
         new FolderInformationPanel(folderName);
     }
 
+    @Step("Navigate to Version sets")
+    public void navigateToVersionSets() {
+        versionSetsNode.click();
+    }
+
+    @Step("Navigate to Recycle bin")
+    public void navigateToRecycleBin() {
+        recycleBinNode.click();
+    }
+
+    @Step("Navigate to Monitored folders")
+    public void navigateToMonitoredFolders() {
+        monitoredFoldersNode.click();
+    }
+
     @Step("Navigate to Monitored files")
     public void navigateToMonitoredFiles() {
         monitoredFilesNode.click();
+    }
+
+    @Step("Navigate to Since last time")
+    public void navigateToSinceLastTime() {
+        sinceLastTimeNode.click();
+    }
+
+    @Step("Navigate to Search result")
+    public void navigateToSearchResult() {
+        searchResultNode.click();
     }
 
     public WorkspaceNodesPanel() {

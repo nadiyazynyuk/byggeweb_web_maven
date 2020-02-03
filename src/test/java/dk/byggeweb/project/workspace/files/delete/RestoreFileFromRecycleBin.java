@@ -20,15 +20,15 @@ public class RestoreFileFromRecycleBin extends ProjectTestBase {
 
     @Test(description = "Restore file from Recycle bin")
     public void restoreFile() {
-        projectHomePage.getWorkspaceNodesPanel().getRecycleBinNode().click();
-        RecycleBinContentPanel recycleBinContentPanel = new RecycleBinContentPanel("Recycle bin");
+        projectHomePage.getWorkspaceNodesPanel().navigateToRecycleBin();
+        RecycleBinContentPanel recycleBinContentPanel = new RecycleBinContentPanel();
         recycleBinContentPanel.restoreFile(data.getTestFileName(), data.getFolderName());
-        projectHomePage.getWorkspaceNodesPanel().clickOnFolder(data.getFolderName());
-        workspaceContentPanel.verifyFileIsPresent(data.getTestFileName());
+        projectHomePage.getWorkspaceNodesPanel().navigateToFolder(data.getFolderName());
+        folderContentPanel.verifyFileIsPresent(data.getTestFileName());
     }
 
     private void placeFileInRecycleBin() {
-        workspaceContentPanel.moveFileToRecycleBin(data.getTestFileName());
-        workspaceContentPanel.verifyFileIsNotPresent(data.getTestFileName());
+        folderContentPanel.moveFileToRecycleBin(data.getTestFileName());
+        folderContentPanel.verifyFileIsNotPresent(data.getTestFileName());
     }
 }

@@ -16,12 +16,12 @@ public class LockFile extends ProjectTestBase {
 
     @Test(description = "Lock/unlock file")
     public void lockFile() {
-        boolean isLocked = workspaceContentPanel.isFileLocked(data.getTestFileName());
-        workspaceContentPanel.lockFile(data.getTestFileName());
+        boolean isLocked = folderContentPanel.isFileLocked(data.getTestFileName());
+        folderContentPanel.lockFile(data.getTestFileName());
         if (isLocked) {
-            workspaceContentPanel.verifyFileIsUnlocked(data.getTestFileName());
+            folderContentPanel.verifyFileIsUnlocked(data.getTestFileName());
         } else {
-            workspaceContentPanel.verifyFileIsLocked(data.getTestFileName());
+            folderContentPanel.verifyFileIsLocked(data.getTestFileName());
         }
     }
 }

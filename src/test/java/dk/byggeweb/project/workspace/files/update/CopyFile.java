@@ -1,7 +1,7 @@
 package dk.byggeweb.project.workspace.files.update;
 
 import dk.byggeweb.infrastructure.test.ProjectTestBase;
-import dk.byggeweb.objects.project.workspace.panels.WorkspaceContentPanel;
+import dk.byggeweb.objects.project.workspace.panels.FolderContentPanel;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -20,15 +20,15 @@ public class CopyFile extends ProjectTestBase {
 
     @Test(description = "Copy file to another folder")
     public void copyFile() {
-        projectHomePage.getWorkspaceNodesPanel().clickOnFolder(data.getFolder1Name());
-        workspaceContentPanel = new WorkspaceContentPanel(data.getFolder1Name());
+        projectHomePage.getWorkspaceNodesPanel().navigateToFolder(data.getFolder1Name());
+        folderContentPanel = new FolderContentPanel(data.getFolder1Name());
 
-        workspaceContentPanel.copyFileToFolder(data.getTestFileName(), data.getFolder2Name(), data.getFolderName());
-        workspaceContentPanel.verifyFileIsPresent(data.getTestFileName());
+        folderContentPanel.copyFileToFolder(data.getTestFileName(), data.getFolder2Name(), data.getFolderName());
+        folderContentPanel.verifyFileIsPresent(data.getTestFileName());
 
-        projectHomePage.getWorkspaceNodesPanel().clickOnFolder(data.getFolder2Name());
-        workspaceContentPanel = new WorkspaceContentPanel(data.getFolder2Name());
-        workspaceContentPanel.verifyFileIsPresent(data.getTestFileName());
+        projectHomePage.getWorkspaceNodesPanel().navigateToFolder(data.getFolder2Name());
+        folderContentPanel = new FolderContentPanel(data.getFolder2Name());
+        folderContentPanel.verifyFileIsPresent(data.getTestFileName());
     }
 
 }
