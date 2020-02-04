@@ -43,56 +43,48 @@ public class ProjectHomePage extends PageBase {
     public void navigateToProjectInformation() {
         projectInformation.click();
         projectInformationNodesPanel = new ProjectInformationNodesPanel();
-        projectInformationNodesPanel.getProjectInformationParentNode().shouldHave(text("Project information"));
     }
 
     @Step("Navigate to Workspace")
     public void navigateToWorkspaceModule() {
         workspace.click();
         workspaceNodesPanel = new WorkspaceNodesPanel();
-        workspaceNodesPanel.getWorkspaceParentNode().shouldHave(text("Workspace"));
     }
 
     @Step("Navigate to Publication Space")
     public void navigateToPublicationSpace() {
         publicationSpace.click();
         publicationSpaceNodesPanel = new PublicationSpaceNodesPanel();
-        publicationSpaceNodesPanel.getPublicationSpaceParentNode().shouldHave(text("Publication space"));
     }
 
     @Step("Navigate to Distribution Space")
     public void navigateToDistributionSpace() {
         distributionSpace.click();
         distributionSpaceNodesPanel = new DistributionSpaceNodesPanel();
-        distributionSpaceNodesPanel.getDistributionSpaceParentNode().shouldHave(text("Distribution space"));
     }
 
     @Step("Navigate to Communication")
     public void navigateToCommunication() {
         communication.click();
         communicationNodesPanel = new CommunicationNodesPanel();
-        communicationNodesPanel.getCommunicationParentNode().shouldHave(text("Communication"));
     }
 
     @Step("Navigate to Project Administration")
     public void navigateToProjectAdministration() {
         projectAdministration.click();
         projectAdministrationNodesPanel = new ProjectAdministrationNodesPanel();
-        projectAdministrationNodesPanel.getProjectAdministrationParentNode().shouldHave(text("Project administration"));
     }
 
     @Step("Navigate to Log")
     public void navigateToLog() {
         log.click();
         logNodesPanel = new LogNodesPanel();
-        logNodesPanel.getLogParentNode().shouldHave(text("Log"));
     }
 
     @Step("Navigate to Personal Overviews")
     public void navigateToPersonalOverviews() {
         personalOverviews.click();
         personalOverviewsNodesPanel = new PersonalOverviewsNodesPanel();
-        personalOverviewsNodesPanel.getPersonalOverviewsParentNode().shouldHave(text("Personal overviews"));
     }
 
     @Step("Verify project title")
