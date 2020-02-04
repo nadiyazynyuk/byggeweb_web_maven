@@ -10,13 +10,12 @@ import lombok.Getter;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 
 @Getter
 public class WorkspaceNodesPanel extends ProjectHomePage {
-
-    private SelenideElement panelTitle = $(byXpath("//div[contains(@id, 'mp-common-infocard-directory')]//div[@class='x-title-text x-title-text-default x-title-item']"));
 
     private SelenideElement workspaceParentNode = $(byXpath("//span[@class='x-tree-node-text ' and contains(text(), 'Workspace')]"));
     private SelenideElement rootFolderNode = $(byXpath("//span[@class='x-tree-node-text ' and contains(text(), 'Project')]"));
@@ -116,11 +115,7 @@ public class WorkspaceNodesPanel extends ProjectHomePage {
     }
 
     public WorkspaceNodesPanel() {
-        super();
-    }
-
-    public WorkspaceNodesPanel(String title) {
-        panelTitle.shouldHave(text(title));
+        workspaceParentNode.shouldBe(visible);
     }
 
 }

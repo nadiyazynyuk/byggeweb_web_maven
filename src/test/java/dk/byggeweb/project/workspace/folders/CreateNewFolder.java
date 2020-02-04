@@ -1,7 +1,7 @@
 package dk.byggeweb.project.workspace.folders;
 
 import dk.byggeweb.infrastructure.test.ProjectTestBase;
-import dk.byggeweb.objects.project.workspace.panels.WorkspaceNodesPanel;
+import dk.byggeweb.objects.project.workspace.panels.FolderContentPanel;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -36,25 +36,25 @@ public class CreateNewFolder extends ProjectTestBase {
     @Test(description = "Create folder in root folder")
     public void createFolder() {
         projectHomePage.getWorkspaceNodesPanel().navigateToFolder(data.getFolderName());
-        WorkspaceNodesPanel workspaceNodesPanel = new WorkspaceNodesPanel(data.getFolderName());
-        workspaceNodesPanel.createFolder(data.getCreateFolderName());
-        workspaceNodesPanel.verifyFolderIsPresent(data.getCreateFolderName());
+        FolderContentPanel folderContentPanel = new FolderContentPanel(data.getFolderName());
+        folderContentPanel.createFolder(data.getCreateFolderName());
+        folderContentPanel.verifyFolderIsPresent(data.getCreateFolderName());
     }
 
     @Test(dependsOnMethods = "createFolder", description = "Rename folder")
     public void renameFolder() {
         projectHomePage.getWorkspaceNodesPanel().navigateToFolder(data.getCreateFolderName());
-        WorkspaceNodesPanel workspaceNodesPanel = new WorkspaceNodesPanel(data.getCreateFolderName());
-        workspaceNodesPanel.renameFolder(data.getRenameFolderName());
-        workspaceNodesPanel.verifyFolderIsPresent(data.getRenameFolderName());
+        FolderContentPanel folderContentPanel = new FolderContentPanel(data.getCreateFolderName());
+        folderContentPanel.renameFolder(data.getRenameFolderName());
+        folderContentPanel.verifyFolderIsPresent(data.getRenameFolderName());
     }
 
     @Test(dependsOnMethods = "renameFolder", description = "Delete folder")
     public void deleteFolder() {
         projectHomePage.getWorkspaceNodesPanel().navigateToFolder(data.getRenameFolderName());
-        WorkspaceNodesPanel workspaceNodesPanel = new WorkspaceNodesPanel(data.getRenameFolderName());
-        workspaceNodesPanel.deleteFolder(data.getRenameFolderName());
-        workspaceNodesPanel.verifyFolderIsNotPresent(data.getRenameFolderName());
+        FolderContentPanel folderContentPanel = new FolderContentPanel(data.getRenameFolderName());
+        folderContentPanel.deleteFolder(data.getRenameFolderName());
+        folderContentPanel.verifyFolderIsNotPresent(data.getRenameFolderName());
     }
 
 }
