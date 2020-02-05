@@ -12,10 +12,10 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public class CommunicationNodesPanel extends ProjectHomePage {
 
-    private SelenideElement communicationParentNode = $(byXpath("//span[@class='x-tree-node-text ' and contains(text(), 'Communication')]"));
-    private SelenideElement messagesNode = $(byXpath("//span[@class='x-tree-node-text ' and contains(text(), 'Messages')]"));
-    private SelenideElement addressListNode = $(byXpath("//span[@class='x-tree-node-text ' and contains(text(), 'Address list')]"));
-    private SelenideElement projectHomepageNode = $(byXpath("//span[@class='x-tree-node-text ' and contains(text(), 'Project homepage')]"));
+    private SelenideElement communicationParentNode = $(byXpath("//td[contains(@class, 'WMP_80')]"));
+    private SelenideElement messagesNode = $(byXpath("//td[contains(@class, 'WMP_81')]"));
+    private SelenideElement addressListNode = $(byXpath("//td[contains(@class, 'WMP_82')]"));
+    private SelenideElement projectHomepageNode = $(byXpath("//td[contains(@class, 'WMP_88')]"));
 
     public CommunicationNodesPanel() {
         communicationParentNode.shouldBe(visible);

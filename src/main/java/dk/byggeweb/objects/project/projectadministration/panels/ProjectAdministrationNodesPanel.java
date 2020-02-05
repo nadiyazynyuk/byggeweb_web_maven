@@ -11,13 +11,13 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public class ProjectAdministrationNodesPanel extends ProjectHomePage {
 
-    private SelenideElement projectAdministrationParentNode = $(byXpath("//span[@class='x-tree-node-text ' and contains(text(), 'Project administration')]"));
-    private SelenideElement systemInformationNode = $(byXpath("//span[@class='x-tree-node-text ' and contains(text(), 'System Information')]"));
-    private SelenideElement approvalNode = $(byXpath("//span[@class='x-tree-node-text ' and contains(text(), 'Approval')]"));
-    private SelenideElement backupOrdersNode = $(byXpath("//span[@class='x-tree-node-text ' and contains(text(), 'Backup orders')]"));
-    private SelenideElement printOrdersNode = $(byXpath("//span[@class='x-tree-node-text ' and contains(text(), 'Print orders')]"));
-    private SelenideElement groupsNode = $(byXpath("//span[@class='x-tree-node-text ' and contains(text(), 'Groups')]"));
-    private SelenideElement usersNode = $(byXpath("//span[@class='x-tree-node-text ' and contains(text(), 'Users')]"));
+    private SelenideElement projectAdministrationParentNode = $(byXpath("//td[contains(@class, 'WMP_90')]"));
+    private SelenideElement systemInformationNode = $(byXpath("//td[contains(@class, 'WMP_91')]"));
+    private SelenideElement approvalNode = $(byXpath("//td[contains(@class, 'WMP_92')]"));
+    private SelenideElement backupOrdersNode = $(byXpath("//td[contains(@class, 'WMP_95')]"));
+    private SelenideElement printOrdersNode = $(byXpath("//td[contains(@class, 'WMP_96')]"));
+    private SelenideElement groupsNode = $(byXpath("//td[contains(@class, 'WMP_99')]"));
+    private SelenideElement usersNode = $(byXpath("//td[contains(@class, 'WMP_101')]"));
 
     public ProjectAdministrationNodesPanel() {
         projectAdministrationParentNode.shouldBe(visible);

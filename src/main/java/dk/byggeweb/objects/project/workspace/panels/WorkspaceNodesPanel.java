@@ -17,14 +17,14 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public class WorkspaceNodesPanel extends ProjectHomePage {
 
-    private SelenideElement workspaceParentNode = $(byXpath("//span[@class='x-tree-node-text ' and contains(text(), 'Workspace')]"));
-    private SelenideElement rootFolderNode = $(byXpath("//span[@class='x-tree-node-text ' and contains(text(), 'Project')]"));
-    private SelenideElement versionSetsNode = $(byXpath("//span[@class='x-tree-node-text ' and contains(text(), 'Version sets')]"));
-    private SelenideElement recycleBinNode = $(byXpath("//span[@class='x-tree-node-text ' and contains(text(), 'Recycle bin')]"));
-    private SelenideElement monitoredFoldersNode = $(byXpath("//span[@class='x-tree-node-text ' and contains(text(), 'Monitored folders')]"));
-    private SelenideElement monitoredFilesNode = $(byXpath("//span[@class='x-tree-node-text ' and contains(text(), 'Monitored files')]"));
-    private SelenideElement sinceLastTimeNode = $(byXpath("//span[@class='x-tree-node-text ' and contains(text(), 'Since last time')]"));
-    private SelenideElement searchResultNode = $(byXpath("//span[@class='x-tree-node-text ' and contains(text(), 'Search')]"));
+    private SelenideElement workspaceParentNode = $(byXpath("//td[contains(@class, 'WMP_10')]"));
+    private SelenideElement rootFolderNode = $(byXpath("//td[contains(@class, 'WMP_11')]/div/span[contains(text(), 'Project')]"));
+    private SelenideElement versionSetsNode = $(byXpath("//td[contains(@class, 'WMP_140')]"));
+    private SelenideElement recycleBinNode = $(byXpath("//td[contains(@class, 'WMP_12')]"));
+    private SelenideElement monitoredFoldersNode = $(byXpath("//td[contains(@class, 'WMP_13')]"));
+    private SelenideElement monitoredFilesNode = $(byXpath("//td[contains(@class, 'WMP_19')]"));
+    private SelenideElement sinceLastTimeNode = $(byXpath("//td[contains(@class, 'WMP_14')]/div/span[contains(text(), 'Since last time')]"));
+    private SelenideElement searchResultNode = $(byXpath("//td[contains(@class, 'WMP_15')]"));
 
     private SelenideElement getFolderByName(String name) {
         return $(By.xpath("//span[@class='x-tree-node-text ' and contains(text(), '" + name + "')]"));
@@ -82,6 +82,11 @@ public class WorkspaceNodesPanel extends ProjectHomePage {
         folderDeletePopup.deleteFolder();
         WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
         new FolderInformationPanel(folderName);
+    }
+
+    @Step("Navigate to root folder")
+    public void navigateToRootFolder() {
+        rootFolderNode.click();
     }
 
     @Step("Navigate to Version sets")

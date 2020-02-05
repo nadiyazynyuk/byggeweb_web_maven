@@ -11,10 +11,10 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public class ProjectInformationNodesPanel extends ProjectHomePage {
 
-    private SelenideElement projectInformationParentNode = $(byXpath("//span[@class='x-tree-node-text ' and contains(text(), 'Project information')]"));
-    private SelenideElement projectNameAndDescriptionNode = $(byXpath("//span[@class='x-tree-node-text ' and contains(text(), 'Project name and description')]"));
-    private SelenideElement administratorsNode = $(byXpath("//span[@class='x-tree-node-text ' and contains(text(), 'Administrators')]"));
-    private SelenideElement areasOfResponsibilityNode = $(byXpath("//span[@class='x-tree-node-text ' and contains(text(), 'Areas of responsibility')]"));
+    private SelenideElement projectInformationParentNode = $(byXpath("//td[contains(@class, 'WMP_1')]"));
+    private SelenideElement projectNameAndDescriptionNode = $(byXpath("//td[contains(@class, 'WMP_2')]"));
+    private SelenideElement administratorsNode = $(byXpath("//td[contains(@class, 'WMP_3')]"));
+    private SelenideElement areasOfResponsibilityNode = $(byXpath("//td[contains(@class, 'WMP_4')]"));
 
     public ProjectInformationNodesPanel() {
         projectInformationParentNode.shouldBe(visible);

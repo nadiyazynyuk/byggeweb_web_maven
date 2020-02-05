@@ -12,16 +12,17 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public class DistributionSpaceNodesPanel extends ProjectHomePage {
 
-    private SelenideElement distributionSpaceParentNode = $(byXpath("//span[@class='x-tree-node-text ' and contains(text(), 'Distribution space')]"));
-    private SelenideElement rootDistributionListNode = $(byXpath("//span[@class='x-tree-node-text ' and contains(text(), 'Distribution lists')]"));
-    private SelenideElement versionSetsNode = $(byXpath("//span[@class='x-tree-node-text ' and contains(text(), 'Version sets')]"));
-    private SelenideElement recipientsNode = $(byXpath("//span[@class='x-tree-node-text ' and contains(text(), 'Recipients')]"));
-    private SelenideElement invitedUsersNode = $(byXpath("//span[@class='x-tree-node-text ' and contains(text(), 'Invited users')]"));
-    private SelenideElement recentlyReleasedFileVersionsNode = $(byXpath("//span[@class='x-tree-node-text ' and contains(text(), 'Recently released file versions')]"));
-    private SelenideElement printDistributionExceptionsNode = $(byXpath("//span[@class='x-tree-node-text ' and contains(text(), 'Print distribution exceptions')]"));
-    private SelenideElement monitoredFoldersNode = $(byXpath("//span[@class='x-tree-node-text ' and contains(text(), 'Monitored folders')]"));
+    private SelenideElement distributionSpaceParentNode = $(byXpath("//td[contains(@class, 'WMP_50')]"));
+    private SelenideElement rootDistributionListNode = $(byXpath("//td[contains(@class, 'WMP_51')]"));
+    private SelenideElement versionSetsNode = $(byXpath("//td[contains(@class, 'WMP_140')]"));
+    private SelenideElement recipientsNode = $(byXpath("//td[contains(@class, 'WMP_61')]"));
+    private SelenideElement invitedUsersNode = $(byXpath("//td[contains(@class, 'WMP_62')]"));
+    private SelenideElement recentlyReleasedFileVersionsNode = $(byXpath("//td[contains(@class, 'WMP_63')]"));
+    private SelenideElement printDistributionExceptionsNode = $(byXpath("//td[contains(@class, 'WMP_64')]"));
+    private SelenideElement monitoredFoldersNode = $(byXpath("//td[contains(@class, 'WMP_73')]"));
     private SelenideElement monitoredFilesNode = $(byXpath("//span[@class='x-tree-node-text ' and contains(text(), 'Monitored files')]"));
-    private SelenideElement searchResultNode = $(byXpath("//span[@class='x-tree-node-text ' and contains(text(), 'Search')]"));
+//    private SelenideElement monitoredFilesNode = $(byXpath("//td[contains(@class, 'WMP_73')]"));
+    private SelenideElement searchResultNode = $(byXpath("//td[contains(@class, 'WMP_68')]"));
 
     private SelenideElement getDistributionListByName(String name) {
         return $(By.xpath("//span[@class='x-tree-node-text ' and contains(text(), '" + name + "')]"));

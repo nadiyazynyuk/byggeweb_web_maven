@@ -11,10 +11,10 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public class LogNodesPanel extends ProjectHomePage {
 
-    private SelenideElement logParentNode = $(byXpath("//span[@class='x-tree-node-text ' and contains(text(), 'Log')]"));
-    private SelenideElement predefinedLogFiltersNode = $(byXpath("//span[@class='x-tree-node-text ' and contains(text(), 'Predefined log filters')]"));
-    private SelenideElement projectLogFiltersNode = $(byXpath("//span[@class='x-tree-node-text ' and contains(text(), 'Project log filters')]"));
-    private SelenideElement userLogFiltersNode = $(byXpath("//span[@class='x-tree-node-text ' and contains(text(), 'User log filters')]"));
+    private SelenideElement logParentNode = $(byXpath("//td[contains(@class, 'WMP_110')]"));
+    private SelenideElement predefinedLogFiltersNode = $(byXpath("//td[contains(@class, 'WMP_111')]"));
+    private SelenideElement projectLogFiltersNode = $(byXpath("//td[contains(@class, 'WMP_116')]"));
+    private SelenideElement userLogFiltersNode = $(byXpath("//td[contains(@class, 'WMP_118')]"));
 
     public LogNodesPanel() {
         logParentNode.shouldBe(visible);
