@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<testdata>
+    <userName>selenium.bot@ukr.net</userName>
+    <password>testPassword#1</password>
+    <name>Selenium Bot</name>
+    <testFileName>TestFile</testFileName>
+    <fileToUploadPath>resources/testfiles/TestFile.docx</fileToUploadPath>
+    <firstVersion>1</firstVersion>
+    <secondVersion>2</secondVersion>
+</testdata>

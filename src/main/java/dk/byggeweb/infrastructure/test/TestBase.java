@@ -29,7 +29,7 @@ public abstract class TestBase {
             Configuration.browserCapabilities.merge(caps);
         }
 
-        Selenide.open("/");
+        Selenide.open("");
         WebDriverRunner.getWebDriver().manage().window().setSize(new Dimension(1600, 1200));
     }
 

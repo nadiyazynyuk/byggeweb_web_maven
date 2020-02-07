@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<testdata>
+
+    <userName>selenium.bot@ukr.net</userName>
+    <password>testPassword#1</password>
+    <name>Selenium Bot</name>
+    <projectLink>https://byggeweb.dk/controller?cmd=company7.project.login&amp;project=36359</projectLink>
+    <projectName>AutoRoyalFactory</projectName>
+    <folderName>Project</folderName>
+    <testFileName>TestUploadEnhancedFile</testFileName>
+    <fileToUploadPath>resources/testfiles/TestUploadEnhancedFile.docx</fileToUploadPath>
+
+</testdata>

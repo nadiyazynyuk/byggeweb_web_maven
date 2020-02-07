@@ -30,14 +30,14 @@ public class ProjectHomePage extends PageBase {
     public PersonalOverviewsNodesPanel personalOverviewsNodesPanel;
 
     private SelenideElement projectTitleLabel = $(byXpath("//div[@class='WMP_Title']"));
-    private SelenideElement projectInformation = $(byXpath("//span[@class='x-btn-inner x-btn-inner-default-small' and contains(text(), 'Project information')]"));
-    private SelenideElement workspace = $(byXpath("//span[@class='x-btn-inner x-btn-inner-default-small' and contains(text(), 'Workspace')]"));
-    private SelenideElement publicationSpace = $(byXpath("//span[@class='x-btn-inner x-btn-inner-default-small' and contains(text(), 'Publication space')]"));
-    private SelenideElement distributionSpace = $(byXpath("//span[@class='x-btn-inner x-btn-inner-default-small' and contains(text(), 'Distribution space')]"));
-    private SelenideElement communication = $(byXpath("//span[@class='x-btn-inner x-btn-inner-default-small' and contains(text(), 'Communication')]"));
-    private SelenideElement projectAdministration = $(byXpath("//span[@class='x-btn-inner x-btn-inner-default-small' and contains(text(), 'Project administration')]"));
-    private SelenideElement log = $(byXpath("//span[@class='x-btn-inner x-btn-inner-default-small' and contains(text(), 'Log')]"));
-    private SelenideElement personalOverviews = $(byXpath("//span[@class='x-btn-inner x-btn-inner-default-small' and contains(text(), 'Personal overviews')]"));
+    private SelenideElement projectInformation = $(byXpath("//a[contains(@class, 'WMP_module_14')]"));
+    private SelenideElement workspace = $(byXpath("//a[contains(@class, 'WMP_module_1')]//span[contains(text(), 'Workspace')]"));
+    private SelenideElement publicationSpace = $(byXpath("//a[contains(@class, 'WMP_module_3')]"));
+    private SelenideElement distributionSpace = $(byXpath("//a[contains(@class, 'WMP_module_11')]"));
+    private SelenideElement communication = $(byXpath("//a[contains(@class, 'WMP_module_4')]"));
+    private SelenideElement projectAdministration = $(byXpath("//a[contains(@class, 'WMP_module_10')]"));
+    private SelenideElement log = $(byXpath("//a[contains(@class, 'WMP_module_9')]"));
+    private SelenideElement personalOverviews = $(byXpath("//a[contains(@class, 'WMP_module_18')]"));
 
     @Step("Navigate to Project Information")
     public void navigateToProjectInformation() {

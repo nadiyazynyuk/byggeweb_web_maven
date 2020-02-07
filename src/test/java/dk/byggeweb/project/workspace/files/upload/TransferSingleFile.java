@@ -18,7 +18,7 @@ public class TransferSingleFile extends ProjectTestBase {
 
     @BeforeClass
     public void prepareData() {
-        Selenide.open("/");
+        Selenide.open("");
         homePage = GeneralSteps.loginAsVerifiedUser(data.getUserName(), data.getPassword(), data.getName());
         uploadFileInPersonalSpace(data.getTestFileName(), data.getFileToUploadPath());
 

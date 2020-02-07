@@ -21,7 +21,7 @@ public class FileInformationPanel extends WorkspaceContentPanel {
     private SelenideElement moreButton = $(byXpath("//span[contains(@id, 'button') and contains(text(), 'More...')]"));
     private SelenideElement saveButton = $(byXpath("//div[contains(@id, 'mp-common-infocard-workspacefile')]//span[contains(text(), 'Save')]"));
     private SelenideElement versionSelector = $(byXpath("//input[contains(@id, 'mp-common-infocard-versionselector')]"));
-    private SelenideElement metadataSubjectField = $(byXpath("//div[contains(@class, 'WMP_Ref')][3]//input"));
+    private SelenideElement metadataRefField = $(byXpath("//div[contains(@class, 'WMP_Ref')][1]//input"));
     private SelenideElement metadataRevisionField = $(byXpath("//div[contains(@class, 'WMP_RevName')]//input"));
     private SelenideElement metadataRevDateField = $(byXpath("//div[contains(@class, 'WMP_RevDate')]//input"));
 

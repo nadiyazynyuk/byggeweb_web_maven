@@ -22,7 +22,7 @@ public class EditFileInformation extends ProjectTestBase {
         String subjectMetadata = data.getSubject() + LocalDate.now() + " " + System.currentTimeMillis();
         folderContentPanel.clickOnFile(data.getTestFileName());
         FileInformationPanel fileInformationPanel = new FileInformationPanel(data.getTestFileName());
-        fileInformationPanel.editMetadataTextField(fileInformationPanel.getMetadataSubjectField(), subjectMetadata);
+        fileInformationPanel.editMetadataTextField(fileInformationPanel.getMetadataRefField(), subjectMetadata);
         folderContentPanel.verifyDataIsPresentInTable(subjectMetadata);
     }
 

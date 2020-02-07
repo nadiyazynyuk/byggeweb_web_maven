@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="One test">
+
+    <test name="Project navigation tests">
+        <parameter name="testData" value="testserver/project/launchProjectTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.navigation.BasicNavigation"/>
+            <class name="dk.byggeweb.project.navigation.WorkspaceNavigation"/>
+            <class name="dk.byggeweb.project.navigation.PublicationSpaceNavigation"/>
+        </classes>
+    </test>
+
+
+</suite>

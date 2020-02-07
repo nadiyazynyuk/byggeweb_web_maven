@@ -3,7 +3,7 @@
 <suite name="Byggeweb Project UI tests">
 
     <test name="Project navigation tests">
-        <parameter name="testData" value="project/launchProjectTestData.xml"/>
+        <parameter name="testData" value="testserver/project/launchProjectTestData.xml"/>
         <classes>
             <class name="dk.byggeweb.project.navigation.BasicNavigation"/>
             <class name="dk.byggeweb.project.navigation.WorkspaceNavigation"/>
@@ -11,91 +11,91 @@
     </test>
 
     <test name="Workspace folders tests">
-        <parameter name="testData" value="project/workspace/createNewFolderTestData.xml"/>
+        <parameter name="testData" value="testserver/project/workspace/createNewFolderTestData.xml"/>
         <classes>
             <class name="dk.byggeweb.project.workspace.folders.CreateNewFolder"/>
         </classes>
     </test>
 
     <test name="Workspace enhanced upload single file tests">
-        <parameter name="testData" value="project/workspace/enhancedUploadSingleFileTestData.xml"/>
+        <parameter name="testData" value="testserver/project/workspace/enhancedUploadSingleFileTestData.xml"/>
         <classes>
             <class name="dk.byggeweb.project.workspace.files.upload.EnhancedUploadSingleFile"/>
         </classes>
     </test>
 
     <test name="Workspace standard upload single file tests">
-        <parameter name="testData" value="project/workspace/standardUploadSingleFileTestData.xml"/>
+        <parameter name="testData" value="testserver/project/workspace/standardUploadSingleFileTestData.xml"/>
         <classes>
             <class name="dk.byggeweb.project.workspace.files.upload.StandardUploadSingleFile"/>
         </classes>
     </test>
 
     <test name="Workspace transfer single file tests">
-        <parameter name="testData" value="project/workspace/transferFileTestData.xml"/>
+        <parameter name="testData" value="testserver/project/workspace/transferFileTestData.xml"/>
         <classes>
             <class name="dk.byggeweb.project.workspace.files.upload.TransferSingleFile"/>
         </classes>
     </test>
 
     <test name="Workspace open file version test">
-        <parameter name="testData" value="project/workspace/openFileVersionTestData.xml"/>
+        <parameter name="testData" value="testserver/project/workspace/openFileVersionTestData.xml"/>
         <classes>
             <class name="dk.byggeweb.project.workspace.files.open.OpenFileVersion"/>
         </classes>
     </test>
 
     <test name="Workspace edit file information tests">
-        <parameter name="testData" value="project/workspace/editFileInformationTestData.xml"/>
+        <parameter name="testData" value="testserver/project/workspace/editFileInformationTestData.xml"/>
         <classes>
             <class name="dk.byggeweb.project.workspace.files.update.EditFileInformation"/>
         </classes>
     </test>
 
     <test name="Delete file from Workspace">
-        <parameter name="testData" value="project/workspace/deleteFileTestData.xml"/>
+        <parameter name="testData" value="testserver/project/workspace/deleteFileTestData.xml"/>
         <classes>
             <class name="dk.byggeweb.project.workspace.files.delete.DeleteFile"/>
         </classes>
     </test>
 
     <test name="Recycle file from Workspace">
-        <parameter name="testData" value="project/workspace/recycleFileTestData.xml"/>
+        <parameter name="testData" value="testserver/project/workspace/recycleFileTestData.xml"/>
         <classes>
             <class name="dk.byggeweb.project.workspace.files.delete.DeleteFileViaRecycleBin"/>
         </classes>
     </test>
 
     <test name="Restore recycled file from Workspace">
-        <parameter name="testData" value="project/workspace/restoreRecycledFileTestData.xml"/>
+        <parameter name="testData" value="testserver/project/workspace/restoreRecycledFileTestData.xml"/>
         <classes>
             <class name="dk.byggeweb.project.workspace.files.delete.RestoreFileFromRecycleBin"/>
         </classes>
     </test>
 
     <test name="Move file to another folder in Workspace">
-        <parameter name="testData" value="project/workspace/moveFileTestData.xml"/>
+        <parameter name="testData" value="testserver/project/workspace/moveFileTestData.xml"/>
         <classes>
             <class name="dk.byggeweb.project.workspace.files.update.MoveFile"/>
         </classes>
     </test>
 
     <test name="Copy file to another folder in Workspace">
-        <parameter name="testData" value="project/workspace/copyFileTestData.xml"/>
+        <parameter name="testData" value="testserver/project/workspace/copyFileTestData.xml"/>
         <classes>
             <class name="dk.byggeweb.project.workspace.files.update.CopyFile"/>
         </classes>
     </test>
 
     <test name="Lock/unlock file test">
-        <parameter name="testData" value="project/workspace/lockFileTestData.xml"/>
+        <parameter name="testData" value="testserver/project/workspace/lockFileTestData.xml"/>
         <classes>
             <class name="dk.byggeweb.project.workspace.files.update.LockFile"/>
         </classes>
     </test>
 
     <test name="Start/stop file monitoring test">
-        <parameter name="testData" value="project/workspace/monitorFileTestData.xml"/>
+        <parameter name="testData" value="testserver/project/workspace/monitorFileTestData.xml"/>
         <classes>
             <class name="dk.byggeweb.project.workspace.files.update.MonitorFile"/>
         </classes>

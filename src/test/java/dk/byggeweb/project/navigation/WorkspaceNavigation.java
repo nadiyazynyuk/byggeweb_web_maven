@@ -10,8 +10,8 @@ public class WorkspaceNavigation extends ProjectTestBase {
     public void workspaceNavigation() {
         projectHomePage.navigateToWorkspaceModule();
 
-        projectHomePage.getWorkspaceNodesPanel().navigateToFolder(data.getFolderName());
-        new FolderContentPanel(data.getFolderName());
+        projectHomePage.getWorkspaceNodesPanel().navigateToRootFolder();
+        new FolderContentPanel("Project");
 
         projectHomePage.getWorkspaceNodesPanel().navigateToVersionSets();
         new VersionSetsContentPanel();
