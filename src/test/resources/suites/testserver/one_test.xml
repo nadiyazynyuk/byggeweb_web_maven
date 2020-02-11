@@ -1,15 +1,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="One test">
+    <parameter name="baseUrl" value="https://testserver.byggeweb.dk/controller?cmd=company7.login.form&amp;language=English"/>
 
-    <test name="Project navigation tests">
-        <parameter name="testData" value="testserver/project/launchProjectTestData.xml"/>
+    <test name="Workspace folders tests">
+        <parameter name="testData" value="testserver/project/workspace/createNewFolderTestData.xml"/>
         <classes>
-            <class name="dk.byggeweb.project.navigation.BasicNavigation"/>
-            <class name="dk.byggeweb.project.navigation.WorkspaceNavigation"/>
-            <class name="dk.byggeweb.project.navigation.PublicationSpaceNavigation"/>
+            <class name="dk.byggeweb.project.workspace.folders.CreateNewFolder"/>
         </classes>
     </test>
-
 
 </suite>

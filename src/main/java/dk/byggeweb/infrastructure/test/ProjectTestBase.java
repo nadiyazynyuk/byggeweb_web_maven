@@ -1,10 +1,10 @@
 package dk.byggeweb.infrastructure.test;
 
-import dk.byggeweb.infrastructure.steps.GeneralSteps;
 import dk.byggeweb.infrastructure.test.testdata.model.ProjectTestDataModel;
 import dk.byggeweb.objects.project.ProjectHomePage;
 import dk.byggeweb.objects.project.workspace.modals.FileInformationEditPopup;
 import dk.byggeweb.objects.project.workspace.panels.FolderContentPanel;
+import dk.byggeweb.steps.GeneralSteps;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
@@ -18,7 +18,6 @@ public abstract class ProjectTestBase extends TestBase {
     @BeforeClass
     public void launchProject(String testData) {
         data = getXmlObject(testData, ProjectTestDataModel.class);
-
         GeneralSteps.loginAsVerifiedUser(data.getUserName(), data.getPassword(), data.getName());
         GeneralSteps.launchProject(data.getProjectLink());
         projectHomePage = new ProjectHomePage(data.getProjectName());

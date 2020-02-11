@@ -9,6 +9,7 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
+import org.testng.annotations.Parameters;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -16,15 +17,17 @@ import java.nio.file.Paths;
 @Listeners(TestListener.class)
 public abstract class TestBase {
 
+    @Parameters("baseUrl")
     @BeforeClass
-    public void setUp() {
+    public void setUp(String baseUrl) {
         Configuration.browser = EnvironmentProperties.getInstance().getProperty("browser");
         Configuration.headless = EnvironmentProperties.getInstance().getBooleanProperty("headless");
-        Configuration.baseUrl = EnvironmentProperties.getInstance().getProperty("desktopBaseUrl");
+//        Configuration.baseUrl = EnvironmentProperties.getInstance().getProperty("desktopBaseUrl");
+        Configuration.baseUrl = baseUrl;
         Configuration.timeout = EnvironmentProperties.getInstance().getIntProperty("defaultTimeout");
 
-        if(EnvironmentProperties.getInstance().getProperty("browser").equals("ie")) {
-        DesiredCapabilities caps = DesiredCapabilities.internetExplorer();
+        if (EnvironmentProperties.getInstance().getProperty("browser").equals("ie")) {
+            DesiredCapabilities caps = DesiredCapabilities.internetExplorer();
             caps.setCapability("initialBrowserUrl", Configuration.baseUrl);
             Configuration.browserCapabilities.merge(caps);
         }
@@ -38,8 +41,8 @@ public abstract class TestBase {
         return path.toAbsolutePath().toString();
     }
 
-    protected <T> T getXmlObject(String path, Class<? extends T> type){
-        return  JaxbDataReader.getData(path, type);
+    protected <T> T getXmlObject(String path, Class<? extends T> type) {
+        return JaxbDataReader.getData(path, type);
     }
 
 }

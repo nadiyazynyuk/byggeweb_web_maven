@@ -37,4 +37,5 @@ public class TestListener implements ITestListener {
     public void onFinish(ITestContext context) {
         log.info(context.getSuite().getName().toUpperCase() + " SUITE FINISHED");
     }
+
 }

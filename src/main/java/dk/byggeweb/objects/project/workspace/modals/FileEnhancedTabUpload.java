@@ -2,7 +2,7 @@ package dk.byggeweb.objects.project.workspace.modals;
 
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
-import dk.byggeweb.infrastructure.steps.GeneralSteps;
+import dk.byggeweb.steps.GeneralSteps;
 import io.qameta.allure.Step;
 
 import java.io.File;

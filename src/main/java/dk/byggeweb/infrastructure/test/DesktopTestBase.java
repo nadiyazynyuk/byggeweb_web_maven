@@ -1,8 +1,8 @@
 package dk.byggeweb.infrastructure.test;
 
-import dk.byggeweb.infrastructure.steps.GeneralSteps;
 import dk.byggeweb.infrastructure.test.testdata.model.DesktopTestDataModel;
 import dk.byggeweb.objects.desktop.HomePage;
+import dk.byggeweb.steps.GeneralSteps;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 

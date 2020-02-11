@@ -127,4 +127,6 @@ public class FolderContentPanel extends WorkspaceContentPanel {
     public FolderContentPanel(String title) {
         panelTitle.shouldHave(text(title));
     }
+
+    public FolderContentPanel(){}
 }

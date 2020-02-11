@@ -1,12 +1,12 @@
 package dk.byggeweb.project.workspace.files.upload;
 
 import com.codeborne.selenide.Selenide;
-import dk.byggeweb.infrastructure.steps.GeneralSteps;
 import dk.byggeweb.infrastructure.test.ProjectTestBase;
 import dk.byggeweb.objects.desktop.HomePage;
 import dk.byggeweb.objects.desktop.personalspace.MyFoldersPage;
 import dk.byggeweb.objects.desktop.personalspace.PersonalSpacePage;
 import dk.byggeweb.objects.project.ProjectHomePage;
+import dk.byggeweb.steps.GeneralSteps;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 

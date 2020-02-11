@@ -3,8 +3,8 @@ package dk.byggeweb.objects.desktop.personalspace;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
-import dk.byggeweb.infrastructure.steps.GeneralSteps;
 import dk.byggeweb.objects.desktop.personalspace.modals.*;
+import dk.byggeweb.steps.GeneralSteps;
 import io.qameta.allure.Step;
 import lombok.Getter;
 
