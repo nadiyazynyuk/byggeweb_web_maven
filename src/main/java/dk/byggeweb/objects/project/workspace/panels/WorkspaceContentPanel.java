@@ -1,10 +1,8 @@
 package dk.byggeweb.objects.project.workspace.panels;
 
 import com.codeborne.selenide.SelenideElement;
-import io.qameta.allure.Step;
 import lombok.Getter;
 
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 
@@ -29,26 +27,6 @@ public class WorkspaceContentPanel extends WorkspaceNodesPanel {
 
     public SelenideElement getFileByName(String name) {
         return $(byXpath("//tr[@class='  x-grid-row']//*[contains(text(),'" + name + "')]"));
-    }
-
-    @Step("Select file")
-    public void clickOnFile(String name) {
-        getFileByName(name).click();
-    }
-
-    @Step("Verify file is present in the list")
-    public void verifyFileIsPresent(String name) {
-        getFileByName(name).shouldHave(text(name));
-    }
-
-    @Step("Verify file is not present in the list")
-    public void verifyFileIsNotPresent(String name) {
-        getFileByName(name).shouldNotHave(text(name));
-    }
-
-    @Step("Verify data is present in table")
-    public void verifyDataIsPresentInTable(String name) {
-        getFileByName(name).shouldHave(text(name));
     }
 
     public WorkspaceContentPanel() {

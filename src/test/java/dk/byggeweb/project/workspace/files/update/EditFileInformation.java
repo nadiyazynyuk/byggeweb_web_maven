@@ -11,37 +11,48 @@ public class EditFileInformation extends ProjectTestBase {
 
     // https://itwofm.atlassian.net/browse/TSB-22
 
+    private String subjectMetadata;
+    private String revisionMetadata;
+    private String revisionDateMetadata;
+
     @BeforeClass
     public void prepareData() {
         projectHomePage.navigateToWorkspaceModule();
         uploadFileIfNotPresentInWorkspaceFolder(data.getFolderName(), data.getFileToUploadPath(), data.getTestFileName());
+
+        subjectMetadata = data.getSubject() + LocalDate.now() + " " + System.currentTimeMillis();
+        revisionMetadata = data.getRevision() + System.currentTimeMillis();
+        revisionDateMetadata = String.valueOf(System.currentTimeMillis());
     }
 
     @Test(priority = 1, description = "Edit Subject metadata for existing file in File information tab")
     public void editSubjectMetadata() {
-        String subjectMetadata = data.getSubject() + LocalDate.now() + " " + System.currentTimeMillis();
-        folderContentPanel.clickOnFile(data.getTestFileName());
-        FileInformationPanel fileInformationPanel = new FileInformationPanel(data.getTestFileName());
-        fileInformationPanel.editMetadataTextField(fileInformationPanel.getMetadataRefField(), subjectMetadata);
-        folderContentPanel.verifyDataIsPresentInTable(subjectMetadata);
+        fileSteps.selectFile(data.getTestFileName());
+        fileInformationSteps.editMetadataTextField(
+                data.getTestFileName(),
+                new FileInformationPanel(data.getTestFileName()).getMetadataRefField(),
+                subjectMetadata);
+        fileSteps.verifyDataIsPresentInTable(subjectMetadata);
     }
 
     @Test(priority = 2, description = "Edit Revision metadata for existing file in File information tab")
     public void editRevisionMetadata() {
-        String revisionMetadata = data.getRevision() + System.currentTimeMillis();
-        folderContentPanel.clickOnFile(data.getTestFileName());
-        FileInformationPanel fileInformationPanel = new FileInformationPanel(data.getTestFileName());
-        fileInformationPanel.editMetadataTextField(fileInformationPanel.getMetadataRevisionField(), revisionMetadata);
-        folderContentPanel.verifyDataIsPresentInTable(revisionMetadata);
+        fileSteps.selectFile(data.getTestFileName());
+        fileInformationSteps.editMetadataTextField(
+                data.getTestFileName(),
+                new FileInformationPanel(data.getTestFileName()).getMetadataRevisionField(),
+                revisionMetadata);
+        fileSteps.verifyDataIsPresentInTable(revisionMetadata);
     }
 
     @Test(priority = 3, description = "Edit Revision Date metadata for existing file in File information tab")
     public void editRevisionDateMetadata() {
-        String revisionDateMetadata = String.valueOf(System.currentTimeMillis());
-        folderContentPanel.clickOnFile(data.getTestFileName());
-        FileInformationPanel fileInformationPanel = new FileInformationPanel(data.getTestFileName());
-        fileInformationPanel.editMetadataTextField(fileInformationPanel.getMetadataRevDateField(), revisionDateMetadata);
-        folderContentPanel.verifyDataIsPresentInTable(revisionDateMetadata);
+        fileSteps.selectFile(data.getTestFileName());
+        fileInformationSteps.editMetadataTextField(
+                data.getTestFileName(),
+                new FileInformationPanel(data.getTestFileName()).getMetadataRevDateField(),
+                revisionDateMetadata);
+        fileSteps.verifyDataIsPresentInTable(revisionDateMetadata);
     }
 
 }

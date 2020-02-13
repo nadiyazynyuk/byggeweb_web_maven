@@ -8,20 +8,25 @@ public class LockFile extends ProjectTestBase {
 
     // https://itwofm.atlassian.net/browse/TSB-28
 
+    private boolean isLocked;
+
     @BeforeClass
     public void prepareData() {
         projectHomePage.navigateToWorkspaceModule();
         uploadFileIfNotPresentInWorkspaceFolder(data.getFolderName(), data.getFileToUploadPath(), data.getTestFileName());
+
+        isLocked = fileSteps.isFileLocked(data.getTestFileName());
     }
 
     @Test(description = "Lock/unlock file")
     public void lockFile() {
-        boolean isLocked = folderContentPanel.isFileLocked(data.getTestFileName());
-        folderContentPanel.lockFile(data.getTestFileName());
+        fileSteps.lockFile(data.getTestFileName());
         if (isLocked) {
-            folderContentPanel.verifyFileIsUnlocked(data.getTestFileName());
+            fileSteps.verifyFileIsUnlocked(data.getTestFileName());
         } else {
-            folderContentPanel.verifyFileIsLocked(data.getTestFileName());
+            fileSteps.verifyFileIsLocked(data.getTestFileName());
         }
     }
+
+    //TODO: test works in debug only???
 }

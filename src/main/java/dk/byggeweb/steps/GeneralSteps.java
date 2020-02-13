@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.File;
 
 public class GeneralSteps {
+
     public static HomePage loginAsVerifiedUser(String username, String password, String user) {
         LoginPage loginPage = new LoginPage();
         loginPage.login(username, password);

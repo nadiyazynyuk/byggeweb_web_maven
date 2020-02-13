@@ -32,9 +32,9 @@
                     <suiteXmlFiles>
 <!--                        <suiteXmlFile>src/test/resources/suites/testserver/desktop.xml</suiteXmlFile>-->
 <!--                        <suiteXmlFile>src/test/resources/suites/testserver/project.xml</suiteXmlFile>-->
-<!--                        <suiteXmlFile>src/test/resources/suites/testserver/one_test.xml</suiteXmlFile>-->
-                        <!-- Suite file parameter from command line -->
-                        <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/suites/testserver/one_test.xml</suiteXmlFile>
+                        <!-- Suite file parameter from command lmvine -->
+<!--                        <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>-->
                     </suiteXmlFiles>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"

@@ -48,49 +48,6 @@ public class WorkspaceNodesPanel extends ProjectHomePage {
         new FolderContentPanel(name);
     }
 
-//    @Step("Verify folder is present in the list")
-//    public void verifyFolderIsPresent(String name) {
-//        getFolderByName(name).shouldHave(text(name));
-//    }
-
-//    @Step("Verify folder is not present in the list")
-//    public void verifyFolderIsNotPresent(String name) {
-//        getFolderByName(name).shouldNotHave(text(name));
-//    }
-
-//    @Step("Create folder")
-//    public void createFolder(String createFolderName) {
-//        String winHandleBefore = WebDriverRunner.getWebDriver().getWindowHandle();
-//        createFolderButton.click();
-//        switchToNewWindow();
-//        FolderCreatePopup folderCreatePopup = new FolderCreatePopup();
-//        folderCreatePopup.createFolder(createFolderName);
-//        WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
-//        new FolderContentPanel(createFolderName);
-//    }
-
-//    @Step("Rename folder")
-//    public void renameFolder(String renameFolderName) {
-//        String winHandleBefore = WebDriverRunner.getWebDriver().getWindowHandle();
-//        renameFolderButton.click();
-//        switchToNewWindow();
-//        FolderCreatePopup folderCreatePopup = new FolderCreatePopup();
-//        folderCreatePopup.renameFolder(renameFolderName);
-//        WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
-////        new FolderContentPanel(renameFolderName); => bug
-//    }
-
-//    @Step("Delete folder")
-//    public void deleteFolder(String folderName) {
-//        String winHandleBefore = WebDriverRunner.getWebDriver().getWindowHandle();
-//        deleteFolderButton.click();
-//        switchToNewWindow();
-//        FolderDeletePopup folderDeletePopup = new FolderDeletePopup();
-//        folderDeletePopup.deleteFolder();
-//        WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
-//        new FolderInformationPanel(folderName);
-//    }
-
     @Step("Navigate to root folder")
     public void navigateToRootFolder() {
         rootFolderNode.click();

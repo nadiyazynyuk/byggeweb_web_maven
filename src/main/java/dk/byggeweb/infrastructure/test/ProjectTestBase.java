@@ -2,9 +2,9 @@ package dk.byggeweb.infrastructure.test;
 
 import dk.byggeweb.infrastructure.test.testdata.model.ProjectTestDataModel;
 import dk.byggeweb.objects.project.ProjectHomePage;
-import dk.byggeweb.objects.project.workspace.modals.FileInformationEditPopup;
 import dk.byggeweb.objects.project.workspace.panels.FolderContentPanel;
 import dk.byggeweb.steps.GeneralSteps;
+import dk.byggeweb.steps.project.workspace.*;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
@@ -13,6 +13,12 @@ public abstract class ProjectTestBase extends TestBase {
     public ProjectTestDataModel data;
     public ProjectHomePage projectHomePage;
     public FolderContentPanel folderContentPanel;
+
+    public FolderSteps folderSteps = new FolderSteps();
+    public FileSteps fileSteps = new FileSteps();
+    public RecycleBinSteps recycleBinSteps = new RecycleBinSteps();
+    public MonitoredFilesSteps monitoredFilesSteps = new MonitoredFilesSteps();
+    public FileInformationSteps fileInformationSteps = new FileInformationSteps();
 
     @Parameters("testData")
     @BeforeClass
@@ -25,23 +31,21 @@ public abstract class ProjectTestBase extends TestBase {
 
     public void uploadFileIfNotPresentInWorkspaceFolder(String folderName, String filePath, String fileName) {
         projectHomePage.getWorkspaceNodesPanel().navigateToFolder(folderName);
-        folderContentPanel = new FolderContentPanel(folderName);
+        folderSteps.navigateToFolder(folderName);
         try {
-            folderContentPanel.verifyFileIsPresent(fileName);
+            fileSteps.verifyFileIsPresent(fileName);
         } catch (com.codeborne.selenide.ex.ElementNotFound e) {
-            folderContentPanel.enhancedUploadSingleFile(getAbsolutePath(filePath));
-            FileInformationEditPopup fileInformationEditPopup = new FileInformationEditPopup();
-            fileInformationEditPopup.closeEditFileInformation();
-            folderContentPanel.verifyFileIsPresent(fileName);
+            fileSteps.enhancedUploadSingleFile(getAbsolutePath(filePath));
+            fileSteps.closeEditFileInformationPopup();
+            fileSteps.verifyFileIsPresent(fileName);
         }
     }
 
     public void deleteFileIfPresentInWorkspaceFolder(String folderName, String fileName) {
-        projectHomePage.getWorkspaceNodesPanel().navigateToFolder(folderName);
-        folderContentPanel = new FolderContentPanel(folderName);
+        folderSteps.navigateToFolder(folderName);
         while (true) {
             try {
-                folderContentPanel.deleteFile(fileName);
+                fileSteps.deleteFilePermanently(fileName);
             } catch (com.codeborne.selenide.ex.ElementNotFound e) {
                 break;
             }

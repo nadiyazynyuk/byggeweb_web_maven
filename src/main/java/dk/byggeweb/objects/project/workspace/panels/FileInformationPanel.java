@@ -1,10 +1,6 @@
 package dk.byggeweb.objects.project.workspace.panels;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.WebDriverRunner;
-import dk.byggeweb.objects.project.common.TxtFileViewPage;
-import io.qameta.allure.Step;
 import lombok.Getter;
 
 import static com.codeborne.selenide.Condition.text;
@@ -25,48 +21,8 @@ public class FileInformationPanel extends WorkspaceContentPanel {
     private SelenideElement metadataRevisionField = $(byXpath("//div[contains(@class, 'WMP_RevName')]//input"));
     private SelenideElement metadataRevDateField = $(byXpath("//div[contains(@class, 'WMP_RevDate')]//input"));
 
-    private SelenideElement fileVersionSelector(String versionIndex) {
+    public SelenideElement fileVersionSelector(String versionIndex) {
         return $(byXpath("//li[@data-recordindex=" + versionIndex + "]"));
-    }
-
-    @Step("Select file version")
-    public void selectFileVersion(String versionIndex) {
-        versionSelector.click();
-        fileVersionSelector(versionIndex).click();
-    }
-
-    @Step("Open file")
-    public void openFile(String content) {
-        String winHandleBefore = WebDriverRunner.getWebDriver().getWindowHandle();
-        openButton.click();
-        switchToNewWindow();
-        TxtFileViewPage txtFileViewPage = new TxtFileViewPage();
-        txtFileViewPage.verifyFileVersionContent(content);
-        WebDriverRunner.getWebDriver().close();
-        WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
-    }
-
-    @Step("Open previous file version")
-    public void openPreviousFileVersion(String content) {
-        String winHandleBefore = WebDriverRunner.getWebDriver().getWindowHandle();
-        openButton.click();
-        WebDriverRunner.getWebDriver().switchTo().alert().accept();
-        switchToLastTab();
-        switchToNewWindow();
-        TxtFileViewPage txtFileViewPage = new TxtFileViewPage();
-        txtFileViewPage.verifyFileVersionContent(content);
-        WebDriverRunner.getWebDriver().close();
-        WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
-    }
-
-    @Step("Edit metadata text field")
-    public void editMetadataTextField(SelenideElement element, String data) {
-        saveButton.shouldBe(Condition.enabled);
-        element.click();
-        element.clear();
-        element.shouldBe(Condition.empty);
-        element.setValue(data);
-        saveButton.click();
     }
 
     public FileInformationPanel(String title) {
