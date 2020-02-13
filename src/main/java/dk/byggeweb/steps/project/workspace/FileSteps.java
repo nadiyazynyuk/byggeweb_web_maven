@@ -124,9 +124,10 @@ public class FileSteps {
         folderContentPanel.getFileContainsLockIcon(name).shouldNotBe(visible);
     }
 
-    public boolean isFileLocked(String name) {
+    @Step("Get file lock status")
+    public boolean getFileLockStatus(String fileName) {
         FolderContentPanel folderContentPanel = new FolderContentPanel();
-        return folderContentPanel.getFileContainsLockIcon(name).isDisplayed();
+        return folderContentPanel.isFileLocked(fileName);
     }
 
     @Step("Start to monitor file")

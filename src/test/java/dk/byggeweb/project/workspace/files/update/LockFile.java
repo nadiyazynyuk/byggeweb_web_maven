@@ -14,8 +14,7 @@ public class LockFile extends ProjectTestBase {
     public void prepareData() {
         projectHomePage.navigateToWorkspaceModule();
         uploadFileIfNotPresentInWorkspaceFolder(data.getFolderName(), data.getFileToUploadPath(), data.getTestFileName());
-
-        isLocked = fileSteps.isFileLocked(data.getTestFileName());
+        isLocked = fileSteps.getFileLockStatus(data.getTestFileName());
     }
 
     @Test(description = "Lock/unlock file")
@@ -28,5 +27,4 @@ public class LockFile extends ProjectTestBase {
         }
     }
 
-    //TODO: test works in debug only???
 }

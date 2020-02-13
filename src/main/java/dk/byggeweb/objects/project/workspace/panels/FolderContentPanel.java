@@ -14,6 +14,11 @@ public class FolderContentPanel extends WorkspaceContentPanel {
         return $(byXpath("//img[@class='lock-tipp']/parent::div/parent::td/parent::tr/td/div[contains(text(), '" + name + "')]"));
     }
 
+    public boolean isFileLocked(String name) {
+        FolderContentPanel folderContentPanel = new FolderContentPanel();
+        return folderContentPanel.getFileContainsLockIcon(name).isDisplayed();
+    }
+
     public FolderContentPanel(String title) {
         panelTitle.shouldHave(text(title));
     }
