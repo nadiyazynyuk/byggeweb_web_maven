@@ -18,3 +18,4 @@ selenium-config/
 caches/
 allure-results/
 allure-report/
+output/

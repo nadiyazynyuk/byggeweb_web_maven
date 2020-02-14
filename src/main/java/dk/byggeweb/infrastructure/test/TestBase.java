@@ -17,20 +17,17 @@ import java.nio.file.Paths;
 @Listeners(TestListener.class)
 public abstract class TestBase {
 
+    public String outputDirectory = EnvironmentProperties.getInstance().getProperty("outputDirectory");
+
     @Parameters("baseUrl")
     @BeforeClass
     public void setUp(String baseUrl) {
+        Configuration.baseUrl = baseUrl;
         Configuration.browser = EnvironmentProperties.getInstance().getProperty("browser");
         Configuration.headless = EnvironmentProperties.getInstance().getBooleanProperty("headless");
-//        Configuration.baseUrl = EnvironmentProperties.getInstance().getProperty("desktopBaseUrl");
-        Configuration.baseUrl = baseUrl;
         Configuration.timeout = EnvironmentProperties.getInstance().getIntProperty("defaultTimeout");
 
-        if (EnvironmentProperties.getInstance().getProperty("browser").equals("ie")) {
-            DesiredCapabilities caps = DesiredCapabilities.internetExplorer();
-            caps.setCapability("initialBrowserUrl", Configuration.baseUrl);
-            Configuration.browserCapabilities.merge(caps);
-        }
+        setDownloadDirectory(getAbsolutePath(outputDirectory));
 
         Selenide.open("");
         WebDriverRunner.getWebDriver().manage().window().setSize(new Dimension(1600, 1200));
@@ -43,6 +40,18 @@ public abstract class TestBase {
 
     protected <T> T getXmlObject(String path, Class<? extends T> type) {
         return JaxbDataReader.getData(path, type);
+    }
+
+    private void setDownloadDirectory(String directory) {
+        System.setProperty("chromeoptions.prefs", "profile.default_content_settings.popups=0,download.default_directory=" + directory);
+    }
+
+    private void setInternetExplorerConfiguration() {
+        if (EnvironmentProperties.getInstance().getProperty("browser").equals("ie")) {
+            DesiredCapabilities caps = DesiredCapabilities.internetExplorer();
+            caps.setCapability("initialBrowserUrl", Configuration.baseUrl);
+            Configuration.browserCapabilities.merge(caps);
+        }
     }
 
 }

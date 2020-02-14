@@ -1,16 +1,17 @@
 package dk.byggeweb.steps;
 
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.WebDriverRunner;
 import dk.byggeweb.objects.desktop.HomePage;
 import dk.byggeweb.objects.desktop.authorization.LoginPage;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebDriverException;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
+import java.io.IOException;
 
 public class GeneralSteps {
 
@@ -66,4 +67,42 @@ public class GeneralSteps {
         input.sendKeys(filePath.getAbsoluteFile().toString());
         wait.until(ExpectedConditions.stalenessOf(input));
     }
+
+    public static void selectAll() {
+        Actions action = new Actions(WebDriverRunner.getWebDriver());
+        if (System.getProperty("os.name").contains("Mac OS")) {
+            action.keyDown(Keys.COMMAND).sendKeys(String.valueOf('\u0061')).perform();
+            action.keyUp(Keys.COMMAND).perform();
+        } else {
+            action.keyDown(Keys.CONTROL).sendKeys(String.valueOf('\u0061')).perform();
+            action.keyUp(Keys.CONTROL).perform();
+        }
+    }
+
+    public static void waitForTheFileToDownload(String fileName, String outputDirectory) {
+        File directory = new File(outputDirectory);
+        File[] listOfFiles = directory.listFiles();
+        for (int retry = 0; retry < 10; retry++) {
+            System.out.println(retry);
+            for (File file : listOfFiles) {
+                if (file.getName().equalsIgnoreCase(fileName)) {
+                    break;
+                }
+            }
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static void clearOutputDirectory(File outputDirectory) {
+        try {
+            FileUtils.cleanDirectory(outputDirectory);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

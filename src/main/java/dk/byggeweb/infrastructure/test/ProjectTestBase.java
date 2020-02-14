@@ -2,7 +2,6 @@ package dk.byggeweb.infrastructure.test;
 
 import dk.byggeweb.infrastructure.test.testdata.model.ProjectTestDataModel;
 import dk.byggeweb.objects.project.ProjectHomePage;
-import dk.byggeweb.objects.project.workspace.panels.FolderContentPanel;
 import dk.byggeweb.steps.GeneralSteps;
 import dk.byggeweb.steps.project.workspace.*;
 import org.testng.annotations.BeforeClass;
@@ -12,7 +11,6 @@ public abstract class ProjectTestBase extends TestBase {
 
     public ProjectTestDataModel data;
     public ProjectHomePage projectHomePage;
-    public FolderContentPanel folderContentPanel;
 
     public FolderSteps folderSteps = new FolderSteps();
     public FileSteps fileSteps = new FileSteps();
@@ -30,7 +28,6 @@ public abstract class ProjectTestBase extends TestBase {
     }
 
     public void uploadFileIfNotPresentInWorkspaceFolder(String folderName, String filePath, String fileName) {
-        projectHomePage.getWorkspaceNodesPanel().navigateToFolder(folderName);
         folderSteps.navigateToFolder(folderName);
         try {
             fileSteps.verifyFileIsPresent(fileName);

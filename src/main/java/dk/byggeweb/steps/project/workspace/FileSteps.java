@@ -4,6 +4,7 @@ import com.codeborne.selenide.WebDriverRunner;
 import dk.byggeweb.objects.project.workspace.modals.*;
 import dk.byggeweb.objects.project.workspace.panels.FileInformationPanel;
 import dk.byggeweb.objects.project.workspace.panels.FolderContentPanel;
+import dk.byggeweb.steps.GeneralSteps;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.text;
@@ -55,6 +56,27 @@ public class FileSteps {
         FileTransferalTabUpload fileUploadTransferalTab = new FileTransferalTabUpload();
         fileUploadTransferalTab.transferFileFromMyFolders(file);
         WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
+    }
+
+    @Step("Download file")
+    public void downloadFile(String fileName) {
+        selectFile(fileName);
+        FolderContentPanel folderContentPanel = new FolderContentPanel();
+        folderContentPanel.getFileDownloadButton().click();
+    }
+
+    @Step("Download all files from the folder")
+    public void generateDownloadFilesLink(String fileName) {
+        selectFile(fileName);
+        FolderContentPanel folderContentPanel = new FolderContentPanel();
+        GeneralSteps.selectAll();
+        folderContentPanel.getFileDownloadButton().click();
+        folderContentPanel.switchToNewWindow();
+        DownloadFilesPopup downloadFilesPopup = new DownloadFilesPopup();
+        downloadFilesPopup.getOkButton().click();
+        downloadFilesPopup.getDownloadLink().shouldBe(visible);
+        downloadFilesPopup.getCancelButton().click();
+        folderContentPanel.switchToLastTab();
     }
 
     @Step("Delete file permanently")
