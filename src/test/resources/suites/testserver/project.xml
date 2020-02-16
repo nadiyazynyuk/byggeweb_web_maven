@@ -1,7 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="Byggeweb Project UI tests">
-    <parameter name="baseUrl" value="https://testserver.byggeweb.dk/controller?cmd=company7.login.form&amp;language=English"/>
+    <parameter name="baseUrl"
+               value="https://testserver.byggeweb.dk/controller?cmd=company7.login.form&amp;language=English"/>
 
     <test name="Project navigation tests">
         <parameter name="testData" value="testserver/project/launchProjectTestData.xml"/>
@@ -99,6 +100,20 @@
         <parameter name="testData" value="testserver/project/workspace/monitorFileTestData.xml"/>
         <classes>
             <class name="dk.byggeweb.project.workspace.files.update.MonitorFile"/>
+        </classes>
+    </test>
+
+    <test name="Download single file test">
+        <parameter name="testData" value="testserver/project/workspace/downloadFileTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.workspace.files.download.DownloadFile"/>
+        </classes>
+    </test>
+
+    <test name="Download multiple files test">
+        <parameter name="testData" value="testserver/project/workspace/downloadFilesTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.workspace.files.download.DownloadFiles"/>
         </classes>
     </test>
 

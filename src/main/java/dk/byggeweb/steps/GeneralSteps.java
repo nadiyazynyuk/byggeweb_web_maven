@@ -83,7 +83,6 @@ public class GeneralSteps {
         File directory = new File(outputDirectory);
         File[] listOfFiles = directory.listFiles();
         for (int retry = 0; retry < 10; retry++) {
-            System.out.println(retry);
             for (File file : listOfFiles) {
                 if (file.getName().equalsIgnoreCase(fileName)) {
                     break;
@@ -103,6 +102,19 @@ public class GeneralSteps {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static boolean isFilePresentInDirectory(String fileName, String outputDirectory) {
+        boolean result = false;
+        File directory = new File(outputDirectory);
+        File[] listOfFiles = directory.listFiles();
+        for (File file : listOfFiles) {
+            if (file.getName().equalsIgnoreCase(fileName)) {
+                result = true;
+                break;
+            }
+        }
+        return result;
     }
 
 }

@@ -49,7 +49,15 @@ public class ProjectTestDataModel {
 
     @XmlElement
     @Getter
+    private String testFileName2;
+
+    @XmlElement
+    @Getter
     private String fileToUploadPath;
+
+    @XmlElement
+    @Getter
+    private String fileToUploadPath2;
 
     @XmlElement
     @Getter

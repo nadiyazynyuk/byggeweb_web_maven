@@ -6,8 +6,10 @@
     <name>Selenium Bot</name>
     <projectLink>https://testserver.byggeweb.dk/controller?cmd=company7.project.login&amp;project=2763</projectLink>
     <projectName>AutoLegoFactory</projectName>
-    <folderName>Project</folderName>
+    <folderName>Folder A</folderName>
     <testFileName>TestDownloadFile.pdf</testFileName>
     <fileToUploadPath>resources/testfiles/TestDownloadFile.pdf</fileToUploadPath>
+    <testFileName2>TestDownloadFile.png</testFileName2>
+    <fileToUploadPath2>resources/testfiles/TestDownloadFile.png</fileToUploadPath2>
 
 </testdata>

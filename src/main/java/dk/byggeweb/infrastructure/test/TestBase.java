@@ -27,7 +27,7 @@ public abstract class TestBase {
         Configuration.headless = EnvironmentProperties.getInstance().getBooleanProperty("headless");
         Configuration.timeout = EnvironmentProperties.getInstance().getIntProperty("defaultTimeout");
 
-        setDownloadDirectory(getAbsolutePath(outputDirectory));
+        setOutputDirectory(getAbsolutePath(outputDirectory));
 
         Selenide.open("");
         WebDriverRunner.getWebDriver().manage().window().setSize(new Dimension(1600, 1200));
@@ -42,8 +42,10 @@ public abstract class TestBase {
         return JaxbDataReader.getData(path, type);
     }
 
-    private void setDownloadDirectory(String directory) {
-        System.setProperty("chromeoptions.prefs", "profile.default_content_settings.popups=0,download.default_directory=" + directory);
+    private void setOutputDirectory(String directory) {
+        if (EnvironmentProperties.getInstance().getProperty("browser").equals("chrome")) {
+            System.setProperty("chromeoptions.prefs", "profile.default_content_settings.popups=0,download.default_directory=" + directory);
+        }
     }
 
     private void setInternetExplorerConfiguration() {
