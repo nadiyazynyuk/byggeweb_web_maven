@@ -1,7 +1,7 @@
 package dk.byggeweb.project.workspace.files.update;
 
 import dk.byggeweb.infrastructure.test.ProjectTestBase;
-import dk.byggeweb.objects.project.workspace.panels.FileInformationPanel;
+import dk.byggeweb.objects.project.workspace.panels.WSFileInformationPanel;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -30,7 +30,7 @@ public class EditFileInformation extends ProjectTestBase {
         wsFileSteps.selectFile(data.getTestFileName());
         wsFileInformationSteps.editMetadataTextField(
                 data.getTestFileName(),
-                new FileInformationPanel(data.getTestFileName()).getMetadataRefField(),
+                new WSFileInformationPanel(data.getTestFileName()).getMetadataRefField(),
                 subjectMetadata);
         wsFileSteps.verifyDataIsPresentInTable(subjectMetadata);
     }
@@ -40,7 +40,7 @@ public class EditFileInformation extends ProjectTestBase {
         wsFileSteps.selectFile(data.getTestFileName());
         wsFileInformationSteps.editMetadataTextField(
                 data.getTestFileName(),
-                new FileInformationPanel(data.getTestFileName()).getMetadataRevisionField(),
+                new WSFileInformationPanel(data.getTestFileName()).getMetadataRevisionField(),
                 revisionMetadata);
         wsFileSteps.verifyDataIsPresentInTable(revisionMetadata);
     }
@@ -50,7 +50,7 @@ public class EditFileInformation extends ProjectTestBase {
         wsFileSteps.selectFile(data.getTestFileName());
         wsFileInformationSteps.editMetadataTextField(
                 data.getTestFileName(),
-                new FileInformationPanel(data.getTestFileName()).getMetadataRevDateField(),
+                new WSFileInformationPanel(data.getTestFileName()).getMetadataRevDateField(),
                 revisionDateMetadata);
         wsFileSteps.verifyDataIsPresentInTable(revisionDateMetadata);
     }

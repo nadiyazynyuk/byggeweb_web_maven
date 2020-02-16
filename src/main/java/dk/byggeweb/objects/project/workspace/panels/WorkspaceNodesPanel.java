@@ -37,49 +37,49 @@ public class WorkspaceNodesPanel extends ProjectHomePage {
     @Step("Select folder")
     public void navigateToFolder(String name) {
         getFolderByName(name).click();
-        new FolderContentPanel(name);
+        new WSFolderContentPanel(name);
     }
 
     @Step("Navigate to root folder")
     public void navigateToRootFolder() {
         rootFolderNode.click();
-        new FolderContentPanel("Project");
+        new WSFolderContentPanel("Project");
     }
 
     @Step("Navigate to Version sets")
     public void navigateToVersionSets() {
         versionSetsNode.click();
-        new VersionSetsContentPanel();
+        new WSVersionSetsContentPanel();
     }
 
     @Step("Navigate to Recycle bin")
     public void navigateToRecycleBin() {
         recycleBinNode.click();
-        new RecycleBinContentPanel();
+        new WSRecycleBinContentPanel();
     }
 
     @Step("Navigate to Monitored folders")
     public void navigateToMonitoredFolders() {
         monitoredFoldersNode.click();
-        new MonitoredFoldersContentPanel();
+        new WSMonitoredFoldersContentPanel();
     }
 
     @Step("Navigate to Monitored files")
     public void navigateToMonitoredFiles() {
         monitoredFilesNode.click();
-        new MonitoredFilesContentPanel();
+        new WSMonitoredFilesContentPanel();
     }
 
     @Step("Navigate to Since last time")
     public void navigateToSinceLastTime() {
         sinceLastTimeNode.click();
-        new SinceLastTimeContentPanel();
+        new WSSinceLastTimeContentPanel();
     }
 
     @Step("Navigate to Search result")
     public void navigateToSearchResult() {
         searchResultNode.click();
-        new SearchResultContentPanel();
+        new WSSearchResultContentPanel();
     }
 
     public WorkspaceNodesPanel() {

@@ -1,6 +1,13 @@
 package dk.byggeweb.objects.project.publicationspace.panels;
 
-import dk.byggeweb.objects.project.ProjectHomePage;
+import com.codeborne.selenide.SelenideElement;
 
-public class PublicationSpaceContentPanel extends ProjectHomePage {
+import static com.codeborne.selenide.Selectors.byXpath;
+import static com.codeborne.selenide.Selenide.$;
+
+public class PublicationSpaceContentPanel extends PublicationSpaceNodesPanel {
+
+    public SelenideElement getFileByName(String name) {
+        return $(byXpath("//tr[@class='  x-grid-row']//*[contains(text(),'" + name + "')]"));
+    }
 }

@@ -27,80 +27,80 @@ public class PublicationSpaceNodesPanel extends ProjectHomePage {
     private SelenideElement monitoredFilesNode = $(byXpath("//td[contains(@class, 'WMP_41')]"));
     private SelenideElement searchResultNode = $(byXpath("//td[contains(@class, 'WMP_38')]"));
 
-    private SelenideElement getDocumentListByName(String name) {
+    public SelenideElement getDocumentListNodeByName(String name) {
         return $(By.xpath("//span[@class='x-tree-node-text ' and contains(text(), '" + name + "')]"));
     }
 
     @Step("Navigate to Root Document list")
     public void navigateToRootDocumentList() {
         rootDocumentListNode.click();
-        new DocumentListsContentPanel();
+        new PSDocumentListsContentPanel();
     }
 
     @Step("Navigate to Document lists")
     public void navigateToVersionSets() {
         versionSetsNode.click();
-        new VersionSetsContentPanel();
+        new PSVersionSetsContentPanel();
     }
 
     @Step("Navigate to Waiting for approval")
     public void navigateToWaitingForApproval() {
         waitingForApprovalNode.click();
-        new WaitingForApprovalPanel();
+        new PSWaitingForApprovalPanel();
     }
 
     @Step("Navigate to Rejected file versions")
     public void navigateToRejectedFileVersions() {
         rejectedFileVersionsNode.click();
-        new RejectedFileVersionsPanel();
+        new PSRejectedFileVersionsPanel();
     }
 
     @Step("Navigate to Unpublished file versions")
     public void navigateToUnpublishedFileVersions() {
         unpublishedFileVersionsNode.click();
-        new UnpublishedFileVersionsPanel();
+        new PSUnpublishedFileVersionsPanel();
     }
 
     @Step("Navigate to Files not distributed")
     public void navigateToFilesNotDistributed() {
         filesNotDistributedNode.click();
-        new FilesNotDistributedPanel();
+        new PSFilesNotDistributedPanel();
     }
 
     @Step("Navigate to Recently approved file versions")
     public void navigateToRecentlyApprovedFileVersions() {
         recentlyApprovedFileVersionsNode.click();
-        new RecentlyApprovedFileVersionsPanel();
+        new PSRecentlyApprovedFileVersionsPanel();
     }
 
     @Step("Navigate to Recently published file versions")
     public void navigateToRecentlyPublishedFileVersions() {
         recentlyPublishedFileVersionsNode.click();
-        new RecentlyPublishedFileVersionsPanel();
+        new PSRecentlyPublishedFileVersionsPanel();
     }
 
     @Step("navigate to Recently released file versions")
     public void navigateToRecentlyReleasedFileVersions() {
         recentlyReleasedFileVersionsNode.click();
-        new RecentlyReleasedFileVersionsPanel();
+        new PSRecentlyReleasedFileVersionsPanel();
     }
 
     @Step("Navigate to Monitored folders")
     public void navigateToMonitoredFolders() {
         monitoredFoldersNode.click();
-        new MonitoredFoldersContentPanel();
+        new PSMonitoredFoldersContentPanel();
     }
 
     @Step("Navigate to Monitored files")
     public void navigateToMonitoredFiles() {
         monitoredFilesNode.click();
-        new MonitoredFilesContentPanel();
+        new PSMonitoredFilesContentPanel();
     }
 
     @Step("Navigate to Search result")
     public void navigateToSearch() {
         searchResultNode.click();
-        new SearchResultContentPanel();
+        new PSSearchResultContentPanel();
     }
 
     public PublicationSpaceNodesPanel() {

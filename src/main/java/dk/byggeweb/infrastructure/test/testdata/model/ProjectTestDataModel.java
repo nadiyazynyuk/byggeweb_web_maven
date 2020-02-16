@@ -19,7 +19,7 @@ public class ProjectTestDataModel {
     @Getter
     private String password;
 
-   @XmlElement
+    @XmlElement
     @Getter
     private String name;
 
@@ -98,5 +98,13 @@ public class ProjectTestDataModel {
     @XmlElement
     @Getter
     private String renameFolderName;
+
+    @XmlElement
+    @Getter
+    private String documentListName;
+
+    @XmlElement
+    @Getter
+    private String documentListFolderName;
 
 }

@@ -2,8 +2,8 @@ package dk.byggeweb.steps.project.workspace;
 
 import com.codeborne.selenide.WebDriverRunner;
 import dk.byggeweb.objects.project.workspace.modals.*;
-import dk.byggeweb.objects.project.workspace.panels.FileInformationPanel;
-import dk.byggeweb.objects.project.workspace.panels.FolderContentPanel;
+import dk.byggeweb.objects.project.workspace.panels.WSFileInformationPanel;
+import dk.byggeweb.objects.project.workspace.panels.WSFolderContentPanel;
 import dk.byggeweb.steps.GeneralSteps;
 import io.qameta.allure.Step;
 
@@ -14,46 +14,46 @@ public class WSFileSteps {
 
     @Step("Select file")
     public void selectFile(String fileName) {
-        FolderContentPanel folderContentPanel = new FolderContentPanel();
-        folderContentPanel.getFileByName(fileName).click();
-        new FileInformationPanel(fileName);
+        WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
+        wsFolderContentPanel.getFileByName(fileName).click();
+        new WSFileInformationPanel(fileName);
     }
 
     @Step("Enhanced upload file")
     public void enhancedUploadSingleFile(String file) {
-        FolderContentPanel folderContentPanel = new FolderContentPanel();
-        folderContentPanel.getFileUploadButton().click();
+        WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
+        wsFolderContentPanel.getFileUploadButton().click();
         String winHandleBefore = WebDriverRunner.getWebDriver().getWindowHandle();
-        folderContentPanel.switchToNewWindow();
-        FileUploadPopup fileUploadPopup = new FileUploadPopup();
-        fileUploadPopup.switchToEnhancedUploadTab();
-        FileEnhancedTabUpload fileUploadEnhancedTab = new FileEnhancedTabUpload();
+        wsFolderContentPanel.switchToNewWindow();
+        WSFileUploadPopup wsFileUploadPopup = new WSFileUploadPopup();
+        wsFileUploadPopup.switchToEnhancedUploadTab();
+        WSFileEnhancedTabUpload fileUploadEnhancedTab = new WSFileEnhancedTabUpload();
         fileUploadEnhancedTab.dropFile(file);
         WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
     }
 
     @Step("Standard upload file")
     public void standardUploadSingleFile(String file) {
-        FolderContentPanel folderContentPanel = new FolderContentPanel();
-        folderContentPanel.getFileUploadButton().click();
+        WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
+        wsFolderContentPanel.getFileUploadButton().click();
         String winHandleBefore = WebDriverRunner.getWebDriver().getWindowHandle();
-        folderContentPanel.switchToNewWindow();
-        FileUploadPopup fileUploadPopup = new FileUploadPopup();
-        fileUploadPopup.switchToStandardUploadTab();
-        FileStandardTabUpload fileUploadStandardTab = new FileStandardTabUpload();
+        wsFolderContentPanel.switchToNewWindow();
+        WSFileUploadPopup wsFileUploadPopup = new WSFileUploadPopup();
+        wsFileUploadPopup.switchToStandardUploadTab();
+        WSFileStandardTabUpload fileUploadStandardTab = new WSFileStandardTabUpload();
         fileUploadStandardTab.selectFileToUpload(file);
         WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
     }
 
     @Step("Transferal upload file")
     public void transferalUploadSingleFile(String file) {
-        FolderContentPanel folderContentPanel = new FolderContentPanel();
-        folderContentPanel.getFileUploadButton().click();
+        WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
+        wsFolderContentPanel.getFileUploadButton().click();
         String winHandleBefore = WebDriverRunner.getWebDriver().getWindowHandle();
-        folderContentPanel.switchToNewWindow();
-        FileUploadPopup fileUploadPopup = new FileUploadPopup();
-        fileUploadPopup.switchToTransferalUploadTab();
-        FileTransferalTabUpload fileUploadTransferalTab = new FileTransferalTabUpload();
+        wsFolderContentPanel.switchToNewWindow();
+        WSFileUploadPopup wsFileUploadPopup = new WSFileUploadPopup();
+        wsFileUploadPopup.switchToTransferalUploadTab();
+        WSFileTransferalTabUpload fileUploadTransferalTab = new WSFileTransferalTabUpload();
         fileUploadTransferalTab.transferFileFromMyFolders(file);
         WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
     }
@@ -61,126 +61,126 @@ public class WSFileSteps {
     @Step("Download file")
     public void downloadFile(String fileName) {
         selectFile(fileName);
-        FolderContentPanel folderContentPanel = new FolderContentPanel();
-        folderContentPanel.getFileDownloadButton().click();
+        WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
+        wsFolderContentPanel.getFileDownloadButton().click();
     }
 
     @Step("Download all files from the folder")
     public void generateDownloadFilesLink(String fileName) {
         selectFile(fileName);
-        FolderContentPanel folderContentPanel = new FolderContentPanel();
+        WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
         GeneralSteps.selectAll();
-        folderContentPanel.getFileDownloadButton().click();
-        folderContentPanel.switchToNewWindow();
-        DownloadFilesPopup downloadFilesPopup = new DownloadFilesPopup();
-        downloadFilesPopup.getOkButton().click();
-        downloadFilesPopup.getDownloadLink().shouldBe(visible);
-        downloadFilesPopup.getCancelButton().click();
-        folderContentPanel.switchToLastTab();
+        wsFolderContentPanel.getFileDownloadButton().click();
+        wsFolderContentPanel.switchToNewWindow();
+        WSDownloadFilesPopup wsDownloadFilesPopup = new WSDownloadFilesPopup();
+        wsDownloadFilesPopup.getOkButton().click();
+        wsDownloadFilesPopup.getDownloadLink().shouldBe(visible);
+        wsDownloadFilesPopup.getCancelButton().click();
+        wsFolderContentPanel.switchToLastTab();
     }
 
     @Step("Delete file permanently")
     public void deleteFilePermanently(String fileName) {
         selectFile(fileName);
-        FolderContentPanel folderContentPanel = new FolderContentPanel();
-        folderContentPanel.getFileDeleteButton().click();
-        folderContentPanel.switchToNewWindow();
-        FileDeletePopup fileDeletePopup = new FileDeletePopup();
-        fileDeletePopup.deleteFilePermanently();
-        folderContentPanel.switchToLastTab();
+        WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
+        wsFolderContentPanel.getFileDeleteButton().click();
+        wsFolderContentPanel.switchToNewWindow();
+        WSFileDeletePopup wsFileDeletePopup = new WSFileDeletePopup();
+        wsFileDeletePopup.deleteFilePermanently();
+        wsFolderContentPanel.switchToLastTab();
     }
 
     @Step("Move file to Recycle bin")
     public void moveFileToRecycleBin(String fileName) {
         selectFile(fileName);
-        FolderContentPanel folderContentPanel = new FolderContentPanel();
-        folderContentPanel.getFileDeleteButton().click();
-        folderContentPanel.switchToNewWindow();
-        FileDeletePopup fileDeletePopup = new FileDeletePopup();
-        fileDeletePopup.moveFileToRecycleBin();
-        folderContentPanel.switchToLastTab();
+        WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
+        wsFolderContentPanel.getFileDeleteButton().click();
+        wsFolderContentPanel.switchToNewWindow();
+        WSFileDeletePopup wsFileDeletePopup = new WSFileDeletePopup();
+        wsFileDeletePopup.moveFileToRecycleBin();
+        wsFolderContentPanel.switchToLastTab();
     }
 
     @Step("Move file to another folder")
     public void moveFileToFolder(String fileName, String folderName, String parentFolderName) {
         selectFile(fileName);
-        FolderContentPanel folderContentPanel = new FolderContentPanel();
-        folderContentPanel.getFileMoveButton().click();
-        folderContentPanel.switchToNewWindow();
-        FileMovePopup fileMovePopup = new FileMovePopup();
-        fileMovePopup.moveFile(parentFolderName, folderName);
-        folderContentPanel.switchToLastTab();
+        WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
+        wsFolderContentPanel.getFileMoveButton().click();
+        wsFolderContentPanel.switchToNewWindow();
+        WSFileMovePopup wsFileMovePopup = new WSFileMovePopup();
+        wsFileMovePopup.moveFile(parentFolderName, folderName);
+        wsFolderContentPanel.switchToLastTab();
     }
 
     @Step("Copy file to another folder")
     public void copyFileToFolder(String fileName, String folderName, String parentFolderName) {
         selectFile(fileName);
-        FolderContentPanel folderContentPanel = new FolderContentPanel();
-        folderContentPanel.getFileCopyButton().click();
-        folderContentPanel.switchToNewWindow();
-        FileCopyPopup fileCopyPopup = new FileCopyPopup();
-        fileCopyPopup.copyFile(parentFolderName, folderName);
-        folderContentPanel.switchToLastTab();
+        WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
+        wsFolderContentPanel.getFileCopyButton().click();
+        wsFolderContentPanel.switchToNewWindow();
+        WSFileCopyPopup wsFileCopyPopup = new WSFileCopyPopup();
+        wsFileCopyPopup.copyFile(parentFolderName, folderName);
+        wsFolderContentPanel.switchToLastTab();
     }
 
     @Step("Lock/Unlock file")
     public void lockFile(String fileName) {
         selectFile(fileName);
-        FolderContentPanel folderContentPanel = new FolderContentPanel();
-        folderContentPanel.getFileLockButton().click();
-        folderContentPanel.switchToNewWindow();
-        FileLockPopup fileLockPopup = new FileLockPopup();
-        fileLockPopup.unlockFile();
-        folderContentPanel.switchToLastTab();
+        WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
+        wsFolderContentPanel.getFileLockButton().click();
+        wsFolderContentPanel.switchToNewWindow();
+        WSFileLockPopup wsFileLockPopup = new WSFileLockPopup();
+        wsFileLockPopup.unlockFile();
+        wsFolderContentPanel.switchToLastTab();
     }
 
     @Step("Verify lock icon is present (file is locked)")
     public void verifyFileIsLocked(String name) {
-        FolderContentPanel folderContentPanel = new FolderContentPanel();
-        folderContentPanel.getFileContainsLockIcon(name).shouldBe(visible);
+        WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
+        wsFolderContentPanel.getFileContainsLockIcon(name).shouldBe(visible);
     }
 
     @Step("Verify lock icon is not present (file is unlocked)")
     public void verifyFileIsUnlocked(String name) {
-        FolderContentPanel folderContentPanel = new FolderContentPanel();
-        folderContentPanel.getFileContainsLockIcon(name).shouldNotBe(visible);
+        WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
+        wsFolderContentPanel.getFileContainsLockIcon(name).shouldNotBe(visible);
     }
 
     @Step("Get file lock status")
     public boolean getFileLockStatus(String fileName) {
-        FolderContentPanel folderContentPanel = new FolderContentPanel();
-        return folderContentPanel.isFileLocked(fileName);
+        WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
+        return wsFolderContentPanel.isFileLocked(fileName);
     }
 
     @Step("Start to monitor file")
     public void startMonitorFile(String filename) {
         selectFile(filename);
-        FolderContentPanel folderContentPanel = new FolderContentPanel();
-        folderContentPanel.getFileMonitorButton().click();
+        WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
+        wsFolderContentPanel.getFileMonitorButton().click();
     }
 
     @Step("Close edit file information popup")
     public void closeEditFileInformationPopup() {
-        FileInformationEditPopup fileInformationEditPopup = new FileInformationEditPopup();
-        fileInformationEditPopup.closeEditFileInformation();
+        WSFileInformationEditPopup wsFileInformationEditPopup = new WSFileInformationEditPopup();
+        wsFileInformationEditPopup.closeEditFileInformation();
     }
 
     @Step("Verify file is present in the list")
     public void verifyFileIsPresent(String name) {
-        FolderContentPanel folderContentPanel = new FolderContentPanel();
-        folderContentPanel.getFileByName(name).shouldHave(text(name));
+        WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
+        wsFolderContentPanel.getFileByName(name).shouldHave(text(name));
     }
 
     @Step("Verify file is not present in the list")
     public void verifyFileIsNotPresent(String name) {
-        FolderContentPanel folderContentPanel = new FolderContentPanel();
-        folderContentPanel.getFileByName(name).shouldNotHave(text(name));
+        WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
+        wsFolderContentPanel.getFileByName(name).shouldNotHave(text(name));
     }
 
     @Step("Verify data is present in table")
     public void verifyDataIsPresentInTable(String name) {
-        FolderContentPanel folderContentPanel = new FolderContentPanel();
-        folderContentPanel.getFileByName(name).shouldHave(text(name));
+        WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
+        wsFolderContentPanel.getFileByName(name).shouldHave(text(name));
     }
 
 }

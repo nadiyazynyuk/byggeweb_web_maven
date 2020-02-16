@@ -52,4 +52,19 @@ public abstract class ProjectTestBase extends TestBase {
         }
     }
 
+    public void uploadFileIfMNotPresentInDocumentListFolder(String documentListName, String folderName, String filePath, String fileName) {
+        psFolderSteps.navigateToFolderInDocumentList(documentListName, folderName);
+    }
+
+    public void deleteFileIfPresentInDocumentListFolder(String documentListName, String folderName, String fileName) {
+        psFolderSteps.navigateToFolderInDocumentList(documentListName, folderName);
+        while (true) {
+            try {
+                // deleteFile(fileName);
+            } catch (com.codeborne.selenide.ex.ElementNotFound e) {
+                break;
+            }
+        }
+    }
+
 }
