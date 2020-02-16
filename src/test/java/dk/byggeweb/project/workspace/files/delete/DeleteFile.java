@@ -11,16 +11,16 @@ public class DeleteFile extends ProjectTestBase {
     @BeforeClass
     public void prepareData() {
         projectHomePage.navigateToWorkspaceModule();
-        folderSteps.navigateToFolder(data.getFolderName());
-        fileSteps.enhancedUploadSingleFile(getAbsolutePath(data.getFileToUploadPath()));
-        fileSteps.closeEditFileInformationPopup();
-        fileSteps.verifyFileIsPresent(data.getTestFileName());
+        wsFolderSteps.navigateToFolder(data.getFolderName());
+        wsFileSteps.enhancedUploadSingleFile(getAbsolutePath(data.getFileToUploadPath()));
+        wsFileSteps.closeEditFileInformationPopup();
+        wsFileSteps.verifyFileIsPresent(data.getTestFileName());
     }
 
     @Test(description = "Delete file permanently")
     public void deleteFile() {
-        fileSteps.deleteFilePermanently(data.getTestFileName());
-        fileSteps.verifyFileIsNotPresent(data.getTestFileName());
+        wsFileSteps.deleteFilePermanently(data.getTestFileName());
+        wsFileSteps.verifyFileIsNotPresent(data.getTestFileName());
     }
 
 }

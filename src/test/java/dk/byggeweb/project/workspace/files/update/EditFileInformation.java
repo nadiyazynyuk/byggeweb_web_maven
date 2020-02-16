@@ -27,32 +27,32 @@ public class EditFileInformation extends ProjectTestBase {
 
     @Test(priority = 1, description = "Edit Subject metadata for existing file in File information tab")
     public void editSubjectMetadata() {
-        fileSteps.selectFile(data.getTestFileName());
-        fileInformationSteps.editMetadataTextField(
+        wsFileSteps.selectFile(data.getTestFileName());
+        wsFileInformationSteps.editMetadataTextField(
                 data.getTestFileName(),
                 new FileInformationPanel(data.getTestFileName()).getMetadataRefField(),
                 subjectMetadata);
-        fileSteps.verifyDataIsPresentInTable(subjectMetadata);
+        wsFileSteps.verifyDataIsPresentInTable(subjectMetadata);
     }
 
     @Test(priority = 2, description = "Edit Revision metadata for existing file in File information tab")
     public void editRevisionMetadata() {
-        fileSteps.selectFile(data.getTestFileName());
-        fileInformationSteps.editMetadataTextField(
+        wsFileSteps.selectFile(data.getTestFileName());
+        wsFileInformationSteps.editMetadataTextField(
                 data.getTestFileName(),
                 new FileInformationPanel(data.getTestFileName()).getMetadataRevisionField(),
                 revisionMetadata);
-        fileSteps.verifyDataIsPresentInTable(revisionMetadata);
+        wsFileSteps.verifyDataIsPresentInTable(revisionMetadata);
     }
 
     @Test(priority = 3, description = "Edit Revision Date metadata for existing file in File information tab")
     public void editRevisionDateMetadata() {
-        fileSteps.selectFile(data.getTestFileName());
-        fileInformationSteps.editMetadataTextField(
+        wsFileSteps.selectFile(data.getTestFileName());
+        wsFileInformationSteps.editMetadataTextField(
                 data.getTestFileName(),
                 new FileInformationPanel(data.getTestFileName()).getMetadataRevDateField(),
                 revisionDateMetadata);
-        fileSteps.verifyDataIsPresentInTable(revisionDateMetadata);
+        wsFileSteps.verifyDataIsPresentInTable(revisionDateMetadata);
     }
 
 }

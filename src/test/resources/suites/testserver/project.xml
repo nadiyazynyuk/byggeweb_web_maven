@@ -9,6 +9,7 @@
         <classes>
             <class name="dk.byggeweb.project.navigation.BasicNavigation"/>
             <class name="dk.byggeweb.project.navigation.WorkspaceNavigation"/>
+            <class name="dk.byggeweb.project.navigation.PublicationSpaceNavigation"/>
         </classes>
     </test>
 
@@ -89,28 +90,28 @@
         </classes>
     </test>
 
-    <test name="Lock/unlock file test">
+    <test name="Lock/unlock file in Workspace">
         <parameter name="testData" value="testserver/project/workspace/lockFileTestData.xml"/>
         <classes>
             <class name="dk.byggeweb.project.workspace.files.update.LockFile"/>
         </classes>
     </test>
 
-    <test name="Start/stop file monitoring test">
+    <test name="Start/stop file monitoring in Workspace">
         <parameter name="testData" value="testserver/project/workspace/monitorFileTestData.xml"/>
         <classes>
             <class name="dk.byggeweb.project.workspace.files.update.MonitorFile"/>
         </classes>
     </test>
 
-    <test name="Download single file test">
+    <test name="Download single file in Workspace">
         <parameter name="testData" value="testserver/project/workspace/downloadFileTestData.xml"/>
         <classes>
             <class name="dk.byggeweb.project.workspace.files.download.DownloadFile"/>
         </classes>
     </test>
 
-    <test name="Download multiple files test">
+    <test name="Download multiple files in Workspace">
         <parameter name="testData" value="testserver/project/workspace/downloadFilesTestData.xml"/>
         <classes>
             <class name="dk.byggeweb.project.workspace.files.download.DownloadFiles"/>

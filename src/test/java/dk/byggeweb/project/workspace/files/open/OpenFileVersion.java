@@ -11,11 +11,11 @@ public class OpenFileVersion extends ProjectTestBase {
     @BeforeClass
     public void deleteFileIfExists() {
         projectHomePage.navigateToWorkspaceModule();
-        folderSteps.navigateToFolder(data.getFolderName());
+        wsFolderSteps.navigateToFolder(data.getFolderName());
 
         while (true) {
             try {
-                fileSteps.deleteFilePermanently(data.getTestFileName());
+                wsFileSteps.deleteFilePermanently(data.getTestFileName());
             } catch (com.codeborne.selenide.ex.ElementNotFound e) {
                 break;
             }
@@ -24,28 +24,28 @@ public class OpenFileVersion extends ProjectTestBase {
 
     @Test(description = "Upload first file version into Project root folder")
     public void uploadFirstFileVersion() {
-        fileSteps.enhancedUploadSingleFile(data.getFileV1ToUploadPath());
-        fileSteps.closeEditFileInformationPopup();
-        fileSteps.verifyFileIsPresent(data.getTestFileName());
+        wsFileSteps.enhancedUploadSingleFile(data.getFileV1ToUploadPath());
+        wsFileSteps.closeEditFileInformationPopup();
+        wsFileSteps.verifyFileIsPresent(data.getTestFileName());
     }
 
     @Test(dependsOnMethods = "uploadFirstFileVersion", description = "Upload second file version into Project root folder")
     public void uploadSecondFileVersion() {
-        fileSteps.enhancedUploadSingleFile(data.getFileV2ToUploadPath());
-        fileSteps.closeEditFileInformationPopup();
-        fileSteps.verifyFileIsPresent(data.getTestFileName());
+        wsFileSteps.enhancedUploadSingleFile(data.getFileV2ToUploadPath());
+        wsFileSteps.closeEditFileInformationPopup();
+        wsFileSteps.verifyFileIsPresent(data.getTestFileName());
     }
 
     @Test(dependsOnMethods = "uploadSecondFileVersion", description = "Open latest file version")
     public void openLatestFileVersion() {
-        fileSteps.selectFile(data.getTestFileName());
-        fileInformationSteps.openFile(data.getTestFileName(), data.getFileV2Content());
+        wsFileSteps.selectFile(data.getTestFileName());
+        wsFileInformationSteps.openFile(data.getTestFileName(), data.getFileV2Content());
     }
 
     @Test(dependsOnMethods = "openLatestFileVersion", description = "Open first file version")
     public void openFirstFileVersion() {
-        fileSteps.selectFile(data.getTestFileName());
-        fileInformationSteps.selectFileVersion(data.getTestFileName(), data.getFileV1VersionIndex());
-        fileInformationSteps.openPreviousFileVersion(data.getTestFileName(), data.getFileV1Content());
+        wsFileSteps.selectFile(data.getTestFileName());
+        wsFileInformationSteps.selectFileVersion(data.getTestFileName(), data.getFileV1VersionIndex());
+        wsFileInformationSteps.openPreviousFileVersion(data.getTestFileName(), data.getFileV1Content());
     }
 }

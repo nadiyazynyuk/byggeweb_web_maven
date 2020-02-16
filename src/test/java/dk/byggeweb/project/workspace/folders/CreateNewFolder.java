@@ -1,7 +1,7 @@
 package dk.byggeweb.project.workspace.folders;
 
 import dk.byggeweb.infrastructure.test.ProjectTestBase;
-import dk.byggeweb.steps.project.workspace.FolderSteps;
+import dk.byggeweb.steps.project.workspace.WSFolderSteps;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -12,13 +12,13 @@ public class CreateNewFolder extends ProjectTestBase {
     @BeforeClass
     public void deleteFolderIfExists() {
         projectHomePage.navigateToWorkspaceModule();
-        folderSteps = new FolderSteps();
-        folderSteps.navigateToFolder(data.getFolderName());
+        wsFolderSteps = new WSFolderSteps();
+        wsFolderSteps.navigateToFolder(data.getFolderName());
 
         while (true) {
             try {
-                folderSteps.navigateToFolder(data.getCreateFolderName());
-                folderSteps.deleteFolder(data.getFolderName());
+                wsFolderSteps.navigateToFolder(data.getCreateFolderName());
+                wsFolderSteps.deleteFolder(data.getFolderName());
             } catch (com.codeborne.selenide.ex.ElementNotFound e) {
                 break;
             }
@@ -26,8 +26,8 @@ public class CreateNewFolder extends ProjectTestBase {
 
         while (true) {
             try {
-                folderSteps.navigateToFolder(data.getRenameFolderName());
-                folderSteps.deleteFolder(data.getFolderName());
+                wsFolderSteps.navigateToFolder(data.getRenameFolderName());
+                wsFolderSteps.deleteFolder(data.getFolderName());
             } catch (com.codeborne.selenide.ex.ElementNotFound e) {
                 break;
             }
@@ -36,23 +36,23 @@ public class CreateNewFolder extends ProjectTestBase {
 
     @Test(description = "Create folder in root folder")
     public void createFolder() {
-        folderSteps.navigateToFolder(data.getFolderName());
-        folderSteps.createFolder(data.getFolderName(), data.getCreateFolderName());
-        folderSteps.verifyFolderIsPresent(data.getCreateFolderName());
+        wsFolderSteps.navigateToFolder(data.getFolderName());
+        wsFolderSteps.createFolder(data.getFolderName(), data.getCreateFolderName());
+        wsFolderSteps.verifyFolderIsPresent(data.getCreateFolderName());
     }
 
     @Test(dependsOnMethods = "createFolder", description = "Rename folder")
     public void renameFolder() {
-        folderSteps.navigateToFolder(data.getCreateFolderName());
-        folderSteps.renameFolder(data.getCreateFolderName(), data.getRenameFolderName());
-        folderSteps.verifyFolderIsPresent(data.getRenameFolderName());
+        wsFolderSteps.navigateToFolder(data.getCreateFolderName());
+        wsFolderSteps.renameFolder(data.getCreateFolderName(), data.getRenameFolderName());
+        wsFolderSteps.verifyFolderIsPresent(data.getRenameFolderName());
     }
 
     @Test(dependsOnMethods = "renameFolder", description = "Delete folder")
     public void deleteFolder() {
-        folderSteps.navigateToFolder(data.getRenameFolderName());
-        folderSteps.deleteFolder(data.getFolderName());
-        folderSteps.verifyFolderIsNotPresent(data.getRenameFolderName());
+        wsFolderSteps.navigateToFolder(data.getRenameFolderName());
+        wsFolderSteps.deleteFolder(data.getFolderName());
+        wsFolderSteps.verifyFolderIsNotPresent(data.getRenameFolderName());
     }
 
 }

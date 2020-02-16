@@ -30,8 +30,8 @@ public class TransferSingleFile extends ProjectTestBase {
 
     @Test(description = "Transferal upload file into Project root folder")
     public void transferFile() {
-        fileSteps.transferalUploadSingleFile(data.getTestFileName());
-        fileSteps.verifyFileIsPresent(data.getTestFileName());
+        wsFileSteps.transferalUploadSingleFile(data.getTestFileName());
+        wsFileSteps.verifyFileIsPresent(data.getTestFileName());
     }
 
     private void uploadFileInPersonalSpace(String fileName, String filePath) {

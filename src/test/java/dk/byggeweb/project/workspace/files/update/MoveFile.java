@@ -17,11 +17,11 @@ public class MoveFile extends ProjectTestBase {
 
     @Test(description = "Move file to another folder")
     public void moveFile() {
-        folderSteps.navigateToFolder(data.getFolder1Name());
-        fileSteps.moveFileToFolder(data.getTestFileName(), data.getFolder2Name(), data.getFolderName());
-        fileSteps.verifyFileIsNotPresent(data.getTestFileName());
+        wsFolderSteps.navigateToFolder(data.getFolder1Name());
+        wsFileSteps.moveFileToFolder(data.getTestFileName(), data.getFolder2Name(), data.getFolderName());
+        wsFileSteps.verifyFileIsNotPresent(data.getTestFileName());
 
-        folderSteps.navigateToFolder(data.getFolder2Name());
-        fileSteps.verifyFileIsPresent(data.getTestFileName());
+        wsFolderSteps.navigateToFolder(data.getFolder2Name());
+        wsFileSteps.verifyFileIsPresent(data.getTestFileName());
     }
 }

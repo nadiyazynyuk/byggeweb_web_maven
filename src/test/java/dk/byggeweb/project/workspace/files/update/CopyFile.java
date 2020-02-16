@@ -18,12 +18,12 @@ public class CopyFile extends ProjectTestBase {
 
     @Test(description = "Copy file to another folder")
     public void copyFile() {
-        folderSteps.navigateToFolder(data.getFolder1Name());
-        fileSteps.copyFileToFolder(data.getTestFileName(), data.getFolder2Name(), data.getFolderName());
-        fileSteps.verifyFileIsPresent(data.getTestFileName());
+        wsFolderSteps.navigateToFolder(data.getFolder1Name());
+        wsFileSteps.copyFileToFolder(data.getTestFileName(), data.getFolder2Name(), data.getFolderName());
+        wsFileSteps.verifyFileIsPresent(data.getTestFileName());
 
         projectHomePage.getWorkspaceNodesPanel().navigateToFolder(data.getFolder2Name());
-        fileSteps.verifyFileIsPresent(data.getTestFileName());
+        wsFileSteps.verifyFileIsPresent(data.getTestFileName());
     }
 
 }

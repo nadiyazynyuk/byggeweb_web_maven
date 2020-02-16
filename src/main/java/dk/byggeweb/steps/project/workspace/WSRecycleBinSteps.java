@@ -8,7 +8,7 @@ import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.text;
 
-public class RecycleBinSteps {
+public class WSRecycleBinSteps {
 
     @Step("Select file")
     public void selectFile(String name) {

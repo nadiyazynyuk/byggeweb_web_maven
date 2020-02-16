@@ -15,6 +15,6 @@ public class DownloadFiles extends ProjectTestBase {
 
     @Test(description = "Download files (generate download files link)")
     public void downloadFiles() {
-        fileSteps.generateDownloadFilesLink(data.getTestFileName());
+        wsFileSteps.generateDownloadFilesLink(data.getTestFileName());
     }
 }

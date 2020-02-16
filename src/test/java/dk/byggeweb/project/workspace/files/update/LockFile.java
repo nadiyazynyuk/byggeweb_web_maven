@@ -14,16 +14,16 @@ public class LockFile extends ProjectTestBase {
     public void prepareData() {
         projectHomePage.navigateToWorkspaceModule();
         uploadFileIfNotPresentInWorkspaceFolder(data.getFolderName(), data.getFileToUploadPath(), data.getTestFileName());
-        isLocked = fileSteps.getFileLockStatus(data.getTestFileName());
+        isLocked = wsFileSteps.getFileLockStatus(data.getTestFileName());
     }
 
     @Test(description = "Lock/unlock file")
     public void lockFile() {
-        fileSteps.lockFile(data.getTestFileName());
+        wsFileSteps.lockFile(data.getTestFileName());
         if (isLocked) {
-            fileSteps.verifyFileIsUnlocked(data.getTestFileName());
+            wsFileSteps.verifyFileIsUnlocked(data.getTestFileName());
         } else {
-            fileSteps.verifyFileIsLocked(data.getTestFileName());
+            wsFileSteps.verifyFileIsLocked(data.getTestFileName());
         }
     }
 

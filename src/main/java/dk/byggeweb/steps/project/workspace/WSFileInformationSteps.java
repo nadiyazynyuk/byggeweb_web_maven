@@ -7,7 +7,7 @@ import dk.byggeweb.objects.project.common.TxtFileViewPage;
 import dk.byggeweb.objects.project.workspace.panels.FileInformationPanel;
 import io.qameta.allure.Step;
 
-public class FileInformationSteps {
+public class WSFileInformationSteps {
 
     @Step("Select file version")
     public void selectFileVersion(String fileName, String versionIndex) {

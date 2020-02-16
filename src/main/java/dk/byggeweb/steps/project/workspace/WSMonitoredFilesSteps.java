@@ -7,7 +7,7 @@ import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.text;
 
-public class MonitoredFilesSteps {
+public class WSMonitoredFilesSteps {
 
     @Step("Select file")
     public void selectFile(String fileName) {

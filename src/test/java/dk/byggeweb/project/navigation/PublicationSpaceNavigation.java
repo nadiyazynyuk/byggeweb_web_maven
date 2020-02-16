@@ -17,6 +17,9 @@ public class PublicationSpaceNavigation extends ProjectTestBase {
         projectHomePage.getPublicationSpaceNodesPanel().navigateToFilesNotDistributed();
         projectHomePage.getPublicationSpaceNodesPanel().navigateToRecentlyApprovedFileVersions();
         projectHomePage.getPublicationSpaceNodesPanel().navigateToRecentlyPublishedFileVersions();
-        //TODO: finish
+        projectHomePage.getPublicationSpaceNodesPanel().navigateToRecentlyReleasedFileVersions();
+        projectHomePage.getPublicationSpaceNodesPanel().navigateToMonitoredFolders();
+        projectHomePage.getPublicationSpaceNodesPanel().navigateToMonitoredFiles();
+        projectHomePage.getPublicationSpaceNodesPanel().navigateToSearch();
     }
 }

@@ -13,14 +13,6 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public class WorkspaceNodesPanel extends ProjectHomePage {
 
-    public FolderContentPanel folderContentPanel;
-    public VersionSetsContentPanel versionSetsContentPanel;
-    public RecycleBinContentPanel recycleBinContentPanel;
-    public MonitoredFoldersContentPanel monitoredFoldersContentPanel;
-    public MonitoredFilesContentPanel monitoredFilesContentPanel;
-    public SinceLastTimeContentPanel sinceLastTimeContentPanel;
-    public SearchResultContentPanel searchResultContentPanel;
-
     private SelenideElement workspaceParentNode = $(byXpath("//td[contains(@class, 'WMP_10')]"));
     private SelenideElement rootFolderNode = $(byXpath("//td[contains(@class, 'WMP_11')]/div/span[contains(text(), 'Project')]"));
     private SelenideElement versionSetsNode = $(byXpath("//td[contains(@class, 'WMP_140')]"));
@@ -51,43 +43,43 @@ public class WorkspaceNodesPanel extends ProjectHomePage {
     @Step("Navigate to root folder")
     public void navigateToRootFolder() {
         rootFolderNode.click();
-        folderContentPanel = new FolderContentPanel("Project");
+        new FolderContentPanel("Project");
     }
 
     @Step("Navigate to Version sets")
     public void navigateToVersionSets() {
         versionSetsNode.click();
-        versionSetsContentPanel = new VersionSetsContentPanel();
+        new VersionSetsContentPanel();
     }
 
     @Step("Navigate to Recycle bin")
     public void navigateToRecycleBin() {
         recycleBinNode.click();
-        recycleBinContentPanel = new RecycleBinContentPanel();
+        new RecycleBinContentPanel();
     }
 
     @Step("Navigate to Monitored folders")
     public void navigateToMonitoredFolders() {
         monitoredFoldersNode.click();
-        monitoredFoldersContentPanel = new MonitoredFoldersContentPanel();
+        new MonitoredFoldersContentPanel();
     }
 
     @Step("Navigate to Monitored files")
     public void navigateToMonitoredFiles() {
         monitoredFilesNode.click();
-        monitoredFilesContentPanel = new MonitoredFilesContentPanel();
+        new MonitoredFilesContentPanel();
     }
 
     @Step("Navigate to Since last time")
     public void navigateToSinceLastTime() {
         sinceLastTimeNode.click();
-        sinceLastTimeContentPanel = new SinceLastTimeContentPanel();
+        new SinceLastTimeContentPanel();
     }
 
     @Step("Navigate to Search result")
     public void navigateToSearchResult() {
         searchResultNode.click();
-        searchResultContentPanel = new SearchResultContentPanel();
+        new SearchResultContentPanel();
     }
 
     public WorkspaceNodesPanel() {

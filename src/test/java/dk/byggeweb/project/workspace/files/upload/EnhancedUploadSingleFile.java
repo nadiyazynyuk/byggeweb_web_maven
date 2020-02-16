@@ -11,11 +11,11 @@ public class EnhancedUploadSingleFile extends ProjectTestBase {
     @BeforeClass
     public void deleteFileIfExists() {
         projectHomePage.navigateToWorkspaceModule();
-        folderSteps.navigateToFolder(data.getFolderName());
+        wsFolderSteps.navigateToFolder(data.getFolderName());
 
         while (true) {
             try {
-                fileSteps.deleteFilePermanently(data.getTestFileName());
+                wsFileSteps.deleteFilePermanently(data.getTestFileName());
             } catch (com.codeborne.selenide.ex.ElementNotFound e) {
                 break;
             }
@@ -24,9 +24,9 @@ public class EnhancedUploadSingleFile extends ProjectTestBase {
 
     @Test(description = "Enhanced upload file into Project root folder")
     public void uploadFile() {
-        fileSteps.enhancedUploadSingleFile(getAbsolutePath(data.getFileToUploadPath()));
-        fileSteps.closeEditFileInformationPopup();
-        fileSteps.verifyFileIsPresent(data.getTestFileName());
+        wsFileSteps.enhancedUploadSingleFile(getAbsolutePath(data.getFileToUploadPath()));
+        wsFileSteps.closeEditFileInformationPopup();
+        wsFileSteps.verifyFileIsPresent(data.getTestFileName());
     }
 
 }

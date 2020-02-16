@@ -14,8 +14,8 @@ public class MonitorFile extends ProjectTestBase {
         projectHomePage.getWorkspaceNodesPanel().navigateToMonitoredFiles();
         while (true) {
             try {
-                monitoredFilesSteps.stopMonitorFile(data.getTestFileName());
-                monitoredFilesSteps.verifyFileIsNotPresent(data.getTestFileName());
+                wsMonitoredFilesSteps.stopMonitorFile(data.getTestFileName());
+                wsMonitoredFilesSteps.verifyFileIsNotPresent(data.getTestFileName());
             } catch (com.codeborne.selenide.ex.ElementNotFound e) {
                 break;
             }
@@ -25,9 +25,9 @@ public class MonitorFile extends ProjectTestBase {
 
     @Test(description = "Start file monitoring")
     public void monitorFile() {
-        fileSteps.startMonitorFile(data.getTestFileName());
+        wsFileSteps.startMonitorFile(data.getTestFileName());
         projectHomePage.getWorkspaceNodesPanel().navigateToMonitoredFiles();
-        monitoredFilesSteps.verifyFileIsPresent(data.getTestFileName());
+        wsMonitoredFilesSteps.verifyFileIsPresent(data.getTestFileName());
     }
 
 }

@@ -33,7 +33,7 @@
 <!--                        <suiteXmlFile>src/test/resources/suites/testserver/desktop.xml</suiteXmlFile>-->
 <!--                        <suiteXmlFile>src/test/resources/suites/testserver/project.xml</suiteXmlFile>-->
                         <suiteXmlFile>src/test/resources/suites/testserver/one_test.xml</suiteXmlFile>
-                        <!-- Suite file parameter from command lmvine -->
+                        <!-- Suite file parameter from command line -->
 <!--                        <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>-->
                     </suiteXmlFiles>
                     <argLine>

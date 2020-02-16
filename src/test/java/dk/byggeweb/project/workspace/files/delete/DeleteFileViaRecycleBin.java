@@ -11,18 +11,18 @@ public class DeleteFileViaRecycleBin extends ProjectTestBase {
     @BeforeClass
     public void prepareData() {
         projectHomePage.navigateToWorkspaceModule();
-        folderSteps.navigateToFolder(data.getFolderName());
-        fileSteps.enhancedUploadSingleFile(getAbsolutePath(data.getFileToUploadPath()));
-        fileSteps.closeEditFileInformationPopup();
-        fileSteps.verifyFileIsPresent(data.getTestFileName());
+        wsFolderSteps.navigateToFolder(data.getFolderName());
+        wsFileSteps.enhancedUploadSingleFile(getAbsolutePath(data.getFileToUploadPath()));
+        wsFileSteps.closeEditFileInformationPopup();
+        wsFileSteps.verifyFileIsPresent(data.getTestFileName());
     }
 
     @Test(description = "Delete file via Recycle bin")
     public void deleteFile() {
-        fileSteps.moveFileToRecycleBin(data.getTestFileName());
-        fileSteps.verifyFileIsNotPresent(data.getTestFileName());
+        wsFileSteps.moveFileToRecycleBin(data.getTestFileName());
+        wsFileSteps.verifyFileIsNotPresent(data.getTestFileName());
         projectHomePage.getWorkspaceNodesPanel().navigateToRecycleBin();
-        recycleBinSteps.deleteFileFromRecycleBin(data.getTestFileName());
-        recycleBinSteps.verifyFileIsNotPresent(data.getTestFileName());
+        wsRecycleBinSteps.deleteFileFromRecycleBin(data.getTestFileName());
+        wsRecycleBinSteps.verifyFileIsNotPresent(data.getTestFileName());
     }
 }

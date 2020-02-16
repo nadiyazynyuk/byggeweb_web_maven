@@ -19,7 +19,7 @@ public class DownloadFile extends ProjectTestBase {
 
     @Test(description = "Download files")
     public void downloadFile() {
-        fileSteps.downloadFile(data.getTestFileName());
+        wsFileSteps.downloadFile(data.getTestFileName());
         GeneralSteps.waitForTheFileToDownload(data.getTestFileName(), getAbsolutePath(outputDirectory));
         Assert.assertTrue(GeneralSteps.isFilePresentInDirectory(data.getTestFileName(), getAbsolutePath(outputDirectory)));
     }

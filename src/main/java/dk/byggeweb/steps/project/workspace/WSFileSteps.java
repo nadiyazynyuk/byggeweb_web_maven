@@ -10,7 +10,7 @@ import io.qameta.allure.Step;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 
-public class FileSteps {
+public class WSFileSteps {
 
     @Step("Select file")
     public void selectFile(String fileName) {

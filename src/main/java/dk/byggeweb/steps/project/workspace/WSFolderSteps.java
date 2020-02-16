@@ -11,7 +11,7 @@ import lombok.extern.log4j.Log4j;
 import static com.codeborne.selenide.Condition.text;
 
 @Log4j
-public class FolderSteps {
+public class WSFolderSteps {
     @Step("Select folder")
     public void navigateToFolder(String name) {
         FolderContentPanel folderContentPanel = new FolderContentPanel();
