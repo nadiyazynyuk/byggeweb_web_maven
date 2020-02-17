@@ -10,19 +10,18 @@ public class WSFileDeletePopup extends WSModalBase {
 
     private SelenideElement permanentDeleteRadio = $(byXpath("//input[@value=0]"));
     private SelenideElement moveToRecycleBinRadio = $(byXpath("//input[@value=1]"));
-    private SelenideElement closeWindowButton = $(byXpath("//input[@value='Close window']"));
 
     @Step("Delete file permanently")
     public void deleteFilePermanently() {
         permanentDeleteRadio.click();
         getOkButton().click();
-        closeWindowButton.click();
+        getCloseButton().click();
     }
 
     @Step("Move file to Recycle bin")
     public void moveFileToRecycleBin() {
         moveToRecycleBinRadio.click();
         getOkButton().click();
-        closeWindowButton.click();
+        getCloseButton().click();
     }
 }

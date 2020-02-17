@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 
 @Getter
-public class WSDownloadFilesPopup extends WSModalBase {
+public class WSFileDownloadPopup extends WSModalBase {
 
     SelenideElement downloadLink = $(byXpath("//a[@class='popup-headline1-standard headline2-bar-standard headline3-underlined']"));
 

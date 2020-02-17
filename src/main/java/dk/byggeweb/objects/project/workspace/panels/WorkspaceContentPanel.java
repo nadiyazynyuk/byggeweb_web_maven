@@ -29,8 +29,6 @@ public class WorkspaceContentPanel extends WorkspaceNodesPanel {
         return $(byXpath("//tr[@class='  x-grid-row']//*[contains(text(),'" + name + "')]"));
     }
 
-    public WorkspaceContentPanel() {
-        super();
-    }
+    public WorkspaceContentPanel() {}
 
 }

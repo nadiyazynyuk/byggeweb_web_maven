@@ -14,8 +14,8 @@ public class WSFileSteps {
 
     @Step("Select file")
     public void selectFile(String fileName) {
-        WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
-        wsFolderContentPanel.getFileByName(fileName).click();
+//        WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
+        new WSFolderContentPanel().getFileByName(fileName).click();
         new WSFileInformationPanel(fileName);
     }
 
@@ -72,10 +72,10 @@ public class WSFileSteps {
         GeneralSteps.selectAll();
         wsFolderContentPanel.getFileDownloadButton().click();
         wsFolderContentPanel.switchToNewWindow();
-        WSDownloadFilesPopup wsDownloadFilesPopup = new WSDownloadFilesPopup();
-        wsDownloadFilesPopup.getOkButton().click();
-        wsDownloadFilesPopup.getDownloadLink().shouldBe(visible);
-        wsDownloadFilesPopup.getCancelButton().click();
+        WSFileDownloadPopup wsFileDownloadPopup = new WSFileDownloadPopup();
+        wsFileDownloadPopup.getOkButton().click();
+        wsFileDownloadPopup.getDownloadLink().shouldBe(visible);
+        wsFileDownloadPopup.getCancelButton().click();
         wsFolderContentPanel.switchToLastTab();
     }
 
@@ -120,6 +120,17 @@ public class WSFileSteps {
         wsFolderContentPanel.switchToNewWindow();
         WSFileCopyPopup wsFileCopyPopup = new WSFileCopyPopup();
         wsFileCopyPopup.copyFile(parentFolderName, folderName);
+        wsFolderContentPanel.switchToLastTab();
+    }
+
+    @Step("Publish new file")
+    public void publishNewFile(String fileName, String documentListFolderName) {
+        selectFile(fileName);
+        WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
+        wsFolderContentPanel.getFilePublishButton().click();
+        wsFolderContentPanel.switchToNewWindow();
+        WSFilePublishPopup wsFilePublishPopup = new WSFilePublishPopup();
+        wsFilePublishPopup.publishFile(documentListFolderName);
         wsFolderContentPanel.switchToLastTab();
     }
 

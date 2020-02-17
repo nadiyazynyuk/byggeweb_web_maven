@@ -9,8 +9,7 @@ public class PublishFile extends ProjectTestBase {
     @BeforeClass
     public void prepareData() {
         projectHomePage.navigateToPublicationSpace();
-        psFolderSteps.navigateToDocumentList(data.getDocumentListName());
-        //TODO:
+        deleteFileIfPresentInDocumentListFolder(data.getDocumentListName(), data.getDocumentListFolderName(), data.getTestFileName());
 
         projectHomePage.navigateToWorkspaceModule();
         uploadFileIfNotPresentInWorkspaceFolder(data.getFolderName(), data.getFileToUploadPath(), data.getTestFileName());
@@ -18,7 +17,9 @@ public class PublishFile extends ProjectTestBase {
 
     @Test(description = "Publish new file from Workspace")
     public void publishFile() {
-
+        wsFileSteps.publishNewFile(data.getTestFileName(), data.getDocumentListFolderName());
+        projectHomePage.navigateToPublicationSpace();
+        psFileSteps.verifyFileIsPresent(data.getTestFileName());
     }
 }
 

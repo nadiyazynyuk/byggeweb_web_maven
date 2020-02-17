@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class PSFileInformationPanel extends PublicationSpaceContentPanel {
 
-    private SelenideElement panelTitle = $(byXpath("//div[contains(@id, 'mp-common-infocard-workspacefile')]//div[@class='x-title-text x-title-text-default x-title-item']"));
+    private SelenideElement panelTitle = $(byXpath("//div[contains(@id, 'mp-common-infocard-docregisterfile')]//div[@class='x-title-text x-title-text-default x-title-item']"));
 
     public PSFileInformationPanel(String title) {
         panelTitle.shouldHave(text(title));

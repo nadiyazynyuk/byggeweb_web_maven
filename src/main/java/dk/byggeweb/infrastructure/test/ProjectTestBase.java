@@ -3,6 +3,7 @@ package dk.byggeweb.infrastructure.test;
 import dk.byggeweb.infrastructure.test.testdata.model.ProjectTestDataModel;
 import dk.byggeweb.objects.project.ProjectHomePage;
 import dk.byggeweb.steps.GeneralSteps;
+import dk.byggeweb.steps.project.publicationspace.PSFileSteps;
 import dk.byggeweb.steps.project.publicationspace.PSFolderSteps;
 import dk.byggeweb.steps.project.workspace.*;
 import org.testng.annotations.BeforeClass;
@@ -20,6 +21,7 @@ public abstract class ProjectTestBase extends TestBase {
     public WSFileInformationSteps wsFileInformationSteps = new WSFileInformationSteps();
 
     public PSFolderSteps psFolderSteps = new PSFolderSteps();
+    public PSFileSteps psFileSteps = new PSFileSteps();
 
     @Parameters("testData")
     @BeforeClass
@@ -60,7 +62,7 @@ public abstract class ProjectTestBase extends TestBase {
         psFolderSteps.navigateToFolderInDocumentList(documentListName, folderName);
         while (true) {
             try {
-                // deleteFile(fileName);
+                 psFileSteps.deleteFile(fileName);
             } catch (com.codeborne.selenide.ex.ElementNotFound e) {
                 break;
             }

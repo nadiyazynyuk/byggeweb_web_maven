@@ -118,4 +118,11 @@
         </classes>
     </test>
 
+    <test name="Publish new file from Workspace">
+        <parameter name="testData" value="testserver/project/workspace/publishNewFileTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.workspace.files.publish.PublishFile"/>
+        </classes>
+    </test>
+
 </suite>

@@ -54,7 +54,7 @@ public class ProjectHomePage extends PageBase {
     @Step("Navigate to Publication Space")
     public void navigateToPublicationSpace() {
         publicationSpace.click();
-        publicationSpaceNodesPanel = new PublicationSpaceNodesPanel();
+        new PublicationSpaceNodesPanel();
     }
 
     @Step("Navigate to Distribution Space")
