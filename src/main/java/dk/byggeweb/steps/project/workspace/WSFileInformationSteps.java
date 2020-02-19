@@ -16,7 +16,7 @@ public class WSFileInformationSteps {
         wsFileInformationPanel.fileVersionSelector(versionIndex).click();
     }
 
-    @Step("Open file")
+    @Step("Open file and verify its content")
     public void openFile(String fileName, String fileContent) {
         String winHandleBefore = WebDriverRunner.getWebDriver().getWindowHandle();
         WSFileInformationPanel wsFileInformationPanel = new WSFileInformationPanel(fileName);
@@ -28,7 +28,7 @@ public class WSFileInformationSteps {
         WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
     }
 
-    @Step("Open previous file version")
+    @Step("Open previous file version and verify its content")
     public void openPreviousFileVersion(String fileName, String fileContent) {
         String winHandleBefore = WebDriverRunner.getWebDriver().getWindowHandle();
         WSFileInformationPanel wsFileInformationPanel = new WSFileInformationPanel(fileName);

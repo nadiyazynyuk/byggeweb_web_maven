@@ -6,6 +6,8 @@ import org.testng.annotations.Test;
 
 public class PublishFile extends ProjectTestBase {
 
+    // https://itwofm.atlassian.net/browse/TSB-32
+
     @BeforeClass
     public void prepareData() {
         projectHomePage.navigateToPublicationSpace();
@@ -21,12 +23,5 @@ public class PublishFile extends ProjectTestBase {
         projectHomePage.navigateToPublicationSpace();
         psFileSteps.verifyFileIsPresent(data.getTestFileName());
     }
+
 }
-
-
-/*
-0. Delete file from PS
-1. Upload file in WS if not present
-2. Publish file
-3. Check PS if file is present
- */

@@ -134,6 +134,17 @@ public class WSFileSteps {
         wsFolderContentPanel.switchToLastTab();
     }
 
+    @Step("Publish new file version")
+    public void publishNewFileVersion(String fileName) {
+        selectFile(fileName);
+        WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
+        wsFolderContentPanel.getFilePublishButton().click();
+        wsFolderContentPanel.switchToNewWindow();
+        WSFilePublishPopup wsFilePublishPopup = new WSFilePublishPopup();
+        wsFilePublishPopup.publishNewFileVersion();
+        wsFolderContentPanel.switchToLastTab();
+    }
+
     @Step("Lock/Unlock file")
     public void lockFile(String fileName) {
         selectFile(fileName);

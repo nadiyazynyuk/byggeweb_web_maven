@@ -125,4 +125,18 @@
         </classes>
     </test>
 
+    <test name="Publish new file version from Workspace">
+        <parameter name="testData" value="testserver/project/workspace/publishNewFileVersionTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.workspace.files.publish.PublishNewFileVersion"/>
+        </classes>
+    </test>
+
+    <test name="Publish new file version from Local Machine into Publication space">
+        <parameter name="testData" value="testserver/project/publicationspace/publishNewFileFromLocalMachineTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.files.publish.PublishNewFileFromLocalMachine"/>
+        </classes>
+    </test>
+
 </suite>

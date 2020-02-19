@@ -14,10 +14,16 @@ public class WSFilePublishPopup extends WSModalBase {
         return $(byXpath("//td[contains(text(), '" + folderName + "')]/parent::tr/td/input"));
     }
 
-    @Step("Publish new file version")
+    @Step("Publish new file to the folder in Document list")
     public void publishFile(String folderName) {
         getFolderRadio(folderName).click();
         getOkButton().click();
+        getOkButton().click();
+        closeButton.click();
+    }
+
+    @Step("Publish new file version")
+    public void publishNewFileVersion() {
         getOkButton().click();
         closeButton.click();
     }

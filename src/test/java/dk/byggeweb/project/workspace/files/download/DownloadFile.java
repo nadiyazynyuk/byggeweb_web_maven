@@ -10,6 +10,8 @@ import java.io.File;
 
 public class DownloadFile extends ProjectTestBase {
 
+    // https://itwofm.atlassian.net/browse/TSB-30
+
     @BeforeClass
     public void prepareData() {
         projectHomePage.navigateToWorkspaceModule();
@@ -17,7 +19,7 @@ public class DownloadFile extends ProjectTestBase {
         GeneralSteps.clearOutputDirectory(new File(getAbsolutePath(outputDirectory)));
     }
 
-    @Test(description = "Download files")
+    @Test(description = "Download single file")
     public void downloadFile() {
         wsFileSteps.downloadFile(data.getTestFileName());
         GeneralSteps.waitForTheFileToDownload(data.getTestFileName(), getAbsolutePath(outputDirectory));

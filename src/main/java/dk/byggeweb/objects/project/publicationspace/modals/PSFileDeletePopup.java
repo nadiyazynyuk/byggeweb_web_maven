@@ -2,12 +2,13 @@ package dk.byggeweb.objects.project.publicationspace.modals;
 
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
+import dk.byggeweb.objects.project.common.modals.ModalBase;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 
-public class PSFileDeletePopup extends PSModalBase {
+public class PSFileDeletePopup extends ModalBase {
 
     private SelenideElement discontinueFileRadio = $(byXpath("//input[@value='doclisting.file.discontinue']"));
     private SelenideElement deleteFileRadio = $(byXpath("//input[@value='doclisting.file.delete']"));
