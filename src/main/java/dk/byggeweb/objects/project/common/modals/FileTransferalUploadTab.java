@@ -1,4 +1,4 @@
-package dk.byggeweb.objects.project.workspace.modals;
+package dk.byggeweb.objects.project.common.modals;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
@@ -6,7 +6,7 @@ import io.qameta.allure.Step;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 
-public class WSFileTransferalTabUpload extends WSFileUploadPopup {
+public class FileTransferalUploadTab extends FileUploadPopup {
 
     private SelenideElement myFoldersItem = $(byXpath("//span[text()='My folders']"));
     private SelenideElement sharedFoldersItem = $(byXpath("//span[text()='Shared folders']"));

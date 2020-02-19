@@ -1,4 +1,4 @@
-package dk.byggeweb.objects.project.workspace.modals;
+package dk.byggeweb.objects.project.common.modals;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
@@ -6,7 +6,7 @@ import io.qameta.allure.Step;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 
-public class WSFileStandardTabUpload extends WSFileUploadPopup {
+public class FileStandardUploadTab extends FileUploadPopup {
 
     private SelenideElement selectFile1 = $(byXpath("//input[@name='file0']"));
     private SelenideElement selectFile2 = $(byXpath("//input[@name='file1']"));
