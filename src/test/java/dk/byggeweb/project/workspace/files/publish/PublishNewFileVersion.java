@@ -47,13 +47,13 @@ public class PublishNewFileVersion extends ProjectTestBase {
         psFileSteps.verifyFileIsPresent(data.getTestFileName());
     }
 
-    @Test(dependsOnMethods = "publishSecondFileVersion", description = "Check file content of published files")
+    @Test(dependsOnMethods = "publishSecondFileVersion", description = "Check file content of new version of published file")
     public void checkLatestFileVersionContent() {
         psFileSteps.selectFile(data.getTestFileName());
         psFileInformationSteps.openFile(data.getTestFileName(), data.getFileV2Content());
     }
 
-    @Test(dependsOnMethods = "checkLatestFileVersionContent", description = "Check file content of published files")
+    @Test(dependsOnMethods = "checkLatestFileVersionContent", description = "Check file content of first version published file")
     public void checkFirstFileVersionContent() {
         psFileSteps.selectFile(data.getTestFileName());
         psFileInformationSteps.selectFileVersion(data.getTestFileName(), data.getFileV1VersionIndex());
