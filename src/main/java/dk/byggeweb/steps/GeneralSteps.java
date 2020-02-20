@@ -18,9 +18,7 @@ public class GeneralSteps {
     public static HomePage loginAsVerifiedUser(String username, String password, String user) {
         LoginPage loginPage = new LoginPage();
         loginPage.login(username, password);
-        HomePage homePage = new HomePage();
-        homePage.verifyCurrentUser(user);
-        return homePage;
+        return new HomePage(user);
     }
 
     public static void launchProject(String url) {

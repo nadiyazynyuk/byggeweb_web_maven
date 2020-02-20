@@ -13,9 +13,10 @@ public abstract class DesktopTestBase extends TestBase {
 
     @Parameters("testData")
     @BeforeClass
-    public void setUp(String testData) {
+    public void login(String testData) {
         data = getXmlObject(testData, DesktopTestDataModel.class);
-        homePage = GeneralSteps.loginAsVerifiedUser(data.getUserName(), data.getPassword(), data.getName());
+        GeneralSteps.loginAsVerifiedUser(data.getUserName(), data.getPassword(), data.getName());
+        homePage = new HomePage(data.getName());
     }
 
 }

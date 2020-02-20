@@ -1,7 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="Byggeweb Project UI tests">
-    <parameter name="baseUrl" value="https://byggeweb.dk/controller?cmd=company7.login.form&amp;language=English"/>
+    <parameter name="baseUrl" value="https://clone.byggeweb.dk/controller?cmd=company7.login.form&amp;language=English"/>
+<!--    <parameter name="baseUrl" value="https://byggeweb.dk/controller?cmd=company7.login.form&amp;language=English"/>-->
 
     <test name="Project navigation tests">
         <parameter name="testData" value="production/project/launchProjectTestData.xml"/>

@@ -10,16 +10,18 @@ import dk.byggeweb.objects.project.workspace.panels.WSFileInformationPanel;
 import dk.byggeweb.objects.project.workspace.panels.WSFolderContentPanel;
 import dk.byggeweb.steps.GeneralSteps;
 import io.qameta.allure.Step;
+import lombok.extern.log4j.Log4j;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 
+@Log4j
 public class WSFileSteps {
 
     @Step("Select file")
     public void selectFile(String fileName) {
-//        WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
         new WSFolderContentPanel().getFileByName(fileName).click();
+        log.info("File " + fileName + " was selected");
         new WSFileInformationPanel(fileName);
     }
 
@@ -65,8 +67,7 @@ public class WSFileSteps {
     @Step("Download file")
     public void downloadFile(String fileName) {
         selectFile(fileName);
-        WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
-        wsFolderContentPanel.getFileDownloadButton().click();
+        new WSFolderContentPanel().getFileDownloadButton().click();
     }
 
     @Step("Download all files from the folder")
@@ -162,51 +163,43 @@ public class WSFileSteps {
 
     @Step("Verify lock icon is present (file is locked)")
     public void verifyFileIsLocked(String name) {
-        WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
-        wsFolderContentPanel.getFileContainsLockIcon(name).shouldBe(visible);
+        new WSFolderContentPanel().getFileContainsLockIcon(name).shouldBe(visible);
     }
 
     @Step("Verify lock icon is not present (file is unlocked)")
     public void verifyFileIsUnlocked(String name) {
-        WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
-        wsFolderContentPanel.getFileContainsLockIcon(name).shouldNotBe(visible);
+        new WSFolderContentPanel().getFileContainsLockIcon(name).shouldNotBe(visible);
     }
 
     @Step("Get file lock status")
     public boolean getFileLockStatus(String fileName) {
-        WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
-        return wsFolderContentPanel.isFileLocked(fileName);
+        return new WSFolderContentPanel().isFileLocked(fileName);
     }
 
     @Step("Start to monitor file")
     public void startMonitorFile(String filename) {
         selectFile(filename);
-        WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
-        wsFolderContentPanel.getFileMonitorButton().click();
+        new WSFolderContentPanel().getFileMonitorButton().click();
     }
 
     @Step("Close edit file information popup")
     public void closeEditFileInformationPopup() {
-        WSFileInformationEditPopup wsFileInformationEditPopup = new WSFileInformationEditPopup();
-        wsFileInformationEditPopup.closeEditFileInformation();
+        new WSFileInformationEditPopup().closeEditFileInformation();
     }
 
     @Step("Verify file is present in the list")
     public void verifyFileIsPresent(String name) {
-        WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
-        wsFolderContentPanel.getFileByName(name).shouldHave(text(name));
+        new WSFolderContentPanel().getFileByName(name).shouldHave(text(name));
     }
 
     @Step("Verify file is not present in the list")
     public void verifyFileIsNotPresent(String name) {
-        WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
-        wsFolderContentPanel.getFileByName(name).shouldNotHave(text(name));
+        new WSFolderContentPanel().getFileByName(name).shouldNotHave(text(name));
     }
 
     @Step("Verify data is present in table")
     public void verifyDataIsPresentInTable(String name) {
-        WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
-        wsFolderContentPanel.getFileByName(name).shouldHave(text(name));
+        new WSFolderContentPanel().getFileByName(name).shouldHave(text(name));
     }
 
 }

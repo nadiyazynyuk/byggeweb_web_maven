@@ -15,8 +15,7 @@ public class Login extends DesktopTestBase {
         Selenide.open("");
         LoginPage loginPage = new LoginPage();
         loginPage.login(data.getUserName(), data.getPassword());
-        HomePage homePage = new HomePage();
-        homePage.verifyCurrentUser(data.getName());
+        new HomePage(data.getName());
     }
 
     // https://itwofm.atlassian.net/browse/TSB-18

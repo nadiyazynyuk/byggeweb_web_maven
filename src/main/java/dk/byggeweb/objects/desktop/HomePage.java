@@ -73,6 +73,12 @@ public class HomePage extends PageBase {
         String title = page.getPageTitle();
         Assert.assertTrue(title.contains(expectedPageTitle), "Wrong page title");
     }
+
+    public HomePage(String user) {
+        userLabel.shouldHave(text(user));
+    }
+
+    public HomePage() {}
 }
 
 

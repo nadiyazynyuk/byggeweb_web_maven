@@ -22,7 +22,13 @@ public class DeleteFileViaRecycleBin extends ProjectTestBase {
         wsFileSteps.moveFileToRecycleBin(data.getTestFileName());
         wsFileSteps.verifyFileIsNotPresent(data.getTestFileName());
         projectHomePage.getWorkspaceNodesPanel().navigateToRecycleBin();
-        wsRecycleBinSteps.deleteFileFromRecycleBin(data.getTestFileName());
+        while (true) {
+            try {
+                wsRecycleBinSteps.deleteFileFromRecycleBin(data.getTestFileName());
+            } catch (com.codeborne.selenide.ex.ElementNotFound e) {
+                break;
+            }
+        }
         wsRecycleBinSteps.verifyFileIsNotPresent(data.getTestFileName());
     }
 }

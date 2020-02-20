@@ -12,7 +12,7 @@ public class DownloadFiles extends ProjectTestBase {
     public void prepareData() {
         projectHomePage.navigateToWorkspaceModule();
         uploadFileIfNotPresentInWorkspaceFolder(data.getFolderName(), data.getFileToUploadPath(), data.getTestFileName());
-        uploadFileIfNotPresentInWorkspaceFolder(data.getFolderName(), data.getFileToUploadPath2(), data.getTestFileName2());
+//        uploadFileIfNotPresentInWorkspaceFolder(data.getFolderName(), data.getFileToUploadPath2(), data.getTestFileName2());
     }
 
     @Test(description = "Download multiple files (generate download files link)")

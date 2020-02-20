@@ -25,9 +25,11 @@ public class WSFolderSteps {
         String winHandleBefore = WebDriverRunner.getWebDriver().getWindowHandle();
         WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel(parentFolderName);
         wsFolderContentPanel.getCreateFolderButton().click();
+        log.info("Create Folder button was clicked");
         wsFolderContentPanel.switchToNewWindow();
         WSFolderCreatePopup wsFolderCreatePopup = new WSFolderCreatePopup();
         wsFolderCreatePopup.createFolder(createFolderName);
+        log.info("Folder " + createFolderName + " was created");
         WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
         new WSFolderContentPanel(createFolderName);
     }
@@ -37,9 +39,11 @@ public class WSFolderSteps {
         String winHandleBefore = WebDriverRunner.getWebDriver().getWindowHandle();
         WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel(fromFolderName);
         wsFolderContentPanel.getRenameFolderButton().click();
+        log.info("Rename Folder button was clicked");
         wsFolderContentPanel.switchToNewWindow();
         WSFolderCreatePopup wsFolderCreatePopup = new WSFolderCreatePopup();
         wsFolderCreatePopup.renameFolder(toFolderName);
+        log.info("Folder " + fromFolderName + " was renamed to " + toFolderName);
         WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
         new WSFolderContentPanel(); // TODO: => bug, after fix use constructor with name parameter
     }
@@ -49,9 +53,11 @@ public class WSFolderSteps {
         String winHandleBefore = WebDriverRunner.getWebDriver().getWindowHandle();
         WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
         wsFolderContentPanel.getDeleteFolderButton().click();
+        log.info("Delete Folder button was clicked");
         wsFolderContentPanel.switchToNewWindow();
         WSFolderDeletePopup wsFolderDeletePopup = new WSFolderDeletePopup();
         wsFolderDeletePopup.deleteFolder();
+        log.info("Folder was deleted");
         WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
         new WSFolderInformationPanel(parentFolderName);
     }
