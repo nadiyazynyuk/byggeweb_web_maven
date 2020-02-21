@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<testdata>
+
+    <userName>selenium.bot@ukr.net</userName>
+    <password>testPassword#1</password>
+    <name>Selenium Bot</name>
+    <projectLink>https://byggeweb.dk/controller?cmd=company7.project.login&amp;project=36308</projectLink>
+    <projectName>Azure Storage Project</projectName>
+    <folderName>Folder B</folderName>
+    <testFileName>TestPublishFileVersion</testFileName>
+    <fileV1ToUploadPath>resources/testfiles/versions/v1/TestPublishFileVersion.txt</fileV1ToUploadPath>
+    <fileV2ToUploadPath>resources/testfiles/versions/v2/TestPublishFileVersion.txt</fileV2ToUploadPath>
+    <fileV1Content>v1</fileV1Content>
+    <fileV2Content>v2</fileV2Content>
+    <fileV1VersionIndex>0</fileV1VersionIndex>
+    <fileV2VersionIndex>1</fileV2VersionIndex>
+    <documentListName>List B</documentListName>
+    <documentListFolderName>Folder B.3</documentListFolderName>
+
+</testdata>

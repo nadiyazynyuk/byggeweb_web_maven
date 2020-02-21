@@ -21,6 +21,7 @@ public class PublishFile extends ProjectTestBase {
     public void publishFile() {
         wsFileSteps.publishNewFile(data.getTestFileName(), data.getDocumentListFolderName());
         projectHomePage.navigateToPublicationSpace();
+        psFolderSteps.navigateToFolderInDocumentList(data.getDocumentListName(), data.getDocumentListFolderName()); // <--- for production???
         psFileSteps.verifyFileIsPresent(data.getTestFileName());
     }
 

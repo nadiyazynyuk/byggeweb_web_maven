@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<testdata>
+
+    <userName>selenium.bot@ukr.net</userName>
+    <password>testPassword#1</password>
+    <name>Selenium Bot</name>
+    <projectLink>https://byggeweb.dk/controller?cmd=company7.project.login&amp;project=36308</projectLink>
+    <projectName>Azure Storage Project</projectName>
+    <testFileName>TestPublishFromLocalMachineFile</testFileName>
+    <fileToUploadPath>resources/testfiles/TestPublishFromLocalMachineFile.docx</fileToUploadPath>
+    <documentListName>List A</documentListName>
+    <documentListFolderName>Folder A.3</documentListFolderName>
+
+</testdata>
