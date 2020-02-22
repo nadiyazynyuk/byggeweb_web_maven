@@ -11,7 +11,8 @@ public class PublishNewFileFromLocalMachine extends ProjectTestBase {
     @BeforeClass
     public void prepareData() {
         projectHomePage.navigateToPublicationSpace();
-        deleteFileIfPresentInDocumentListFolder(data.getDocumentListName(), data.getDocumentListFolderName(), data.getTestFileName());
+        psFolderSteps.navigateToFolderInDocumentList(data.getDocumentListName(), data.getDocumentListFolderName());
+        deleteFileIfPresentInDocumentListFolder(data.getTestFileName());
     }
 
     @Test(description = "Publish new file from Local machine into Document list folder")

@@ -13,7 +13,8 @@ public class LockFile extends ProjectTestBase {
     @BeforeClass
     public void prepareData() {
         projectHomePage.navigateToWorkspaceModule();
-        uploadFileIfNotPresentInWorkspaceFolder(data.getFolderName(), data.getFileToUploadPath(), data.getTestFileName());
+        wsFolderSteps.navigateToFolder(data.getFolderName());
+        uploadFileIfNotPresentInWorkspaceFolder(data.getFileToUploadPath(), data.getTestFileName());
         isLocked = wsFileSteps.getFileLockStatus(data.getTestFileName());
     }
 

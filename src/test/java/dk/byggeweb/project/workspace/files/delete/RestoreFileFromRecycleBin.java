@@ -11,8 +11,12 @@ public class RestoreFileFromRecycleBin extends ProjectTestBase {
     @BeforeClass
     public void prepareData() {
         projectHomePage.navigateToWorkspaceModule();
-        deleteFileIfPresentInWorkspaceFolder("Recycle bin", data.getTestFileName());
-        uploadFileIfNotPresentInWorkspaceFolder(data.getFolderName(), data.getFileToUploadPath(), data.getTestFileName());
+
+        projectHomePage.getWorkspaceNodesPanel().navigateToRecycleBin();
+        deleteFileIfPresentInWorkspaceFolder(data.getTestFileName());
+
+        wsFolderSteps.navigateToFolder(data.getFolderName());
+        uploadFileIfNotPresentInWorkspaceFolder(data.getFileToUploadPath(), data.getTestFileName());
         placeFileInRecycleBin();
     }
 

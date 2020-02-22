@@ -11,10 +11,12 @@ public class PublishNewFileVersion extends ProjectTestBase {
     @BeforeClass
     public void prepareData() {
         projectHomePage.navigateToPublicationSpace();
-        deleteFileIfPresentInDocumentListFolder(data.getDocumentListName(), data.getDocumentListFolderName(), data.getTestFileName());
+        psFolderSteps.navigateToFolderInDocumentList(data.getDocumentListName(), data.getDocumentListFolderName());
+        deleteFileIfPresentInDocumentListFolder(data.getTestFileName());
 
         projectHomePage.navigateToWorkspaceModule();
-        deleteFileIfPresentInWorkspaceFolder(data.getFolderName(), data.getTestFileName());
+        wsFolderSteps.navigateToFolder(data.getFolderName());
+        deleteFileIfPresentInWorkspaceFolder(data.getTestFileName());
     }
 
     @Test(description = "Upload first file version into Project root folder")

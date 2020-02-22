@@ -20,7 +20,8 @@ public class MonitorFile extends ProjectTestBase {
                 break;
             }
         }
-        uploadFileIfNotPresentInWorkspaceFolder(data.getFolderName(), data.getFileToUploadPath(), data.getTestFileName());
+        wsFolderSteps.navigateToFolder(data.getFolderName());
+        uploadFileIfNotPresentInWorkspaceFolder(data.getFileToUploadPath(), data.getTestFileName());
     }
 
     @Test(description = "Start file monitoring")

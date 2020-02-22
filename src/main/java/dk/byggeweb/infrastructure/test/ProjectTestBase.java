@@ -34,8 +34,7 @@ public abstract class ProjectTestBase extends TestBase {
         projectHomePage = new ProjectHomePage(data.getProjectName());
     }
 
-    public void uploadFileIfNotPresentInWorkspaceFolder(String folderName, String filePath, String fileName) {
-        wsFolderSteps.navigateToFolder(folderName);
+    public void uploadFileIfNotPresentInWorkspaceFolder(String filePath, String fileName) {
         try {
             wsFileSteps.verifyFileIsPresent(fileName);
         } catch (com.codeborne.selenide.ex.ElementNotFound e) {
@@ -45,8 +44,7 @@ public abstract class ProjectTestBase extends TestBase {
         }
     }
 
-    public void deleteFileIfPresentInWorkspaceFolder(String folderName, String fileName) {
-        wsFolderSteps.navigateToFolder(folderName);
+    public void deleteFileIfPresentInWorkspaceFolder(String fileName) {
         while (true) {
             try {
                 wsFileSteps.deleteFilePermanently(fileName);
@@ -60,11 +58,10 @@ public abstract class ProjectTestBase extends TestBase {
         psFolderSteps.navigateToFolderInDocumentList(documentListName, folderName);
     }
 
-    public void deleteFileIfPresentInDocumentListFolder(String documentListName, String folderName, String fileName) {
-        psFolderSteps.navigateToFolderInDocumentList(documentListName, folderName);
+    public void deleteFileIfPresentInDocumentListFolder(String fileName) {
         while (true) {
             try {
-                 psFileSteps.deleteFile(fileName);
+                psFileSteps.deleteFile(fileName);
             } catch (com.codeborne.selenide.ex.ElementNotFound e) {
                 break;
             }

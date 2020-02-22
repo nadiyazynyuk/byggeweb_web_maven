@@ -15,7 +15,8 @@ public class DownloadFile extends ProjectTestBase {
     @BeforeClass
     public void prepareData() {
         projectHomePage.navigateToWorkspaceModule();
-        uploadFileIfNotPresentInWorkspaceFolder(data.getFolderName(), data.getFileToUploadPath(), data.getTestFileName());
+        wsFolderSteps.navigateToFolder(data.getFolderName());
+        uploadFileIfNotPresentInWorkspaceFolder(data.getFileToUploadPath(), data.getTestFileName());
         GeneralSteps.clearOutputDirectory(new File(getAbsolutePath(outputDirectory)));
     }
 

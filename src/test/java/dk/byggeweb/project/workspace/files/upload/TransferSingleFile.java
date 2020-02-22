@@ -25,7 +25,8 @@ public class TransferSingleFile extends ProjectTestBase {
         GeneralSteps.launchProject(data.getProjectLink());
         projectHomePage = new ProjectHomePage(data.getProjectName());
         projectHomePage.navigateToWorkspaceModule();
-        deleteFileIfPresentInWorkspaceFolder(data.getFolderName(), data.getTestFileName());
+        wsFolderSteps.navigateToFolder(data.getFolderName());
+        deleteFileIfPresentInWorkspaceFolder(data.getTestFileName());
     }
 
     @Test(description = "Transferal upload file into Project root folder")

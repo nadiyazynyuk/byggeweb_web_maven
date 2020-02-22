@@ -18,7 +18,8 @@ public class EditFileInformation extends ProjectTestBase {
     @BeforeClass
     public void prepareData() {
         projectHomePage.navigateToWorkspaceModule();
-        uploadFileIfNotPresentInWorkspaceFolder(data.getFolderName(), data.getFileToUploadPath(), data.getTestFileName());
+        wsFolderSteps.navigateToFolder(data.getFolderName());
+        uploadFileIfNotPresentInWorkspaceFolder(data.getFileToUploadPath(), data.getTestFileName());
 
         subjectMetadata = data.getSubject() + LocalDate.now() + " " + System.currentTimeMillis();
         revisionMetadata = data.getRevision() + System.currentTimeMillis();
