@@ -11,7 +11,7 @@ public abstract class TenderTestBase extends TestBase {
     @Parameters("testData")
     @BeforeClass
     public void setUp(String testData) {
-        data = getXmlObject(testData, TenderTestDataModel.class);
+        data = getXmlObject(getEnv() + testData, TenderTestDataModel.class);
     }
 
 }

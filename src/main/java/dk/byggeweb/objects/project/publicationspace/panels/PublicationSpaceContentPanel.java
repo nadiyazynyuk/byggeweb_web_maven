@@ -16,5 +16,9 @@ public class PublicationSpaceContentPanel extends PublicationSpaceNodesPanel {
         return $(byXpath("//tr[@class='  x-grid-row']//*[contains(text(),'" + name + "')]"));
     }
 
+    public SelenideElement getDiscontinuedFileByName(String name) {
+        return $(byXpath("//tr[@class='discontinued  x-grid-row']//*[contains(text(),'" + name + "')]"));
+    }
+
     public PublicationSpaceContentPanel() {}
 }

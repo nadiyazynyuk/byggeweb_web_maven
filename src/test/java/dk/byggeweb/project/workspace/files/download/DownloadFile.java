@@ -17,14 +17,14 @@ public class DownloadFile extends ProjectTestBase {
         projectHomePage.navigateToWorkspaceModule();
         wsFolderSteps.navigateToFolder(data.getFolderName());
         uploadFileIfNotPresentInWorkspaceFolder(data.getFileToUploadPath(), data.getTestFileName());
-        GeneralSteps.clearOutputDirectory(new File(getAbsolutePath(outputDirectory)));
+        GeneralSteps.clearOutputDirectory(new File(getAbsolutePath(getOutputDirectory())));
     }
 
     @Test(description = "Download single file")
     public void downloadFile() {
         wsFileSteps.downloadFile(data.getTestFileName());
-        GeneralSteps.waitForTheFileToDownload(data.getTestFileName(), getAbsolutePath(outputDirectory));
-        Assert.assertTrue(GeneralSteps.isFilePresentInDirectory(data.getTestFileName(), getAbsolutePath(outputDirectory)));
+        GeneralSteps.waitForTheFileToDownload(data.getTestFileName(), getAbsolutePath(getOutputDirectory()));
+        Assert.assertTrue(GeneralSteps.isFilePresentInDirectory(data.getTestFileName(), getAbsolutePath(getOutputDirectory())));
     }
 
 }

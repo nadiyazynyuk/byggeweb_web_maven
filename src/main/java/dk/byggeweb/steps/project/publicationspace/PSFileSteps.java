@@ -51,16 +51,49 @@ public class PSFileSteps {
         WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
     }
 
-//    @Step("Close edit file information popup")
-//    public void closeEditFileInformationPopup() {
-//        PSFileInformationEditPopup psFileInformationEditPopup = new PSFileInformationEditPopup();
-//        psFileInformationEditPopup.getOkButton().click();
-//        psFileInformationEditPopup.getCloseButton().click();
-//    }
+    @Step("Select discontinued file")
+    public void selectDiscontinuedFile(String fileName) {
+        new PSFolderContentPanel().getDiscontinuedFileByName(fileName).click();
+        new PSFileInformationPanel(fileName);
+    }
+
+    @Step("Discontinue file")
+    public void discontinueFile(String fileName) {
+        selectFile(fileName);
+        PSFolderContentPanel psFolderContentPanel = new PSFolderContentPanel();
+        psFolderContentPanel.getFileDeleteButton().click();
+        psFolderContentPanel.switchToNewWindow();
+        PSFileDeletePopup fileDeletePopup = new PSFileDeletePopup();
+        fileDeletePopup.discontinueFile();
+        psFolderContentPanel.switchToLastTab();
+    }
+
+    @Step("Delete discontinued file")
+    public void deleteDiscontinuedFile(String fileName) {
+        selectDiscontinuedFile(fileName);
+        PSFolderContentPanel psFolderContentPanel = new PSFolderContentPanel();
+        psFolderContentPanel.getFileDeleteButton().click();
+        psFolderContentPanel.switchToNewWindow();
+        PSFileDeletePopup fileDeletePopup = new PSFileDeletePopup();
+        fileDeletePopup.deleteFilePermanently();
+        psFolderContentPanel.switchToLastTab();
+    }
 
     @Step("Verify file is present in the list")
     public void verifyFileIsPresent(String name) {
         PSFolderContentPanel psFolderContentPanel = new PSFolderContentPanel();
         psFolderContentPanel.getFileByName(name).shouldHave(text(name));
+    }
+
+    @Step("Verify file is present in the list")
+    public void verifyFileIsNotPresent(String name) {
+        PSFolderContentPanel psFolderContentPanel = new PSFolderContentPanel();
+        psFolderContentPanel.getFileByName(name).shouldNotHave(text(name));
+    }
+
+    @Step("Verify file is discontinued")
+    public void verifyFileIsDiscontinued(String name) {
+        PSFolderContentPanel psFolderContentPanel = new PSFolderContentPanel();
+        psFolderContentPanel.getDiscontinuedFileByName(name).shouldHave(text(name));
     }
 }

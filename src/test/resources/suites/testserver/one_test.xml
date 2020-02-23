@@ -1,13 +1,12 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="One test">
-    <parameter name="baseUrl"
-               value="https://testserver.byggeweb.dk/controller?cmd=company7.login.form&amp;language=English"/>
+    <parameter name="environment" value="production"/>
 
-    <test name="Download multiple files in Workspace">
-        <parameter name="testData" value="testserver/project/workspace/downloadFilesTestData.xml"/>
+    <test name="Delete file from Document list">
+        <parameter name="testData" value="/project/publicationspace/discontinuePublishedFileTestData.xml"/>
         <classes>
-            <class name="dk.byggeweb.project.workspace.files.download.DownloadFiles"/>
+            <class name="dk.byggeweb.project.publicationspace.files.delete.DiscontinueFile"/>
         </classes>
     </test>
 

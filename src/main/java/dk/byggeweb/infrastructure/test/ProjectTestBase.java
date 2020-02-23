@@ -28,7 +28,7 @@ public abstract class ProjectTestBase extends TestBase {
     @Parameters("testData")
     @BeforeClass
     public void launchProject(String testData) {
-        data = getXmlObject(testData, ProjectTestDataModel.class);
+        data = getXmlObject(getEnv() + testData, ProjectTestDataModel.class);
         GeneralSteps.loginAsVerifiedUser(data.getUserName(), data.getPassword(), data.getName());
         GeneralSteps.launchProject(data.getProjectLink());
         projectHomePage = new ProjectHomePage(data.getProjectName());
@@ -54,14 +54,29 @@ public abstract class ProjectTestBase extends TestBase {
         }
     }
 
-    public void uploadFileIfMNotPresentInDocumentListFolder(String documentListName, String folderName, String filePath, String fileName) {
-        psFolderSteps.navigateToFolderInDocumentList(documentListName, folderName);
+    public void uploadFileIfMNotPresentInDocumentListFolder(String filePath, String fileName) {
+        try {
+            psFileSteps.verifyFileIsPresent(fileName);
+        } catch (com.codeborne.selenide.ex.ElementNotFound e) {
+            psFileSteps.publishFileFromLocalMachine(filePath, fileName);
+            psFileSteps.verifyFileIsPresent(fileName);
+        }
     }
 
     public void deleteFileIfPresentInDocumentListFolder(String fileName) {
         while (true) {
             try {
                 psFileSteps.deleteFile(fileName);
+            } catch (com.codeborne.selenide.ex.ElementNotFound e) {
+                break;
+            }
+        }
+    }
+
+    public void deleteDiscontinuedFileIfPresentInDocumentListFolder(String fileName) {
+        while (true) {
+            try {
+                psFileSteps.deleteDiscontinuedFile(fileName);
             } catch (com.codeborne.selenide.ex.ElementNotFound e) {
                 break;
             }

@@ -5,6 +5,7 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import dk.byggeweb.infrastructure.environment.EnvironmentProperties;
 import dk.byggeweb.infrastructure.test.testdata.JaxbDataReader;
+import lombok.Getter;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.BeforeClass;
@@ -17,12 +18,23 @@ import java.nio.file.Paths;
 @Listeners(TestListener.class)
 public abstract class TestBase {
 
-    public String outputDirectory = EnvironmentProperties.getInstance().getProperty("outputDirectory");
+    @Getter
+    private String outputDirectory = EnvironmentProperties.getInstance().getProperty("outputDirectory");
 
-    @Parameters("baseUrl")
+    @Getter
+    private String env;
+
+    @Parameters("environment")
     @BeforeClass
-    public void setUp(String baseUrl) {
-        Configuration.baseUrl = baseUrl;
+    public void setUp(String environment) {
+        env = environment;
+        if (environment.equals("production")) {
+            Configuration.baseUrl = EnvironmentProperties.getInstance().getProperty("prodBaseUrl");
+        }
+        if (environment.equals("testserver")) {
+            Configuration.baseUrl = EnvironmentProperties.getInstance().getProperty("testBaseUrl");
+        }
+
         Configuration.browser = EnvironmentProperties.getInstance().getProperty("browser");
         Configuration.headless = EnvironmentProperties.getInstance().getBooleanProperty("headless");
         Configuration.timeout = EnvironmentProperties.getInstance().getIntProperty("defaultTimeout");

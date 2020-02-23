@@ -12,9 +12,7 @@ public class DeleteFile extends ProjectTestBase {
     public void prepareData() {
         projectHomePage.navigateToWorkspaceModule();
         wsFolderSteps.navigateToFolder(data.getFolderName());
-        wsFileSteps.enhancedUploadSingleFile(getAbsolutePath(data.getFileToUploadPath()));
-        wsFileSteps.closeEditFileInformationPopup();
-        wsFileSteps.verifyFileIsPresent(data.getTestFileName());
+        uploadFileIfNotPresentInWorkspaceFolder(getAbsolutePath(data.getFileToUploadPath()), data.getTestFileName());
     }
 
     @Test(description = "Delete file permanently")

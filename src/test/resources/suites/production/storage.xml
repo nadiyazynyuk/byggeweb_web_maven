@@ -1,111 +1,125 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="Byggeweb Project UI tests">
-        <parameter name="baseUrl" value="https://byggeweb.dk/controller?cmd=company7.login.form&amp;language=English"/>
+    <parameter name="environment" value="production"/>
 
 <!--    <test name="Workspace enhanced upload single file tests">-->
-<!--        <parameter name="testData" value="production/storage/enhancedUploadSingleFileTestData.xml"/>-->
+<!--        <parameter name="testData" value="/storage/enhancedUploadSingleFileTestData.xml"/>-->
 <!--        <classes>-->
 <!--            <class name="dk.byggeweb.project.workspace.files.upload.EnhancedUploadSingleFile"/>-->
 <!--        </classes>-->
 <!--    </test>-->
 
 <!--    <test name="Workspace standard upload single file tests">-->
-<!--        <parameter name="testData" value="production/storage/standardUploadSingleFileTestData.xml"/>-->
+<!--        <parameter name="testData" value="/storage/standardUploadSingleFileTestData.xml"/>-->
 <!--        <classes>-->
 <!--            <class name="dk.byggeweb.project.workspace.files.upload.StandardUploadSingleFile"/>-->
 <!--        </classes>-->
 <!--    </test>-->
 
 <!--    <test name="Workspace transfer single file tests">-->
-<!--        <parameter name="testData" value="production/storage/transferFileTestData.xml"/>-->
+<!--        <parameter name="testData" value="/storage/transferFileTestData.xml"/>-->
 <!--        <classes>-->
 <!--            <class name="dk.byggeweb.project.workspace.files.upload.TransferSingleFile"/>-->
 <!--        </classes>-->
 <!--    </test>-->
 
 <!--    <test name="Workspace open file version test">-->
-<!--        <parameter name="testData" value="production/storage/openFileVersionTestData.xml"/>-->
+<!--        <parameter name="testData" value="/storage/openFileVersionTestData.xml"/>-->
 <!--        <classes>-->
 <!--            <class name="dk.byggeweb.project.workspace.files.open.OpenFileVersion"/>-->
 <!--        </classes>-->
 <!--    </test>-->
 
 <!--    <test name="Delete file from Workspace">-->
-<!--        <parameter name="testData" value="production/storage/deleteFileTestData.xml"/>-->
+<!--        <parameter name="testData" value="/storage/deleteFileTestData.xml"/>-->
 <!--        <classes>-->
 <!--            <class name="dk.byggeweb.project.workspace.files.delete.DeleteFile"/>-->
 <!--        </classes>-->
 <!--    </test>-->
 
 <!--    <test name="Recycle file from Workspace">-->
-<!--        <parameter name="testData" value="production/storage/recycleFileTestData.xml"/>-->
+<!--        <parameter name="testData" value="/storage/recycleFileTestData.xml"/>-->
 <!--        <classes>-->
 <!--            <class name="dk.byggeweb.project.workspace.files.delete.DeleteFileViaRecycleBin"/>-->
 <!--        </classes>-->
 <!--    </test>-->
 
 <!--    <test name="Restore recycled file from Workspace">-->
-<!--        <parameter name="testData" value="production/storage/restoreRecycledFileTestData.xml"/>-->
+<!--        <parameter name="testData" value="/storage/restoreRecycledFileTestData.xml"/>-->
 <!--        <classes>-->
 <!--            <class name="dk.byggeweb.project.workspace.files.delete.RestoreFileFromRecycleBin"/>-->
 <!--        </classes>-->
 <!--    </test>-->
 
 <!--    <test name="Move file to another folder in Workspace">-->
-<!--        <parameter name="testData" value="production/storage/moveFileTestData.xml"/>-->
+<!--        <parameter name="testData" value="/storage/moveFileTestData.xml"/>-->
 <!--        <classes>-->
 <!--            <class name="dk.byggeweb.project.workspace.files.update.MoveFile"/>-->
 <!--        </classes>-->
 <!--    </test>-->
 
 <!--    <test name="Copy file to another folder in Workspace">-->
-<!--        <parameter name="testData" value="production/storage/copyFileTestData.xml"/>-->
+<!--        <parameter name="testData" value="/storage/copyFileTestData.xml"/>-->
 <!--        <classes>-->
 <!--            <class name="dk.byggeweb.project.workspace.files.update.CopyFile"/>-->
 <!--        </classes>-->
 <!--    </test>-->
 
 <!--    <test name="Download single file in Workspace">-->
-<!--        <parameter name="testData" value="production/storage/downloadFileTestData.xml"/>-->
+<!--        <parameter name="testData" value="/storage/downloadFileTestData.xml"/>-->
 <!--        <classes>-->
 <!--            <class name="dk.byggeweb.project.workspace.files.download.DownloadFile"/>-->
 <!--        </classes>-->
 <!--    </test>-->
 
 <!--    <test name="Download multiple files in Workspace">-->
-<!--        <parameter name="testData" value="production/storage/downloadFilesTestData.xml"/>-->
+<!--        <parameter name="testData" value="/storage/downloadFilesTestData.xml"/>-->
 <!--        <classes>-->
 <!--            <class name="dk.byggeweb.project.workspace.files.download.DownloadFiles"/>-->
 <!--        </classes>-->
 <!--    </test>-->
 
-    <test name="Publish new file from Workspace">
-        <parameter name="testData" value="production/storage/publishNewFileTestData.xml"/>
-        <classes>
-            <class name="dk.byggeweb.project.workspace.files.publish.PublishFile"/>
-        </classes>
-    </test>
+<!--    <test name="Publish new file from Workspace">-->
+<!--        <parameter name="testData" value="/storage/publishNewFileTestData.xml"/>-->
+<!--        <classes>-->
+<!--            <class name="dk.byggeweb.project.workspace.files.publish.PublishFile"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 
 <!--    <test name="Publish new file version from Workspace">-->
-<!--        <parameter name="testData" value="production/storage/publishNewFileVersionTestData.xml"/>-->
+<!--        <parameter name="testData" value="/storage/publishNewFileVersionTestData.xml"/>-->
 <!--        <classes>-->
 <!--            <class name="dk.byggeweb.project.workspace.files.publish.PublishNewFileVersion"/>-->
 <!--        </classes>-->
 <!--    </test>-->
 
 <!--    <test name="Publish new file from Local Machine into Publication space">-->
-<!--        <parameter name="testData" value="production/storage/publishNewFileFromLocalMachineTestData.xml"/>-->
+<!--        <parameter name="testData" value="/storage/publishNewFileFromLocalMachineTestData.xml"/>-->
 <!--        <classes>-->
 <!--            <class name="dk.byggeweb.project.publicationspace.files.publish.PublishNewFileFromLocalMachine"/>-->
 <!--        </classes>-->
 <!--    </test>-->
 
 <!--    <test name="Publish new file version from Local Machine into Publication space">-->
-<!--        <parameter name="testData" value="production/storage/publishNewFileVersionFromLocalMachineTestData.xml"/>-->
+<!--        <parameter name="testData" value="/storage/publishNewFileVersionFromLocalMachineTestData.xml"/>-->
 <!--        <classes>-->
 <!--            <class name="dk.byggeweb.project.publicationspace.files.publish.PublishNewFileVersionFromLocalMachine"/>-->
 <!--        </classes>-->
 <!--    </test>-->
+
+<!--    <test name="Delete file from Document list">-->
+<!--        <parameter name="testData" value="/storage/deletePublishedFileTestData.xml"/>-->
+<!--        <classes>-->
+<!--            <class name="dk.byggeweb.project.publicationspace.files.delete.DeleteFile"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="Discontinue file in Document list">
+        <parameter name="testData" value="/storage/discontinuePublishedFileTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.files.delete.DiscontinueFile"/>
+        </classes>
+    </test>
 
 </suite>
