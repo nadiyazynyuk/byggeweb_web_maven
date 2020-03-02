@@ -102,6 +102,11 @@ public class GeneralSteps {
         }
     }
 
+    public static void deleteFileFromDirectory(String fileName, String outputDirectory) {
+        File file = new File(outputDirectory + "/" + fileName);
+        if (file.exists()) file.delete();
+    }
+
     public static boolean isFilePresentInDirectory(String fileName, String outputDirectory) {
         boolean result = false;
         File directory = new File(outputDirectory);

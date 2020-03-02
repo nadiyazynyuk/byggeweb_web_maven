@@ -6,8 +6,6 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import java.io.File;
-
 public class DownloadFile extends ProjectTestBase {
 
     // https://itwofm.atlassian.net/browse/TSB-30
@@ -17,7 +15,7 @@ public class DownloadFile extends ProjectTestBase {
         projectHomePage.navigateToWorkspaceModule();
         wsFolderSteps.navigateToFolder(data.getFolderName());
         uploadFileIfNotPresentInWorkspaceFolder(data.getFileToUploadPath(), data.getTestFileName());
-        GeneralSteps.clearOutputDirectory(new File(getAbsolutePath(getOutputDirectory())));
+        GeneralSteps.deleteFileFromDirectory(data.getTestFileName(), getAbsolutePath(getOutputDirectory()));
     }
 
     @Test(description = "Download single file")

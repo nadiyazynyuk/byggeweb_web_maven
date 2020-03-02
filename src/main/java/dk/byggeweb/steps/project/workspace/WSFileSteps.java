@@ -25,17 +25,30 @@ public class WSFileSteps {
         new WSFileInformationPanel(fileName);
     }
 
+//    ---> old implementation without embedded upload popup <---
+//    @Step("Enhanced upload file")
+//    public void enhancedUploadSingleFile(String file) {
+//        WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
+//        wsFolderContentPanel.getFileUploadButton().click();
+//        String winHandleBefore = WebDriverRunner.getWebDriver().getWindowHandle();
+//        wsFolderContentPanel.switchToNewWindow();
+//        FileUploadPopup fileUploadPopup = new FileUploadPopup();
+//        fileUploadPopup.switchToEnhancedUploadTab();
+//        FileEnhancedUploadTab fileEnhancedUploadTab = new FileEnhancedUploadTab();
+//        fileEnhancedUploadTab.dropFile(file);
+//        WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
+//    }
+
     @Step("Enhanced upload file")
     public void enhancedUploadSingleFile(String file) {
         WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
         wsFolderContentPanel.getFileUploadButton().click();
-        String winHandleBefore = WebDriverRunner.getWebDriver().getWindowHandle();
-        wsFolderContentPanel.switchToNewWindow();
         FileUploadPopup fileUploadPopup = new FileUploadPopup();
+        wsFolderContentPanel.switchToFrame(fileUploadPopup.getUploadFileIFrame());
         fileUploadPopup.switchToEnhancedUploadTab();
         FileEnhancedUploadTab fileEnhancedUploadTab = new FileEnhancedUploadTab();
         fileEnhancedUploadTab.dropFile(file);
-        WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
+        wsFolderContentPanel.switchToParentFrame();
     }
 
     @Step("Standard upload file")

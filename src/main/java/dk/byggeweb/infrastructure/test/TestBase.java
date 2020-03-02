@@ -22,22 +22,23 @@ public abstract class TestBase {
     private String outputDirectory = EnvironmentProperties.getInstance().getProperty("outputDirectory");
 
     @Getter
-    private String env;
+    private String environment;
 
     @Parameters("environment")
     @BeforeClass
-    public void setUp(String environment) {
-        env = environment;
-        if (environment.equals("production")) {
+    public void setUp(String env) {
+        environment = env;
+        if (env.equals("production")) {
             Configuration.baseUrl = EnvironmentProperties.getInstance().getProperty("prodBaseUrl");
+            Configuration.timeout = EnvironmentProperties.getInstance().getIntProperty("prodTimeout");
         }
-        if (environment.equals("testserver")) {
+        if (env.equals("testserver")) {
             Configuration.baseUrl = EnvironmentProperties.getInstance().getProperty("testBaseUrl");
+            Configuration.timeout = EnvironmentProperties.getInstance().getIntProperty("testTimeout");
         }
 
         Configuration.browser = EnvironmentProperties.getInstance().getProperty("browser");
         Configuration.headless = EnvironmentProperties.getInstance().getBooleanProperty("headless");
-        Configuration.timeout = EnvironmentProperties.getInstance().getIntProperty("defaultTimeout");
 
         setOutputDirectory(getAbsolutePath(outputDirectory));
 

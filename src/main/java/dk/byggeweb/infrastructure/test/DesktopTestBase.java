@@ -14,7 +14,7 @@ public abstract class DesktopTestBase extends TestBase {
     @Parameters("testData")
     @BeforeClass
     public void login(String testData) {
-        data = getXmlObject(getEnv() + testData, DesktopTestDataModel.class);
+        data = getXmlObject(getEnvironment() + testData, DesktopTestDataModel.class);
         GeneralSteps.loginAsVerifiedUser(data.getUserName(), data.getPassword(), data.getName());
         homePage = new HomePage(data.getName());
     }

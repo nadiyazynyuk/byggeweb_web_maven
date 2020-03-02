@@ -1,12 +1,12 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="One test">
-    <parameter name="environment" value="production"/>
+<!--    <parameter name="environment" value="testserver"/>-->
 
-    <test name="Delete file from Document list">
-        <parameter name="testData" value="/project/publicationspace/discontinuePublishedFileTestData.xml"/>
+    <test name="Workspace enhanced upload single file tests">
+        <parameter name="testData" value="/project/workspace/enhancedUploadSingleFileTestData.xml"/>
         <classes>
-            <class name="dk.byggeweb.project.publicationspace.files.delete.DiscontinueFile"/>
+            <class name="dk.byggeweb.project.workspace.files.upload.EnhancedUploadSingleFile"/>
         </classes>
     </test>
 

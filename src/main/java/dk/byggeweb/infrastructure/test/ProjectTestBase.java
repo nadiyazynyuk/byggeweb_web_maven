@@ -28,7 +28,7 @@ public abstract class ProjectTestBase extends TestBase {
     @Parameters("testData")
     @BeforeClass
     public void launchProject(String testData) {
-        data = getXmlObject(getEnv() + testData, ProjectTestDataModel.class);
+        data = getXmlObject(getEnvironment() + testData, ProjectTestDataModel.class);
         GeneralSteps.loginAsVerifiedUser(data.getUserName(), data.getPassword(), data.getName());
         GeneralSteps.launchProject(data.getProjectLink());
         projectHomePage = new ProjectHomePage(data.getProjectName());
