@@ -1,6 +1,7 @@
 package dk.byggeweb.steps.project.publicationspace;
 
 import com.codeborne.selenide.WebDriverRunner;
+import dk.byggeweb.objects.project.common.modals.FileDownloadPopup;
 import dk.byggeweb.objects.project.common.modals.FileEnhancedUploadTab;
 import dk.byggeweb.objects.project.common.modals.FileUploadPopup;
 import dk.byggeweb.objects.project.publicationspace.modals.PSFileDeletePopup;
@@ -8,9 +9,11 @@ import dk.byggeweb.objects.project.publicationspace.modals.PSFileInformationEdit
 import dk.byggeweb.objects.project.publicationspace.modals.PSFilePublishPopup;
 import dk.byggeweb.objects.project.publicationspace.panels.PSFileInformationPanel;
 import dk.byggeweb.objects.project.publicationspace.panels.PSFolderContentPanel;
+import dk.byggeweb.steps.GeneralSteps;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 
 public class PSFileSteps {
 
@@ -76,6 +79,27 @@ public class PSFileSteps {
         psFolderContentPanel.switchToNewWindow();
         PSFileDeletePopup fileDeletePopup = new PSFileDeletePopup();
         fileDeletePopup.deleteFilePermanently();
+        psFolderContentPanel.switchToLastTab();
+    }
+
+    @Step("Download file")
+    public void downloadFile(String fileName) {
+        selectFile(fileName);
+        new PSFolderContentPanel().getFileDownloadButton().click();
+    }
+
+
+    @Step("Download all files from the folder")
+    public void generateDownloadFilesLink(String fileName) {
+        selectFile(fileName);
+        PSFolderContentPanel psFolderContentPanel = new PSFolderContentPanel();
+        GeneralSteps.selectAll();
+        psFolderContentPanel.getFileDownloadButton().click();
+        psFolderContentPanel.switchToNewWindow();
+        FileDownloadPopup fileDownloadPopup = new FileDownloadPopup();
+        fileDownloadPopup.getOkButton().click();
+        fileDownloadPopup.getDownloadLink().shouldBe(visible);
+        fileDownloadPopup.getCancelButton().click();
         psFolderContentPanel.switchToLastTab();
     }
 

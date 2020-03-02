@@ -1,10 +1,7 @@
 package dk.byggeweb.steps.project.workspace;
 
 import com.codeborne.selenide.WebDriverRunner;
-import dk.byggeweb.objects.project.common.modals.FileEnhancedUploadTab;
-import dk.byggeweb.objects.project.common.modals.FileStandardUploadTab;
-import dk.byggeweb.objects.project.common.modals.FileTransferalUploadTab;
-import dk.byggeweb.objects.project.common.modals.FileUploadPopup;
+import dk.byggeweb.objects.project.common.modals.*;
 import dk.byggeweb.objects.project.workspace.modals.*;
 import dk.byggeweb.objects.project.workspace.panels.WSFileInformationPanel;
 import dk.byggeweb.objects.project.workspace.panels.WSFolderContentPanel;
@@ -90,10 +87,10 @@ public class WSFileSteps {
         GeneralSteps.selectAll();
         wsFolderContentPanel.getFileDownloadButton().click();
         wsFolderContentPanel.switchToNewWindow();
-        WSFileDownloadPopup wsFileDownloadPopup = new WSFileDownloadPopup();
-        wsFileDownloadPopup.getOkButton().click();
-        wsFileDownloadPopup.getDownloadLink().shouldBe(visible);
-        wsFileDownloadPopup.getCancelButton().click();
+        FileDownloadPopup fileDownloadPopup = new FileDownloadPopup();
+        fileDownloadPopup.getOkButton().click();
+        fileDownloadPopup.getDownloadLink().shouldBe(visible);
+        fileDownloadPopup.getCancelButton().click();
         wsFolderContentPanel.switchToLastTab();
     }
 

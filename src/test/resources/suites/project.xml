@@ -159,4 +159,18 @@
         </classes>
     </test>
 
+    <test name="Download single file from Document list">
+        <parameter name="testData" value="/project/publicationspace/downloadPublishedFileTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.files.download.DownloadFile"/>
+        </classes>
+    </test>
+
+    <test name="Download multiple files from Document list">
+        <parameter name="testData" value="/project/publicationspace/downloadPublishedFilesTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.files.download.DownloadFiles"/>
+        </classes>
+    </test>
+
 </suite>

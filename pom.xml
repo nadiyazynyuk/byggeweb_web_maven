@@ -30,9 +30,9 @@
                 <version>${maven.surefire.version}</version>
                 <configuration>
                     <suiteXmlFiles>
-<!--                        <suiteXmlFile>src/test/resources/suites/testserver/desktop.xml</suiteXmlFile>-->
-<!--                        <suiteXmlFile>src/test/resources/suites/testserver/project.xml</suiteXmlFile>-->
-                        <suiteXmlFile>src/test/resources/suites/testserver/one_test.xml</suiteXmlFile>
+<!--                        <suiteXmlFile>src/test/resources/suites/desktop.xml</suiteXmlFile>-->
+<!--                        <suiteXmlFile>src/test/resources/suites/project.xml</suiteXmlFile>-->
+                        <suiteXmlFile>src/test/resources/suites/one_test.xml</suiteXmlFile>
                         <!-- Suite file parameter from command line -->
 <!--                        <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>-->
                     </suiteXmlFiles>

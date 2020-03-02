@@ -16,7 +16,7 @@ public class DownloadFiles extends ProjectTestBase {
         uploadFileIfNotPresentInWorkspaceFolder(data.getFileToUploadPath2(), data.getTestFileName2());
     }
 
-    @Test(description = "Download multiple files (generate download files link)")
+    @Test(description = "Download multiple files (generate download files link) from Workspace folder")
     public void downloadFiles() {
         wsFileSteps.generateDownloadFilesLink(data.getTestFileName());
     }

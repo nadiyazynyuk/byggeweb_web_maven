@@ -18,7 +18,7 @@ public class DownloadFile extends ProjectTestBase {
         GeneralSteps.deleteFileFromDirectory(data.getTestFileName(), getAbsolutePath(getOutputDirectory()));
     }
 
-    @Test(description = "Download single file")
+    @Test(description = "Download single file from Workspace folder")
     public void downloadFile() {
         wsFileSteps.downloadFile(data.getTestFileName());
         GeneralSteps.waitForTheFileToDownload(data.getTestFileName(), getAbsolutePath(getOutputDirectory()));
