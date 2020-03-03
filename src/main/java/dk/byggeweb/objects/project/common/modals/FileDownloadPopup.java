@@ -1,6 +1,7 @@
 package dk.byggeweb.objects.project.common.modals;
 
 import com.codeborne.selenide.SelenideElement;
+import dk.byggeweb.objects.project.ModalBase;
 import lombok.Getter;
 
 import static com.codeborne.selenide.Selectors.byXpath;

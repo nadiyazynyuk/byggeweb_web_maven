@@ -2,7 +2,7 @@ package dk.byggeweb.objects.project.publicationspace.modals;
 
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
-import dk.byggeweb.objects.project.common.modals.ModalBase;
+import dk.byggeweb.objects.project.ModalBase;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selectors.byXpath;

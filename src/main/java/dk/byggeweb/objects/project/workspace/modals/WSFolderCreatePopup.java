@@ -1,12 +1,13 @@
 package dk.byggeweb.objects.project.workspace.modals;
 
 import com.codeborne.selenide.SelenideElement;
+import dk.byggeweb.objects.project.ModalBase;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 
-public class WSFolderCreatePopup extends WSModalBase {
+public class WSFolderCreatePopup extends ModalBase {
 
     private SelenideElement folderNameInput = $(byXpath("//input[@name='directoryname']"));
 

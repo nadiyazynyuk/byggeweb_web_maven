@@ -1,4 +1,4 @@
-package dk.byggeweb.objects.project.common.modals;
+package dk.byggeweb.objects.project;
 
 import com.codeborne.selenide.SelenideElement;
 import lombok.Getter;

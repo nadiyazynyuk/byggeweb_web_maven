@@ -1,12 +1,13 @@
 package dk.byggeweb.objects.project.workspace.modals;
 
 import com.codeborne.selenide.SelenideElement;
+import dk.byggeweb.objects.project.ModalBase;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 
-public class WSFileLockPopup extends WSModalBase {
+public class WSFileLockPopup extends ModalBase {
 
     private SelenideElement commentArea = $(byXpath("//textarea[@name='comment']"));
 

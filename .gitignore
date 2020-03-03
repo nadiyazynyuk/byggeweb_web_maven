@@ -7,6 +7,7 @@
 .gradle/
 .project
 .settings/
+.allure/
 bin/
 out/
 build/

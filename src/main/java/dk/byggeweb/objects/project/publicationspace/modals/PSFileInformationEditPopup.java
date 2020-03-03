@@ -1,7 +1,7 @@
 package dk.byggeweb.objects.project.publicationspace.modals;
 
 import com.codeborne.selenide.SelenideElement;
-import dk.byggeweb.objects.project.common.modals.ModalBase;
+import dk.byggeweb.objects.project.ModalBase;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byXpath;

@@ -1,12 +1,13 @@
 package dk.byggeweb.objects.project.workspace.modals;
 
 import com.codeborne.selenide.SelenideElement;
+import dk.byggeweb.objects.project.ModalBase;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 
-public class WSFileMovePopup extends WSModalBase {
+public class WSFileMovePopup extends ModalBase {
 
     private SelenideElement getFolderByName(String name) {
         return $(byXpath("//td[@class='foldername']/a[contains(text(), '" + name + "')]"));
