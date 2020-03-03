@@ -37,7 +37,7 @@ public class PublicationSpaceNodesPanel extends ProjectHomePage {
         new PSDocumentListsContentPanel();
     }
 
-    @Step("Navigate to Document lists")
+    @Step("Navigate to Version sets")
     public void navigateToVersionSets() {
         versionSetsNode.click();
         new PSVersionSetsContentPanel();

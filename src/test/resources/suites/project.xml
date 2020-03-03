@@ -9,6 +9,7 @@
             <class name="dk.byggeweb.project.navigation.BasicNavigation"/>
             <class name="dk.byggeweb.project.navigation.WorkspaceNavigation"/>
             <class name="dk.byggeweb.project.navigation.PublicationSpaceNavigation"/>
+            <class name="dk.byggeweb.project.navigation.DistributionSpaceNavigation"/>
         </classes>
     </test>
 

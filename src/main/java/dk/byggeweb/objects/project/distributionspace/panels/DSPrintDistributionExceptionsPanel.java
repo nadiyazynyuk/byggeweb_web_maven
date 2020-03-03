@@ -6,11 +6,11 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 
-public class VersionSetsContentPanel extends DistributionSpaceContentPanel {
+public class DSPrintDistributionExceptionsPanel extends DistributionSpaceContentPanel {
 
-    private SelenideElement panelTitle = $(byXpath("//div[contains(@class, 'x-title-text x-title-text-default') and contains(text(), 'Versions sets overview')]"));
+    private SelenideElement panelTitle = $(byXpath("//div[contains(@class, 'x-title-text x-title-text-default') and contains(text(), 'Print distribution')]"));
 
-    public VersionSetsContentPanel() {
+    public DSPrintDistributionExceptionsPanel() {
         panelTitle.shouldBe(visible);
     }
 }
