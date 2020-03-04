@@ -10,6 +10,11 @@
             <class name="dk.byggeweb.project.navigation.WorkspaceNavigation"/>
             <class name="dk.byggeweb.project.navigation.PublicationSpaceNavigation"/>
             <class name="dk.byggeweb.project.navigation.DistributionSpaceNavigation"/>
+            <class name="dk.byggeweb.project.navigation.CommunicationNavigation"/>
+            <class name="dk.byggeweb.project.navigation.ProjectInformationNavigation"/>
+            <class name="dk.byggeweb.project.navigation.ProjectAdministrationNavigation"/>
+            <class name="dk.byggeweb.project.navigation.LogNavigation"/>
+            <class name="dk.byggeweb.project.navigation.PersonalOverviewsNavigation"/>
         </classes>
     </test>
 

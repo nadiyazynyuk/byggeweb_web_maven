@@ -2,6 +2,7 @@ package dk.byggeweb.objects.project.personaloverviews.panels;
 
 import com.codeborne.selenide.SelenideElement;
 import dk.byggeweb.objects.project.ProjectHomePage;
+import io.qameta.allure.Step;
 import lombok.Getter;
 
 import static com.codeborne.selenide.Condition.visible;
@@ -16,6 +17,30 @@ public class PersonalOverviewsNodesPanel extends ProjectHomePage {
     private SelenideElement printOrdersNode = $(byXpath("//td[contains(@class, 'WMP_132')]"));
     private SelenideElement userLogNode = $(byXpath("//td[contains(@class, 'WMP_133')]"));
     private SelenideElement backupOrdersNode = $(byXpath("//td[contains(@class, 'WMP_134')]"));
+
+    @Step("Navigate to Project settings")
+    public void navigateToProjectSettings() {
+        projectSettingsNode.click();
+        new POProjectSettingsContentPanel();
+    }
+
+    @Step("Navigate to Print orders")
+    public void navigateToPrintOrders() {
+        printOrdersNode.click();
+        new POPrintOrdersContentPanel();
+    }
+
+    @Step("Navigate to User log")
+    public void navigateToUserLog() {
+        userLogNode.click();
+        new POUserLogContentPanel();
+    }
+
+    @Step("Navigate to Backup Orders")
+    public void navigateToBackupOrders() {
+        backupOrdersNode.click();
+        new POBackupOrdersContentPanel();
+    }
 
     public PersonalOverviewsNodesPanel() {
         personalOverviewsParentNode.shouldBe(visible);

@@ -2,6 +2,7 @@ package dk.byggeweb.objects.project.projectadministration.panels;
 
 import com.codeborne.selenide.SelenideElement;
 import dk.byggeweb.objects.project.ProjectHomePage;
+import io.qameta.allure.Step;
 import lombok.Getter;
 
 import static com.codeborne.selenide.Condition.visible;
@@ -18,6 +19,42 @@ public class ProjectAdministrationNodesPanel extends ProjectHomePage {
     private SelenideElement printOrdersNode = $(byXpath("//td[contains(@class, 'WMP_96')]"));
     private SelenideElement groupsNode = $(byXpath("//td[contains(@class, 'WMP_99')]"));
     private SelenideElement usersNode = $(byXpath("//td[contains(@class, 'WMP_101')]"));
+
+    @Step("Navigate to System Information")
+    public void navigateToSystemInformation() {
+        systemInformationNode.click();
+        new PASystemInformationContentPanel();
+    }
+
+    @Step("Navigate to Approval")
+    public void navigateToApproval() {
+        approvalNode.click();
+        new PAApprovalContentPanel();
+    }
+
+    @Step("Navigate to Backup orders")
+    public void navigateToBackupOrders() {
+        backupOrdersNode.click();
+        new PABackupOrdersContentPanel();
+    }
+
+    @Step("Navigate to Print orders")
+    public void navigateToPrintOrders() {
+        printOrdersNode.click();
+        new PAPrintOrdersContentPanel();
+    }
+
+    @Step("Navigate to Groups")
+    public void navigateToGroups() {
+        groupsNode.click();
+        new PAGroupsContentPanel();
+    }
+
+    @Step("Navigate to Users")
+    public void navigateToUsers() {
+        usersNode.click();
+        new PAUsersContentPanel();
+    }
 
     public ProjectAdministrationNodesPanel() {
         projectAdministrationParentNode.shouldBe(visible);
