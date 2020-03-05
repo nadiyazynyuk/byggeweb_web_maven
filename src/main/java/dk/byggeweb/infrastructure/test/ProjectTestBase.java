@@ -18,7 +18,8 @@ public abstract class ProjectTestBase extends TestBase {
     public WSFolderSteps wsFolderSteps = new WSFolderSteps();
     public WSFileSteps wsFileSteps = new WSFileSteps();
     public WSRecycleBinSteps wsRecycleBinSteps = new WSRecycleBinSteps();
-    public WSMonitoredFilesSteps wsMonitoredFilesSteps = new WSMonitoredFilesSteps();
+    public WSMonitorFilesSteps wsMonitorFilesSteps = new WSMonitorFilesSteps();
+    public WSMonitorFoldersSteps wsMonitorFoldersSteps = new WSMonitorFoldersSteps();
     public WSFileInformationSteps wsFileInformationSteps = new WSFileInformationSteps();
 
     public PSFolderSteps psFolderSteps = new PSFolderSteps();

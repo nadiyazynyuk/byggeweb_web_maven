@@ -109,6 +109,13 @@
         </classes>
     </test>
 
+    <test name="Start/stop folder monitoring test">
+        <parameter name="testData" value="/project/workspace/monitorFolderTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.workspace.folders.MonitorFolder"/>
+        </classes>
+    </test>
+
     <test name="Download single file in Workspace">
         <parameter name="testData" value="/project/workspace/downloadFileTestData.xml"/>
         <classes>

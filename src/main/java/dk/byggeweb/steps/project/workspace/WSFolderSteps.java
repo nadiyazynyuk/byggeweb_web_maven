@@ -3,6 +3,7 @@ package dk.byggeweb.steps.project.workspace;
 import com.codeborne.selenide.WebDriverRunner;
 import dk.byggeweb.objects.project.workspace.modals.WSFolderCreatePopup;
 import dk.byggeweb.objects.project.workspace.modals.WSFolderDeletePopup;
+import dk.byggeweb.objects.project.workspace.modals.WSMonitorFolderPopup;
 import dk.byggeweb.objects.project.workspace.panels.WSFolderContentPanel;
 import dk.byggeweb.objects.project.workspace.panels.WSFolderInformationPanel;
 import io.qameta.allure.Step;
@@ -12,6 +13,7 @@ import static com.codeborne.selenide.Condition.text;
 
 @Log4j
 public class WSFolderSteps {
+
     @Step("Select folder")
     public void navigateToFolder(String name) {
         WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
@@ -60,6 +62,18 @@ public class WSFolderSteps {
         log.info("Folder was deleted");
         WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
         new WSFolderInformationPanel(parentFolderName);
+    }
+
+    @Step("Start folder monitoring")
+    public void startMonitorFolder() {
+        String winHandleBefore = WebDriverRunner.getWebDriver().getWindowHandle();
+        WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
+        wsFolderContentPanel.getMonitorFolderButton().click();
+        wsFolderContentPanel.switchToNewWindow();
+        WSMonitorFolderPopup wsMonitorFolderPopup = new WSMonitorFolderPopup();
+        wsMonitorFolderPopup.getOkButton().click();
+        wsMonitorFolderPopup.getCloseButton().click();
+        WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
     }
 
     @Step("Verify folder is present in the list")
