@@ -4,7 +4,9 @@ import dk.byggeweb.infrastructure.test.ProjectTestBase;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class QuickSearch extends ProjectTestBase {
+public class QuickSearchFile extends ProjectTestBase {
+
+    // https://itwofm.atlassian.net/browse/TSB-44
 
     @BeforeClass
     public void prepareData() {

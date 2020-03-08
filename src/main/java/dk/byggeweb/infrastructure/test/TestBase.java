@@ -8,6 +8,7 @@ import dk.byggeweb.infrastructure.test.testdata.JaxbDataReader;
 import lombok.Getter;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
@@ -44,6 +45,14 @@ public abstract class TestBase {
 
         Selenide.open("");
         WebDriverRunner.getWebDriver().manage().window().setSize(new Dimension(1600, 1200));
+    }
+
+    @AfterClass
+    public void tearDown() {
+        if (WebDriverRunner.getWebDriver() != null) {
+            WebDriverRunner.getWebDriver().close();
+            WebDriverRunner.getWebDriver().quit();
+        }
     }
 
     protected String getAbsolutePath(String propertiesPath) {
