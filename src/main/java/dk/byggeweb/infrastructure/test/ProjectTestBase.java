@@ -3,6 +3,7 @@ package dk.byggeweb.infrastructure.test;
 import dk.byggeweb.infrastructure.test.testdata.model.ProjectTestDataModel;
 import dk.byggeweb.objects.project.ProjectHomePage;
 import dk.byggeweb.steps.GeneralSteps;
+import dk.byggeweb.steps.project.common.SearchSteps;
 import dk.byggeweb.steps.project.publicationspace.PSFileInformationSteps;
 import dk.byggeweb.steps.project.publicationspace.PSFileSteps;
 import dk.byggeweb.steps.project.publicationspace.PSFolderSteps;
@@ -25,6 +26,8 @@ public abstract class ProjectTestBase extends TestBase {
     public PSFolderSteps psFolderSteps = new PSFolderSteps();
     public PSFileSteps psFileSteps = new PSFileSteps();
     public PSFileInformationSteps psFileInformationSteps = new PSFileInformationSteps();
+
+    public SearchSteps searchSteps = new SearchSteps();
 
     @Parameters("testData")
     @BeforeClass

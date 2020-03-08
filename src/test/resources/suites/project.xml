@@ -130,6 +130,13 @@
         </classes>
     </test>
 
+    <test name="Quick search for file in Workspace">
+        <parameter name="testData" value="/project/workspace/quickSearchFileTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.workspace.files.search.QuickSearch"/>
+        </classes>
+    </test>
+
     <test name="Publish new file from Workspace">
         <parameter name="testData" value="/project/workspace/publishNewFileTestData.xml"/>
         <classes>

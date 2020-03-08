@@ -33,6 +33,7 @@ public class WorkspaceNodesPanel extends ProjectHomePage {
     private SelenideElement monitorFolderButton = $(byXpath("//span[@data-locator='locator-btn-watch_dir']"));
     private SelenideElement setFolderPermissionsButton = $(byXpath("//span[@data-locator='locator-btn-security_dir']"));
     private SelenideElement downloadFilesFromFolderButton = $(byXpath("//span[@data-locator='locator-btn-download_dir']"));
+    private SelenideElement quickSearchInput = $(byXpath("//input[contains(@id, 'textfield')]"));
 
     @Step("Select folder")
     public void navigateToFolder(String name) {
