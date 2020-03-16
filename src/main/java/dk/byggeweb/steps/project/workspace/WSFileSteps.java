@@ -1,6 +1,5 @@
 package dk.byggeweb.steps.project.workspace;
 
-import com.codeborne.selenide.WebDriverRunner;
 import dk.byggeweb.objects.project.common.modals.*;
 import dk.byggeweb.objects.project.workspace.modals.*;
 import dk.byggeweb.objects.project.workspace.panels.WSFileInformationPanel;
@@ -22,20 +21,6 @@ public class WSFileSteps {
         new WSFileInformationPanel(fileName);
     }
 
-//    ---> old implementation without embedded upload popup <---
-//    @Step("Enhanced upload file")
-//    public void enhancedUploadSingleFile(String file) {
-//        WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
-//        wsFolderContentPanel.getFileUploadButton().click();
-//        String winHandleBefore = WebDriverRunner.getWebDriver().getWindowHandle();
-//        wsFolderContentPanel.switchToNewWindow();
-//        FileUploadPopup fileUploadPopup = new FileUploadPopup();
-//        fileUploadPopup.switchToEnhancedUploadTab();
-//        FileEnhancedUploadTab fileEnhancedUploadTab = new FileEnhancedUploadTab();
-//        fileEnhancedUploadTab.dropFile(file);
-//        WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
-//    }
-
     @Step("Enhanced upload file")
     public void enhancedUploadSingleFile(String file) {
         WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
@@ -52,26 +37,24 @@ public class WSFileSteps {
     public void standardUploadSingleFile(String file) {
         WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
         wsFolderContentPanel.getFileUploadButton().click();
-        String winHandleBefore = WebDriverRunner.getWebDriver().getWindowHandle();
-        wsFolderContentPanel.switchToNewWindow();
         FileUploadPopup fileUploadPopup = new FileUploadPopup();
+        wsFolderContentPanel.switchToFrame(fileUploadPopup.getUploadFileIFrame());
         fileUploadPopup.switchToStandardUploadTab();
         FileStandardUploadTab fileStandardUploadTab = new FileStandardUploadTab();
         fileStandardUploadTab.selectFileToUpload(file);
-        WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
+        wsFolderContentPanel.switchToParentFrame();
     }
 
     @Step("Transferal upload file")
     public void transferalUploadSingleFile(String file) {
         WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
         wsFolderContentPanel.getFileUploadButton().click();
-        String winHandleBefore = WebDriverRunner.getWebDriver().getWindowHandle();
-        wsFolderContentPanel.switchToNewWindow();
         FileUploadPopup fileUploadPopup = new FileUploadPopup();
+        wsFolderContentPanel.switchToFrame(fileUploadPopup.getUploadFileIFrame());
         fileUploadPopup.switchToTransferalUploadTab();
         FileTransferalUploadTab fileTransferalUploadTab = new FileTransferalUploadTab();
         fileTransferalUploadTab.transferFileFromMyFolders(file);
-        WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
+        wsFolderContentPanel.switchToParentFrame();
     }
 
     @Step("Download file")

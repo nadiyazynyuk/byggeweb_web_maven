@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="Byggeweb Project UI tests" parallel="tests" thread-count="4">
-<!--    <parameter name="environment" value="production"/>-->
+<suite name="Byggeweb Project UI tests" parallel="tests" thread-count="1">
+<!--    <parameter name="environment" value="testserver"/>-->
 
     <test name="Project navigation tests">
         <parameter name="testData" value="/project/launchProjectTestData.xml"/>
@@ -127,6 +127,13 @@
         <parameter name="testData" value="/project/workspace/downloadFilesTestData.xml"/>
         <classes>
             <class name="dk.byggeweb.project.workspace.files.download.DownloadFiles"/>
+        </classes>
+    </test>
+
+    <test name="Download folder from Workspace">
+        <parameter name="testData" value="/project/workspace/downloadFolderTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.workspace.folders.DownloadFolder"/>
         </classes>
     </test>
 

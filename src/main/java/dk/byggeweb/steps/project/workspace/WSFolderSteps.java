@@ -3,6 +3,7 @@ package dk.byggeweb.steps.project.workspace;
 import com.codeborne.selenide.WebDriverRunner;
 import dk.byggeweb.objects.project.workspace.modals.WSFolderCreatePopup;
 import dk.byggeweb.objects.project.workspace.modals.WSFolderDeletePopup;
+import dk.byggeweb.objects.project.workspace.modals.WSFolderDownloadPopup;
 import dk.byggeweb.objects.project.workspace.modals.WSMonitorFolderPopup;
 import dk.byggeweb.objects.project.workspace.panels.WSFolderContentPanel;
 import dk.byggeweb.objects.project.workspace.panels.WSFolderInformationPanel;
@@ -10,6 +11,7 @@ import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 
 @Log4j
 public class WSFolderSteps {
@@ -75,6 +77,19 @@ public class WSFolderSteps {
         wsMonitorFolderPopup.getCloseButton().click();
         WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
     }
+
+    @Step("Download folder without subFolders")
+    public void generateDownloadFolderLink() {
+        WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
+        wsFolderContentPanel.getDownloadFilesFromFolderButton().click();
+        wsFolderContentPanel.switchToNewWindow();
+        WSFolderDownloadPopup wsFolderDownloadPopup = new WSFolderDownloadPopup();
+        wsFolderDownloadPopup.getOkButton().click();
+        wsFolderDownloadPopup.getDownloadLink().shouldBe(visible);
+        wsFolderDownloadPopup.getCancelButton().click();
+        wsFolderContentPanel.switchToLastTab();
+    }
+
 
     @Step("Verify folder is present in the list")
     public void verifyFolderIsPresent(String name) {

@@ -50,7 +50,6 @@ public abstract class TestBase {
     @AfterClass
     public void tearDown() {
         if (WebDriverRunner.getWebDriver() != null) {
-            WebDriverRunner.getWebDriver().close();
             WebDriverRunner.getWebDriver().quit();
         }
     }

@@ -32,9 +32,9 @@
                     <suiteXmlFiles>
 <!--                        <suiteXmlFile>src/test/resources/suites/desktop.xml</suiteXmlFile>-->
 <!--                        <suiteXmlFile>src/test/resources/suites/project.xml</suiteXmlFile>-->
-                        <suiteXmlFile>src/test/resources/suites/one_test.xml</suiteXmlFile>
+<!--                        <suiteXmlFile>src/test/resources/suites/one_test.xml</suiteXmlFile>-->
                         <!-- Suite file parameter from command line -->
-<!--                        <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>-->
+                        <suiteXmlFile>src/test/resources/suites/${suiteXmlFile}</suiteXmlFile>
                     </suiteXmlFiles>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
