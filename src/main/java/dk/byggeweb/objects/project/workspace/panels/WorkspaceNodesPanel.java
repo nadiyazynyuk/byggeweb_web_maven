@@ -2,6 +2,7 @@ package dk.byggeweb.objects.project.workspace.panels;
 
 import com.codeborne.selenide.SelenideElement;
 import dk.byggeweb.objects.project.ProjectHomePage;
+import dk.byggeweb.objects.project.versionsets.panels.VersionSetsOverviewPanel;
 import io.qameta.allure.Step;
 import lombok.Getter;
 import org.openqa.selenium.By;
@@ -49,8 +50,8 @@ public class WorkspaceNodesPanel extends ProjectHomePage {
 
     @Step("Navigate to Version sets")
     public void navigateToVersionSets() {
-        versionSetsNode.click();
-        new WSVersionSetsContentPanel();
+        versionSetsNode.doubleClick();
+        new VersionSetsOverviewPanel();
     }
 
     @Step("Navigate to Recycle bin")

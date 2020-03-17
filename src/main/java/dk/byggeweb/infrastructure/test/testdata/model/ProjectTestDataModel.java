@@ -107,4 +107,12 @@ public class ProjectTestDataModel {
     @Getter
     private String documentListFolderName;
 
+    @XmlElement
+    @Getter
+    private String createVersionSetName;
+
+    @XmlElement
+    @Getter
+    private String renameVersionSetName;
+
 }

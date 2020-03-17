@@ -2,6 +2,7 @@ package dk.byggeweb.objects.project.publicationspace.panels;
 
 import com.codeborne.selenide.SelenideElement;
 import dk.byggeweb.objects.project.ProjectHomePage;
+import dk.byggeweb.objects.project.versionsets.panels.VersionSetsOverviewPanel;
 import io.qameta.allure.Step;
 import lombok.Getter;
 import org.openqa.selenium.By;
@@ -40,7 +41,7 @@ public class PublicationSpaceNodesPanel extends ProjectHomePage {
     @Step("Navigate to Version sets")
     public void navigateToVersionSets() {
         versionSetsNode.click();
-        new PSVersionSetsContentPanel();
+        new VersionSetsOverviewPanel();
     }
 
     @Step("Navigate to Waiting for approval")

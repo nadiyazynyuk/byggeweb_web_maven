@@ -23,5 +23,6 @@ public class WSFolderContentPanel extends WorkspaceContentPanel {
         panelTitle.shouldHave(text(title));
     }
 
-    public WSFolderContentPanel(){}
+    public WSFolderContentPanel() {
+    }
 }

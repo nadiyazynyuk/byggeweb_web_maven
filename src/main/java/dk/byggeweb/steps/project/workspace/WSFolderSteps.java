@@ -49,7 +49,7 @@ public class WSFolderSteps {
         wsFolderCreatePopup.renameFolder(toFolderName);
         log.info("Folder " + fromFolderName + " was renamed to " + toFolderName);
         WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
-        new WSFolderContentPanel(); // TODO: => bug, after fix use constructor with name parameter
+        new WSFolderContentPanel(toFolderName);
     }
 
     @Step("Delete folder")
@@ -93,7 +93,7 @@ public class WSFolderSteps {
 
     @Step("Verify folder is present in the list")
     public void verifyFolderIsPresent(String name) {
-        WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel(); // TODO: => bug, after fix use constructor with name parameter
+        WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
         wsFolderContentPanel.getFolderByName(name).shouldHave(text(name));
     }
 

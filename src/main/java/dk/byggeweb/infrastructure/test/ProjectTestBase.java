@@ -7,6 +7,7 @@ import dk.byggeweb.steps.project.common.SearchSteps;
 import dk.byggeweb.steps.project.publicationspace.PSFileInformationSteps;
 import dk.byggeweb.steps.project.publicationspace.PSFileSteps;
 import dk.byggeweb.steps.project.publicationspace.PSFolderSteps;
+import dk.byggeweb.steps.project.versionsets.VersionSetsSteps;
 import dk.byggeweb.steps.project.workspace.*;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -28,6 +29,7 @@ public abstract class ProjectTestBase extends TestBase {
     public PSFileInformationSteps psFileInformationSteps = new PSFileInformationSteps();
 
     public SearchSteps searchSteps = new SearchSteps();
+    public VersionSetsSteps versionSetsSteps = new VersionSetsSteps();
 
     @Parameters("testData")
     @BeforeClass

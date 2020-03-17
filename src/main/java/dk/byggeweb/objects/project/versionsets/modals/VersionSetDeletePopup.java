@@ -1,15 +1,14 @@
-package dk.byggeweb.objects.project.workspace.modals;
+package dk.byggeweb.objects.project.versionsets.modals;
 
 import com.codeborne.selenide.WebDriverRunner;
 import dk.byggeweb.objects.project.ModalBase;
 import io.qameta.allure.Step;
 
-public class WSFolderDeletePopup extends ModalBase {
+public class VersionSetDeletePopup extends ModalBase {
 
-    @Step("Delete folder")
-    public void deleteFolder() {
+    @Step("Delete Version set")
+    public void deleteVersionSet() {
         getOkButton().click();
         WebDriverRunner.getWebDriver().switchTo().alert().accept();
     }
-
 }
