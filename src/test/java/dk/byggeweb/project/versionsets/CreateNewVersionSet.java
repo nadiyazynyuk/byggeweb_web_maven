@@ -11,7 +11,7 @@ public class CreateNewVersionSet extends ProjectTestBase {
     @BeforeClass
     public void deleteVersionSetIfExists() {
         projectHomePage.navigateToWorkspaceModule();
-        projectHomePage.getWorkspaceNodesPanel().navigateToVersionSets();
+        projectHomePage.getWorkspaceNodesPanel().openVersionSet();
 
         while (true) {
             try {
@@ -34,7 +34,6 @@ public class CreateNewVersionSet extends ProjectTestBase {
 
     @Test(description = "Create new version set")
     public void createVersionSet() {
-//        projectHomePage.getWorkspaceNodesPanel().navigateToVersionSets();
         versionSetsSteps.createVersionSet(data.getCreateVersionSetName());
         versionSetsSteps.verifyVersionSetIsPresent(data.getCreateVersionSetName());
     }

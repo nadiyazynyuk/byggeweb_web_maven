@@ -1,5 +1,6 @@
 package dk.byggeweb.steps.project.workspace;
 
+import com.codeborne.selenide.WebDriverRunner;
 import dk.byggeweb.objects.project.common.modals.*;
 import dk.byggeweb.objects.project.workspace.modals.*;
 import dk.byggeweb.objects.project.workspace.panels.WSFileInformationPanel;
@@ -145,12 +146,24 @@ public class WSFileSteps {
 
     @Step("Lock/Unlock file")
     public void lockFile(String fileName) {
+        String winHandleBefore = WebDriverRunner.getWebDriver().getWindowHandle();
         selectFile(fileName);
         WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
         wsFolderContentPanel.getFileLockButton().click();
         wsFolderContentPanel.switchToNewWindow();
         WSFileLockPopup wsFileLockPopup = new WSFileLockPopup();
         wsFileLockPopup.unlockFile();
+        WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
+    }
+
+    @Step("Add file to version set")
+    public void addFileToVersionSet(String filename, String versionSetName) {
+        selectFile(filename);
+        WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
+        wsFolderContentPanel.getFileAddToVersionSetButton().click();
+        wsFolderContentPanel.switchToNewWindow();
+        WSAddFileToVersionSetsPopup wsAddFileToVersionSetsPopup = new WSAddFileToVersionSetsPopup();
+        wsAddFileToVersionSetsPopup.addFileToVersionSet(versionSetName);
         wsFolderContentPanel.switchToLastTab();
     }
 

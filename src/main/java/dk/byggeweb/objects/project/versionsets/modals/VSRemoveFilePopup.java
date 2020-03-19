@@ -4,10 +4,10 @@ import com.codeborne.selenide.WebDriverRunner;
 import dk.byggeweb.objects.project.ModalBase;
 import io.qameta.allure.Step;
 
-public class VersionSetDeletePopup extends ModalBase {
+public class VSRemoveFilePopup extends ModalBase {
 
-    @Step("Delete Version set")
-    public void deleteVersionSet() {
+    @Step("Remove file")
+    public void removeFile() {
         getOkButton().click();
         WebDriverRunner.getWebDriver().switchTo().alert().accept();
     }

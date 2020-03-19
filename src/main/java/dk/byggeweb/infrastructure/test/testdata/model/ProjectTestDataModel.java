@@ -109,6 +109,10 @@ public class ProjectTestDataModel {
 
     @XmlElement
     @Getter
+    private String versionSetName;
+
+    @XmlElement
+    @Getter
     private String createVersionSetName;
 
     @XmlElement

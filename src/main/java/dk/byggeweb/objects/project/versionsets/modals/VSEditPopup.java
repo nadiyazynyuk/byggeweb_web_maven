@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 
-public class VersionSetEditPopup extends ModalBase {
+public class VSEditPopup extends ModalBase {
 
     private SelenideElement popupTitle = $(byXpath("//h1[contains(text(), 'Edit version set')]"));
 
@@ -23,7 +23,7 @@ public class VersionSetEditPopup extends ModalBase {
         getOkButton().click();
     }
 
-    public VersionSetEditPopup() {
+    public VSEditPopup() {
         popupTitle.shouldBe(visible);
     }
 }

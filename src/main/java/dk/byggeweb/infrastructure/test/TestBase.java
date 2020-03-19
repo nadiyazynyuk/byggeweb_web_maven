@@ -3,8 +3,10 @@ package dk.byggeweb.infrastructure.test;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
+import com.codeborne.selenide.logevents.SelenideLogger;
 import dk.byggeweb.infrastructure.environment.EnvironmentProperties;
 import dk.byggeweb.infrastructure.test.testdata.JaxbDataReader;
+import io.qameta.allure.selenide.AllureSelenide;
 import lombok.Getter;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -42,6 +44,8 @@ public abstract class TestBase {
         Configuration.headless = EnvironmentProperties.getInstance().getBooleanProperty("headless");
 
         setOutputDirectory(getAbsolutePath(outputDirectory));
+
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(false));
 
         Selenide.open("");
         WebDriverRunner.getWebDriver().manage().window().setSize(new Dimension(1600, 1200));

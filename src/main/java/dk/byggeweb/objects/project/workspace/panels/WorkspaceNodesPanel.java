@@ -50,6 +50,12 @@ public class WorkspaceNodesPanel extends ProjectHomePage {
 
     @Step("Navigate to Version sets")
     public void navigateToVersionSets() {
+        versionSetsNode.click();
+        new VersionSetsOverviewPanel();
+    }
+
+    @Step("Open Version sets")
+    public void openVersionSet() {
         versionSetsNode.doubleClick();
         new VersionSetsOverviewPanel();
     }

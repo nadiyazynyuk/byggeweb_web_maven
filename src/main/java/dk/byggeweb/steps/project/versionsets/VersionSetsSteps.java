@@ -1,9 +1,12 @@
 package dk.byggeweb.steps.project.versionsets;
 
 import com.codeborne.selenide.WebDriverRunner;
-import dk.byggeweb.objects.project.versionsets.modals.VersionSetCreatePopup;
-import dk.byggeweb.objects.project.versionsets.modals.VersionSetDeletePopup;
-import dk.byggeweb.objects.project.versionsets.modals.VersionSetEditPopup;
+import dk.byggeweb.objects.project.versionsets.modals.VSCreatePopup;
+import dk.byggeweb.objects.project.versionsets.modals.VSDeletePopup;
+import dk.byggeweb.objects.project.versionsets.modals.VSEditPopup;
+import dk.byggeweb.objects.project.versionsets.modals.VSRemoveFilePopup;
+import dk.byggeweb.objects.project.versionsets.panels.VSWorkspaceFileInformationPanel;
+import dk.byggeweb.objects.project.versionsets.panels.VSSpaceContentPanel;
 import dk.byggeweb.objects.project.versionsets.panels.VersionSetsContentPanel;
 import dk.byggeweb.objects.project.versionsets.panels.VersionSetsOverviewPanel;
 import io.qameta.allure.Step;
@@ -14,12 +17,46 @@ import static com.codeborne.selenide.Condition.text;
 @Log4j
 public class VersionSetsSteps {
 
+    @Step("Select file")
+    public void selectFileInWorkspace(String path, String name) {
+        new VSSpaceContentPanel().getFileByFolderAndName(path, name).click();
+        log.info("File " + name + " was selected");
+        new VSWorkspaceFileInformationPanel(name);
+    }
+
     @Step("Select version set")
     public void navigateToVersionSet(String name) {
         VersionSetsOverviewPanel versionSetsOverviewPanel = new VersionSetsOverviewPanel();
         versionSetsOverviewPanel.getVersionSetByName(name).click();
         log.info("Version set " + name + " was selected");
         new VersionSetsContentPanel(name);
+    }
+
+    @Step("Open version set")
+    public void openVersionSet(String name) {
+        VersionSetsOverviewPanel versionSetsOverviewPanel = new VersionSetsOverviewPanel();
+        versionSetsOverviewPanel.getVersionSetByName(name).doubleClick();
+        log.info("Version set " + name + " was opened");
+    }
+
+    @Step("Navigate to space in version set")
+    public void navigateToVersionSetSpace(String name) {
+        VersionSetsOverviewPanel versionSetsOverviewPanel = new VersionSetsOverviewPanel();
+        versionSetsOverviewPanel.getVersionSetByName(name).click();
+        log.info("Version set " + name + " was selected");
+        VersionSetsContentPanel versionSetsContentPanel = new VersionSetsContentPanel(name);
+        versionSetsContentPanel.getWorkspaceInVersionSet().click();
+        new VSSpaceContentPanel();
+    }
+
+    @Step("Open space in version set")
+    public void openVersionSetSpace(String name) {
+        VersionSetsOverviewPanel versionSetsOverviewPanel = new VersionSetsOverviewPanel();
+        versionSetsOverviewPanel.getVersionSetByName(name).doubleClick();
+        log.info("Version set " + name + " was opened");
+        VersionSetsContentPanel versionSetsContentPanel = new VersionSetsContentPanel(name);
+        versionSetsContentPanel.getWorkspaceInVersionSet().click();
+        new VSSpaceContentPanel();
     }
 
     @Step("Create new Version set")
@@ -29,8 +66,8 @@ public class VersionSetsSteps {
         versionSetsOverviewPanel.getNewVersionSetButton().click();
         log.info("Create Version set button was clicked");
         versionSetsOverviewPanel.switchToNewWindow();
-        VersionSetCreatePopup versionSetCreatePopup = new VersionSetCreatePopup();
-        versionSetCreatePopup.createVersionSet(createName);
+        VSCreatePopup vsCreatePopup = new VSCreatePopup();
+        vsCreatePopup.createVersionSet(createName);
         log.info("Version set " + createName + " was created");
         WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
         new VersionSetsContentPanel(createName);
@@ -43,8 +80,8 @@ public class VersionSetsSteps {
         versionSetsContentPanel.getEditVersionSetButton().click();
         log.info("Create Version set button was clicked");
         versionSetsContentPanel.switchToNewWindow();
-        VersionSetEditPopup versionSetEditPopup = new VersionSetEditPopup();
-        versionSetEditPopup.renameVersionSet(renameName);
+        VSEditPopup vsEditPopup = new VSEditPopup();
+        vsEditPopup.renameVersionSet(renameName);
         log.info("Version set " + createName + " was renamed to " + renameName);
         WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
         new VersionSetsContentPanel(renameName);
@@ -57,11 +94,23 @@ public class VersionSetsSteps {
         versionSetsContentPanel.getDeleteVersionSetButton().click();
         log.info("Delete Version set button was clicked");
         versionSetsContentPanel.switchToNewWindow();
-        VersionSetDeletePopup versionSetDeletePopup = new VersionSetDeletePopup();
-        versionSetDeletePopup.deleteVersionSet();
+        VSDeletePopup vsDeletePopup = new VSDeletePopup();
+        vsDeletePopup.deleteVersionSet();
         log.info("Version set was deleted");
         WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
         new VersionSetsOverviewPanel();
+    }
+
+    @Step("Remove file from version set")
+    public void removeFileFromVersionSet(String path, String name) {
+        String winHandleBefore = WebDriverRunner.getWebDriver().getWindowHandle();
+        selectFileInWorkspace(path, name);
+        VSSpaceContentPanel vsSpaceContentPanel = new VSSpaceContentPanel();
+        vsSpaceContentPanel.getRemoveFromVersionSetButton().click();
+        VSRemoveFilePopup vsRemoveFilePopup = new VSRemoveFilePopup();
+        vsSpaceContentPanel.switchToNewWindow();
+        vsRemoveFilePopup.removeFile();
+        WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
     }
 
     @Step("Verify version set is present in the list")
@@ -74,5 +123,17 @@ public class VersionSetsSteps {
     public void verifyVersionSetIsNotPresent(String name) {
         VersionSetsOverviewPanel versionSetsOverviewPanel = new VersionSetsOverviewPanel();
         versionSetsOverviewPanel.getVersionSetByName(name).shouldNotHave(text(name));
+    }
+
+    @Step("Verify file is present in version set")
+    public void verifyFileIsPresent(String path, String name) {
+        VSSpaceContentPanel vsSpaceContentPanel = new VSSpaceContentPanel();
+        vsSpaceContentPanel.getFileByFolderAndName(path, name).shouldHave(text(name));
+    }
+
+    @Step("Verify file is not present in version set")
+    public void verifyFileIsNotPresent(String path, String name) {
+        VSSpaceContentPanel vsSpaceContentPanel = new VSSpaceContentPanel();
+        vsSpaceContentPanel.getFileByFolderAndName(path, name).shouldNotHave(text(name));
     }
 }
