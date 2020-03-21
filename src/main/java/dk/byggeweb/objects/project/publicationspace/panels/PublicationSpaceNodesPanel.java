@@ -44,6 +44,12 @@ public class PublicationSpaceNodesPanel extends ProjectHomePage {
         new VersionSetsOverviewPanel();
     }
 
+    @Step("Open Version sets")
+    public void openVersionSets() {
+        versionSetsNode.doubleClick();
+        new VersionSetsOverviewPanel();
+    }
+
     @Step("Navigate to Waiting for approval")
     public void navigateToWaitingForApproval() {
         waitingForApprovalNode.click();

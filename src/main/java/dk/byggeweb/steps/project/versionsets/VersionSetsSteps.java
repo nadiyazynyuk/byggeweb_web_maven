@@ -5,10 +5,7 @@ import dk.byggeweb.objects.project.versionsets.modals.VSCreatePopup;
 import dk.byggeweb.objects.project.versionsets.modals.VSDeletePopup;
 import dk.byggeweb.objects.project.versionsets.modals.VSEditPopup;
 import dk.byggeweb.objects.project.versionsets.modals.VSRemoveFilePopup;
-import dk.byggeweb.objects.project.versionsets.panels.VSWorkspaceFileInformationPanel;
-import dk.byggeweb.objects.project.versionsets.panels.VSSpaceContentPanel;
-import dk.byggeweb.objects.project.versionsets.panels.VersionSetsContentPanel;
-import dk.byggeweb.objects.project.versionsets.panels.VersionSetsOverviewPanel;
+import dk.byggeweb.objects.project.versionsets.panels.*;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j;
 
@@ -17,11 +14,18 @@ import static com.codeborne.selenide.Condition.text;
 @Log4j
 public class VersionSetsSteps {
 
-    @Step("Select file")
+    @Step("Select file in Version set Workspace")
     public void selectFileInWorkspace(String path, String name) {
         new VSSpaceContentPanel().getFileByFolderAndName(path, name).click();
         log.info("File " + name + " was selected");
         new VSWorkspaceFileInformationPanel(name);
+    }
+
+    @Step("Select file in Version set Publication Space")
+    public void selectFileInPublicationSpace(String path, String name) {
+        new VSSpaceContentPanel().getFileByFolderAndName(path, name).click();
+        log.info("File " + name + " was selected");
+        new VSPublicationSpaceFileInformationPanel(name);
     }
 
     @Step("Select version set")
@@ -39,23 +43,47 @@ public class VersionSetsSteps {
         log.info("Version set " + name + " was opened");
     }
 
-    @Step("Navigate to space in version set")
-    public void navigateToVersionSetSpace(String name) {
+    @Step("Navigate to Workspace in version set")
+    public void navigateToVersionSetWorkspace(String name) {
         VersionSetsOverviewPanel versionSetsOverviewPanel = new VersionSetsOverviewPanel();
         versionSetsOverviewPanel.getVersionSetByName(name).click();
         log.info("Version set " + name + " was selected");
-        VersionSetsContentPanel versionSetsContentPanel = new VersionSetsContentPanel(name);
+        VersionSetsContentPanel versionSetsContentPanel = new VersionSetsContentPanel();
         versionSetsContentPanel.getWorkspaceInVersionSet().click();
+        log.info("Workspace in Version set " + name + " was selected");
         new VSSpaceContentPanel();
     }
 
-    @Step("Open space in version set")
-    public void openVersionSetSpace(String name) {
+    @Step("Navigate to Publication Space in version set")
+    public void navigateToVersionSetPublicationSpace(String name) {
+        VersionSetsOverviewPanel versionSetsOverviewPanel = new VersionSetsOverviewPanel();
+        versionSetsOverviewPanel.getVersionSetByName(name).click();
+        log.info("Version set " + name + " was selected");
+        VersionSetsContentPanel versionSetsContentPanel = new VersionSetsContentPanel();
+        versionSetsContentPanel.getPublicationSpaceInVersionSet().click();
+        log.info("Publication space in Version set " + name + " was selected");
+        new VSSpaceContentPanel();
+    }
+
+    @Step("Open Workspace in version set")
+    public void openVersionSetWorkspace(String name) {
         VersionSetsOverviewPanel versionSetsOverviewPanel = new VersionSetsOverviewPanel();
         versionSetsOverviewPanel.getVersionSetByName(name).doubleClick();
         log.info("Version set " + name + " was opened");
         VersionSetsContentPanel versionSetsContentPanel = new VersionSetsContentPanel(name);
         versionSetsContentPanel.getWorkspaceInVersionSet().click();
+        log.info("Workspace in Version set " + name + " was opened");
+        new VSSpaceContentPanel();
+    }
+
+    @Step("Open Publication Space in version set")
+    public void openVersionSetPublicationSpace(String name) {
+        VersionSetsOverviewPanel versionSetsOverviewPanel = new VersionSetsOverviewPanel();
+        versionSetsOverviewPanel.getVersionSetByName(name).doubleClick();
+        log.info("Version set " + name + " was opened");
+        VersionSetsContentPanel versionSetsContentPanel = new VersionSetsContentPanel(name);
+        versionSetsContentPanel.getPublicationSpaceInVersionSet().click();
+        log.info("Publication space in Version set " + name + " was opened");
         new VSSpaceContentPanel();
     }
 
@@ -101,10 +129,22 @@ public class VersionSetsSteps {
         new VersionSetsOverviewPanel();
     }
 
-    @Step("Remove file from version set")
-    public void removeFileFromVersionSet(String path, String name) {
+    @Step("Remove file from Version set Workspace")
+    public void removeFileFromWorkspaceVersionSet(String path, String name) {
         String winHandleBefore = WebDriverRunner.getWebDriver().getWindowHandle();
         selectFileInWorkspace(path, name);
+        VSSpaceContentPanel vsSpaceContentPanel = new VSSpaceContentPanel();
+        vsSpaceContentPanel.getRemoveFromVersionSetButton().click();
+        VSRemoveFilePopup vsRemoveFilePopup = new VSRemoveFilePopup();
+        vsSpaceContentPanel.switchToNewWindow();
+        vsRemoveFilePopup.removeFile();
+        WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
+    }
+
+    @Step("Remove file from Version set Publication Space")
+    public void removeFileFromPublicationSpaceVersionSet(String path, String name) {
+        String winHandleBefore = WebDriverRunner.getWebDriver().getWindowHandle();
+        selectFileInPublicationSpace(path, name);
         VSSpaceContentPanel vsSpaceContentPanel = new VSSpaceContentPanel();
         vsSpaceContentPanel.getRemoveFromVersionSetButton().click();
         VSRemoveFilePopup vsRemoveFilePopup = new VSRemoveFilePopup();

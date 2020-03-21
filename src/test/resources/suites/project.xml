@@ -221,4 +221,11 @@
         </classes>
     </test>
 
+    <test name="[VersionSet][Publication space] Add and remove file from Version set tests">
+        <parameter name="testData" value="/project/versionsets/addRemoveFileFromPublicationSpaceTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.versionsets.AddRemoveFileFromPublicationSpace"/>
+        </classes>
+    </test>
+
 </suite>

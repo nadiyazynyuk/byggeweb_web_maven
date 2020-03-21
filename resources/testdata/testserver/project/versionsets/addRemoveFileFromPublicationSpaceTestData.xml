@@ -6,9 +6,10 @@
     <name>Selenium Bot</name>
     <projectLink>https://testserver.byggeweb.dk/controller?cmd=company7.project.login&amp;project=2763</projectLink>
     <projectName>AutoLegoFactory</projectName>
-    <folderName>Project</folderName>
+    <documentListName>Document List A</documentListName>
+    <documentListFolderName>Folder A.1</documentListFolderName>
     <versionSetName>Version 1 Set</versionSetName>
-    <testFileName>TestAddRemoveWSVersionSetFile</testFileName>
-    <fileToUploadPath>resources/testfiles/TestAddRemoveWSVersionSetFile.pptx</fileToUploadPath>
+    <testFileName>TestAddRemovePSVersionSetFile</testFileName>
+    <fileToUploadPath>resources/testfiles/TestAddRemovePSVersionSetFile.pptx</fileToUploadPath>
 
 </testdata>

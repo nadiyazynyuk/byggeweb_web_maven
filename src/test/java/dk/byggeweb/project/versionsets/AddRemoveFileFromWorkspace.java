@@ -11,18 +11,18 @@ public class AddRemoveFileFromWorkspace extends ProjectTestBase {
     @BeforeClass
     public void prepareData() {
         projectHomePage.navigateToWorkspaceModule();
-        projectHomePage.getWorkspaceNodesPanel().openVersionSet();
-        versionSetsSteps.openVersionSetSpace(data.getVersionSetName());
+        projectHomePage.getWorkspaceNodesPanel().openVersionSets();
+        versionSetsSteps.openVersionSetWorkspace(data.getVersionSetName());
 
         while (true) {
             try {
-                versionSetsSteps.removeFileFromVersionSet(data.getFolderName(), data.getTestFileName());
+                versionSetsSteps.removeFileFromWorkspaceVersionSet(data.getFolderName(), data.getTestFileName());
             } catch (com.codeborne.selenide.ex.ElementNotFound e) {
                 break;
             }
         }
 
-        projectHomePage.getWorkspaceNodesPanel().navigateToFolder(data.getFolderName());
+        wsFolderSteps.navigateToFolder(data.getFolderName());
         uploadFileIfNotPresentInWorkspaceFolder(data.getFileToUploadPath(), data.getTestFileName());
     }
 
@@ -30,27 +30,14 @@ public class AddRemoveFileFromWorkspace extends ProjectTestBase {
     public void addFileToVersionSet() {
         wsFileSteps.addFileToVersionSet(data.getTestFileName(), data.getVersionSetName());
         projectHomePage.getWorkspaceNodesPanel().navigateToVersionSets();
-        versionSetsSteps.navigateToVersionSetSpace(data.getVersionSetName());
+        versionSetsSteps.navigateToVersionSetWorkspace(data.getVersionSetName());
         versionSetsSteps.verifyFileIsPresent(data.getFolderName(), data.getTestFileName());
     }
 
     @Test(dependsOnMethods = "addFileToVersionSet", description = "Remove file from version set")
     public void removeFileFromVersionSet() {
-        versionSetsSteps.removeFileFromVersionSet(data.getFolderName(), data.getTestFileName());
+        versionSetsSteps.removeFileFromWorkspaceVersionSet(data.getFolderName(), data.getTestFileName());
         versionSetsSteps.verifyFileIsNotPresent(data.getFolderName(), data.getTestFileName());
     }
 
 }
-
-
-/*
-pre:
-file is not present in version set
-file is present in workspace
-
-test:
-add file to version set
-verify is present in version set
-remove file from version set
-verify file is not present in version set
- */

@@ -162,8 +162,8 @@ public class WSFileSteps {
         WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
         wsFolderContentPanel.getFileAddToVersionSetButton().click();
         wsFolderContentPanel.switchToNewWindow();
-        WSAddFileToVersionSetsPopup wsAddFileToVersionSetsPopup = new WSAddFileToVersionSetsPopup();
-        wsAddFileToVersionSetsPopup.addFileToVersionSet(versionSetName);
+        FileAddToVersionSetPopup fileAddToVersionSetPopup = new FileAddToVersionSetPopup();
+        fileAddToVersionSetPopup.addFileToVersionSet(versionSetName);
         wsFolderContentPanel.switchToLastTab();
     }
 

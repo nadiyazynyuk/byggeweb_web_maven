@@ -1,6 +1,7 @@
 package dk.byggeweb.steps.project.publicationspace;
 
 import com.codeborne.selenide.WebDriverRunner;
+import dk.byggeweb.objects.project.common.modals.FileAddToVersionSetPopup;
 import dk.byggeweb.objects.project.common.modals.FileDownloadPopup;
 import dk.byggeweb.objects.project.common.modals.FileEnhancedUploadTab;
 import dk.byggeweb.objects.project.common.modals.FileUploadPopup;
@@ -11,15 +12,18 @@ import dk.byggeweb.objects.project.publicationspace.panels.PSFileInformationPane
 import dk.byggeweb.objects.project.publicationspace.panels.PSFolderContentPanel;
 import dk.byggeweb.steps.GeneralSteps;
 import io.qameta.allure.Step;
+import lombok.extern.log4j.Log4j;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 
+@Log4j
 public class PSFileSteps {
 
     @Step("Select file")
     public void selectFile(String fileName) {
         new PSFolderContentPanel().getFileByName(fileName).click();
+        log.info("File " + fileName + " was selected");
         new PSFileInformationPanel(fileName);
     }
 
@@ -88,7 +92,6 @@ public class PSFileSteps {
         new PSFolderContentPanel().getFileDownloadButton().click();
     }
 
-
     @Step("Download all files from the folder")
     public void generateDownloadFilesLink(String fileName) {
         selectFile(fileName);
@@ -100,6 +103,17 @@ public class PSFileSteps {
         fileDownloadPopup.getOkButton().click();
         fileDownloadPopup.getDownloadLink().shouldBe(visible);
         fileDownloadPopup.getCancelButton().click();
+        psFolderContentPanel.switchToLastTab();
+    }
+
+    @Step("Add file to version set")
+    public void addFileToVersionSet(String filename, String versionSetName) {
+        selectFile(filename);
+        PSFolderContentPanel psFolderContentPanel = new PSFolderContentPanel();
+        psFolderContentPanel.getFileAddToVersionSetButton().click();
+        psFolderContentPanel.switchToNewWindow();
+        FileAddToVersionSetPopup fileAddToVersionSetPopup = new FileAddToVersionSetPopup();
+        fileAddToVersionSetPopup.addFileToVersionSet(versionSetName);
         psFolderContentPanel.switchToLastTab();
     }
 
