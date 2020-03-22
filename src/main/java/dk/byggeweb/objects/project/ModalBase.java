@@ -14,5 +14,8 @@ public abstract class ModalBase {
     private SelenideElement nextButton = $(byXpath("//input[@value='Next']"));
     private SelenideElement closeButton = $(byXpath("//input[contains(@value, 'Close')]"));
     private SelenideElement deleteButton = $(byXpath("//input[@value='Delete']"));
+    private SelenideElement createButton = $(byXpath("//input[@value='Create']"));
+    private SelenideElement yesButton = $(byXpath("//input[contains(@value, 'Yes')]"));
+    private SelenideElement noButton = $(byXpath("//input[contains(@value, 'No')]"));
 
 }

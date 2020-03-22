@@ -16,4 +16,5 @@ public class PSFileInformationEditPopup extends ModalBase {
     public PSFileInformationEditPopup(String fileName) {
         getFileByName(fileName).shouldBe(visible);
     }
+
 }

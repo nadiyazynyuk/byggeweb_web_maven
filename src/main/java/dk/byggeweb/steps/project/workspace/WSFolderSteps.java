@@ -26,7 +26,7 @@ public class WSFolderSteps {
 
     @Step("Create folder")
     public void createFolder(String parentFolderName, String createFolderName) {
-        String winHandleBefore = WebDriverRunner.getWebDriver().getWindowHandle();
+            String winHandleBefore = WebDriverRunner.getWebDriver().getWindowHandle();
         WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel(parentFolderName);
         wsFolderContentPanel.getCreateFolderButton().click();
         log.info("Create Folder button was clicked");

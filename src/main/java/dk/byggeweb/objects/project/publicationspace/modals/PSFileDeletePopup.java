@@ -28,5 +28,4 @@ public class PSFileDeletePopup extends ModalBase {
         getCloseButton().click();
     }
 
-
 }

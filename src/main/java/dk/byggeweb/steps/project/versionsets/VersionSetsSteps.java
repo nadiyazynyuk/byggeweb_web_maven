@@ -3,7 +3,6 @@ package dk.byggeweb.steps.project.versionsets;
 import com.codeborne.selenide.WebDriverRunner;
 import dk.byggeweb.objects.project.versionsets.modals.VSCreatePopup;
 import dk.byggeweb.objects.project.versionsets.modals.VSDeletePopup;
-import dk.byggeweb.objects.project.versionsets.modals.VSEditPopup;
 import dk.byggeweb.objects.project.versionsets.modals.VSRemoveFilePopup;
 import dk.byggeweb.objects.project.versionsets.panels.*;
 import io.qameta.allure.Step;
@@ -108,8 +107,8 @@ public class VersionSetsSteps {
         versionSetsContentPanel.getEditVersionSetButton().click();
         log.info("Create Version set button was clicked");
         versionSetsContentPanel.switchToNewWindow();
-        VSEditPopup vsEditPopup = new VSEditPopup();
-        vsEditPopup.renameVersionSet(renameName);
+        VSCreatePopup vsCreatePopup = new VSCreatePopup();
+        vsCreatePopup.renameVersionSet(renameName);
         log.info("Version set " + createName + " was renamed to " + renameName);
         WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
         new VersionSetsContentPanel(renameName);

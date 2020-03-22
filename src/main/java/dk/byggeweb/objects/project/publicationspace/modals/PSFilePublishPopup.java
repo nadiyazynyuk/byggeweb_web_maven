@@ -12,4 +12,5 @@ public class PSFilePublishPopup extends ModalBase {
 
     private SelenideElement localMachineItem = $(byXpath("//span[text()='Local machine']"));
     private SelenideElement workspaceItem = $(byXpath("//span[text()='Workspace']"));
+
 }

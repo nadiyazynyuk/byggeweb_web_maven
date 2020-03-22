@@ -1,7 +1,7 @@
 package dk.byggeweb.steps.project.workspace;
 
 import com.codeborne.selenide.WebDriverRunner;
-import dk.byggeweb.objects.project.workspace.modals.WSEditMonitorFolderPopup;
+import dk.byggeweb.objects.project.workspace.modals.WSMonitorFolderEditPopup;
 import dk.byggeweb.objects.project.workspace.panels.WSMonitoredFoldersContentPanel;
 import io.qameta.allure.Step;
 
@@ -15,8 +15,8 @@ public class WSMonitorFoldersSteps {
         WSMonitoredFoldersContentPanel panel = new WSMonitoredFoldersContentPanel();
         panel.getFolderByName(name).click();
         panel.switchToNewWindow();
-        WSEditMonitorFolderPopup wsEditMonitorFolderPopup = new WSEditMonitorFolderPopup();
-        wsEditMonitorFolderPopup.getDeleteButton().click();
+        WSMonitorFolderEditPopup wsMonitorFolderEditPopup = new WSMonitorFolderEditPopup();
+        wsMonitorFolderEditPopup.getDeleteButton().click();
         WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
     }
 

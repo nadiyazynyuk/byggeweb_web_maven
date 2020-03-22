@@ -6,6 +6,8 @@ import org.testng.annotations.Test;
 
 public class AddRemoveFileFromPublicationSpace extends ProjectTestBase {
 
+    // https://itwofm.atlassian.net/browse/TSB-50
+
     @BeforeClass
     public void prepareData() {
         projectHomePage.navigateToPublicationSpace();

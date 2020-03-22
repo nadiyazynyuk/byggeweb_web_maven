@@ -165,6 +165,13 @@
         </classes>
     </test>
 
+    <test name="[Publication space] Create/update/delete new empty Document list">
+        <parameter name="testData" value="/project/publicationspace/createNewEmptyListTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.lists.CreateNewEmptyList"/>
+        </classes>
+    </test>
+
     <test name="[Publication space] Publish new file from Local Machine into Publication space test">
         <parameter name="testData" value="/project/publicationspace/publishNewFileFromLocalMachineTestData.xml"/>
         <classes>

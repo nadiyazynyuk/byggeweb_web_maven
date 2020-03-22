@@ -32,6 +32,11 @@ public class PublicationSpaceNodesPanel extends ProjectHomePage {
         return $(By.xpath("//span[@class='x-tree-node-text ' and contains(text(), '" + name + "')]"));
     }
 
+    private SelenideElement createDocumentListButton = $(byXpath("//span[@data-locator='locator-btn-doclist_create']"));
+    private SelenideElement editDocumentListButton = $(byXpath("//span[@data-locator='locator-btn-doclist_edit']"));
+    private SelenideElement deleteDocumentListButton = $(byXpath("//span[@data-locator='locator-btn-doclist_delete']"));
+
+
     @Step("Navigate to Root Document list")
     public void navigateToRootDocumentList() {
         rootDocumentListNode.click();

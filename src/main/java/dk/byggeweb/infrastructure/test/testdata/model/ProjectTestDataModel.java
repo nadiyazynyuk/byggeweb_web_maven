@@ -105,6 +105,14 @@ public class ProjectTestDataModel {
 
     @XmlElement
     @Getter
+    private String createListName;
+
+    @XmlElement
+    @Getter
+    private String renameListName;
+
+    @XmlElement
+    @Getter
     private String documentListFolderName;
 
     @XmlElement

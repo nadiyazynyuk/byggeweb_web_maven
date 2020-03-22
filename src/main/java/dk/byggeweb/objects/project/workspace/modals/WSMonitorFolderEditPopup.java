@@ -7,11 +7,11 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 
-public class WSEditMonitorFolderPopup extends ModalBase {
+public class WSMonitorFolderEditPopup extends ModalBase {
 
     private SelenideElement popupTitle = $(byXpath("//h1[text()='Edit folder monitoring']"));
 
-    public WSEditMonitorFolderPopup() {
+    public WSMonitorFolderEditPopup() {
         popupTitle.shouldBe(visible);
     }
 }
