@@ -9,7 +9,7 @@ public class CreateNewEmptyList extends ProjectTestBase {
     // https://itwofm.atlassian.net/browse/TSB-51
 
     @BeforeClass
-    public void deleteListIfExists() {
+    public void prepareData() {
         projectHomePage.navigateToPublicationSpace();
 
         while (true) {

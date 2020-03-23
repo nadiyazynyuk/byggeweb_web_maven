@@ -1,11 +1,10 @@
 package dk.byggeweb.steps.project.publicationspace;
 
+import dk.byggeweb.objects.project.publicationspace.modals.PSFolderCreatePopup;
+import dk.byggeweb.objects.project.publicationspace.modals.PSFolderDeletePopup;
 import dk.byggeweb.objects.project.publicationspace.modals.PSListCreatePopup;
 import dk.byggeweb.objects.project.publicationspace.modals.PSListDeletePopup;
-import dk.byggeweb.objects.project.publicationspace.panels.PSDocumentListsContentPanel;
-import dk.byggeweb.objects.project.publicationspace.panels.PSFolderContentPanel;
-import dk.byggeweb.objects.project.publicationspace.panels.PSSingleDocumentListContentPanel;
-import dk.byggeweb.objects.project.publicationspace.panels.PublicationSpaceNodesPanel;
+import dk.byggeweb.objects.project.publicationspace.panels.*;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j;
 
@@ -20,6 +19,22 @@ public class PSFolderSteps {
         publicationSpaceNodesPanel.getDocumentListNodeByName(documentListName).click();
         log.info("Document list " + documentListName + " was selected");
         new PSSingleDocumentListContentPanel();
+    }
+
+    @Step("Open Document list")
+    public void openDocumentList(String documentListName) {
+        PublicationSpaceNodesPanel publicationSpaceNodesPanel = new PublicationSpaceNodesPanel();
+        publicationSpaceNodesPanel.getDocumentListNodeByName(documentListName).doubleClick();
+        log.info("Document list " + documentListName + " was opened");
+        new PSSingleDocumentListContentPanel();
+    }
+
+    @Step("Navigate to the Folder inside Document list")
+    public void navigateToFolderInsideDocumentList(String folderName) {
+        PSFolderContentPanel psFolderContentPanel = new PSFolderContentPanel();
+        psFolderContentPanel.getDocumentListNodeByName(folderName).click();
+        log.info("Folder " + folderName + " was selected");
+        new PSFolderContentPanel(folderName);
     }
 
     @Step("Navigate to the Folder in Document list")
@@ -54,7 +69,7 @@ public class PSFolderSteps {
         psSingleDocumentListContentPanel.switchToNewWindow();
         PSListCreatePopup psListCreatePopup = new PSListCreatePopup();
         psListCreatePopup.renameDocumentList(renameListName);
-        log.info("Document list " + renameListName + " was renamed");
+        log.info("Document list was renamed to " + renameListName);
         psSingleDocumentListContentPanel.switchToLastTab();
     }
 
@@ -71,7 +86,41 @@ public class PSFolderSteps {
         new PSDocumentListsContentPanel();
     }
 
+    @Step("Create folder in Document list")
+    public void createFolder(String createFolderName) {
+        PSSingleDocumentListContentPanel psSingleDocumentListContentPanel = new PSSingleDocumentListContentPanel();
+        psSingleDocumentListContentPanel.getCreateFolderButton().click();
+        log.info("Create folder button was clicked");
+        psSingleDocumentListContentPanel.switchToNewWindow();
+        PSFolderCreatePopup psFolderCreatePopup = new PSFolderCreatePopup();
+        psFolderCreatePopup.createFolder(createFolderName);
+        log.info("Folder " + createFolderName + " was created");
+        psSingleDocumentListContentPanel.switchToLastTab();
+    }
 
+    @Step("Rename folder in Document list")
+    public void renameFolder(String renameFolderName) {
+        PSSingleDocumentListContentPanel psSingleDocumentListContentPanel = new PSSingleDocumentListContentPanel();
+        psSingleDocumentListContentPanel.getRenameFolderButton().click();
+        log.info("Rename folder button was clicked");
+        psSingleDocumentListContentPanel.switchToNewWindow();
+        PSFolderCreatePopup psFolderCreatePopup = new PSFolderCreatePopup();
+        psFolderCreatePopup.renameFolder(renameFolderName);
+        log.info("Folder was renamed to " + renameFolderName);
+        psSingleDocumentListContentPanel.switchToLastTab();
+    }
+
+    @Step("Delete folder in Document list")
+    public void deleteFolder() {
+        PSSingleDocumentListContentPanel psSingleDocumentListContentPanel = new PSSingleDocumentListContentPanel();
+        psSingleDocumentListContentPanel.getDeleteFolderButton().click();
+        log.info("Delete folder button was clicked");
+        psSingleDocumentListContentPanel.switchToNewWindow();
+        PSFolderDeletePopup psFolderDeletePopup = new PSFolderDeletePopup();
+        psFolderDeletePopup.deleteFolder();
+        log.info("Folder was deleted");
+        psSingleDocumentListContentPanel.switchToLastTab();
+    }
 
     @Step("Verify list is present")
     public void verifyListIsPresent(String name) {
@@ -81,17 +130,22 @@ public class PSFolderSteps {
 
     @Step("Verify list is not present")
     public void verifyListIsNotPresent(String name) {
-
+        PublicationSpaceNodesPanel publicationSpaceNodesPanel = new PublicationSpaceNodesPanel();
+        publicationSpaceNodesPanel.getDocumentListNodeByName(name).shouldNotHave(text(name));
     }
 
     @Step("Verify folder is present")
     public void verifyFolderIsPresent(String name) {
-
+        PublicationSpaceNodesPanel publicationSpaceNodesPanel = new PublicationSpaceNodesPanel();
+        publicationSpaceNodesPanel.getDocumentListNodeByName(name).shouldHave(text(name));
+//        PublicationSpaceContentPanel publicationSpaceContentPanel = new PublicationSpaceContentPanel();
+//        publicationSpaceContentPanel.getDocumentListNodeByName(name).shouldHave(text(name));
     }
 
     @Step("Verify folder is not present")
     public void verifyFolderIsNotPresent(String name) {
-
+        PublicationSpaceNodesPanel publicationSpaceNodesPanel = new PublicationSpaceNodesPanel();
+        publicationSpaceNodesPanel.getDocumentListNodeByName(name).shouldNotHave(text(name));
     }
 
 

@@ -9,7 +9,7 @@ public class CreateNewFolder extends ProjectTestBase {
     // https://itwofm.atlassian.net/browse/TSB-20
 
     @BeforeClass
-    public void deleteFolderIfExists() {
+    public void prepareData() {
         projectHomePage.navigateToWorkspaceModule();
         wsFolderSteps.navigateToFolder(data.getFolderName());
 
