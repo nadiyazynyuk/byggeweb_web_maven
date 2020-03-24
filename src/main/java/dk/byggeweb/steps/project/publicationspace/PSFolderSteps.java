@@ -1,9 +1,6 @@
 package dk.byggeweb.steps.project.publicationspace;
 
-import dk.byggeweb.objects.project.publicationspace.modals.PSFolderCreatePopup;
-import dk.byggeweb.objects.project.publicationspace.modals.PSFolderDeletePopup;
-import dk.byggeweb.objects.project.publicationspace.modals.PSListCreatePopup;
-import dk.byggeweb.objects.project.publicationspace.modals.PSListDeletePopup;
+import dk.byggeweb.objects.project.publicationspace.modals.*;
 import dk.byggeweb.objects.project.publicationspace.panels.*;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j;
@@ -35,6 +32,14 @@ public class PSFolderSteps {
         psFolderContentPanel.getDocumentListNodeByName(folderName).click();
         log.info("Folder " + folderName + " was selected");
         new PSFolderContentPanel(folderName);
+    }
+
+    @Step("Navigate to Information inside Document list")
+    public void navigateToInformation(String listName) {
+        PSFolderContentPanel psFolderContentPanel = new PSFolderContentPanel();
+        psFolderContentPanel.getDocumentListNodeByName("Information").click();
+        log.info("Information section of the Document list " + listName + " was selected");
+        new PSListInformationPanel(listName);
     }
 
     @Step("Navigate to the Folder in Document list")
@@ -122,6 +127,23 @@ public class PSFolderSteps {
         psSingleDocumentListContentPanel.switchToLastTab();
     }
 
+    @Step("Get Document list association status")
+    public boolean getListAssociationStatus(String listName) {
+        return new PSListInformationPanel(listName).isListAssociated(listName);
+    }
+
+    @Step("Add Document list association with Distribution list")
+    public void changeListAssociation(String distributionListName) {
+        PublicationSpaceContentPanel publicationSpaceContentPanel = new PublicationSpaceContentPanel();
+        publicationSpaceContentPanel.getAssociateDocumentListButton().click();
+        log.info("Associate distribution list button was clicked");
+        publicationSpaceContentPanel.switchToNewWindow();
+        PSListAssociatingPopup psListAssociatingPopup = new PSListAssociatingPopup();
+        psListAssociatingPopup.associateList(distributionListName);
+        log.info("Document list was associated with distribution list " + distributionListName);
+        publicationSpaceContentPanel.switchToLastTab();
+    }
+
     @Step("Verify list is present")
     public void verifyListIsPresent(String name) {
         PublicationSpaceNodesPanel publicationSpaceNodesPanel = new PublicationSpaceNodesPanel();
@@ -138,8 +160,6 @@ public class PSFolderSteps {
     public void verifyFolderIsPresent(String name) {
         PublicationSpaceNodesPanel publicationSpaceNodesPanel = new PublicationSpaceNodesPanel();
         publicationSpaceNodesPanel.getDocumentListNodeByName(name).shouldHave(text(name));
-//        PublicationSpaceContentPanel publicationSpaceContentPanel = new PublicationSpaceContentPanel();
-//        publicationSpaceContentPanel.getDocumentListNodeByName(name).shouldHave(text(name));
     }
 
     @Step("Verify folder is not present")

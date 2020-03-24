@@ -127,4 +127,8 @@ public class ProjectTestDataModel {
     @Getter
     private String renameVersionSetName;
 
+    @XmlElement
+    @Getter
+    private String distributionListName;
+
 }

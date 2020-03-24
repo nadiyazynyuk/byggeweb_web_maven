@@ -15,8 +15,7 @@ public class WSFolderContentPanel extends WorkspaceContentPanel {
     }
 
     public boolean isFileLocked(String name) {
-        WSFolderContentPanel wsFolderContentPanel = new WSFolderContentPanel();
-        return wsFolderContentPanel.getFileContainsLockIcon(name).isDisplayed();
+        return getFileContainsLockIcon(name).isDisplayed();
     }
 
     public WSFolderContentPanel(String title) {

@@ -179,6 +179,13 @@
         </classes>
     </test>
 
+    <test name="[Publication space] Associate Document list with Distribution list">
+        <parameter name="testData" value="/project/publicationspace/associateListTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.lists.AssociateList"/>
+        </classes>
+    </test>
+
     <test name="[Publication space] Publish new file from Local Machine into Publication space test">
         <parameter name="testData" value="/project/publicationspace/publishNewFileFromLocalMachineTestData.xml"/>
         <classes>

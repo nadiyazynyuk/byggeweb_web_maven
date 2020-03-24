@@ -27,7 +27,6 @@ public class CreateNewEmptyList extends ProjectTestBase {
                 psFolderSteps.deleteDocumentList();
             } catch (com.codeborne.selenide.ex.ElementNotFound e) {
                 break;
-
             }
         }
     }
