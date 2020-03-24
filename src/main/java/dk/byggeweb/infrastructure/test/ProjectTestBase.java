@@ -44,7 +44,7 @@ public abstract class ProjectTestBase extends TestBase {
         try {
             wsFileSteps.verifyFileIsPresent(fileName);
         } catch (com.codeborne.selenide.ex.ElementNotFound e) {
-            wsFileSteps.enhancedUploadSingleFile(getAbsolutePath(filePath));
+            wsFileSteps.standardUploadSingleFile(getAbsolutePath(filePath));
             wsFileSteps.closeEditFileInformationPopup();
             wsFileSteps.verifyFileIsPresent(fileName);
         }

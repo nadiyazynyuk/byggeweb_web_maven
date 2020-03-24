@@ -58,6 +58,17 @@ public class PSFileSteps {
         WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
     }
 
+    @Step("Publish file from Workspace")
+    public void publishFileFromWorkspace(String fileName, String folderName) {
+        PSFolderContentPanel psFolderContentPanel = new PSFolderContentPanel();
+        psFolderContentPanel.getFilePublishButton().click();
+        String winHandleBefore = WebDriverRunner.getWebDriver().getWindowHandle();
+        psFolderContentPanel.switchToNewWindow();
+        PSFilePublishPopup psFilePublishPopup = new PSFilePublishPopup();
+        psFilePublishPopup.publishFileFromWorkspaceFolder(folderName, fileName);
+        WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
+    }
+
     @Step("Select discontinued file")
     public void selectDiscontinuedFile(String fileName) {
         new PSFolderContentPanel().getDiscontinuedFileByName(fileName).click();
