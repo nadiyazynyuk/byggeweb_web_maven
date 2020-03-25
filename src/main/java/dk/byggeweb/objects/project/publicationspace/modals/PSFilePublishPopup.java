@@ -20,6 +20,7 @@ public class PSFilePublishPopup extends ModalBase {
 
     @Step("Publish file from Workspace folder")
     public void publishFileFromWorkspaceFolder(String folderName, String fileName) {
+        pleaseWait(1000);
         workspaceItem.click();
         getTableItemByName("Project").click();
         getTableItemByName(folderName).click();

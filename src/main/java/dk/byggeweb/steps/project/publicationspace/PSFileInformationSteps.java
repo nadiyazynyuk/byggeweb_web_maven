@@ -1,5 +1,7 @@
 package dk.byggeweb.steps.project.publicationspace;
 
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
 import dk.byggeweb.objects.project.common.TxtFileViewPage;
 import dk.byggeweb.objects.project.publicationspace.panels.PSFileInformationPanel;
@@ -38,5 +40,16 @@ public class PSFileInformationSteps {
         txtFileViewPage.verifyFileVersionContent(fileContent);
         WebDriverRunner.getWebDriver().close();
         WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
+    }
+
+    @Step("Edit metadata text field")
+    public void editMetadataTextField(String fileName, SelenideElement element, String data) {
+        PSFileInformationPanel psFileInformationPanel = new PSFileInformationPanel(fileName);
+        psFileInformationPanel.getSaveButton().shouldBe(Condition.enabled);
+        element.click();
+        element.clear();
+        element.shouldBe(Condition.empty);
+        element.setValue(data);
+        psFileInformationPanel.getSaveButton().click();
     }
 }

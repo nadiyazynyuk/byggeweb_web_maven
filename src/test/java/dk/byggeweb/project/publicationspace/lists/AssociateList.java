@@ -43,14 +43,3 @@ public class AssociateList extends ProjectTestBase {
     }
 
 }
-
-
-/*
-open list
-check if associated
-
-associate
-check if associated
-cancel association
-check if not associated
- */

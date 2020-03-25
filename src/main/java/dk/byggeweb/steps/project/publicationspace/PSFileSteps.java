@@ -32,9 +32,11 @@ public class PSFileSteps {
         selectFile(fileName);
         PSFolderContentPanel psFolderContentPanel = new PSFolderContentPanel();
         psFolderContentPanel.getFileDeleteButton().click();
+        log.info("Delete button was clicked");
         psFolderContentPanel.switchToNewWindow();
         PSFileDeletePopup fileDeletePopup = new PSFileDeletePopup();
         fileDeletePopup.deleteFilePermanently();
+        log.info("File " + fileName + " was permanently deleted");
         psFolderContentPanel.switchToLastTab();
     }
 
@@ -42,6 +44,7 @@ public class PSFileSteps {
     public void publishFileFromLocalMachine(String filePath, String fileName) {
         PSFolderContentPanel psFolderContentPanel = new PSFolderContentPanel();
         psFolderContentPanel.getFilePublishButton().click();
+        log.info("Publish/upload file version button was clicked");
         String winHandleBefore = WebDriverRunner.getWebDriver().getWindowHandle();
         psFolderContentPanel.switchToNewWindow();
         PSFilePublishPopup psFilePublishPopup = new PSFilePublishPopup();
@@ -50,11 +53,10 @@ public class PSFileSteps {
         fileUploadPopup.switchToEnhancedUploadTab();
         FileEnhancedUploadTab fileEnhancedUploadTab = new FileEnhancedUploadTab();
         fileEnhancedUploadTab.dropFile(filePath);
-
         PSFileInformationEditPopup psFileInformationEditPopup = new PSFileInformationEditPopup(fileName);
         psFileInformationEditPopup.getOkButton().click();
         psFileInformationEditPopup.getCloseButton().click();
-
+        log.info("File " + fileName + " was published from Local Machine");
         WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
     }
 
@@ -62,16 +64,19 @@ public class PSFileSteps {
     public void publishFileFromWorkspace(String fileName, String folderName) {
         PSFolderContentPanel psFolderContentPanel = new PSFolderContentPanel();
         psFolderContentPanel.getFilePublishButton().click();
+        log.info("Publish/upload file version button was clicked");
         String winHandleBefore = WebDriverRunner.getWebDriver().getWindowHandle();
         psFolderContentPanel.switchToNewWindow();
         PSFilePublishPopup psFilePublishPopup = new PSFilePublishPopup();
         psFilePublishPopup.publishFileFromWorkspaceFolder(folderName, fileName);
+        log.info("File " + fileName + " was published from Workspace folder " + folderName);
         WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
     }
 
     @Step("Select discontinued file")
     public void selectDiscontinuedFile(String fileName) {
         new PSFolderContentPanel().getDiscontinuedFileByName(fileName).click();
+        log.info("Discontinued file " + fileName + " was selected");
         new PSFileInformationPanel(fileName);
     }
 
@@ -80,9 +85,11 @@ public class PSFileSteps {
         selectFile(fileName);
         PSFolderContentPanel psFolderContentPanel = new PSFolderContentPanel();
         psFolderContentPanel.getFileDeleteButton().click();
+        log.info("Delete files button was clicked");
         psFolderContentPanel.switchToNewWindow();
         PSFileDeletePopup fileDeletePopup = new PSFileDeletePopup();
         fileDeletePopup.discontinueFile();
+        log.info("File " + fileName + " was discontinued");
         psFolderContentPanel.switchToLastTab();
     }
 
@@ -91,9 +98,11 @@ public class PSFileSteps {
         selectDiscontinuedFile(fileName);
         PSFolderContentPanel psFolderContentPanel = new PSFolderContentPanel();
         psFolderContentPanel.getFileDeleteButton().click();
+        log.info("Delete files button was clicked");
         psFolderContentPanel.switchToNewWindow();
         PSFileDeletePopup fileDeletePopup = new PSFileDeletePopup();
         fileDeletePopup.deleteFilePermanently();
+        log.info("File " + fileName + " was deleted");
         psFolderContentPanel.switchToLastTab();
     }
 
@@ -101,6 +110,7 @@ public class PSFileSteps {
     public void downloadFile(String fileName) {
         selectFile(fileName);
         new PSFolderContentPanel().getFileDownloadButton().click();
+        log.info("Download files button was clicked");
     }
 
     @Step("Download all files from the folder")
@@ -109,6 +119,7 @@ public class PSFileSteps {
         PSFolderContentPanel psFolderContentPanel = new PSFolderContentPanel();
         GeneralSteps.selectAll();
         psFolderContentPanel.getFileDownloadButton().click();
+        log.info("Download files button was clicked");
         psFolderContentPanel.switchToNewWindow();
         FileDownloadPopup fileDownloadPopup = new FileDownloadPopup();
         fileDownloadPopup.getOkButton().click();
@@ -122,9 +133,11 @@ public class PSFileSteps {
         selectFile(filename);
         PSFolderContentPanel psFolderContentPanel = new PSFolderContentPanel();
         psFolderContentPanel.getFileAddToVersionSetButton().click();
+        log.info("Add to version sets button was clicked");
         psFolderContentPanel.switchToNewWindow();
         FileAddToVersionSetPopup fileAddToVersionSetPopup = new FileAddToVersionSetPopup();
         fileAddToVersionSetPopup.addFileToVersionSet(versionSetName);
+        log.info("File " + filename + " was added to the version set: " + versionSetName);
         psFolderContentPanel.switchToLastTab();
     }
 
@@ -144,5 +157,10 @@ public class PSFileSteps {
     public void verifyFileIsDiscontinued(String name) {
         PSFolderContentPanel psFolderContentPanel = new PSFolderContentPanel();
         psFolderContentPanel.getDiscontinuedFileByName(name).shouldHave(text(name));
+    }
+
+    @Step("Verify data is present in table")
+    public void verifyDataIsPresentInTable(String name) {
+        new PSFolderContentPanel().getFileByName(name).shouldHave(text(name));
     }
 }
