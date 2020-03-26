@@ -249,6 +249,20 @@
         </classes>
     </test>
 
+    <test name="[Publication space] Quick search for file test">
+        <parameter name="testData" value="/project/publicationspace/quickSearchFileTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.files.search.QuickSearchFile"/>
+        </classes>
+    </test>
+
+    <test name="[Publication space] Advanced search for file test">
+        <parameter name="testData" value="/project/publicationspace/advancedSearchFileTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.files.search.AdvancedSearchFile"/>
+        </classes>
+    </test>
+
     <test name="[VersionSet][Workspace] Create/update/delete Version set tests">
         <parameter name="testData" value="/project/versionsets/createNewVersionSetTestData.xml"/>
         <classes>

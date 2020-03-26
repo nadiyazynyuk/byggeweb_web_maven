@@ -17,7 +17,7 @@ public class QuickSearchFile extends ProjectTestBase {
 
     @Test(description = "Quick search for the file in Workspace")
     public void quickSearchFile() {
-        searchSteps.quickSearchFile(data.getTestFileName());
+        searchSteps.quickSearchFileInWorkspace(data.getTestFileName());
         wsFileSteps.verifyFileIsPresent(data.getTestFileName());
     }
 }

@@ -17,7 +17,7 @@ public class AdvancedSearchFile extends ProjectTestBase {
 
     @Test(description = "Advanced search for the file by filename in Workspace")
     public void advancedSearchFileByName() {
-        searchSteps.advancedSearchFileByName(data.getTestFileName());
+        searchSteps.advancedSearchFileByNameInWorkspace(data.getTestFileName());
         wsFileSteps.verifyFileIsPresent(data.getTestFileName());
     }
 

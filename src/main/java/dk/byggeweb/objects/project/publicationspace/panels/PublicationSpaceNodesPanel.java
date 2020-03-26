@@ -40,6 +40,7 @@ public class PublicationSpaceNodesPanel extends ProjectHomePage {
     private SelenideElement renameFolderButton = $(byXpath("//span[@data-locator='locator-btn-doclist_rename_dir']"));
     private SelenideElement deleteFolderButton = $(byXpath("//span[@data-locator='locator-btn-doclist_delete_dir']"));
     private SelenideElement monitorFolderButton = $(byXpath("//span[@data-locator='locator-btn-doclist_watch_dir']"));
+    private SelenideElement quickSearchInput = $(byXpath("//input[contains(@id, 'textfield')]"));
 
     @Step("Navigate to Root Document list")
     public void navigateToRootDocumentList() {
