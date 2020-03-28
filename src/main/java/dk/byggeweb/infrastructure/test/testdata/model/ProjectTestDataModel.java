@@ -113,6 +113,10 @@ public class ProjectTestDataModel {
 
     @XmlElement
     @Getter
+    private String approvalProcedureName;
+
+    @XmlElement
+    @Getter
     private String documentListFolderName;
 
     @XmlElement

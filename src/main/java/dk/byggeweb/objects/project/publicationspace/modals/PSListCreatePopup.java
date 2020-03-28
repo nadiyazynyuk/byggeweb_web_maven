@@ -13,9 +13,21 @@ public class PSListCreatePopup extends ModalBase {
 
     private SelenideElement nameInput = $(byXpath("//input[@name='DocListing__Name']"));
 
+    private SelenideElement getApprovalProcedureOption(String approvalProcedureName) {
+        return $(byXpath("//select[@name='DocListing__ApprovalProcedure_ID']/option[contains(text(), '" + approvalProcedureName + "')]"));
+    }
+
     @Step("Create new document list")
-    public void createDocumentList(String name) {
-        nameInput.setValue(name);
+    public void createDocumentList(String listName) {
+        nameInput.setValue(listName);
+        getCreateButton().click();
+        getNoButton().click();
+    }
+
+    @Step("Create new document list with approval procedure")
+    public void createDocumentList(String listName, String approvalProcedureName) {
+        nameInput.setValue(listName);
+        getApprovalProcedureOption(approvalProcedureName).click();
         getCreateButton().click();
         getNoButton().click();
     }

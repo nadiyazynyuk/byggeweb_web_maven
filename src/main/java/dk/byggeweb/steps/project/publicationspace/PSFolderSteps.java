@@ -52,7 +52,7 @@ public class PSFolderSteps {
         new PSFolderContentPanel(folderName);
     }
 
-    @Step("Create new Document list")
+    @Step("Create new Document list without approval procedure")
     public void createDocumentList(String createListName) {
         PublicationSpaceNodesPanel publicationSpaceNodesPanel = new PublicationSpaceNodesPanel();
         publicationSpaceNodesPanel.navigateToRootDocumentList();
@@ -63,6 +63,20 @@ public class PSFolderSteps {
         PSListCreatePopup psListCreatePopup = new PSListCreatePopup();
         psListCreatePopup.createDocumentList(createListName);
         log.info("Document list " + createListName + " was created");
+        psDocumentListsContentPanel.switchToLastTab();
+    }
+
+    @Step("Create document list with approval procedure")
+    public void createDocumentListWithApproval(String createListName, String approvalProcedureName) {
+        PublicationSpaceNodesPanel publicationSpaceNodesPanel = new PublicationSpaceNodesPanel();
+        publicationSpaceNodesPanel.navigateToRootDocumentList();
+        PSDocumentListsContentPanel psDocumentListsContentPanel = new PSDocumentListsContentPanel();
+        psDocumentListsContentPanel.getCreateDocumentListButton().click();
+        log.info("Create Document list button was clicked");
+        psDocumentListsContentPanel.switchToNewWindow();
+        PSListCreatePopup psListCreatePopup = new PSListCreatePopup();
+        psListCreatePopup.createDocumentList(createListName, approvalProcedureName);
+        log.info("Document list " + createListName + " was created with approval procedure " + approvalProcedureName);
         psDocumentListsContentPanel.switchToLastTab();
     }
 
