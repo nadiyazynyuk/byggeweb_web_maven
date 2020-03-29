@@ -249,7 +249,19 @@
         </classes>
     </test>
 
+    <test name="[Publication space] Reject and delete published from Workspace file test">
+        <parameter name="testData" value="/project/publicationspace/rejectAndDeleteFileFromWorkspaceTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.files.publish.RejectAndDeleteFileFromWorkspace"/>
+        </classes>
+    </test>
 
+    <test name="[Publication space] Reject and save published from Workspace file test">
+        <parameter name="testData" value="/project/publicationspace/rejectAndSaveFileFromWorkspaceTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.files.publish.RejectAndSaveFileFromWorkspace"/>
+        </classes>
+    </test>
 
     <test name="[Publication space] Edit file information tests">
         <parameter name="testData" value="/project/publicationspace/editFileInformationTestData.xml"/>
