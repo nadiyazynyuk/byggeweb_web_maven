@@ -90,11 +90,40 @@ public class PSFileSteps {
     @Step("Reject and delete file")
     public void rejectAndDeleteFile(String fileName) {
         selectFile(fileName);
+        PSFolderContentPanel psFolderContentPanel = new PSFolderContentPanel();
+        psFolderContentPanel.getFileApproveRejectButton().click();
+        log.info("Approve/reject file version button was clicked");
+        psFolderContentPanel.switchToNewWindow();
+        PSFileApproveRejectPopup psFileApproveRejectPopup = new PSFileApproveRejectPopup();
+        psFileApproveRejectPopup.rejectAndDeleteFile();
+        log.info("File " + fileName + " was rejected and deleted");
+        psFolderContentPanel.switchToLastTab();
     }
 
     @Step("Reject and save file")
     public void rejectAndSaveFile(String fileName) {
         selectFile(fileName);
+        PSFolderContentPanel psFolderContentPanel = new PSFolderContentPanel();
+        psFolderContentPanel.getFileApproveRejectButton().click();
+        log.info("Approve/reject file version button was clicked");
+        psFolderContentPanel.switchToNewWindow();
+        PSFileApproveRejectPopup psFileApproveRejectPopup = new PSFileApproveRejectPopup();
+        psFileApproveRejectPopup.rejectAndSaveFile();
+        log.info("File " + fileName + " was rejected and saved");
+        psFolderContentPanel.switchToLastTab();
+    }
+
+    @Step("Delete rejected file")
+    public void deleteRejectedFile(String fileName) {
+        selectFile(fileName);
+        PSFolderContentPanel psFolderContentPanel = new PSFolderContentPanel();
+        psFolderContentPanel.getFileDeleteButton().click();
+        log.info("Delete button was clicked");
+        psFolderContentPanel.switchToNewWindow();
+        PSFileDeletePopup fileDeletePopup = new PSFileDeletePopup();
+        fileDeletePopup.deleteFile();
+        log.info("File " + fileName + " was deleted");
+        psFolderContentPanel.switchToLastTab();
     }
 
     @Step("Select discontinued file")

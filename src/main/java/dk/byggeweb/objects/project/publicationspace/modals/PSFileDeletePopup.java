@@ -28,4 +28,11 @@ public class PSFileDeletePopup extends ModalBase {
         getCloseButton().click();
     }
 
+    @Step("Delete file")
+    public void deleteFile() {
+        getOkButton().click();
+        WebDriverRunner.getWebDriver().switchTo().alert().accept();
+        getCloseButton().click();
+    }
+
 }
