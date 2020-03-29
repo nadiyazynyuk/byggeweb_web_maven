@@ -5,6 +5,7 @@ import dk.byggeweb.objects.project.common.modals.FileAddToVersionSetPopup;
 import dk.byggeweb.objects.project.common.modals.FileDownloadPopup;
 import dk.byggeweb.objects.project.common.modals.FileEnhancedUploadTab;
 import dk.byggeweb.objects.project.common.modals.FileUploadPopup;
+import dk.byggeweb.objects.project.publicationspace.modals.PSFileApproveRejectPopup;
 import dk.byggeweb.objects.project.publicationspace.modals.PSFileDeletePopup;
 import dk.byggeweb.objects.project.publicationspace.modals.PSFileInformationEditPopup;
 import dk.byggeweb.objects.project.publicationspace.modals.PSFilePublishPopup;
@@ -71,6 +72,29 @@ public class PSFileSteps {
         psFilePublishPopup.publishFileFromWorkspaceFolder(folderName, fileName);
         log.info("File " + fileName + " was published from Workspace folder " + folderName);
         WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
+    }
+
+    @Step("Approve file")
+    public void approveFile(String fileName) {
+        selectFile(fileName);
+        PSFolderContentPanel psFolderContentPanel = new PSFolderContentPanel();
+        psFolderContentPanel.getFileApproveRejectButton().click();
+        log.info("Approve/reject file version button was clicked");
+        psFolderContentPanel.switchToNewWindow();
+        PSFileApproveRejectPopup psFileApproveRejectPopup = new PSFileApproveRejectPopup();
+        psFileApproveRejectPopup.approveFile();
+        log.info("File " + fileName + " was approved");
+        psFolderContentPanel.switchToLastTab();
+    }
+
+    @Step("Reject and delete file")
+    public void rejectAndDeleteFile(String fileName) {
+        selectFile(fileName);
+    }
+
+    @Step("Reject and save file")
+    public void rejectAndSaveFile(String fileName) {
+        selectFile(fileName);
     }
 
     @Step("Select discontinued file")

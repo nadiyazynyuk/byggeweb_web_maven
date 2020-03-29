@@ -200,17 +200,26 @@
         </classes>
     </test>
 
-    <test name="[Publication space] Publish new file from Workspace into Document list test">
-        <parameter name="testData" value="/project/publicationspace/publishNewFileFromWorkspaceTestData.xml"/>
-        <classes>
-            <class name="dk.byggeweb.project.publicationspace.files.publish.PublishNewFileFromWorkspace"/>
-        </classes>
-    </test>
-
     <test name="[Publication space] Publish new file version from Local Machine into Document list test">
         <parameter name="testData" value="/project/publicationspace/publishNewFileVersionFromLocalMachineTestData.xml"/>
         <classes>
             <class name="dk.byggeweb.project.publicationspace.files.publish.PublishNewFileVersionFromLocalMachine"/>
+        </classes>
+    </test>
+
+    <test name="[Publication space] Approve published from Local Machine file test">
+        <parameter name="testData" value="/project/publicationspace/approveFileFromLocalMachineTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.files.publish.ApproveFileFromLocalMachine"/>
+        </classes>
+    </test>
+
+
+
+    <test name="[Publication space] Publish new file from Workspace into Document list test">
+        <parameter name="testData" value="/project/publicationspace/publishNewFileFromWorkspaceTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.files.publish.PublishNewFileFromWorkspace"/>
         </classes>
     </test>
 
@@ -220,6 +229,15 @@
             <class name="dk.byggeweb.project.publicationspace.files.publish.PublishNewFileVersionFromWorkspace"/>
         </classes>
     </test>
+
+    <test name="[Publication space] Approve published from Workspace file test">
+        <parameter name="testData" value="/project/publicationspace/approveFileFromWorkspaceTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.files.publish.ApproveFileFromWorkspace"/>
+        </classes>
+    </test>
+
+
 
     <test name="[Publication space] Edit file information tests">
         <parameter name="testData" value="/project/publicationspace/editFileInformationTestData.xml"/>

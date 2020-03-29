@@ -21,6 +21,9 @@ public abstract class ModalBase {
     private SelenideElement createButton = $(byXpath("//input[@value='Create']"));
     private SelenideElement yesButton = $(byXpath("//input[contains(@value, 'Yes')]"));
     private SelenideElement noButton = $(byXpath("//input[contains(@value, 'No')]"));
+    private SelenideElement approveButton = $(byXpath("//input[@value='Approve']"));
+    private SelenideElement rejectButton = $(byXpath("//input[@value='Reject']"));
+    private SelenideElement saveButton = $(byXpath("//input[@value='Save']"));
 
     public void pleaseWait(int millis) {
         try {
