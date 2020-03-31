@@ -1,5 +1,7 @@
 package dk.byggeweb.steps.project.publicationspace;
 
+import com.codeborne.selenide.WebDriverRunner;
+import dk.byggeweb.objects.project.publicationspace.modals.PSMonitorFolderPopup;
 import dk.byggeweb.objects.project.publicationspace.modals.*;
 import dk.byggeweb.objects.project.publicationspace.panels.*;
 import io.qameta.allure.Step;
@@ -156,6 +158,18 @@ public class PSFolderSteps {
         psListAssociatingPopup.associateList(distributionListName);
         log.info("Document list was associated with distribution list " + distributionListName);
         publicationSpaceContentPanel.switchToLastTab();
+    }
+
+    @Step("Start folder monitoring")
+    public void startMonitorFolder() {
+        String winHandleBefore = WebDriverRunner.getWebDriver().getWindowHandle();
+        PSFolderContentPanel psFolderContentPanel = new PSFolderContentPanel();
+        psFolderContentPanel.getMonitorFolderButton().click();
+        psFolderContentPanel.switchToNewWindow();
+        PSMonitorFolderPopup PSMonitorFolderPopup = new PSMonitorFolderPopup();
+        PSMonitorFolderPopup.getOkButton().click();
+        PSMonitorFolderPopup.getCloseButton().click();
+        WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
     }
 
     @Step("Verify list is present")

@@ -22,7 +22,7 @@ public class MonitorFolder extends ProjectTestBase {
         }
     }
 
-    @Test(description = "Start folder monitoring")
+    @Test(description = "Start Workspace folder monitoring")
     public void monitorFolder() {
         projectHomePage.getWorkspaceNodesPanel().navigateToFolder(data.getFolderName());
         wsFolderSteps.startMonitorFolder();

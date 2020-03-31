@@ -1,4 +1,4 @@
-package dk.byggeweb.project.publicationspace.lists;
+package dk.byggeweb.project.publicationspace.folders;
 
 import dk.byggeweb.infrastructure.test.ProjectTestBase;
 import org.testng.annotations.BeforeClass;

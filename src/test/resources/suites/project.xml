@@ -182,7 +182,7 @@
     <test name="[Publication space] Create/update/delete folder in Document list">
         <parameter name="testData" value="/project/publicationspace/createNewFolderTestData.xml"/>
         <classes>
-            <class name="dk.byggeweb.project.publicationspace.lists.CreateNewFolder"/>
+            <class name="dk.byggeweb.project.publicationspace.folders.CreateNewFolder"/>
         </classes>
     </test>
 
@@ -260,6 +260,13 @@
         <parameter name="testData" value="/project/publicationspace/rejectAndSaveFileFromWorkspaceTestData.xml"/>
         <classes>
             <class name="dk.byggeweb.project.publicationspace.files.publish.RejectAndSaveFileFromWorkspace"/>
+        </classes>
+    </test>
+
+    <test name="[Publication space] Start/stop folder monitoring test">
+        <parameter name="testData" value="/project/publicationspace/monitorFolderTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.folders.MonitorFolder"/>
         </classes>
     </test>
 
