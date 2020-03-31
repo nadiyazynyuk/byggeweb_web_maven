@@ -15,6 +15,7 @@ public class PublicationSpaceContentPanel extends PublicationSpaceNodesPanel {
     private SelenideElement fileDeleteButton = $(byXpath("//span[@data-locator='locator-btn-file_ps_delete']"));
     private SelenideElement fileAddToVersionSetButton = $(byXpath("//span[@data-locator='locator-btn-file_ps_vs_add']"));
     private SelenideElement fileAdvancedSearchButton = $(byXpath("//span[@data-locator='locator-btn-file_ps_search']"));
+    private SelenideElement fileMonitorButton = $(byXpath("//span[@data-locator='locator-btn-file_ps_watch_toggle']"));
 
     public SelenideElement getFileByName(String name) {
         return $(byXpath("//tr[@class='  x-grid-row']//*[contains(text(),'" + name + "')]"));

@@ -263,6 +263,13 @@
         </classes>
     </test>
 
+    <test name="[Publication space] Start/stop file monitoring test">
+        <parameter name="testData" value="/project/publicationspace/monitorFileTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.files.update.MonitorFile"/>
+        </classes>
+    </test>
+
     <test name="[Publication space] Start/stop folder monitoring test">
         <parameter name="testData" value="/project/publicationspace/monitorFolderTestData.xml"/>
         <classes>

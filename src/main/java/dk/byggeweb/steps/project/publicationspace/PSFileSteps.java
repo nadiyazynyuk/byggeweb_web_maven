@@ -194,6 +194,12 @@ public class PSFileSteps {
         psFolderContentPanel.switchToLastTab();
     }
 
+    @Step("Start to monitor file")
+    public void startMonitorFile(String filename) {
+        selectFile(filename);
+        new PSFolderContentPanel().getFileMonitorButton().click();
+    }
+
     @Step("Verify file is present in the list")
     public void verifyFileIsPresent(String name) {
         PSFolderContentPanel psFolderContentPanel = new PSFolderContentPanel();
