@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Byggeweb Project General UI tests" parallel="tests" thread-count="1">
+    <parameter name="environment" value="testserver"/>
+
+    <test name="[General] Project navigation tests">
+        <parameter name="testData" value="/project/launchProjectTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.navigation.BasicNavigation"/>
+            <class name="dk.byggeweb.project.navigation.WorkspaceNavigation"/>
+            <class name="dk.byggeweb.project.navigation.PublicationSpaceNavigation"/>
+            <class name="dk.byggeweb.project.navigation.DistributionSpaceNavigation"/>
+            <class name="dk.byggeweb.project.navigation.CommunicationNavigation"/>
+            <class name="dk.byggeweb.project.navigation.ProjectInformationNavigation"/>
+            <class name="dk.byggeweb.project.navigation.ProjectAdministrationNavigation"/>
+            <class name="dk.byggeweb.project.navigation.LogNavigation"/>
+            <class name="dk.byggeweb.project.navigation.PersonalOverviewsNavigation"/>
+        </classes>
+    </test>
+
+</suite>

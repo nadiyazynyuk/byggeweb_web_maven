@@ -1,0 +1,185 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Byggeweb Project Publication Space UI tests" parallel="tests" thread-count="1">
+    <parameter name="environment" value="testserver"/>
+
+    <test name="[Publication space] Create/update/delete new empty Document list">
+        <parameter name="testData" value="/project/publicationspace/createNewEmptyListTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.lists.CreateNewEmptyList"/>
+        </classes>
+    </test>
+
+    <test name="[Publication space] Create/update/delete folder in Document list">
+        <parameter name="testData" value="/project/publicationspace/createNewFolderTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.folders.CreateNewFolder"/>
+        </classes>
+    </test>
+
+    <test name="[Publication space] Associate Document list with Distribution list">
+        <parameter name="testData" value="/project/publicationspace/associateListTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.lists.AssociateList"/>
+        </classes>
+    </test>
+
+    <test name="[Publication space] Publish new file from Local Machine into Document list test">
+        <parameter name="testData" value="/project/publicationspace/publishNewFileFromLocalMachineTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.files.publish.PublishNewFileFromLocalMachine"/>
+        </classes>
+    </test>
+
+    <test name="[Publication space] Publish new file version from Local Machine into Document list test">
+        <parameter name="testData" value="/project/publicationspace/publishNewFileVersionFromLocalMachineTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.files.publish.PublishNewFileVersionFromLocalMachine"/>
+        </classes>
+    </test>
+
+    <test name="[Publication space] Publish new file from Workspace into Document list test">
+        <parameter name="testData" value="/project/publicationspace/publishNewFileFromWorkspaceTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.files.publish.PublishNewFileFromWorkspace"/>
+        </classes>
+    </test>
+
+    <test name="[Publication space] Publish new file version from Workspace into Document list test">
+        <parameter name="testData" value="/project/publicationspace/publishNewFileVersionFromWorkspaceTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.files.publish.PublishNewFileVersionFromWorkspace"/>
+        </classes>
+    </test>
+
+    <test name="[Publication space] Start/stop file monitoring test">
+        <parameter name="testData" value="/project/publicationspace/monitorFileTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.files.update.MonitorFile"/>
+        </classes>
+    </test>
+
+    <test name="[Publication space] Start/stop folder monitoring test">
+        <parameter name="testData" value="/project/publicationspace/monitorFolderTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.folders.MonitorFolder"/>
+        </classes>
+    </test>
+
+    <test name="[Publication space] Edit file information tests">
+        <parameter name="testData" value="/project/publicationspace/editFileInformationTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.files.update.EditFileInformation"/>
+        </classes>
+    </test>
+
+    <test name="[Publication space] Delete file from Document list test">
+        <parameter name="testData" value="/project/publicationspace/deletePublishedFileTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.files.delete.DeleteFile"/>
+        </classes>
+    </test>
+
+    <test name="[Publication space] Discontinue file in Document list test">
+        <parameter name="testData" value="/project/publicationspace/discontinuePublishedFileTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.files.delete.DiscontinueFile"/>
+        </classes>
+    </test>
+
+    <test name="[Publication space] Download single file from Document list test">
+        <parameter name="testData" value="/project/publicationspace/downloadPublishedFileTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.files.download.DownloadFile"/>
+        </classes>
+    </test>
+
+    <test name="[Publication space] Download multiple files from Document list test">
+        <parameter name="testData" value="/project/publicationspace/downloadPublishedFilesTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.files.download.DownloadFiles"/>
+        </classes>
+    </test>
+
+    <test name="[Publication space] Quick search for file test">
+        <parameter name="testData" value="/project/publicationspace/quickSearchFileTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.files.search.QuickSearchFile"/>
+        </classes>
+    </test>
+
+    <test name="[Publication space] Advanced search for file test">
+        <parameter name="testData" value="/project/publicationspace/advancedSearchFileTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.files.search.AdvancedSearchFile"/>
+        </classes>
+    </test>
+
+    <!--  With Approval -->
+
+    <test name="[Publication space] Create/update/delete new empty Document list with approval procedure">
+        <parameter name="testData" value="/project/publicationspace/createNewEmptyListWithApprovalTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.lists.CreateNewEmptyListWithApproval"/>
+        </classes>
+    </test>
+
+    <test name="[Publication space] Create/update/delete folder in Document list with approval procedure">
+        <parameter name="testData" value="/project/publicationspace/createNewFolderInApprovalListTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.folders.CreateNewFolder"/>
+        </classes>
+    </test>
+
+    <test name="[Publication space] Associate Document list (with approval) with Distribution list">
+        <parameter name="testData" value="/project/publicationspace/associateListWithApprovalTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.lists.AssociateList"/>
+        </classes>
+    </test>
+
+
+
+    <test name="[Publication space] Approve published from Local Machine file test">
+        <parameter name="testData" value="/project/publicationspace/approveFileFromLocalMachineTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.files.publish.ApproveFileFromLocalMachine"/>
+        </classes>
+    </test>
+
+    <test name="[Publication space] Reject and delete published from Local Machine file test">
+        <parameter name="testData" value="/project/publicationspace/rejectAndDeleteFileFromLocalMachineTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.files.publish.RejectAndDeleteFileFromLocalMachine"/>
+        </classes>
+    </test>
+
+    <test name="[Publication space] Reject and save published from Local Machine file test">
+        <parameter name="testData" value="/project/publicationspace/rejectAndSaveFileFromLocalMachineTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.files.publish.RejectAndSaveFileFromLocalMachine"/>
+        </classes>
+    </test>
+
+    <test name="[Publication space] Approve published from Workspace file test">
+        <parameter name="testData" value="/project/publicationspace/approveFileFromWorkspaceTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.files.publish.ApproveFileFromWorkspace"/>
+        </classes>
+    </test>
+
+    <test name="[Publication space] Reject and delete published from Workspace file test">
+        <parameter name="testData" value="/project/publicationspace/rejectAndDeleteFileFromWorkspaceTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.files.publish.RejectAndDeleteFileFromWorkspace"/>
+        </classes>
+    </test>
+
+    <test name="[Publication space] Reject and save published from Workspace file test">
+        <parameter name="testData" value="/project/publicationspace/rejectAndSaveFileFromWorkspaceTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.files.publish.RejectAndSaveFileFromWorkspace"/>
+        </classes>
+    </test>
+
+</suite>

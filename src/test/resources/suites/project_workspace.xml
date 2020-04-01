@@ -1,0 +1,153 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Byggeweb Project Workspace UI tests" parallel="tests" thread-count="1">
+    <parameter name="environment" value="testserver"/>
+
+    <test name="[Workspace] Create/update/delete folder tests">
+        <parameter name="testData" value="/project/workspace/createNewFolderTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.workspace.folders.CreateNewFolder"/>
+        </classes>
+    </test>
+
+    <test name="[Workspace] Enhanced upload single file test">
+        <parameter name="testData" value="/project/workspace/enhancedUploadSingleFileTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.workspace.files.upload.EnhancedUploadSingleFile"/>
+        </classes>
+    </test>
+
+    <test name="[Workspace] Standard upload single file test">
+        <parameter name="testData" value="/project/workspace/standardUploadSingleFileTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.workspace.files.upload.StandardUploadSingleFile"/>
+        </classes>
+    </test>
+
+    <test name="[Workspace] Transfer single file test">
+        <parameter name="testData" value="/project/workspace/transferFileTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.workspace.files.upload.TransferSingleFile"/>
+        </classes>
+    </test>
+
+    <test name="[Workspace] Open file version test">
+        <parameter name="testData" value="/project/workspace/openFileVersionTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.workspace.files.open.OpenFileVersion"/>
+        </classes>
+    </test>
+
+    <test name="[Workspace] Edit file information tests">
+        <parameter name="testData" value="/project/workspace/editFileInformationTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.workspace.files.update.EditFileInformation"/>
+        </classes>
+    </test>
+
+    <test name="[Workspace] Delete file test">
+        <parameter name="testData" value="/project/workspace/deleteFileTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.workspace.files.delete.DeleteFile"/>
+        </classes>
+    </test>
+
+    <test name="[Workspace] Recycle file test">
+        <parameter name="testData" value="/project/workspace/recycleFileTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.workspace.files.delete.DeleteFileViaRecycleBin"/>
+        </classes>
+    </test>
+
+    <test name="[Workspace] Restore recycled file test">
+        <parameter name="testData" value="/project/workspace/restoreRecycledFileTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.workspace.files.delete.RestoreFileFromRecycleBin"/>
+        </classes>
+    </test>
+
+    <test name="[Workspace] Move file to another folder test">
+        <parameter name="testData" value="/project/workspace/moveFileTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.workspace.files.update.MoveFile"/>
+        </classes>
+    </test>
+
+    <test name="[Workspace] Copy file to another folder test">
+        <parameter name="testData" value="/project/workspace/copyFileTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.workspace.files.update.CopyFile"/>
+        </classes>
+    </test>
+
+    <test name="[Workspace] Lock/unlock file test">
+        <parameter name="testData" value="/project/workspace/lockFileTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.workspace.files.update.LockFile"/>
+        </classes>
+    </test>
+
+    <test name="[Workspace] Start/stop file monitoring test">
+        <parameter name="testData" value="/project/workspace/monitorFileTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.workspace.files.update.MonitorFile"/>
+        </classes>
+    </test>
+
+    <test name="[Workspace] Start/stop folder monitoring test">
+        <parameter name="testData" value="/project/workspace/monitorFolderTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.workspace.folders.MonitorFolder"/>
+        </classes>
+    </test>
+
+    <test name="[Workspace] Download single file in Workspace test">
+        <parameter name="testData" value="/project/workspace/downloadFileTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.workspace.files.download.DownloadFile"/>
+        </classes>
+    </test>
+
+    <test name="[Workspace] Download multiple files test">
+        <parameter name="testData" value="/project/workspace/downloadFilesTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.workspace.files.download.DownloadFiles"/>
+        </classes>
+    </test>
+
+    <test name="[Workspace] Download folder with files test">
+        <parameter name="testData" value="/project/workspace/downloadFolderTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.workspace.folders.DownloadFolder"/>
+        </classes>
+    </test>
+
+    <test name="[Workspace] Quick search for file test">
+        <parameter name="testData" value="/project/workspace/quickSearchFileTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.workspace.files.search.QuickSearchFile"/>
+        </classes>
+    </test>
+
+    <test name="[Workspace] Advanced search for file test">
+        <parameter name="testData" value="/project/workspace/advancedSearchFileTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.workspace.files.search.AdvancedSearchFile"/>
+        </classes>
+    </test>
+
+    <test name="[Workspace] Publish new file from Workspace test">
+        <parameter name="testData" value="/project/workspace/publishNewFileTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.workspace.files.publish.PublishFile"/>
+        </classes>
+    </test>
+
+    <test name="[Workspace] Publish new file version from Workspace test">
+        <parameter name="testData" value="/project/workspace/publishNewFileVersionTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.workspace.files.publish.PublishNewFileVersion"/>
+        </classes>
+    </test>
+
+</suite>

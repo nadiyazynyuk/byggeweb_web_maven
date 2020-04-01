@@ -1,0 +1,27 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Byggeweb Project Version Set UI tests" parallel="tests" thread-count="1">
+    <parameter name="environment" value="testserver"/>
+
+    <test name="[VersionSet][Workspace] Create/update/delete Version set tests">
+        <parameter name="testData" value="/project/versionsets/createNewVersionSetTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.versionsets.CreateNewVersionSet"/>
+        </classes>
+    </test>
+
+    <test name="[VersionSet][Workspace] Add and remove file from Version set tests">
+        <parameter name="testData" value="/project/versionsets/addRemoveFileFromWorkspaceTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.versionsets.AddRemoveFileFromWorkspace"/>
+        </classes>
+    </test>
+
+    <test name="[VersionSet][Publication space] Add and remove file from Version set tests">
+        <parameter name="testData" value="/project/versionsets/addRemoveFileFromPublicationSpaceTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.versionsets.AddRemoveFileFromPublicationSpace"/>
+        </classes>
+    </test>
+
+</suite>
