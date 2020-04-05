@@ -21,7 +21,7 @@ public class PublishNewFileVersion extends ProjectTestBase {
 
     @Test(description = "Upload first file version into Project root folder")
     public void uploadFirstFileVersion() {
-        wsFileSteps.enhancedUploadSingleFile(data.getFileV1ToUploadPath());
+        wsFileSteps.enhancedUploadSingleFile(getAbsolutePath(data.getFileV1ToUploadPath()));
         wsFileSteps.closeEditFileInformationPopup();
         wsFileSteps.verifyFileIsPresent(data.getTestFileName());
     }

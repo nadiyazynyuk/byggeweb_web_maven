@@ -24,7 +24,6 @@ public class CopyFile extends ProjectTestBase {
 
     @Test(description = "Copy file to another folder")
     public void copyFile() {
-        wsFolderSteps.navigateToFolder(data.getFolder1Name());
         wsFileSteps.copyFileToFolder(data.getTestFileName(), data.getFolder2Name(), data.getFolderName());
         wsFileSteps.verifyFileIsPresent(data.getTestFileName());
 

@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="One test">
+    <parameter name="environment" value="production"/>
+<!--    <parameter name="environment" value="testserver"/>-->
+
+    <test name="[VersionSet][Publication space] Add and remove file from Version set tests">
+        <parameter name="testData" value="/project/versionsets/addRemoveFileFromPublicationSpaceTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.versionsets.AddRemoveFileFromPublicationSpace"/>
+        </classes>
+    </test>
+
+</suite>
+

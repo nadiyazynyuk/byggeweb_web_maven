@@ -2,6 +2,7 @@
 
 <suite name="Byggeweb Project General UI tests" parallel="tests" thread-count="1">
     <parameter name="environment" value="testserver"/>
+<!--    <parameter name="environment" value="production"/>-->
 
     <test name="[General] Project navigation tests">
         <parameter name="testData" value="/project/launchProjectTestData.xml"/>

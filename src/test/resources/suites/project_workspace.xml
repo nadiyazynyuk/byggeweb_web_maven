@@ -2,6 +2,7 @@
 
 <suite name="Byggeweb Project Workspace UI tests" parallel="tests" thread-count="1">
     <parameter name="environment" value="testserver"/>
+<!--    <parameter name="environment" value="production"/>-->
 
     <test name="[Workspace] Create/update/delete folder tests">
         <parameter name="testData" value="/project/workspace/createNewFolderTestData.xml"/>

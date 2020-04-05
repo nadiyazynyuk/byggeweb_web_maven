@@ -2,6 +2,7 @@
 
 <suite name="Byggeweb Project Version Set UI tests" parallel="tests" thread-count="1">
     <parameter name="environment" value="testserver"/>
+<!--    <parameter name="environment" value="production"/>-->
 
     <test name="[VersionSet][Workspace] Create/update/delete Version set tests">
         <parameter name="testData" value="/project/versionsets/createNewVersionSetTestData.xml"/>

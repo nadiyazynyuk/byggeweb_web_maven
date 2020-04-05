@@ -2,6 +2,7 @@
 
 <suite name="Byggeweb Project Publication Space UI tests" parallel="tests" thread-count="1">
     <parameter name="environment" value="testserver"/>
+<!--    <parameter name="environment" value="production"/>-->
 
     <test name="[Publication space] Create/update/delete new empty Document list">
         <parameter name="testData" value="/project/publicationspace/createNewEmptyListTestData.xml"/>
@@ -137,8 +138,6 @@
             <class name="dk.byggeweb.project.publicationspace.lists.AssociateList"/>
         </classes>
     </test>
-
-
 
     <test name="[Publication space] Approve published from Local Machine file test">
         <parameter name="testData" value="/project/publicationspace/approveFileFromLocalMachineTestData.xml"/>
