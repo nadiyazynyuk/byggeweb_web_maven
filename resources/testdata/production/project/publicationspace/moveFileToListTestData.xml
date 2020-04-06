@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<testdata>
+
+    <userName>selenium.bot@ukr.net</userName>
+    <password>testPassword#1</password>
+    <name>Selenium Bot</name>
+    <projectLink>https://byggeweb.dk/controller?cmd=company7.project.login&amp;project=36359</projectLink>
+    <projectName>AutoRoyalFactory</projectName>
+    <documentListName>Document List A</documentListName>
+    <documentListFolderName>Folder A.1</documentListFolderName>
+    <documentList2Name>Document List B</documentList2Name>
+    <documentListFolder2Name>Folder B.1</documentListFolder2Name>
+    <testFileName>TestMoveToListPublishedFile</testFileName>
+    <fileToUploadPath>resources/testfiles/TestMoveToListPublishedFile.jpg</fileToUploadPath>
+
+</testdata>
