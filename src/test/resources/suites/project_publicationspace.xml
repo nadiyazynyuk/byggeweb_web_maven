@@ -130,6 +130,13 @@
         </classes>
     </test>
 
+    <test name="[Distribution space] Distribute file from Document list to Distribution list test">
+        <parameter name="testData" value="/project/publicationspace/distributeFileTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.files.update.DistributeFile"/>
+        </classes>
+    </test>
+
     <!--  With Approval -->
 
     <test name="[Publication space] Create/update/delete new empty Document list with approval procedure">

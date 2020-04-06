@@ -25,7 +25,7 @@ public class DistributionSpaceNodesPanel extends ProjectHomePage {
     private SelenideElement monitoredFilesNode = $(byXpath("//td[contains(@class, 'WMP_74')]"));
     private SelenideElement searchResultNode = $(byXpath("//td[contains(@class, 'WMP_68')]"));
 
-    private SelenideElement getDistributionListNodeByName(String name) {
+    public SelenideElement getDistributionListNodeByName(String name) {
         return $(By.xpath("//span[@class='x-tree-node-text ' and contains(text(), '" + name + "')]"));
     }
 

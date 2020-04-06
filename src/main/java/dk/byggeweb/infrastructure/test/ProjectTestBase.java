@@ -4,6 +4,8 @@ import dk.byggeweb.infrastructure.test.testdata.model.ProjectTestDataModel;
 import dk.byggeweb.objects.project.ProjectHomePage;
 import dk.byggeweb.steps.GeneralSteps;
 import dk.byggeweb.steps.project.common.SearchSteps;
+import dk.byggeweb.steps.project.distributionspace.DSFileSteps;
+import dk.byggeweb.steps.project.distributionspace.DSFolderSteps;
 import dk.byggeweb.steps.project.publicationspace.*;
 import dk.byggeweb.steps.project.versionsets.VersionSetsSteps;
 import dk.byggeweb.steps.project.workspace.*;
@@ -27,6 +29,9 @@ public abstract class ProjectTestBase extends TestBase {
     public PSFileInformationSteps psFileInformationSteps = new PSFileInformationSteps();
     public PSMonitorFilesSteps psMonitorFilesSteps = new PSMonitorFilesSteps();
     public PSMonitorFoldersSteps pSMonitorFoldersSteps = new PSMonitorFoldersSteps();
+
+    public DSFolderSteps dsFolderSteps = new DSFolderSteps();
+    public DSFileSteps dsFileSteps = new DSFileSteps();
 
     public SearchSteps searchSteps = new SearchSteps();
     public VersionSetsSteps versionSetsSteps = new VersionSetsSteps();

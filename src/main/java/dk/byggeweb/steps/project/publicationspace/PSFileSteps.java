@@ -163,6 +163,18 @@ public class PSFileSteps {
         log.info("Download files button was clicked");
     }
 
+    @Step("Distribute file")
+    public void distributeFile(String fileName, String distributionListName) {
+        selectFile(fileName);
+        PSFolderContentPanel psFolderContentPanel = new PSFolderContentPanel();
+        psFolderContentPanel.getFileDistributeButton().click();
+        log.info("Distribute files button was clicked");
+        psFolderContentPanel.switchToNewWindow();
+        PSFileDistributionPopup psFileDistributionPopup = new PSFileDistributionPopup();
+        psFileDistributionPopup.distributeFile();
+        psFolderContentPanel.switchToLastTab();
+    }
+
     @Step("Download all files from the folder")
     public void generateDownloadFilesLink(String fileName) {
         selectFile(fileName);
