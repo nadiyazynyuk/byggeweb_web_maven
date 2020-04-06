@@ -13,6 +13,7 @@ public class PublicationSpaceContentPanel extends PublicationSpaceNodesPanel {
     private SelenideElement filePublishButton = $(byXpath("//span[@data-locator='locator-btn-file_ps_add']"));
     private SelenideElement fileApproveRejectButton = $(byXpath("//span[@data-locator='locator-btn-file_ps_appr_reject']"));
     private SelenideElement fileDeleteButton = $(byXpath("//span[@data-locator='locator-btn-file_ps_delete']"));
+    private SelenideElement fileMoveButton = $(byXpath("//span[@data-locator='locator-btn-file_ps_move']"));
     private SelenideElement fileAddToVersionSetButton = $(byXpath("//span[@data-locator='locator-btn-file_ps_vs_add']"));
     private SelenideElement fileAdvancedSearchButton = $(byXpath("//span[@data-locator='locator-btn-file_ps_search']"));
     private SelenideElement fileMonitorButton = $(byXpath("//span[@data-locator='locator-btn-file_ps_watch_toggle']"));

@@ -116,6 +116,13 @@
         </classes>
     </test>
 
+    <test name="[Publication space] Move file to another folder inside one Document list test">
+        <parameter name="testData" value="/project/publicationspace/moveFileToFolderTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.files.update.MoveFileToFolder"/>
+        </classes>
+    </test>
+
     <!--  With Approval -->
 
     <test name="[Publication space] Create/update/delete new empty Document list with approval procedure">

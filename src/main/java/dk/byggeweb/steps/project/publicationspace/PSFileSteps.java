@@ -5,10 +5,7 @@ import dk.byggeweb.objects.project.common.modals.FileAddToVersionSetPopup;
 import dk.byggeweb.objects.project.common.modals.FileDownloadPopup;
 import dk.byggeweb.objects.project.common.modals.FileEnhancedUploadTab;
 import dk.byggeweb.objects.project.common.modals.FileUploadPopup;
-import dk.byggeweb.objects.project.publicationspace.modals.PSFileApproveRejectPopup;
-import dk.byggeweb.objects.project.publicationspace.modals.PSFileDeletePopup;
-import dk.byggeweb.objects.project.publicationspace.modals.PSFileInformationEditPopup;
-import dk.byggeweb.objects.project.publicationspace.modals.PSFilePublishPopup;
+import dk.byggeweb.objects.project.publicationspace.modals.*;
 import dk.byggeweb.objects.project.publicationspace.panels.PSFileInformationPanel;
 import dk.byggeweb.objects.project.publicationspace.panels.PSFolderContentPanel;
 import dk.byggeweb.steps.GeneralSteps;
@@ -198,6 +195,19 @@ public class PSFileSteps {
     public void startMonitorFile(String filename) {
         selectFile(filename);
         new PSFolderContentPanel().getFileMonitorButton().click();
+    }
+
+    @Step("Move file to another folder")
+    public void moveFile(String filename, String folderName) {
+        selectFile(filename);
+        PSFolderContentPanel psFolderContentPanel = new PSFolderContentPanel();
+        psFolderContentPanel.getFileMoveButton().click();
+        log.info("Move file button was clicked");
+        psFolderContentPanel.switchToNewWindow();
+        PSFileMovePopup psFileMovePopup = new PSFileMovePopup();
+        psFileMovePopup.moveFile(folderName);
+        log.info("File " + filename + " was moved to the folder " + folderName);
+        psFolderContentPanel.switchToLastTab();
     }
 
     @Step("Verify file is present in the list")

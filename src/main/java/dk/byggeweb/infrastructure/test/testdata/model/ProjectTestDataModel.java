@@ -103,6 +103,10 @@ public class ProjectTestDataModel {
     @Getter
     private String documentListName;
 
+ @XmlElement
+    @Getter
+    private String documentList2Name;
+
     @XmlElement
     @Getter
     private String createListName;
@@ -118,6 +122,10 @@ public class ProjectTestDataModel {
     @XmlElement
     @Getter
     private String documentListFolderName;
+
+    @XmlElement
+    @Getter
+    private String documentListFolder2Name;
 
     @XmlElement
     @Getter
