@@ -143,4 +143,8 @@ public class ProjectTestDataModel {
     @Getter
     private String distributionListName;
 
+    @XmlElement
+    @Getter
+    private String distributionList2Name;
+
 }

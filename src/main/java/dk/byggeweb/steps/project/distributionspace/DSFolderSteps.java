@@ -1,5 +1,6 @@
 package dk.byggeweb.steps.project.distributionspace;
 
+import dk.byggeweb.objects.project.distributionspace.modals.DSDocumentListAssociatingPopup;
 import dk.byggeweb.objects.project.distributionspace.modals.DSListCreatePopup;
 import dk.byggeweb.objects.project.distributionspace.modals.DSListDeletePopup;
 import dk.byggeweb.objects.project.distributionspace.panels.*;
@@ -16,6 +17,14 @@ public class DSFolderSteps {
         DistributionSpaceNodesPanel distributionSpaceNodesPanel = new DistributionSpaceNodesPanel();
         distributionSpaceNodesPanel.getDistributionListNodeByName(distributionListName).click();
         log.info("Distribution list " + distributionListName + " was selected");
+        new DSSingleDistributionListContentPanel();
+    }
+
+    @Step("Open Distribution list")
+    public void openDistributionList(String distributionListName) {
+        DistributionSpaceNodesPanel distributionSpaceNodesPanel = new DistributionSpaceNodesPanel();
+        distributionSpaceNodesPanel.getDistributionListNodeByName(distributionListName).doubleClick();
+        log.info("Distribution list " + distributionListName + " was opened");
         new DSSingleDistributionListContentPanel();
     }
 
@@ -97,6 +106,23 @@ public class DSFolderSteps {
         log.info("Distribution list was deleted");
         dsSingleDistributionListContentPanel.switchToLastTab();
         new DSDistributionListsContentPanel();
+    }
+
+    @Step("Add Distribution list association with Document list")
+    public void changeDocumentListAssociation(String documentListName) {
+        DSSingleDistributionListContentPanel dsSingleDistributionListContentPanel = new DSSingleDistributionListContentPanel();
+        dsSingleDistributionListContentPanel.getAssociateDocumentListButton().click();
+        log.info("Associate document list button was clicked");
+        dsSingleDistributionListContentPanel.switchToNewWindow();
+        DSDocumentListAssociatingPopup dsDocumentListAssociatingPopup = new DSDocumentListAssociatingPopup();
+        dsDocumentListAssociatingPopup.associateList(documentListName);
+        log.info("Distribution list was associated with document list " + documentListName);
+        dsSingleDistributionListContentPanel.switchToLastTab();
+    }
+
+    public boolean getListIsPresent(String name) {
+        DistributionSpaceNodesPanel distributionSpaceNodesPanel = new DistributionSpaceNodesPanel();
+        return distributionSpaceNodesPanel.getDistributionListNodeByName(name).isDisplayed();
     }
 
     @Step("Verify list is present")
