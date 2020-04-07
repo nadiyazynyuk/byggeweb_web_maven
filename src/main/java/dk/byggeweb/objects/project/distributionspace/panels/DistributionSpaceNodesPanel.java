@@ -29,6 +29,13 @@ public class DistributionSpaceNodesPanel extends ProjectHomePage {
         return $(By.xpath("//span[@class='x-tree-node-text ' and contains(text(), '" + name + "')]"));
     }
 
+    private SelenideElement createDistributionListButton = $(byXpath("//span[@data-locator='locator-btn-distlist_create']"));
+    private SelenideElement editDistributionListButton = $(byXpath("//span[@data-locator='locator-btn-distlist_edit']"));
+    private SelenideElement deleteDistributionListButton = $(byXpath("//span[@data-locator='locator-btn-distlist_delete']"));
+    private SelenideElement associateDocumentListButton = $(byXpath("//span[@data-locator='locator-btn-distlist_set_doclist']"));
+    private SelenideElement associateDistributionListButton = $(byXpath("//span[@data-locator='locator-btn-distlist_set_distr']"));
+    private SelenideElement monitorFolderButton = $(byXpath("//span[@data-locator='locator-btn-distlist_watch_dir']"));
+
     @Step("Navigate to Root Distribution list")
     public void navigateToRootDistributionList() {
         rootDistributionListNode.click();

@@ -34,6 +34,7 @@ public class PSListCreatePopup extends ModalBase {
 
     @Step("Rename document list")
     public void renameDocumentList(String name) {
+        nameInput.clear();
         nameInput.setValue(name);
         getOkButton().click();
         getCloseButton().click();

@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Byggeweb Project Distribution Space UI tests" parallel="tests" thread-count="1">
+    <parameter name="environment" value="testserver"/>
+    <!--    <parameter name="environment" value="production"/>-->
+
+    <test name="[Distribution space] Create/update/delete Distribution list test">
+        <parameter name="testData" value="/project/distributionspace/createNewListTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.distributionspace.lists.CreateList"/>
+        </classes>
+    </test>
+
+</suite>
+

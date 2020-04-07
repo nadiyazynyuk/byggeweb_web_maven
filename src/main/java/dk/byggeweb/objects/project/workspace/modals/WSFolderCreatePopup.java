@@ -9,19 +9,19 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class WSFolderCreatePopup extends ModalBase {
 
-    private SelenideElement folderNameInput = $(byXpath("//input[@name='directoryname']"));
+    private SelenideElement nameInput = $(byXpath("//input[@name='directoryname']"));
 
     @Step("Create folder with name")
     public void createFolder(String name) {
-        folderNameInput.setValue(name);
+        nameInput.setValue(name);
         getOkButton().click();
         getCloseButton().click();
     }
 
     @Step("Rename folder")
     public void renameFolder(String name) {
-        folderNameInput.clear();
-        folderNameInput.setValue(name);
+        nameInput.clear();
+        nameInput.setValue(name);
         getOkButton().click();
         getCloseButton().click();
     }
