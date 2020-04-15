@@ -1,12 +1,13 @@
 package dk.byggeweb.project.versionsets;
 
 import dk.byggeweb.infrastructure.test.ProjectTestBase;
+import io.qameta.allure.Link;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class AddRemoveFileFromWorkspace extends ProjectTestBase {
 
-    // https://itwofm.atlassian.net/browse/TSB-49
+    @Link(url = "https://itwofm.atlassian.net/browse/TSB-49")
 
     @BeforeClass
     public void prepareData() {
@@ -14,12 +15,9 @@ public class AddRemoveFileFromWorkspace extends ProjectTestBase {
         projectHomePage.getWorkspaceNodesPanel().openVersionSets();
         versionSetsSteps.openVersionSetWorkspace(data.getVersionSetName());
 
-        while (true) {
-            try {
-                versionSetsSteps.removeFileFromWorkspaceVersionSet(data.getFolderName(), data.getTestFileName());
-            } catch (com.codeborne.selenide.ex.ElementNotFound e) {
-                break;
-            }
+        try {
+            versionSetsSteps.removeFileFromWorkspaceVersionSet(data.getFolderName(), data.getTestFileName());
+        } catch (com.codeborne.selenide.ex.ElementNotFound ignored) {
         }
 
         wsFolderSteps.navigateToFolder(data.getFolderName());

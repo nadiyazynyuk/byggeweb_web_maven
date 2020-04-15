@@ -1,23 +1,22 @@
 package dk.byggeweb.project.publicationspace.files.publish;
 
 import dk.byggeweb.infrastructure.test.ProjectTestBase;
+import io.qameta.allure.Link;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class RejectAndDeleteFileFromLocalMachine extends ProjectTestBase {
 
-    // https://itwofm.atlassian.net/browse/TSB-62
+    @Link(url = "https://itwofm.atlassian.net/browse/TSB-62")
 
     @BeforeClass
     public void prepareData() {
         projectHomePage.navigateToPublicationSpace();
         projectHomePage.getPublicationSpaceNodesPanel().navigateToWaitingForApproval();
-        while (true) {
-            try {
-                psFileSteps.rejectAndDeleteFile(data.getTestFileName());
-            } catch (com.codeborne.selenide.ex.ElementNotFound e) {
-                break;
-            }
+
+        try {
+            psFileSteps.rejectAndDeleteFile(data.getTestFileName());
+        } catch (com.codeborne.selenide.ex.ElementNotFound ignored) {
         }
 
         psFolderSteps.navigateToFolderInDocumentList(data.getDocumentListName(), data.getDocumentListFolderName());

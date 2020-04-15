@@ -1,24 +1,23 @@
 package dk.byggeweb.project.workspace.folders;
 
 import dk.byggeweb.infrastructure.test.ProjectTestBase;
+import io.qameta.allure.Link;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class MonitorFolder extends ProjectTestBase {
 
-    // https://itwofm.atlassian.net/browse/TSB-43
+    @Link(url = "https://itwofm.atlassian.net/browse/TSB-43")
 
     @BeforeClass
     public void prepareData() {
         projectHomePage.navigateToWorkspaceModule();
         projectHomePage.getWorkspaceNodesPanel().navigateToMonitoredFolders();
-        while (true) {
-            try {
-                wsMonitorFoldersSteps.stopMonitorFolder(data.getFolderName());
-                wsMonitorFoldersSteps.verifyFolderIsNotPresent(data.getFolderName());
-            } catch (com.codeborne.selenide.ex.ElementNotFound e) {
-                break;
-            }
+
+        try {
+            wsMonitorFoldersSteps.stopMonitorFolder(data.getFolderName());
+            wsMonitorFoldersSteps.verifyFolderIsNotPresent(data.getFolderName());
+        } catch (com.codeborne.selenide.ex.ElementNotFound ignored) {
         }
     }
 

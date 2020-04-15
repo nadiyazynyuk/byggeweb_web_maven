@@ -1,34 +1,29 @@
 package dk.byggeweb.project.workspace.folders;
 
 import dk.byggeweb.infrastructure.test.ProjectTestBase;
+import io.qameta.allure.Link;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class CreateNewFolder extends ProjectTestBase {
 
-    // https://itwofm.atlassian.net/browse/TSB-20
+    @Link(url = "https://itwofm.atlassian.net/browse/TSB-20")
 
     @BeforeClass
     public void prepareData() {
         projectHomePage.navigateToWorkspaceModule();
         wsFolderSteps.navigateToFolder(data.getFolderName());
 
-        while (true) {
-            try {
-                wsFolderSteps.navigateToFolder(data.getCreateFolderName());
-                wsFolderSteps.deleteFolder(data.getFolderName());
-            } catch (com.codeborne.selenide.ex.ElementNotFound e) {
-                break;
-            }
+        try {
+            wsFolderSteps.navigateToFolder(data.getCreateFolderName());
+            wsFolderSteps.deleteFolder(data.getFolderName());
+        } catch (com.codeborne.selenide.ex.ElementNotFound ignored) {
         }
 
-        while (true) {
-            try {
-                wsFolderSteps.navigateToFolder(data.getRenameFolderName());
-                wsFolderSteps.deleteFolder(data.getFolderName());
-            } catch (com.codeborne.selenide.ex.ElementNotFound e) {
-                break;
-            }
+        try {
+            wsFolderSteps.navigateToFolder(data.getRenameFolderName());
+            wsFolderSteps.deleteFolder(data.getFolderName());
+        } catch (com.codeborne.selenide.ex.ElementNotFound ignored) {
         }
     }
 

@@ -1,12 +1,13 @@
 package dk.byggeweb.project.publicationspace.files.delete;
 
 import dk.byggeweb.infrastructure.test.ProjectTestBase;
+import io.qameta.allure.Link;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class DiscontinueFile extends ProjectTestBase {
 
-    // https://itwofm.atlassian.net/browse/TSB-40
+    @Link(url = "https://itwofm.atlassian.net/browse/TSB-40")
 
     @BeforeClass
     public void prepareData() {

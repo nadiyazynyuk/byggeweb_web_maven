@@ -1,34 +1,29 @@
 package dk.byggeweb.project.versionsets;
 
 import dk.byggeweb.infrastructure.test.ProjectTestBase;
+import io.qameta.allure.Link;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class CreateNewVersionSet extends ProjectTestBase {
 
-    // https://itwofm.atlassian.net/browse/TSB-47
+    @Link(url = "https://itwofm.atlassian.net/browse/TSB-47")
 
     @BeforeClass
     public void deleteVersionSetIfExists() {
         projectHomePage.navigateToWorkspaceModule();
         projectHomePage.getWorkspaceNodesPanel().openVersionSets();
 
-        while (true) {
-            try {
-                versionSetsSteps.navigateToVersionSet(data.getCreateVersionSetName());
-                versionSetsSteps.deleteVersionSet(data.getCreateVersionSetName());
-            } catch (com.codeborne.selenide.ex.ElementNotFound e) {
-                break;
-            }
+        try {
+            versionSetsSteps.navigateToVersionSet(data.getCreateVersionSetName());
+            versionSetsSteps.deleteVersionSet(data.getCreateVersionSetName());
+        } catch (com.codeborne.selenide.ex.ElementNotFound ignored) {
         }
 
-        while (true) {
-            try {
-                versionSetsSteps.navigateToVersionSet(data.getRenameVersionSetName());
-                versionSetsSteps.deleteVersionSet(data.getRenameVersionSetName());
-            } catch (com.codeborne.selenide.ex.ElementNotFound e) {
-                break;
-            }
+        try {
+            versionSetsSteps.navigateToVersionSet(data.getRenameVersionSetName());
+            versionSetsSteps.deleteVersionSet(data.getRenameVersionSetName());
+        } catch (com.codeborne.selenide.ex.ElementNotFound ignored) {
         }
     }
 

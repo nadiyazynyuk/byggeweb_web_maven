@@ -1,12 +1,13 @@
 package dk.byggeweb.project.publicationspace.files.publish;
 
 import dk.byggeweb.infrastructure.test.ProjectTestBase;
+import io.qameta.allure.Link;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class PublishNewFileFromLocalMachine extends ProjectTestBase {
 
-    // https://itwofm.atlassian.net/browse/TSB-37
+    @Link(url = "https://itwofm.atlassian.net/browse/TSB-37")
 
     @BeforeClass
     public void prepareData() {

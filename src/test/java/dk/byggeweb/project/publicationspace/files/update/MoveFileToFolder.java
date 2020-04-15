@@ -1,12 +1,13 @@
 package dk.byggeweb.project.publicationspace.files.update;
 
 import dk.byggeweb.infrastructure.test.ProjectTestBase;
+import io.qameta.allure.Link;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class MoveFileToFolder extends ProjectTestBase {
 
-    // https://itwofm.atlassian.net/browse/TSB-68
+    @Link(url = "https://itwofm.atlassian.net/browse/TSB-68")
 
     @BeforeClass
     public void prepareData() {

@@ -2,6 +2,7 @@ package dk.byggeweb.project.publicationspace.files.update;
 
 import dk.byggeweb.infrastructure.test.ProjectTestBase;
 import dk.byggeweb.objects.project.publicationspace.panels.PSFileInformationPanel;
+import io.qameta.allure.Link;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -9,10 +10,10 @@ import java.time.LocalDate;
 
 public class EditFileInformation extends ProjectTestBase {
 
-    // https://itwofm.atlassian.net/browse/TSB-56
-
     private String subjectMetadata;
     private String revisionDateMetadata;
+
+    @Link(url = "https://itwofm.atlassian.net/browse/TSB-56")
 
     @BeforeClass
     public void prepareData() {

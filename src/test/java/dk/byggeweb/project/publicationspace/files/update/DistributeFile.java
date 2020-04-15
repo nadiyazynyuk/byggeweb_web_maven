@@ -14,12 +14,9 @@ public class DistributeFile extends ProjectTestBase {
         projectHomePage.navigateToDistributionSpace();
         dsFolderSteps.navigateToFolderInDocumentListInDistributionList(data.getDistributionListName(), data.getDocumentListName(), data.getDocumentListFolderName());
 
-        while(true) {
-            try{
-                dsFileSteps.cancelFileDistribution(data.getTestFileName());
-            } catch (com.codeborne.selenide.ex.ElementNotFound e) {
-                break;
-            }
+        try {
+            dsFileSteps.cancelFileDistribution(data.getTestFileName());
+        } catch (com.codeborne.selenide.ex.ElementNotFound ignored) {
         }
 
         projectHomePage.navigateToPublicationSpace();

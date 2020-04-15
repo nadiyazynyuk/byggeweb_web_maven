@@ -2,13 +2,14 @@ package dk.byggeweb.project.workspace.files.download;
 
 import dk.byggeweb.infrastructure.test.ProjectTestBase;
 import dk.byggeweb.steps.GeneralSteps;
+import io.qameta.allure.Link;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class DownloadFile extends ProjectTestBase {
 
-    // https://itwofm.atlassian.net/browse/TSB-30
+    @Link(url = "https://itwofm.atlassian.net/browse/TSB-30")
 
     @BeforeClass
     public void prepareData() {

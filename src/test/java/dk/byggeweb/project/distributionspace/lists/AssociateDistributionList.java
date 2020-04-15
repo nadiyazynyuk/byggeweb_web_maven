@@ -17,7 +17,6 @@ public class AssociateDistributionList extends ProjectTestBase {
         dsFolderSteps.navigateToInformation(data.getDistributionListName());
 
         boolean isAssociated = dsFolderSteps.getDistributionListAssociationStatus(data.getDistributionListName(), data.getDistributionList2Name());
-        System.out.println("Associated ---> " + isAssociated);
         while (true) {
             if (isAssociated) {
                 try {

@@ -1,35 +1,31 @@
 package dk.byggeweb.project.publicationspace.folders;
 
 import dk.byggeweb.infrastructure.test.ProjectTestBase;
+import io.qameta.allure.Link;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class CreateNewFolder extends ProjectTestBase {
 
-    // https://itwofm.atlassian.net/browse/TSB-52
+    @Link(url = "https://itwofm.atlassian.net/browse/TSB-52")
 
     @BeforeClass
     public void prepareData() {
         projectHomePage.navigateToPublicationSpace();
         psFolderSteps.openDocumentList(data.getDocumentListName());
 
-        while (true) {
-            try {
-                psFolderSteps.navigateToFolderInsideDocumentList(data.getCreateFolderName());
-                psFolderSteps.deleteFolder();
-            } catch (com.codeborne.selenide.ex.ElementNotFound e) {
-                break;
-            }
+        try {
+            psFolderSteps.navigateToFolderInsideDocumentList(data.getCreateFolderName());
+            psFolderSteps.deleteFolder();
+        } catch (com.codeborne.selenide.ex.ElementNotFound ignored) {
         }
 
-        while (true) {
-            try {
-                psFolderSteps.navigateToFolderInsideDocumentList(data.getRenameFolderName());
-                psFolderSteps.deleteFolder();
-            } catch (com.codeborne.selenide.ex.ElementNotFound e) {
-                break;
-            }
+        try {
+            psFolderSteps.navigateToFolderInsideDocumentList(data.getRenameFolderName());
+            psFolderSteps.deleteFolder();
+        } catch (com.codeborne.selenide.ex.ElementNotFound ignored) {
         }
+
     }
 
     @Test(description = "Create folder in Document list")

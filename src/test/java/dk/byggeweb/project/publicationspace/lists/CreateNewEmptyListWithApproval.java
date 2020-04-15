@@ -1,33 +1,28 @@
 package dk.byggeweb.project.publicationspace.lists;
 
 import dk.byggeweb.infrastructure.test.ProjectTestBase;
+import io.qameta.allure.Link;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class CreateNewEmptyListWithApproval extends ProjectTestBase {
 
-    // https://itwofm.atlassian.net/browse/TSB-59
+    @Link(url = "https://itwofm.atlassian.net/browse/TSB-59")
 
     @BeforeClass
     public void prepareData() {
         projectHomePage.navigateToPublicationSpace();
 
-        while (true) {
-            try {
-                psFolderSteps.navigateToDocumentList(data.getCreateListName());
-                psFolderSteps.deleteDocumentList();
-            } catch (com.codeborne.selenide.ex.ElementNotFound e) {
-                break;
-            }
+        try {
+            psFolderSteps.navigateToDocumentList(data.getCreateListName());
+            psFolderSteps.deleteDocumentList();
+        } catch (com.codeborne.selenide.ex.ElementNotFound ignored) {
         }
 
-        while (true) {
-            try {
-                psFolderSteps.navigateToDocumentList(data.getRenameListName());
-                psFolderSteps.deleteDocumentList();
-            } catch (com.codeborne.selenide.ex.ElementNotFound e) {
-                break;
-            }
+        try {
+            psFolderSteps.navigateToDocumentList(data.getRenameListName());
+            psFolderSteps.deleteDocumentList();
+        } catch (com.codeborne.selenide.ex.ElementNotFound ignored) {
         }
     }
 

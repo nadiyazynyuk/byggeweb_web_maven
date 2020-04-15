@@ -1,14 +1,15 @@
 package dk.byggeweb.project.workspace.files.update;
 
 import dk.byggeweb.infrastructure.test.ProjectTestBase;
+import io.qameta.allure.Link;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class LockFile extends ProjectTestBase {
 
-    // https://itwofm.atlassian.net/browse/TSB-28
-
     private boolean isLocked;
+
+    @Link(url = "https://itwofm.atlassian.net/browse/TSB-28")
 
     @BeforeClass
     public void prepareData() {

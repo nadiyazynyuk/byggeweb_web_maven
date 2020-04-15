@@ -7,14 +7,15 @@ import dk.byggeweb.objects.desktop.personalspace.MyFoldersPage;
 import dk.byggeweb.objects.desktop.personalspace.PersonalSpacePage;
 import dk.byggeweb.objects.project.ProjectHomePage;
 import dk.byggeweb.steps.GeneralSteps;
+import io.qameta.allure.Link;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class TransferSingleFile extends ProjectTestBase {
 
-    // https://itwofm.atlassian.net/browse/TSB-16
-
     private HomePage homePage;
+
+    @Link(url = "https://itwofm.atlassian.net/browse/TSB-16")
 
     @BeforeClass
     public void prepareData() {
