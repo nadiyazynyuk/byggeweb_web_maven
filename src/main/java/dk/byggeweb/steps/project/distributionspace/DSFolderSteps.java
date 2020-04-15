@@ -1,9 +1,6 @@
 package dk.byggeweb.steps.project.distributionspace;
 
-import dk.byggeweb.objects.project.distributionspace.modals.DSDistributionListAssociatingPopup;
-import dk.byggeweb.objects.project.distributionspace.modals.DSDocumentListAssociatingPopup;
-import dk.byggeweb.objects.project.distributionspace.modals.DSListCreatePopup;
-import dk.byggeweb.objects.project.distributionspace.modals.DSListDeletePopup;
+import dk.byggeweb.objects.project.distributionspace.modals.*;
 import dk.byggeweb.objects.project.distributionspace.panels.*;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j;
@@ -143,6 +140,18 @@ public class DSFolderSteps {
         DSDocumentListAssociatingPopup dsDocumentListAssociatingPopup = new DSDocumentListAssociatingPopup();
         dsDocumentListAssociatingPopup.associateList(documentListName);
         log.info("Distribution list was associated with document list " + documentListName);
+        dsSingleDistributionListContentPanel.switchToLastTab();
+    }
+
+    @Step("Distribute file from Distribution list")
+    public void distributeFile(String fileName) {
+        DSSingleDistributionListContentPanel dsSingleDistributionListContentPanel = new DSSingleDistributionListContentPanel();
+        dsSingleDistributionListContentPanel.getFileDistributeButton().click();
+        log.info("Distribute file button was clicked");
+        dsSingleDistributionListContentPanel.switchToNewWindow();
+        DSFileDistributionPopup dsFileDistributionPopup = new DSFileDistributionPopup();
+        dsFileDistributionPopup.distributeFile(fileName);
+        log.info("File " + fileName + " was distributed to distribution list");
         dsSingleDistributionListContentPanel.switchToLastTab();
     }
 

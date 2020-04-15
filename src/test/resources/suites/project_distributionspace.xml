@@ -25,5 +25,12 @@
         </classes>
     </test>
 
+    <test name="[Distribution space] Distribute file from the Distribution list test">
+        <parameter name="testData" value="/project/distributionspace/distributeFileFromDSTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.distributionspace.files.DistributeFile"/>
+        </classes>
+    </test>
+
 </suite>
 

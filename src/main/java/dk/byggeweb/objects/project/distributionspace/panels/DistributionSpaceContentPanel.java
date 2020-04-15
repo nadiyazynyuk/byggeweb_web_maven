@@ -10,6 +10,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class DistributionSpaceContentPanel extends DistributionSpaceNodesPanel {
 
     private SelenideElement fileCancelDistributionButton = $(byXpath("//span[@data-locator='locator-btn-file_ds_remove']"));
+    private SelenideElement fileDistributeButton = $(byXpath("//span[@data-locator='locator-btn-file_ds_add']"));
 
     public SelenideElement getFileByName(String name) {
         return $(byXpath("//tr[@class='  x-grid-row']//*[contains(text(),'" + name + "')]"));

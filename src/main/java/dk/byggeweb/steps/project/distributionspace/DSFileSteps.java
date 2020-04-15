@@ -24,8 +24,11 @@ public class DSFileSteps {
         DSFolderContentPanel dsFolderContentPanel = new DSFolderContentPanel();
         dsFolderContentPanel.getFileCancelDistributionButton().click();
         log.info("Cancel file distribution button was clicked");
+        dsFolderContentPanel.switchToNewWindow();
         DSFileDistributionCancelPopup dsFileDistributionCancelPopup = new DSFileDistributionCancelPopup();
-        dsFileDistributionCancelPopup.getOkButton().click();
+        dsFileDistributionCancelPopup.cancelDistribution();
+        log.info("Distribution of the file " + fileName + " was canceled");
+        dsFolderContentPanel.switchToLastTab();
     }
 
     @Step("Verify file is present in the list")

@@ -1,13 +1,14 @@
 package dk.byggeweb.project.publicationspace.lists;
 
 import dk.byggeweb.infrastructure.test.ProjectTestBase;
+import io.qameta.allure.Link;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class AssociateList extends ProjectTestBase {
 
-    // https://itwofm.atlassian.net/browse/TSB-53
+    @Link(url = "https://itwofm.atlassian.net/browse/TSB-53")
 
     @BeforeClass
     public void prepareData() {
