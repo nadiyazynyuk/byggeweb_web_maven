@@ -18,5 +18,12 @@
         </classes>
     </test>
 
+    <test name="[Distribution space] Associate Coordinator Distribution list with another Distribution list test">
+        <parameter name="testData" value="/project/distributionspace/associateDistributionListTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.distributionspace.lists.AssociateDistributionList"/>
+        </classes>
+    </test>
+
 </suite>
 

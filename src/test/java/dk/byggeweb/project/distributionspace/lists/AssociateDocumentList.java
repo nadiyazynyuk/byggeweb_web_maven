@@ -1,13 +1,14 @@
 package dk.byggeweb.project.distributionspace.lists;
 
 import dk.byggeweb.infrastructure.test.ProjectTestBase;
+import io.qameta.allure.Link;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class AssociateDocumentList extends ProjectTestBase {
 
-    // https://itwofm.atlassian.net/browse/TSB-73
+    @Link(url = "https://itwofm.atlassian.net/browse/TSB-73")
 
     @BeforeClass
     public void prepareData() {
@@ -33,6 +34,7 @@ public class AssociateDocumentList extends ProjectTestBase {
             }
         }
     }
+
 
     @Test(description = "Add association of the Distribution list with the Document list")
     public void associateDocumentList() {

@@ -1,5 +1,6 @@
 package dk.byggeweb.steps.project.distributionspace;
 
+import dk.byggeweb.objects.project.distributionspace.modals.DSDistributionListAssociatingPopup;
 import dk.byggeweb.objects.project.distributionspace.modals.DSDocumentListAssociatingPopup;
 import dk.byggeweb.objects.project.distributionspace.modals.DSListCreatePopup;
 import dk.byggeweb.objects.project.distributionspace.modals.DSListDeletePopup;
@@ -26,6 +27,14 @@ public class DSFolderSteps {
         distributionSpaceNodesPanel.getDistributionListNodeByName(distributionListName).doubleClick();
         log.info("Distribution list " + distributionListName + " was opened");
         new DSSingleDistributionListContentPanel();
+    }
+
+    @Step("Navigate to Information inside Distribution list")
+    public void navigateToInformation(String listName) {
+        DSSingleDistributionListContentPanel dsSingleDistributionListContentPanel = new DSSingleDistributionListContentPanel();
+        dsSingleDistributionListContentPanel.getDistributionListNodeByName("Information").click();
+        log.info("Information section of the Distribution list " + listName + " was selected");
+        new DSListInformationPanel(listName);
     }
 
     @Step("Navigate to the Folder in Document list in Distribution list")
@@ -106,6 +115,23 @@ public class DSFolderSteps {
         log.info("Distribution list was deleted");
         dsSingleDistributionListContentPanel.switchToLastTab();
         new DSDistributionListsContentPanel();
+    }
+
+    @Step("Get Distribution list association status")
+    public boolean getDistributionListAssociationStatus(String listName, String associatedListName) {
+        return new DSListInformationPanel(listName).isListAssociated(associatedListName);
+    }
+
+    @Step("Add Distribution list association with another Distribution list")
+    public void changeDistributionListAssociation(String distributionListName) {
+        DSSingleDistributionListContentPanel dsSingleDistributionListContentPanel = new DSSingleDistributionListContentPanel();
+        dsSingleDistributionListContentPanel.getAssociateDistributionListButton().click();
+        log.info("Associate distribution list button was clicked");
+        dsSingleDistributionListContentPanel.switchToNewWindow();
+        DSDistributionListAssociatingPopup dsDistributionListAssociatingPopup = new DSDistributionListAssociatingPopup();
+        dsDistributionListAssociatingPopup.associateList(distributionListName);
+        log.info("Distribution list was associated with distribution list " + distributionListName);
+        dsSingleDistributionListContentPanel.switchToLastTab();
     }
 
     @Step("Add Distribution list association with Document list")
