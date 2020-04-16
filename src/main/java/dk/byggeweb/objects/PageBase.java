@@ -36,4 +36,14 @@ public abstract class PageBase {
     public String getPageTitle() {
         return driver.getTitle();
     }
+
+    public void pleaseWait(int millis) {
+        try {
+            synchronized (this) {
+                wait(millis);
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }

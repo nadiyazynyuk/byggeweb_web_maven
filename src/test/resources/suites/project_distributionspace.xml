@@ -53,5 +53,12 @@
         </classes>
     </test>
 
+    <test name="[Distribution space] Quick search for file test">
+        <parameter name="testData" value="/project/distributionspace/quickSearchFileTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.distributionspace.files.search.QuickSearchFile"/>
+        </classes>
+    </test>
+
 </suite>
 

@@ -35,6 +35,7 @@ public class DistributionSpaceNodesPanel extends ProjectHomePage {
     private SelenideElement associateDocumentListButton = $(byXpath("//span[@data-locator='locator-btn-distlist_set_doclist']"));
     private SelenideElement associateDistributionListButton = $(byXpath("//span[@data-locator='locator-btn-distlist_set_distr']"));
     private SelenideElement monitorFolderButton = $(byXpath("//span[@data-locator='locator-btn-distlist_watch_dir']"));
+    private SelenideElement quickSearchInput = $(byXpath("//input[contains(@id, 'textfield')]"));
 
     @Step("Navigate to Root Distribution list")
     public void navigateToRootDistributionList() {

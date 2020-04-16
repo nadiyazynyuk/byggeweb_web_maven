@@ -2,6 +2,8 @@ package dk.byggeweb.steps.project.common;
 
 import com.codeborne.selenide.WebDriverRunner;
 import dk.byggeweb.objects.project.common.modals.FileSearchPopup;
+import dk.byggeweb.objects.project.distributionspace.panels.DSFolderContentPanel;
+import dk.byggeweb.objects.project.distributionspace.panels.DSQuickSearchResultContentPanel;
 import dk.byggeweb.objects.project.publicationspace.panels.PSFolderContentPanel;
 import dk.byggeweb.objects.project.publicationspace.panels.PSQuickSearchResultContentPanel;
 import dk.byggeweb.objects.project.publicationspace.panels.PSSearchResultContentPanel;
@@ -58,6 +60,14 @@ public class SearchSteps {
 
         WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
         new PSSearchResultContentPanel();
+    }
+
+    @Step("Quick search for file in Distribution space")
+    public void quickSearchFileInDistributionSpace(String fileName) {
+        DSFolderContentPanel dsFolderContentPanel = new DSFolderContentPanel();
+        dsFolderContentPanel.pleaseWait(1000);
+        dsFolderContentPanel.getQuickSearchInput().setValue(fileName).pressEnter();
+        new DSQuickSearchResultContentPanel();
     }
 
 }
