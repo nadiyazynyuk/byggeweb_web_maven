@@ -31,6 +31,13 @@ public class DSFileSteps {
         dsFolderContentPanel.switchToLastTab();
     }
 
+    @Step("Download single file")
+    public void downloadFile(String fileName) {
+        selectFile(fileName);
+        new DSFolderContentPanel().getFileDownloadButton().click();
+        log.info("Download files button was clicked");
+    }
+
     @Step("Verify file is present in the list")
     public void verifyFileIsPresent(String name) {
         DSFolderContentPanel dsFolderContentPanel = new DSFolderContentPanel();

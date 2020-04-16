@@ -28,14 +28,21 @@
     <test name="[Distribution space] Distribute file from the Distribution list test">
         <parameter name="testData" value="/project/distributionspace/distributeFileFromDSTestData.xml"/>
         <classes>
-            <class name="dk.byggeweb.project.distributionspace.files.DistributeFile"/>
+            <class name="dk.byggeweb.project.distributionspace.files.distribute.DistributeFile"/>
         </classes>
     </test>
 
     <test name="[Distribution space] Cancel file distribution test">
         <parameter name="testData" value="/project/distributionspace/cancelFileDistributionTestData.xml"/>
         <classes>
-            <class name="dk.byggeweb.project.distributionspace.files.CancelFileDistribution"/>
+            <class name="dk.byggeweb.project.distributionspace.files.distribute.CancelFileDistribution"/>
+        </classes>
+    </test>
+
+    <test name="[Distribution space] Download single file from Distribution list test">
+        <parameter name="testData" value="/project/distributionspace/downloadDistributedFileTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.distributionspace.files.download.DownloadFile"/>
         </classes>
     </test>
 

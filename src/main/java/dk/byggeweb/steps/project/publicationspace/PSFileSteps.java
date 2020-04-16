@@ -156,7 +156,7 @@ public class PSFileSteps {
         psFolderContentPanel.switchToLastTab();
     }
 
-    @Step("Download file")
+    @Step("Download single file")
     public void downloadFile(String fileName) {
         selectFile(fileName);
         new PSFolderContentPanel().getFileDownloadButton().click();

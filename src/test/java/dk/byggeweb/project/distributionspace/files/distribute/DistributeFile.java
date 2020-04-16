@@ -1,4 +1,4 @@
-package dk.byggeweb.project.distributionspace.files;
+package dk.byggeweb.project.distributionspace.files.distribute;
 
 import dk.byggeweb.infrastructure.test.ProjectTestBase;
 import io.qameta.allure.Link;

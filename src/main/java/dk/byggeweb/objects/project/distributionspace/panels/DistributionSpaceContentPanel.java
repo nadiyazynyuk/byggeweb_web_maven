@@ -9,6 +9,7 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public class DistributionSpaceContentPanel extends DistributionSpaceNodesPanel {
 
+    private SelenideElement fileDownloadButton = $(byXpath("//span[@data-locator='locator-btn-file_ds_download']"));
     private SelenideElement fileCancelDistributionButton = $(byXpath("//span[@data-locator='locator-btn-file_ds_remove']"));
     private SelenideElement fileDistributeButton = $(byXpath("//span[@data-locator='locator-btn-file_ds_add']"));
 
