@@ -32,5 +32,12 @@
         </classes>
     </test>
 
+    <test name="[Distribution space] Cancel file distribution test">
+        <parameter name="testData" value="/project/distributionspace/cancelFileDistributionTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.distributionspace.files.CancelFileDistribution"/>
+        </classes>
+    </test>
+
 </suite>
 

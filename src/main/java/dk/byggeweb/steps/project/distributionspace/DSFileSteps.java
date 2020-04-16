@@ -36,4 +36,11 @@ public class DSFileSteps {
         DSFolderContentPanel dsFolderContentPanel = new DSFolderContentPanel();
         dsFolderContentPanel.getFileByName(name).shouldHave(text(name));
     }
+
+    @Step("Verify file is not present in the list")
+    public void verifyFileIsNotPresent(String name) {
+        DSFolderContentPanel dsFolderContentPanel = new DSFolderContentPanel();
+        dsFolderContentPanel.getFileByName(name).shouldNotHave(text(name));
+    }
+
 }
