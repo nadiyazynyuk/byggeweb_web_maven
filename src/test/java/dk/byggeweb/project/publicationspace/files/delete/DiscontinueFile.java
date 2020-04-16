@@ -14,7 +14,7 @@ public class DiscontinueFile extends ProjectTestBase {
         projectHomePage.navigateToPublicationSpace();
         psFolderSteps.navigateToFolderInDocumentList(data.getDocumentListName(), data.getDocumentListFolderName());
         deleteDiscontinuedFileIfPresentInDocumentListFolder(data.getTestFileName());
-        uploadFileIfMNotPresentInDocumentListFolder(getAbsolutePath(data.getFileToUploadPath()), data.getTestFileName());
+        uploadFileIfNotPresentInDocumentListFolder(getAbsolutePath(data.getFileToUploadPath()), data.getTestFileName());
     }
 
     @Test(description = "Discontinue file")

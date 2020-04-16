@@ -13,7 +13,7 @@ public class DeleteFile extends ProjectTestBase {
     public void prepareData() {
         projectHomePage.navigateToPublicationSpace();
         psFolderSteps.navigateToFolderInDocumentList(data.getDocumentListName(), data.getDocumentListFolderName());
-        uploadFileIfMNotPresentInDocumentListFolder(getAbsolutePath(data.getFileToUploadPath()), data.getTestFileName());
+        uploadFileIfNotPresentInDocumentListFolder(getAbsolutePath(data.getFileToUploadPath()), data.getTestFileName());
     }
 
     @Test(description = "Delete file permanently")

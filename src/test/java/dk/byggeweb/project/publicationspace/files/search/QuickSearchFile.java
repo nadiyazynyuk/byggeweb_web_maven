@@ -13,7 +13,7 @@ public class QuickSearchFile extends ProjectTestBase {
     public void prepareData() {
         projectHomePage.navigateToPublicationSpace();
         psFolderSteps.navigateToFolderInDocumentList(data.getDocumentListName(), data.getDocumentListFolderName());
-        uploadFileIfMNotPresentInDocumentListFolder(data.getFileToUploadPath(), data.getTestFileName());
+        uploadFileIfNotPresentInDocumentListFolder(data.getFileToUploadPath(), data.getTestFileName());
     }
 
     @Test(description = "Quick search for the file in Publication space")

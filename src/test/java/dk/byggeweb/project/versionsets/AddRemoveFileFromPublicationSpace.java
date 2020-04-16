@@ -21,7 +21,7 @@ public class AddRemoveFileFromPublicationSpace extends ProjectTestBase {
         }
 
         psFolderSteps.navigateToFolderInDocumentList(data.getDocumentListName(), data.getDocumentListFolderName());
-        uploadFileIfMNotPresentInDocumentListFolder(data.getFileToUploadPath(), data.getTestFileName());
+        uploadFileIfNotPresentInDocumentListFolder(data.getFileToUploadPath(), data.getTestFileName());
     }
 
     @Test(description = "Add file to version set")

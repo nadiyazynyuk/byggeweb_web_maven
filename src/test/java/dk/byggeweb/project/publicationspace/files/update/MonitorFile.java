@@ -20,7 +20,7 @@ public class MonitorFile extends ProjectTestBase {
         } catch (com.codeborne.selenide.ex.ElementNotFound ignored) {
         }
         psFolderSteps.navigateToFolderInDocumentList(data.getDocumentListName(), data.getDocumentListFolderName());
-        uploadFileIfMNotPresentInDocumentListFolder(data.getFileToUploadPath(), data.getTestFileName());
+        uploadFileIfNotPresentInDocumentListFolder(data.getFileToUploadPath(), data.getTestFileName());
     }
 
     @Test(description = "Start Document list file monitoring")

@@ -20,7 +20,7 @@ public class CancelFileDistribution extends ProjectTestBase {
 
         projectHomePage.navigateToPublicationSpace();
         psFolderSteps.navigateToFolderInDocumentList(data.getDocumentListName(), data.getDocumentListFolderName());
-        uploadFileIfMNotPresentInDocumentListFolder(data.getFileToUploadPath(), data.getTestFileName());
+        uploadFileIfNotPresentInDocumentListFolder(data.getFileToUploadPath(), data.getTestFileName());
 
         projectHomePage.navigateToDistributionSpace();
         dsFolderSteps.navigateToDistributionList(data.getDistributionListName());

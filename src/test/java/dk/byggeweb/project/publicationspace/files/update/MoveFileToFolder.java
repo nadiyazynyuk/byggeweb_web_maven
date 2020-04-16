@@ -17,7 +17,7 @@ public class MoveFileToFolder extends ProjectTestBase {
         deleteFileIfPresentInDocumentListFolder(data.getTestFileName());
 
         psFolderSteps.navigateToFolderInsideDocumentList(data.getDocumentListFolderName());
-        uploadFileIfMNotPresentInDocumentListFolder(data.getFileToUploadPath(), data.getTestFileName());
+        uploadFileIfNotPresentInDocumentListFolder(data.getFileToUploadPath(), data.getTestFileName());
     }
 
     @Test(description = "Move file to another folder inside one Document list")

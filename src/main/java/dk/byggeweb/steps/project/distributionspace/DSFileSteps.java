@@ -1,12 +1,15 @@
 package dk.byggeweb.steps.project.distributionspace;
 
+import dk.byggeweb.objects.project.common.modals.FileDownloadPopup;
 import dk.byggeweb.objects.project.distributionspace.modals.DSFileDistributionCancelPopup;
 import dk.byggeweb.objects.project.distributionspace.panels.DSFileInformationPanel;
 import dk.byggeweb.objects.project.distributionspace.panels.DSFolderContentPanel;
+import dk.byggeweb.steps.GeneralSteps;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 
 @Log4j
 public class DSFileSteps {
@@ -36,6 +39,21 @@ public class DSFileSteps {
         selectFile(fileName);
         new DSFolderContentPanel().getFileDownloadButton().click();
         log.info("Download files button was clicked");
+    }
+
+    @Step("Download all files from the folder")
+    public void generateDownloadFilesLink(String fileName) {
+        selectFile(fileName);
+        DSFolderContentPanel dsFolderContentPanel = new DSFolderContentPanel();
+        GeneralSteps.selectAll();
+        dsFolderContentPanel.getFileDownloadButton().click();
+        log.info("Download files button was clicked");
+        dsFolderContentPanel.switchToNewWindow();
+        FileDownloadPopup fileDownloadPopup = new FileDownloadPopup();
+        fileDownloadPopup.getOkButton().click();
+        fileDownloadPopup.getDownloadLink().shouldBe(visible);
+        fileDownloadPopup.getCancelButton().click();
+        dsFolderContentPanel.switchToLastTab();
     }
 
     @Step("Verify file is present in the list")

@@ -65,7 +65,7 @@ public abstract class ProjectTestBase extends TestBase {
         }
     }
 
-    public void uploadFileIfMNotPresentInDocumentListFolder(String filePath, String fileName) {
+    public void uploadFileIfNotPresentInDocumentListFolder(String filePath, String fileName) {
         try {
             psFileSteps.verifyFileIsPresent(fileName);
         } catch (com.codeborne.selenide.ex.ElementNotFound e) {

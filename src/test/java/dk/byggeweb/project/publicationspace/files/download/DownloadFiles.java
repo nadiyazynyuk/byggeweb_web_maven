@@ -13,8 +13,8 @@ public class DownloadFiles extends ProjectTestBase {
     public void prepareData() {
         projectHomePage.navigateToPublicationSpace();
         psFolderSteps.navigateToFolderInDocumentList(data.getDocumentListName(), data.getDocumentListFolderName());
-        uploadFileIfMNotPresentInDocumentListFolder(data.getFileToUploadPath(), data.getTestFileName());
-        uploadFileIfMNotPresentInDocumentListFolder(data.getFileToUploadPath2(), data.getTestFileName2());
+        uploadFileIfNotPresentInDocumentListFolder(data.getFileToUploadPath(), data.getTestFileName());
+        uploadFileIfNotPresentInDocumentListFolder(data.getFileToUploadPath2(), data.getTestFileName2());
     }
 
     @Test(description = "Download multiple files (generate download files link) from Document list folder")

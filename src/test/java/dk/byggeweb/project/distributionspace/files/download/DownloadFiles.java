@@ -1,18 +1,19 @@
 package dk.byggeweb.project.distributionspace.files.download;
 
 import dk.byggeweb.infrastructure.test.ProjectTestBase;
-import dk.byggeweb.steps.GeneralSteps;
 import io.qameta.allure.Link;
-import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class DownloadFile extends ProjectTestBase {
+public class DownloadFiles extends ProjectTestBase {
 
-    @Link(url = "https://itwofm.atlassian.net/browse/TSB-77")
+    @Link(url = "https://itwofm.atlassian.net/browse/TSB-78")
 
     @BeforeClass
     public void prepareData() {
+        projectHomePage.navigateToPublicationSpace();
+        psFolderSteps.navigateToFolderInDocumentList(data.getDocumentListName(), data.getDocumentListFolderName());
+
         projectHomePage.navigateToDistributionSpace();
         dsFolderSteps.navigateToFolderInDocumentListInDistributionList(data.getDistributionListName(), data.getDocumentListName(), data.getDocumentListFolderName());
 
@@ -20,19 +21,25 @@ public class DownloadFile extends ProjectTestBase {
             dsFileSteps.verifyFileIsPresent(data.getTestFileName());
         } catch (com.codeborne.selenide.ex.ElementNotFound e) {
             projectHomePage.navigateToPublicationSpace();
-            psFolderSteps.navigateToFolderInDocumentList(data.getDocumentListName(), data.getDocumentListFolderName());
             uploadFileIfNotPresentInDocumentListFolder(data.getFileToUploadPath(), data.getTestFileName());
             psFileSteps.distributeFile(data.getTestFileName(), data.getDistributionListName());
             projectHomePage.navigateToDistributionSpace();
         }
 
-        GeneralSteps.deleteFileFromDirectory(data.getTestFileName(), getAbsolutePath(getOutputDirectory()));
+        try {
+            dsFileSteps.verifyFileIsPresent(data.getTestFileName2());
+        } catch (com.codeborne.selenide.ex.ElementNotFound e) {
+            projectHomePage.navigateToPublicationSpace();
+            uploadFileIfNotPresentInDocumentListFolder(data.getFileToUploadPath2(), data.getTestFileName2());
+            psFileSteps.distributeFile(data.getTestFileName2(), data.getDistributionListName());
+            projectHomePage.navigateToDistributionSpace();
+        }
+
     }
 
-    @Test(description = "Download single file from Distribution space Document list list folder")
-    public void downloadFile() {
-        dsFileSteps.downloadFile(data.getTestFileName());
-        GeneralSteps.waitForTheFileToDownload(data.getTestFileName(), getAbsolutePath(getOutputDirectory()));
-        Assert.assertTrue(GeneralSteps.isFilePresentInDirectory(data.getTestFileName(), getAbsolutePath(getOutputDirectory())));
+    @Test(description = "Download multiple files (generate download files link) from Document list folder")
+    public void downloadFiles() {
+        dsFileSteps.generateDownloadFilesLink(data.getTestFileName());
     }
+
 }

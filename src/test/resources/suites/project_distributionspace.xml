@@ -46,5 +46,12 @@
         </classes>
     </test>
 
+    <test name="[Distribution space] Download multiple files from Distribution list test">
+        <parameter name="testData" value="/project/distributionspace/downloadDistributedFilesTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.distributionspace.files.download.DownloadFiles"/>
+        </classes>
+    </test>
+
 </suite>
 

@@ -19,7 +19,7 @@ public class EditFileInformation extends ProjectTestBase {
     public void prepareData() {
         projectHomePage.navigateToPublicationSpace();
         psFolderSteps.navigateToFolderInDocumentList(data.getDocumentListName(), data.getDocumentListFolderName());
-        uploadFileIfMNotPresentInDocumentListFolder(data.getFileToUploadPath(), data.getTestFileName());
+        uploadFileIfNotPresentInDocumentListFolder(data.getFileToUploadPath(), data.getTestFileName());
 
         subjectMetadata = data.getSubject() + LocalDate.now() + " " + System.currentTimeMillis();
         revisionDateMetadata = String.valueOf(System.currentTimeMillis());
