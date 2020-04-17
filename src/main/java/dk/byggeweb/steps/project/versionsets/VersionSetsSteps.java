@@ -80,7 +80,7 @@ public class VersionSetsSteps {
         VersionSetsOverviewPanel versionSetsOverviewPanel = new VersionSetsOverviewPanel();
         versionSetsOverviewPanel.getVersionSetByName(name).doubleClick();
         log.info("Version set " + name + " was opened");
-        VersionSetsContentPanel versionSetsContentPanel = new VersionSetsContentPanel(name);
+        VersionSetsContentPanel versionSetsContentPanel = new VersionSetsContentPanel();
         versionSetsContentPanel.getPublicationSpaceInVersionSet().click();
         log.info("Publication space in Version set " + name + " was opened");
         new VSSpaceContentPanel();

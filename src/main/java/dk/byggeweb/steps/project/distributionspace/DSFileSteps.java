@@ -1,5 +1,6 @@
 package dk.byggeweb.steps.project.distributionspace;
 
+import dk.byggeweb.objects.project.common.modals.FileAddToVersionSetPopup;
 import dk.byggeweb.objects.project.common.modals.FileDownloadPopup;
 import dk.byggeweb.objects.project.distributionspace.modals.DSFileDistributionCancelPopup;
 import dk.byggeweb.objects.project.distributionspace.panels.DSFileInformationPanel;
@@ -53,6 +54,19 @@ public class DSFileSteps {
         fileDownloadPopup.getOkButton().click();
         fileDownloadPopup.getDownloadLink().shouldBe(visible);
         fileDownloadPopup.getCancelButton().click();
+        dsFolderContentPanel.switchToLastTab();
+    }
+
+    @Step("Add file to version set")
+    public void addFileToVersionSet(String filename, String versionSetName) {
+        selectFile(filename);
+        DSFolderContentPanel dsFolderContentPanel = new DSFolderContentPanel();
+        dsFolderContentPanel.getFileAddToVersionSetButton().click();
+        log.info("Add to version sets button was clicked");
+        dsFolderContentPanel.switchToNewWindow();
+        FileAddToVersionSetPopup fileAddToVersionSetPopup = new FileAddToVersionSetPopup();
+        fileAddToVersionSetPopup.addFileToVersionSet(versionSetName);
+        log.info("File " + filename + " was added to the version set: " + versionSetName);
         dsFolderContentPanel.switchToLastTab();
     }
 

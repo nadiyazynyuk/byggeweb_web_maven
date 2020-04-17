@@ -25,4 +25,11 @@
         </classes>
     </test>
 
+    <test name="[VersionSet][Distribution space] Add and remove file from Version set tests">
+        <parameter name="testData" value="/project/versionsets/addRemoveFileFromDistributionSpaceTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.versionsets.AddRemoveFileFromDistributionSpace"/>
+        </classes>
+    </test>
+
 </suite>

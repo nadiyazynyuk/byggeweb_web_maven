@@ -49,6 +49,12 @@ public class DistributionSpaceNodesPanel extends ProjectHomePage {
         new VersionSetsOverviewPanel();
     }
 
+    @Step("Open Version sets")
+    public void openVersionSets() {
+        versionSetsNode.doubleClick();
+        new VersionSetsOverviewPanel();
+    }
+
     @Step("Navigate to Recipients")
     public void navigateToRecipients() {
         recipientsNode.click();
