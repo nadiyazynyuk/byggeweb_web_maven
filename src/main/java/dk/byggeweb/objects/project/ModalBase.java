@@ -9,10 +9,6 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public abstract class ModalBase {
 
-//    public ModalBase() {
-//        WebDriverRunner.getWebDriver().manage().window().setSize(new Dimension(900, 700));
-//    }
-
     private SelenideElement okButton = $(byXpath("//input[@value='OK']"));
     private SelenideElement cancelButton = $(byXpath("//input[@value='Cancel']"));
     private SelenideElement nextButton = $(byXpath("//input[@value='Next']"));

@@ -166,9 +166,9 @@ public class PSFolderSteps {
         PSFolderContentPanel psFolderContentPanel = new PSFolderContentPanel();
         psFolderContentPanel.getMonitorFolderButton().click();
         psFolderContentPanel.switchToNewWindow();
-        PSMonitorFolderPopup PSMonitorFolderPopup = new PSMonitorFolderPopup();
-        PSMonitorFolderPopup.getOkButton().click();
-        PSMonitorFolderPopup.getCloseButton().click();
+        PSMonitorFolderPopup psMonitorFolderPopup = new PSMonitorFolderPopup();
+        psMonitorFolderPopup.getOkButton().click();
+        psMonitorFolderPopup.getCloseButton().click();
         WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
     }
 

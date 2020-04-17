@@ -10,6 +10,10 @@ public class DSMonitoredFoldersContentPanel extends DistributionSpaceContentPane
 
     private SelenideElement panelTitle = $(byXpath("//div[contains(@class, 'x-title-text x-title-text-default') and contains(text(), 'Monitored folders')]"));
 
+    public SelenideElement getFolderByName(String name) {
+        return $(byXpath("//tr[@class='  x-grid-row']//*[contains(text(),'/" + name + "')]"));
+    }
+
     public DSMonitoredFoldersContentPanel() {
         panelTitle.shouldBe(visible);
     }

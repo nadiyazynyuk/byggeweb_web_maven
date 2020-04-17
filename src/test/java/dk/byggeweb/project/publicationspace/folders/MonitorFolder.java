@@ -15,8 +15,8 @@ public class MonitorFolder extends ProjectTestBase {
         projectHomePage.getPublicationSpaceNodesPanel().navigateToMonitoredFolders();
 
         try {
-            pSMonitorFoldersSteps.stopMonitorFolder(data.getDocumentListFolderName());
-            pSMonitorFoldersSteps.verifyFolderIsNotPresent(data.getDocumentListFolderName());
+            psMonitorFoldersSteps.stopMonitorFolder(data.getDocumentListFolderName());
+            psMonitorFoldersSteps.verifyFolderIsNotPresent(data.getDocumentListFolderName());
         } catch (com.codeborne.selenide.ex.ElementNotFound ignored) {
         }
     }
@@ -26,7 +26,7 @@ public class MonitorFolder extends ProjectTestBase {
         psFolderSteps.navigateToFolderInDocumentList(data.getDocumentListName(), data.getDocumentListFolderName());
         psFolderSteps.startMonitorFolder();
         projectHomePage.getPublicationSpaceNodesPanel().navigateToMonitoredFolders();
-        pSMonitorFoldersSteps.verifyFolderIsPresent(data.getDocumentListFolderName());
+        psMonitorFoldersSteps.verifyFolderIsPresent(data.getDocumentListFolderName());
     }
 
 }

@@ -1,5 +1,6 @@
 package dk.byggeweb.steps.project.distributionspace;
 
+import com.codeborne.selenide.WebDriverRunner;
 import dk.byggeweb.objects.project.distributionspace.modals.*;
 import dk.byggeweb.objects.project.distributionspace.panels.*;
 import io.qameta.allure.Step;
@@ -153,6 +154,18 @@ public class DSFolderSteps {
         dsFileDistributionPopup.distributeFile(fileName);
         log.info("File " + fileName + " was distributed to distribution list");
         dsSingleDistributionListContentPanel.switchToLastTab();
+    }
+
+    @Step("Start folder monitoring")
+    public void startMonitorFolder() {
+        String winHandleBefore = WebDriverRunner.getWebDriver().getWindowHandle();
+        DSFolderContentPanel dsFolderContentPanel = new DSFolderContentPanel();
+        dsFolderContentPanel.getMonitorFolderButton().click();
+        dsFolderContentPanel.switchToNewWindow();
+        DSMonitorFolderPopup dsMonitorFolderPopup = new DSMonitorFolderPopup();
+        dsMonitorFolderPopup.getOkButton().click();
+        dsMonitorFolderPopup.getCloseButton().click();
+        WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
     }
 
     public boolean getListIsPresent(String name) {

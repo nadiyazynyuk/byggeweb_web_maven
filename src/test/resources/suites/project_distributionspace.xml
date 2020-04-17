@@ -74,5 +74,12 @@
         </classes>
     </test>
 
+    <test name="[Distribution space] Start/stop folder monitoring test">
+        <parameter name="testData" value="/project/distributionspace/monitorFolderTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.distributionspace.folders.MonitorFolder"/>
+        </classes>
+    </test>
+
 </suite>
 

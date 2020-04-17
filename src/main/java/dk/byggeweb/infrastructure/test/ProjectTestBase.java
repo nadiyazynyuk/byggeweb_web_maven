@@ -30,7 +30,7 @@ public abstract class ProjectTestBase extends TestBase {
     public PSFileSteps psFileSteps = new PSFileSteps();
     public PSFileInformationSteps psFileInformationSteps = new PSFileInformationSteps();
     public PSMonitorFilesSteps psMonitorFilesSteps = new PSMonitorFilesSteps();
-    public PSMonitorFoldersSteps pSMonitorFoldersSteps = new PSMonitorFoldersSteps();
+    public PSMonitorFoldersSteps psMonitorFoldersSteps = new PSMonitorFoldersSteps();
 
     public DSFolderSteps dsFolderSteps = new DSFolderSteps();
     public DSFileSteps dsFileSteps = new DSFileSteps();
