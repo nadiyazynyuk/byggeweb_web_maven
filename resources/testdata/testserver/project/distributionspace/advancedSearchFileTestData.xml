@@ -6,9 +6,10 @@
     <name>Selenium Bot</name>
     <projectLink>https://testserver.byggeweb.dk/controller?cmd=company7.project.login&amp;project=2763</projectLink>
     <projectName>AutoLegoFactory</projectName>
-    <documentListName>Document List B</documentListName>
-    <documentListFolderName>Folder B.1</documentListFolderName>
-    <testFileName>TestPSAdvancedSearchFile</testFileName>
-    <fileToUploadPath>resources/testfiles/TestPSAdvancedSearchFile.pdf</fileToUploadPath>
+    <documentListName>Document List A</documentListName>
+    <documentListFolderName>Folder A.1</documentListFolderName>
+    <distributionListName>Distribution List AB</distributionListName>
+    <testFileName>TestDSAdvancedSearchFile</testFileName>
+    <fileToUploadPath>resources/testfiles/TestDSAdvancedSearchFile.pdf</fileToUploadPath>
 
 </testdata>

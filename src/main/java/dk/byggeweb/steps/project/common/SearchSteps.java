@@ -4,6 +4,7 @@ import com.codeborne.selenide.WebDriverRunner;
 import dk.byggeweb.objects.project.common.modals.FileSearchPopup;
 import dk.byggeweb.objects.project.distributionspace.panels.DSFolderContentPanel;
 import dk.byggeweb.objects.project.distributionspace.panels.DSQuickSearchResultContentPanel;
+import dk.byggeweb.objects.project.distributionspace.panels.DSSearchResultContentPanel;
 import dk.byggeweb.objects.project.publicationspace.panels.PSFolderContentPanel;
 import dk.byggeweb.objects.project.publicationspace.panels.PSQuickSearchResultContentPanel;
 import dk.byggeweb.objects.project.publicationspace.panels.PSSearchResultContentPanel;
@@ -68,6 +69,23 @@ public class SearchSteps {
         dsFolderContentPanel.pleaseWait(1000);
         dsFolderContentPanel.getQuickSearchInput().setValue(fileName).pressEnter();
         new DSQuickSearchResultContentPanel();
+    }
+
+    @Step("Advanced search for file by filename value in Distribution space")
+    public void advancedSearchFileByNameInDistributionSpace(String value) {
+        String winHandleBefore = WebDriverRunner.getWebDriver().getWindowHandle();
+        DSFolderContentPanel dsFolderContentPanel = new DSFolderContentPanel();
+        dsFolderContentPanel.getFileAdvancedSearchButton().click();
+        dsFolderContentPanel.switchToNewWindow();
+        FileSearchPopup fileSearchPopup = new FileSearchPopup();
+
+        fileSearchPopup.getMetadataSelectorDropdown().click();
+        fileSearchPopup.getFileNameOption().click();
+        fileSearchPopup.getFileNameInput().setValue(value);
+        fileSearchPopup.getSearchButton().click();
+
+        WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
+        new DSSearchResultContentPanel();
     }
 
 }
