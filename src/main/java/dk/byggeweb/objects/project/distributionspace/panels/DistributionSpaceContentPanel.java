@@ -14,6 +14,7 @@ public class DistributionSpaceContentPanel extends DistributionSpaceNodesPanel {
     private SelenideElement fileDistributeButton = $(byXpath("//span[@data-locator='locator-btn-file_ds_add']"));
     private SelenideElement fileAddToVersionSetButton = $(byXpath("//span[@data-locator='locator-btn-file_ds_vs_add']"));
     private SelenideElement fileAdvancedSearchButton = $(byXpath("//span[@data-locator='locator-btn-ds_search']"));
+    private SelenideElement fileMonitorButton = $(byXpath("//span[@data-locator='locator-btn-file_ds_watch_toggle']"));
 
     public SelenideElement getFileByName(String name) {
         return $(byXpath("//tr[@class='  x-grid-row']//*[contains(text(),'" + name + "')]"));

@@ -67,5 +67,12 @@
         </classes>
     </test>
 
+    <test name="[Distribution space] Start/stop file monitoring test">
+        <parameter name="testData" value="/project/distributionspace/monitorFileTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.distributionspace.files.update.MonitorFile"/>
+        </classes>
+    </test>
+
 </suite>
 

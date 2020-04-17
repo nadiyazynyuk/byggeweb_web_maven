@@ -70,6 +70,12 @@ public class DSFileSteps {
         dsFolderContentPanel.switchToLastTab();
     }
 
+    @Step("Start to monitor file")
+    public void startMonitorFile(String filename) {
+        selectFile(filename);
+        new DSFolderContentPanel().getFileMonitorButton().click();
+    }
+
     @Step("Verify file is present in the list")
     public void verifyFileIsPresent(String name) {
         DSFolderContentPanel dsFolderContentPanel = new DSFolderContentPanel();
