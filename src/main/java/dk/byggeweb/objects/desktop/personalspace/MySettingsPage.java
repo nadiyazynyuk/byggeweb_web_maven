@@ -11,8 +11,8 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public class MySettingsPage extends PersonalSpacePage {
 
-    private SelenideElement mySettingsLabel = $(byXpath("//*[@class='headline1-content' and contains(text(),'Settings')]"));
-    private SelenideElement editSettingsButton = $(byXpath("//button[@class='desktop-btn' and contains(text(), 'Edit')]"));
+    private final SelenideElement mySettingsLabel = $(byXpath("//*[@class='headline1-content' and contains(text(),'Settings')]"));
+    private final SelenideElement editSettingsButton = $(byXpath("//button[@class='desktop-btn' and contains(text(), 'Edit')]"));
 
     @Step("Change user name")
     public void changePersonalData(String data) {

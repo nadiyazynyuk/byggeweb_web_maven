@@ -9,6 +9,6 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public class PropertyOverviewPage extends ApplicationsPage {
 
-    private SelenideElement propertyLabel = $(byXpath("//*[@class='headline1-content' and contains(text(), 'Property')]"));
+    private final SelenideElement propertyLabel = $(byXpath("//*[@class='headline1-content' and contains(text(), 'Property')]"));
 
 }

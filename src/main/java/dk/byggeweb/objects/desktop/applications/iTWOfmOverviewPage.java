@@ -9,6 +9,6 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public class iTWOfmOverviewPage extends ApplicationsPage {
 
-    private SelenideElement iTWOfmLabel = $(byXpath("//*[@class='headline1-content' and contains(text(), 'Portfolios')]"));
+    private final SelenideElement iTWOfmLabel = $(byXpath("//*[@class='headline1-content' and contains(text(), 'Portfolios')]"));
 
 }

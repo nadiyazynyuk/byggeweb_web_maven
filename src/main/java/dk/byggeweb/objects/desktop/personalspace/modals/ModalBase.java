@@ -11,8 +11,8 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public abstract class ModalBase {
 
-    private SelenideElement iFrame = $(byXpath("//iframe[@id='window-iframe']"));
-    private SelenideElement okButton = $(byXpath("//button[@type='button' and contains(text(), 'OK')]"));
+    private final SelenideElement iFrame = $(byXpath("//iframe[@id='window-iframe']"));
+    private final SelenideElement okButton = $(byXpath("//button[@type='button' and contains(text(), 'OK')]"));
 
     @Step("Verify popup is loaded")
     public void verifyPopupIsLoaded(SelenideElement element) {

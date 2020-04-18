@@ -9,6 +9,6 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public class CompanyInformationPage extends CompanySpacePage {
 
-    private SelenideElement companyInformationLabel = $(byXpath("//*[@class='headline1-content' and contains(text(), 'information')]"));
+    private final SelenideElement companyInformationLabel = $(byXpath("//*[@class='headline1-content' and contains(text(), 'information')]"));
 
 }

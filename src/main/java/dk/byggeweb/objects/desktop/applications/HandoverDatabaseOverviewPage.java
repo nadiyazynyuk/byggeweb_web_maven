@@ -9,6 +9,6 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public class HandoverDatabaseOverviewPage extends ApplicationsPage {
 
-    private SelenideElement handoverDatabaseLabel = $(byXpath("//*[@class='headline1-content' and contains(text(), 'Handover')]"));
+    private final SelenideElement handoverDatabaseLabel = $(byXpath("//*[@class='headline1-content' and contains(text(), 'Handover')]"));
 
 }

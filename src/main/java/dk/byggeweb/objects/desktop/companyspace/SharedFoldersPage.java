@@ -16,17 +16,17 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public class SharedFoldersPage extends CompanySpacePage {
 
-    private String sharedFoldersHeaderXpath = "//div[@id='foldersgriddiv']/div[contains(@class,'x-panel')]/div[contains(@class,'x-panel-header')]/span[text()='Shared folders']";
-    private SelenideElement sharedFoldersTableHeader = $(byXpath(sharedFoldersHeaderXpath));
+    private final String sharedFoldersHeaderXpath = "//div[@id='foldersgriddiv']/div[contains(@class,'x-panel')]/div[contains(@class,'x-panel-header')]/span[text()='Shared folders']";
+    private final SelenideElement sharedFoldersTableHeader = $(byXpath(sharedFoldersHeaderXpath));
 
-    private SelenideElement filesMenu = $(byXpath("//div[@id='foldersgriddiv']//button[contains(@class, 'x-btn-text') and contains(@class, 'desktop-icon-file-options')]"));
-    private SelenideElement uploadFilesMenuItem = $(byXpath("//div[@id='file_menu']/ul/li/a/span[contains(@class, 'x-menu-item-text') and contains(text(), 'Upload files')]"));
-    private SelenideElement editFileInfoButton = $(byXpath("//a[@id='filemenu_edit']"));
-    private SelenideElement deleteFilesMenuItem = $(byXpath("//div[@id='file_menu']/ul/li/a[@id='filemenu_delete']"));
+    private final SelenideElement filesMenu = $(byXpath("//div[@id='foldersgriddiv']//button[contains(@class, 'x-btn-text') and contains(@class, 'desktop-icon-file-options')]"));
+    private final SelenideElement uploadFilesMenuItem = $(byXpath("//div[@id='file_menu']/ul/li/a/span[contains(@class, 'x-menu-item-text') and contains(text(), 'Upload files')]"));
+    private final SelenideElement editFileInfoButton = $(byXpath("//a[@id='filemenu_edit']"));
+    private final SelenideElement deleteFilesMenuItem = $(byXpath("//div[@id='file_menu']/ul/li/a[@id='filemenu_delete']"));
 
-    private SelenideElement foldersMenu = $(byXpath("//div[@id='foldersgriddiv']//button[contains(@class, 'x-btn-text') and contains(@class, 'desktop-icon-folder-options')]"));
-    private SelenideElement newFolderMenuItem = $(byXpath("//div[@id='folder_menu']/ul/li/a/span[contains(@class, 'x-menu-item-text') and contains(text(), 'New folder')]"));
-    private SelenideElement deleteFolderMenuItem = $(byXpath("//div[@id='folder_menu']/ul/li/a[@id='foldermenu_delete']"));
+    private final SelenideElement foldersMenu = $(byXpath("//div[@id='foldersgriddiv']//button[contains(@class, 'x-btn-text') and contains(@class, 'desktop-icon-folder-options')]"));
+    private final SelenideElement newFolderMenuItem = $(byXpath("//div[@id='folder_menu']/ul/li/a/span[contains(@class, 'x-menu-item-text') and contains(text(), 'New folder')]"));
+    private final SelenideElement deleteFolderMenuItem = $(byXpath("//div[@id='folder_menu']/ul/li/a[@id='foldermenu_delete']"));
 
     private SelenideElement getRowByName(String name) {
         return $(byXpath("//div[@id='foldersgriddiv']//*[contains(text(),'" + name + "')]"));

@@ -11,8 +11,8 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public class CommunicationPage extends HomePage {
 
-    private SelenideElement notificationsLink = $(byXpath("//*[@id='notifications']"));
-    private SelenideElement messagesLink = $(byXpath("//*[@id='messages']"));
+    private final SelenideElement notificationsLink = $(byXpath("//*[@id='notifications']"));
+    private final SelenideElement messagesLink = $(byXpath("//*[@id='messages']"));
 
     @Step("Click on Notifications link")
     public void clickOnNotifications() {

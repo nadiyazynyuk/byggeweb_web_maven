@@ -9,6 +9,6 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public class BudgetOverviewPage extends ApplicationsPage {
 
-    private SelenideElement budgetLabel = $(byXpath("//*[@class='headline1-content' and contains(text(), 'Budgets')]"));
+    private final SelenideElement budgetLabel = $(byXpath("//*[@class='headline1-content' and contains(text(), 'Budgets')]"));
 
 }

@@ -9,6 +9,6 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public class DeleteFolderPopup extends ModalBase {
 
-    private SelenideElement deleteLabel = $(byXpath("//div[contains(@class, 'popup-headline1-red') and contains(text(), 'Delete the selected folder:')]"));
+    private final SelenideElement deleteLabel = $(byXpath("//div[contains(@class, 'popup-headline1-red') and contains(text(), 'Delete the selected folder:')]"));
 
 }

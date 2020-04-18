@@ -8,9 +8,9 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class RequestPasswordPage {
 
-    private SelenideElement requestPasswordButton = $(byXpath("//button[contains(text(), 'Request new password')]"));
-    private SelenideElement emailTextBox = $(byXpath("//input[contains(@id, 'email')]"));
-    private SelenideElement requestSentLabel = $(byXpath("//*[contains(text(),'Request sent')]"));
+    private final SelenideElement requestPasswordButton = $(byXpath("//button[contains(text(), 'Request new password')]"));
+    private final SelenideElement emailTextBox = $(byXpath("//input[contains(@id, 'email')]"));
+    private final SelenideElement requestSentLabel = $(byXpath("//*[contains(text(),'Request sent')]"));
 
     @Step("Request new password")
     public void requestPassword(String username) {

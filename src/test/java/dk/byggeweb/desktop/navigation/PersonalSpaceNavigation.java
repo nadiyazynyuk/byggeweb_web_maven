@@ -2,11 +2,12 @@ package dk.byggeweb.desktop.navigation;
 
 import dk.byggeweb.infrastructure.test.DesktopTestBase;
 import dk.byggeweb.objects.desktop.personalspace.*;
+import io.qameta.allure.Link;
 import org.testng.annotations.Test;
 
 public class PersonalSpaceNavigation extends DesktopTestBase {
 
-    // https://itwofm.atlassian.net/browse/TSB-11
+    @Link(url = "https://itwofm.atlassian.net/browse/TSB-11")
 
     @Test(description = "Navigation through Personal space sections")
     public void personalSpaceNavigation() {

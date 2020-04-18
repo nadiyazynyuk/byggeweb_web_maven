@@ -9,6 +9,6 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public class WebsiteTemplatesPage extends CompanySpacePage {
 
-    private SelenideElement websiteTemplatesLabel = $(byXpath("//*[@class='headline1-content' and contains(text(), 'Website')]"));
+    private final SelenideElement websiteTemplatesLabel = $(byXpath("//*[@class='headline1-content' and contains(text(), 'Website')]"));
 
 }

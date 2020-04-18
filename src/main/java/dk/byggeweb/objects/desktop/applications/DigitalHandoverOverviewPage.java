@@ -9,6 +9,6 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public class DigitalHandoverOverviewPage extends ApplicationsPage {
 
-    private SelenideElement digitalHandoverLabel = $(byXpath("//*[@class='headline1-content' and contains(text(), 'Digital')]"));
+    private final SelenideElement digitalHandoverLabel = $(byXpath("//*[@class='headline1-content' and contains(text(), 'Digital')]"));
 
 }

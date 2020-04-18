@@ -11,12 +11,12 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public class CompanySpacePage extends HomePage {
 
-    private SelenideElement sharedFoldersLink = $(byXpath("//*[@id='company_folders']"));
-    private SelenideElement companyInfoLink = $(byXpath("//*[@id='company_information']"));
-    private SelenideElement companyUsersLink = $(byXpath("//*[@id='company_users']"));
-    private SelenideElement companyContactsLink = $(byXpath("//*[@id='contacts']"));
-    private SelenideElement websiteTemplatesLink = $(byXpath("//*[@id='webtemplate_list']"));
-    private SelenideElement backgroundImageLink = $(byXpath("//*[@id='background_image']"));
+    private final SelenideElement sharedFoldersLink = $(byXpath("//*[@id='company_folders']"));
+    private final SelenideElement companyInfoLink = $(byXpath("//*[@id='company_information']"));
+    private final SelenideElement companyUsersLink = $(byXpath("//*[@id='company_users']"));
+    private final SelenideElement companyContactsLink = $(byXpath("//*[@id='contacts']"));
+    private final SelenideElement websiteTemplatesLink = $(byXpath("//*[@id='webtemplate_list']"));
+    private final SelenideElement backgroundImageLink = $(byXpath("//*[@id='background_image']"));
 
     @Step("Navigate to Company Space > Shared folders")
     public void navigateToSharedFolders() {

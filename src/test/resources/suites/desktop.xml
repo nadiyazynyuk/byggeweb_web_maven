@@ -4,14 +4,15 @@
     <parameter name="environment" value="testserver"/>
 <!--    <parameter name="environment" value="production"/>-->
 
-    <test name="Desktop authorization test">
+    <test name="[Desktop] Authorization test">
         <parameter name="testData" value="/desktop/authorization/userLoginTestData.xml"/>
         <classes>
             <class name="dk.byggeweb.desktop.authorization.Login"/>
+            <class name="dk.byggeweb.desktop.authorization.Logoff"/>
         </classes>
     </test>
 
-    <test name="Desktop navigation test">
+    <test name="[Desktop] Navigation test">
         <parameter name="testData" value="/desktop/authorization/userLoginTestData.xml"/>
         <classes>
             <class name="dk.byggeweb.desktop.navigation.BasicNavigation"/>
@@ -21,35 +22,35 @@
         </classes>
     </test>
 
-    <test name="Desktop settings tests">
+    <test name="[Desktop] Settings tests">
         <parameter name="testData" value="/desktop/personalspace/updateUserDataTestData.xml"/>
         <classes>
             <class name="dk.byggeweb.desktop.personalspace.UpdateUserData"/>
         </classes>
     </test>
 
-    <test name="Desktop Personal space files and folders tests">
+    <test name="[Desktop] Personal space files and folders tests">
         <parameter name="testData" value="/desktop/personalspace/filesAndFoldersTestData.xml"/>
         <classes>
             <class name="dk.byggeweb.desktop.personalspace.FilesAndFolders"/>
         </classes>
     </test>
 
-    <test name="Desktop Personal space upload new file version test">
+    <test name="[Desktop] Personal space upload new file version test">
         <parameter name="testData" value="/desktop/personalspace/uploadNewFileVersionTestData.xml"/>
         <classes>
             <class name="dk.byggeweb.desktop.personalspace.UploadNewFileVersion"/>
         </classes>
     </test>
 
-    <test name="Desktop Company space files and folders tests">
+    <test name="[Desktop] Company space files and folders tests">
         <parameter name="testData" value="/desktop/companyspace/filesAndFoldersTestData.xml"/>
         <classes>
             <class name="dk.byggeweb.desktop.companyspace.FilesAndFolders"/>
         </classes>
     </test>
 
-    <test name="Desktop Company space upload new file version test">
+    <test name="[Desktop] Company space upload new file version test">
         <parameter name="testData" value="/desktop/companyspace/uploadNewFileVersionTestData.xml"/>
         <classes>
             <class name="dk.byggeweb.desktop.companyspace.UploadNewFileVersion"/>

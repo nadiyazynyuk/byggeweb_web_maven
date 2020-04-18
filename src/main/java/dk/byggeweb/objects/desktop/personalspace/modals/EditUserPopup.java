@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class EditUserPopup extends ModalBase {
 
-    private SelenideElement firstNameInput = $(byXpath("//*[@name='User__FirstName']"));
+    private final SelenideElement firstNameInput = $(byXpath("//*[@name='User__FirstName']"));
 
     @Step()
     public void updateFirstName(String data) {

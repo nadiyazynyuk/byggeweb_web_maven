@@ -11,18 +11,18 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public class ApplicationsPage extends HomePage {
 
-    private SelenideElement projectsLink = $(byXpath("//li[@id='docia_project']"));
-    private SelenideElement tenderLink = $(byXpath("//li[@id='docia_tender']"));
-    private SelenideElement captureLink = $(byXpath("//li[@id='deficiency_list']"));
-    private SelenideElement digitalHandoverLink = $(byXpath("//li[@id='corefm_digitalhandover']"));
-    private SelenideElement iTWOfmLink = $(byXpath("//li[@id='corefm_portofolio']"));
-    private SelenideElement handoverDatabaseLink = $(byXpath("//li[@id='corefm_handoverdatabase']"));
-    private SelenideElement archiveLink = $(byXpath("//li[@id='docia_archive']"));
-    private SelenideElement documentationLink = $(byXpath("//li[@id='documentation']"));
-    private SelenideElement photoLink = $(byXpath("//li[@id='photo_list']"));
-    private SelenideElement budgetLink = $(byXpath("//li[@id='docia_budget']"));
-    private SelenideElement propertyLink = $(byXpath("//li[@id='docia_property']"));
-    private SelenideElement scribbleLink = $(byXpath("//li[@id='scribble']"));
+    private final SelenideElement projectsLink = $(byXpath("//li[@id='docia_project']"));
+    private final SelenideElement tenderLink = $(byXpath("//li[@id='docia_tender']"));
+    private final SelenideElement captureLink = $(byXpath("//li[@id='deficiency_list']"));
+    private final SelenideElement digitalHandoverLink = $(byXpath("//li[@id='corefm_digitalhandover']"));
+    private final SelenideElement iTWOfmLink = $(byXpath("//li[@id='corefm_portofolio']"));
+    private final SelenideElement handoverDatabaseLink = $(byXpath("//li[@id='corefm_handoverdatabase']"));
+    private final SelenideElement archiveLink = $(byXpath("//li[@id='docia_archive']"));
+    private final SelenideElement documentationLink = $(byXpath("//li[@id='documentation']"));
+    private final SelenideElement photoLink = $(byXpath("//li[@id='photo_list']"));
+    private final SelenideElement budgetLink = $(byXpath("//li[@id='docia_budget']"));
+    private final SelenideElement propertyLink = $(byXpath("//li[@id='docia_property']"));
+    private final SelenideElement scribbleLink = $(byXpath("//li[@id='scribble']"));
 
     @Step("Click on Applications")
     public void clickOnProject() {

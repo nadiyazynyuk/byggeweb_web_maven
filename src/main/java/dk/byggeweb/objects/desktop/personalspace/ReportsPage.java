@@ -9,6 +9,6 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public class ReportsPage extends PersonalSpacePage {
 
-    private SelenideElement reportsLabel = $(byXpath("//*[@class='headline1-content' and contains(text(),'Reports')]"));
+    private final SelenideElement reportsLabel = $(byXpath("//*[@class='headline1-content' and contains(text(),'Reports')]"));
 
 }

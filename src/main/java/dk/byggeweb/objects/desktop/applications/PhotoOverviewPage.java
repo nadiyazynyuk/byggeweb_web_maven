@@ -9,6 +9,6 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public class PhotoOverviewPage extends ApplicationsPage {
 
-    private SelenideElement photoLabel = $(byXpath("//*[@class='headline1-content' and contains(text(), 'Photo')]"));
+    private final SelenideElement photoLabel = $(byXpath("//*[@class='headline1-content' and contains(text(), 'Photo')]"));
 
 }

@@ -3,14 +3,15 @@ package dk.byggeweb.desktop.personalspace;
 import dk.byggeweb.infrastructure.test.DesktopTestBase;
 import dk.byggeweb.objects.desktop.personalspace.MyFoldersPage;
 import dk.byggeweb.objects.desktop.personalspace.PersonalSpacePage;
+import io.qameta.allure.Link;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class FilesAndFolders extends DesktopTestBase {
 
-    // https://itwofm.atlassian.net/browse/TSB-5
-
     private MyFoldersPage myFoldersPage;
+
+    @Link(url = "https://itwofm.atlassian.net/browse/TSB-5")
 
     @BeforeClass
     public void deleteFilesAndFoldersIfExist() {

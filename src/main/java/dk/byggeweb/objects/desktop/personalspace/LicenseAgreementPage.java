@@ -9,6 +9,6 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public class LicenseAgreementPage extends PersonalSpacePage {
 
-    private SelenideElement licenseAgreementLabel = $(byXpath("//*[@class='headline1-content' and contains(text(),'License')]"));
+    private final SelenideElement licenseAgreementLabel = $(byXpath("//*[@class='headline1-content' and contains(text(),'License')]"));
 
 }

@@ -11,12 +11,12 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public class PersonalSpacePage extends HomePage {
 
-    private SelenideElement desktopLink = $(byXpath("//*[@id='desktop']"));
-    private SelenideElement myFoldersLink = $(byXpath("//*[@id='personal_folders']"));
-    private SelenideElement mySettingsLink = $(byXpath("//*[@id='personal_settings']"));
-    private SelenideElement logLink = $(byXpath("//*[@id='user_log']"));
-    private SelenideElement reportsLink = $(byXpath("//*[@id='reports']"));
-    private SelenideElement licenseAgreementLink = $(byXpath("//*[@id='license_agreement']"));
+    private final SelenideElement desktopLink = $(byXpath("//*[@id='desktop']"));
+    private final SelenideElement myFoldersLink = $(byXpath("//*[@id='personal_folders']"));
+    private final SelenideElement mySettingsLink = $(byXpath("//*[@id='personal_settings']"));
+    private final SelenideElement logLink = $(byXpath("//*[@id='user_log']"));
+    private final SelenideElement reportsLink = $(byXpath("//*[@id='reports']"));
+    private final SelenideElement licenseAgreementLink = $(byXpath("//*[@id='license_agreement']"));
 
     @Step("Navigate to Personal Space > Desktop")
     public void navigateToDesktop() {

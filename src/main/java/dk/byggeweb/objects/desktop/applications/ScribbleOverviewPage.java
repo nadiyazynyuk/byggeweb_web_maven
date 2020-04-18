@@ -9,6 +9,6 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public class ScribbleOverviewPage extends ApplicationsPage {
 
-    private SelenideElement scribbleLabel = $(byXpath("//*[@class='headline1-content' and contains(text(), 'Scribble')]"));
+    private final SelenideElement scribbleLabel = $(byXpath("//*[@class='headline1-content' and contains(text(), 'Scribble')]"));
 
 }

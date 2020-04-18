@@ -9,6 +9,6 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public class TenderOverviewPage extends ApplicationsPage {
 
-    private SelenideElement tendersLabel = $(byXpath("//*[@class='headline1-content' and contains(text(),'Tenders')]"));
+    private final SelenideElement tendersLabel = $(byXpath("//*[@class='headline1-content' and contains(text(),'Tenders')]"));
 
 }

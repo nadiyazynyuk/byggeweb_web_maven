@@ -9,6 +9,6 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public class CreateFolderPopup extends ModalBase {
 
-    private SelenideElement folderNameInput = $(byXpath("//input[@id='directory_name']"));
+    private final SelenideElement folderNameInput = $(byXpath("//input[@id='directory_name']"));
 
 }

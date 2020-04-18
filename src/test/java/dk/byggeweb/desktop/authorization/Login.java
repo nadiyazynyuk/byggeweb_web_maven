@@ -5,11 +5,12 @@ import dk.byggeweb.infrastructure.test.DesktopTestBase;
 import dk.byggeweb.objects.desktop.HomePage;
 import dk.byggeweb.objects.desktop.authorization.LoginPage;
 import dk.byggeweb.objects.desktop.authorization.RequestPasswordPage;
+import io.qameta.allure.Link;
 import org.testng.annotations.Test;
 
 public class Login extends DesktopTestBase {
 
-    // https://itwofm.atlassian.net/browse/TSB-17
+    @Link(url = "https://itwofm.atlassian.net/browse/TSB-17")
     @Test(description = "Login in Byggeweb desktop")
     public void loginAsValidUser() {
         Selenide.open("");
@@ -18,7 +19,7 @@ public class Login extends DesktopTestBase {
         new HomePage(data.getName());
     }
 
-    // https://itwofm.atlassian.net/browse/TSB-18
+    @Link(url = "https://itwofm.atlassian.net/browse/TSB-18")
     @Test(description = "Login with invalid username")
     public void loginWithInvalidUsername() {
         Selenide.open("");
@@ -27,7 +28,7 @@ public class Login extends DesktopTestBase {
         loginPage.verifyErrorMessage("You have entered the wrong username or password.");
     }
 
-    // https://itwofm.atlassian.net/browse/TSB-18
+    @Link(url = "https://itwofm.atlassian.net/browse/TSB-18")
     @Test(description = "Login with invalid password")
     public void loginWithInvalidPassword() {
         Selenide.open("");
@@ -36,7 +37,7 @@ public class Login extends DesktopTestBase {
         loginPage.verifyErrorMessage("You have entered the wrong username or password.");
     }
 
-    // https://itwofm.atlassian.net/browse/TSB-19
+    @Link(url = "https://itwofm.atlassian.net/browse/TSB-19")
     @Test(description = "Request new password")
     public void requestPassword() {
         Selenide.open("");

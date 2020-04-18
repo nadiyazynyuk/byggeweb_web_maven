@@ -14,14 +14,14 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public class HomePage extends PageBase {
 
-    private SelenideElement userLabel = $(byXpath("//div[@id = 'companypage-top-user']/p"));
-    private SelenideElement personalSpace = $(byXpath("//*[@id='tab_personalspace']"));
-    private SelenideElement companySpace = $(byXpath("//*[@id='tab_companyspace']"));
-    private SelenideElement applications = $(byXpath("//*[@id='tab_applications']"));
-    private SelenideElement portfolio = $(byXpath("//*[@id='tab_cases']"));
-    private SelenideElement communication = $(byXpath("//*[@id='tab_communication']"));
-    private SelenideElement support = $(byXpath("//*[@id='tab_support']"));
-    private SelenideElement logoffButton = $(byXpath("//*[@class='logOff']"));
+    private final SelenideElement userLabel = $(byXpath("//div[@id = 'companypage-top-user']/p"));
+    private final SelenideElement personalSpace = $(byXpath("//*[@id='tab_personalspace']"));
+    private final SelenideElement companySpace = $(byXpath("//*[@id='tab_companyspace']"));
+    private final SelenideElement applications = $(byXpath("//*[@id='tab_applications']"));
+    private final SelenideElement portfolio = $(byXpath("//*[@id='tab_cases']"));
+    private final SelenideElement communication = $(byXpath("//*[@id='tab_communication']"));
+    private final SelenideElement support = $(byXpath("//*[@id='tab_support']"));
+    private final SelenideElement logoffButton = $(byXpath("//*[@class='logOff']"));
 
     @Step("Verify that user is logged in")
     public void verifyCurrentUser(String username) {

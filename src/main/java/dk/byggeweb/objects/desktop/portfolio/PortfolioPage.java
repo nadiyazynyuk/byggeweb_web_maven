@@ -11,8 +11,8 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public class PortfolioPage extends HomePage {
 
-    private SelenideElement masterProjectLink = $(byXpath("//*[@id='case_list']"));
-    private SelenideElement closedMasterProjectsLink = $(byXpath("//*[@id='case_closedlist']"));
+    private final SelenideElement masterProjectLink = $(byXpath("//*[@id='case_list']"));
+    private final SelenideElement closedMasterProjectsLink = $(byXpath("//*[@id='case_closedlist']"));
 
     @Step("Click on Master Project link")
     public void clickOnMasterProject() {

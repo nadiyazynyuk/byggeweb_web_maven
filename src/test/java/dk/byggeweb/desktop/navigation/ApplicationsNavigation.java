@@ -2,11 +2,12 @@ package dk.byggeweb.desktop.navigation;
 
 import dk.byggeweb.infrastructure.test.DesktopTestBase;
 import dk.byggeweb.objects.desktop.applications.*;
+import io.qameta.allure.Link;
 import org.testng.annotations.Test;
 
 public class ApplicationsNavigation extends DesktopTestBase {
 
-    // https://itwofm.atlassian.net/browse/TSB-9
+    @Link(url = "https://itwofm.atlassian.net/browse/TSB-9")
 
     @Test(description = "Navigation through application sections")
     public void applicationsNavigation() {

@@ -9,6 +9,6 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public class BackgroundImagePage extends CompanySpacePage {
 
-    private SelenideElement backgroundImageLabel = $(byXpath("//*[@class='headline1-content' and contains(text(),'Background')]"));
+    private final SelenideElement backgroundImageLabel = $(byXpath("//*[@class='headline1-content' and contains(text(),'Background')]"));
 
 }

@@ -9,6 +9,6 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public class DocumentationOverviewPage extends ApplicationsPage {
 
-    private SelenideElement documentationLabel = $(byXpath("//*[@class='headline1-content' and contains(text(), 'Documentation')]"));
+    private final SelenideElement documentationLabel = $(byXpath("//*[@class='headline1-content' and contains(text(), 'Documentation')]"));
 
 }

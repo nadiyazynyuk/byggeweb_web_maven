@@ -9,6 +9,6 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public class DesktopPage extends PersonalSpacePage {
 
-    private SelenideElement addDesktopContentLink = $(byXpath("//span[@id='desktop_addcontent']"));
+    private final SelenideElement addDesktopContentLink = $(byXpath("//span[@id='desktop_addcontent']"));
 
 }
