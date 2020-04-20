@@ -52,8 +52,26 @@ public class PSFileSteps {
         FileEnhancedUploadTab fileEnhancedUploadTab = new FileEnhancedUploadTab();
         fileEnhancedUploadTab.dropFile(filePath);
         PSFileInformationEditPopup psFileInformationEditPopup = new PSFileInformationEditPopup(fileName);
-        psFileInformationEditPopup.getOkButton().click();
-        psFileInformationEditPopup.getCloseButton().click();
+        psFileInformationEditPopup.closePopup();
+        log.info("File " + fileName + " was published from Local Machine");
+        WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
+    }
+
+    @Step("Publish file from Local machine")
+    public void publishFileFromLocalMachine(String filePath, String fileName, String revision) {
+        PSFolderContentPanel psFolderContentPanel = new PSFolderContentPanel();
+        psFolderContentPanel.getFilePublishButton().click();
+        log.info("Publish/upload file version button was clicked");
+        String winHandleBefore = WebDriverRunner.getWebDriver().getWindowHandle();
+        psFolderContentPanel.switchToNewWindow();
+        PSFilePublishPopup psFilePublishPopup = new PSFilePublishPopup();
+        psFilePublishPopup.getLocalMachineItem().click();
+        FileUploadPopup fileUploadPopup = new FileUploadPopup();
+        fileUploadPopup.switchToEnhancedUploadTab();
+        FileEnhancedUploadTab fileEnhancedUploadTab = new FileEnhancedUploadTab();
+        fileEnhancedUploadTab.dropFile(filePath);
+        PSFileInformationEditPopup psFileInformationEditPopup = new PSFileInformationEditPopup(fileName);
+        psFileInformationEditPopup.setRevisionAndClose(revision);
         log.info("File " + fileName + " was published from Local Machine");
         WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
     }

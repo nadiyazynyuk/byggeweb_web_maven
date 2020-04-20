@@ -167,6 +167,13 @@
         </classes>
     </test>
 
+    <test name="[Publication space] Approve new file version published from Local Machine test">
+        <parameter name="testData" value="/project/publicationspace/approveNewFileVersionFromLocalMachineTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.files.publish.ApproveNewFileVersionFromLocalMachine"/>
+        </classes>
+    </test>
+
     <test name="[Publication space] Reject and delete published from Local Machine file test">
         <parameter name="testData" value="/project/publicationspace/rejectAndDeleteFileFromLocalMachineTestData.xml"/>
         <classes>

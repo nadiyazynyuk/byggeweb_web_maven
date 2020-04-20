@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<testdata>
+
+    <userName>selenium.bot@ukr.net</userName>
+    <password>testPassword#1</password>
+    <name>Selenium Bot</name>
+    <projectLink>https://testserver.byggeweb.dk/controller?cmd=company7.project.login&amp;project=2763</projectLink>
+    <projectName>AutoLegoFactory</projectName>
+    <testFileName>TestApproveFromLocalMachineFileVersion</testFileName>
+    <fileV1ToUploadPath>resources/testfiles/versions/v1/TestApproveFromLocalMachineFileVersion.txt</fileV1ToUploadPath>
+    <fileV2ToUploadPath>resources/testfiles/versions/v2/TestApproveFromLocalMachineFileVersion.txt</fileV2ToUploadPath>
+    <fileV1Content>v1</fileV1Content>
+    <fileV2Content>v2</fileV2Content>
+    <fileV1VersionIndex>0</fileV1VersionIndex>
+    <fileV2VersionIndex>1</fileV2VersionIndex>
+    <documentListName>Document List C</documentListName>
+    <documentListFolderName>Folder C.1</documentListFolderName>
+
+</testdata>
