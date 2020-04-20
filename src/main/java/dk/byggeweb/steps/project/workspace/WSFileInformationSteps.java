@@ -45,6 +45,7 @@ public class WSFileInformationSteps {
     @Step("Edit metadata text field")
     public void editMetadataTextField(String fileName, SelenideElement element, String data) {
         WSFileInformationPanel wsFileInformationPanel = new WSFileInformationPanel(fileName);
+        wsFileInformationPanel.pleaseWait(1000);
         wsFileInformationPanel.getSaveButton().shouldBe(Condition.enabled);
         element.click();
         element.clear();

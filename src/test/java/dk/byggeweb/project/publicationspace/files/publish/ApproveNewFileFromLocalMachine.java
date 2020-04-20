@@ -5,7 +5,7 @@ import io.qameta.allure.Link;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class ApproveFileFromLocalMachine extends ProjectTestBase {
+public class ApproveNewFileFromLocalMachine extends ProjectTestBase {
 
     @Link(url = "https://itwofm.atlassian.net/browse/TSB-60")
 

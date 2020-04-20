@@ -160,10 +160,10 @@
         </classes>
     </test>
 
-    <test name="[Publication space] Approve published from Local Machine file test">
+    <test name="[Publication space] Approve new file published from Local Machine test">
         <parameter name="testData" value="/project/publicationspace/approveFileFromLocalMachineTestData.xml"/>
         <classes>
-            <class name="dk.byggeweb.project.publicationspace.files.publish.ApproveFileFromLocalMachine"/>
+            <class name="dk.byggeweb.project.publicationspace.files.publish.ApproveNewFileFromLocalMachine"/>
         </classes>
     </test>
 
@@ -181,10 +181,17 @@
         </classes>
     </test>
 
-    <test name="[Publication space] Approve published from Workspace file test">
+    <test name="[Publication space] Approve new file published from Workspace test">
         <parameter name="testData" value="/project/publicationspace/approveFileFromWorkspaceTestData.xml"/>
         <classes>
-            <class name="dk.byggeweb.project.publicationspace.files.publish.ApproveFileFromWorkspace"/>
+            <class name="dk.byggeweb.project.publicationspace.files.publish.ApproveNewFileFromWorkspace"/>
+        </classes>
+    </test>
+
+    <test name="[Publication space] Approve new file version published from Workspace test">
+        <parameter name="testData" value="/project/publicationspace/approveNewFileVersionFromWorkspaceTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.project.publicationspace.files.publish.ApproveNewFileVersionFromWorkspace"/>
         </classes>
     </test>
 
