@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<testdata>
+
+    <userName>selenium.bot@ukr.net</userName>
+    <password>testPassword#1</password>
+    <name>Selenium Bot</name>
+    <projectLink>https://testserver.byggeweb.dk/controller?cmd=company7.project.login&amp;project=2763</projectLink>
+    <projectName>AutoLegoFactory</projectName>
+    <testFileName>TestDownloadPublishedWithApprovalFile.pdf</testFileName>
+    <fileToUploadPath>resources/testfiles/TestDownloadPublishedWithApprovalFile.pdf</fileToUploadPath>
+    <documentListName>Document List C</documentListName>
+    <documentListFolderName>Folder C.1</documentListFolderName>
+
+</testdata>

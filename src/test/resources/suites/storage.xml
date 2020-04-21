@@ -97,28 +97,28 @@
     <test name="Publish new file from Local Machine into Publication space">
         <parameter name="testData" value="/storage/publishNewFileFromLocalMachineTestData.xml"/>
         <classes>
-            <class name="dk.byggeweb.project.publicationspace.files.publish.PublishNewFileFromLocalMachine"/>
+            <class name="dk.byggeweb.project.publicationspace.nonapproval.files.publish.PublishNewFileFromLocalMachine"/>
         </classes>
     </test>
 
     <test name="Publish new file version from Local Machine into Publication space">
         <parameter name="testData" value="/storage/publishNewFileVersionFromLocalMachineTestData.xml"/>
         <classes>
-            <class name="dk.byggeweb.project.publicationspace.files.publish.PublishNewFileVersionFromLocalMachine"/>
+            <class name="dk.byggeweb.project.publicationspace.nonapproval.files.publish.PublishNewFileVersionFromLocalMachine"/>
         </classes>
     </test>
 
     <test name="Delete file from Document list">
         <parameter name="testData" value="/storage/deletePublishedFileTestData.xml"/>
         <classes>
-            <class name="dk.byggeweb.project.publicationspace.files.delete.DeleteFile"/>
+            <class name="dk.byggeweb.project.publicationspace.nonapproval.files.delete.DeleteFile"/>
         </classes>
     </test>
 
     <test name="Discontinue file in Document list">
         <parameter name="testData" value="/storage/discontinuePublishedFileTestData.xml"/>
         <classes>
-            <class name="dk.byggeweb.project.publicationspace.files.delete.DiscontinueFile"/>
+            <class name="dk.byggeweb.project.publicationspace.nonapproval.files.delete.DiscontinueFile"/>
         </classes>
     </test>
 

@@ -21,20 +21,13 @@ public class AssociateDocumentList extends ProjectTestBase {
         }
 
         boolean isAssociated = dsFolderSteps.getListIsPresent(data.getDocumentListName());
-        while (true) {
-            if (isAssociated) {
-                try {
-                    dsFolderSteps.changeDocumentListAssociation(data.getDocumentListName());
-                    isAssociated = false;
-                } catch (com.codeborne.selenide.ex.ElementNotFound e) {
-                    break;
-                }
-            } else {
-                break;
+        if (isAssociated) {
+            try {
+                dsFolderSteps.changeDocumentListAssociation(data.getDocumentListName());
+            } catch (com.codeborne.selenide.ex.ElementNotFound ignored) {
             }
         }
     }
-
 
     @Test(description = "Add association of the Distribution list with the Document list")
     public void associateDocumentList() {

@@ -78,6 +78,19 @@ public abstract class ProjectTestBase extends TestBase {
         }
     }
 
+    public void uploadFileIfNotPresentInDocumentListWithApprovalFolder(String filePath, String fileName) {
+        try {
+            psFileSteps.verifyFileIsPresent(fileName);
+        } catch (com.codeborne.selenide.ex.ElementNotFound e) {
+            psFileSteps.publishFileFromLocalMachine(filePath, fileName);
+            projectHomePage.getPublicationSpaceNodesPanel().navigateToWaitingForApproval();
+            psFileSteps.approveFile(data.getTestFileName());
+            psFolderSteps.navigateToDocumentList(data.getDocumentListName());
+            psFolderSteps.navigateToFolderInsideDocumentList(data.getDocumentListFolderName());
+            psFileSteps.verifyFileIsPresent(data.getTestFileName());
+        }
+    }
+
     public void deleteFileIfPresentInDocumentListFolder(String fileName) {
         while (true) {
             try {

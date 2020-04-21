@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<testdata>
+
+    <userName>selenium.bot@ukr.net</userName>
+    <password>testPassword#1</password>
+    <name>Selenium Bot</name>
+    <projectLink>https://byggeweb.dk/controller?cmd=company7.project.login&amp;project=36359</projectLink>
+    <projectName>AutoRoyalFactory</projectName>
+    <documentListName>Document List C</documentListName>
+    <documentListFolderName>Folder C.1</documentListFolderName>
+    <distributionListName>Distribution List C</distributionListName>
+    <testFileName>TestDistributeWithApprovalFile</testFileName>
+    <fileToUploadPath>resources/testfiles/TestDistributeWithApprovalFile.jpg</fileToUploadPath>
+
+</testdata>
