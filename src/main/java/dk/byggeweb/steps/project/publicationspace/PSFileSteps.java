@@ -189,7 +189,7 @@ public class PSFileSteps {
         log.info("Distribute files button was clicked");
         psFolderContentPanel.switchToNewWindow();
         PSFileDistributionPopup psFileDistributionPopup = new PSFileDistributionPopup();
-        psFileDistributionPopup.distributeFile();
+        psFileDistributionPopup.distributeFile(distributionListName);
         psFolderContentPanel.switchToLastTab();
     }
 

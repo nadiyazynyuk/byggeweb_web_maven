@@ -168,11 +168,6 @@ public class DSFolderSteps {
         WebDriverRunner.getWebDriver().switchTo().window(winHandleBefore);
     }
 
-//    public boolean getListIsPresent(String name) {
-//        DistributionSpaceNodesPanel distributionSpaceNodesPanel = new DistributionSpaceNodesPanel();
-//        return distributionSpaceNodesPanel.getDistributionListNodeByName(name).isDisplayed();
-//    }
-
     public boolean getListIsPresent(String name) {
         DSSingleDistributionListContentPanel dsSingleDistributionListContentPanel = new DSSingleDistributionListContentPanel();
         dsSingleDistributionListContentPanel.pleaseWait(1000);
