@@ -26,6 +26,10 @@ public class ApplicationsNavigation extends DesktopTestBase {
         CaptureOverviewPage captureOverviewPage = new CaptureOverviewPage();
         captureOverviewPage.verifyPageIsLoaded(captureOverviewPage.getCaptureLabel());
 
+        applicationsPage.clickOnVault();
+        VaultOverviewPage vaultOverviewPage = new VaultOverviewPage();
+        vaultOverviewPage.verifyPageIsLoaded(vaultOverviewPage.getVaultLabel());
+
         applicationsPage.clickOnDigitalHandover();
         DigitalHandoverOverviewPage digitalHandoverOverviewPage = new DigitalHandoverOverviewPage();
         digitalHandoverOverviewPage.verifyPageIsLoaded(digitalHandoverOverviewPage.getDigitalHandoverLabel());

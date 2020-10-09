@@ -14,6 +14,7 @@ public class ApplicationsPage extends HomePage {
     private final SelenideElement projectsLink = $(byXpath("//li[@id='docia_project']"));
     private final SelenideElement tenderLink = $(byXpath("//li[@id='docia_tender']"));
     private final SelenideElement captureLink = $(byXpath("//li[@id='deficiency_list']"));
+    private final SelenideElement vaultLink = $(byXpath("//li[@id='docia_vault']"));
     private final SelenideElement digitalHandoverLink = $(byXpath("//li[@id='corefm_digitalhandover']"));
     private final SelenideElement iTWOfmLink = $(byXpath("//li[@id='corefm_portofolio']"));
     private final SelenideElement handoverDatabaseLink = $(byXpath("//li[@id='corefm_handoverdatabase']"));
@@ -37,6 +38,12 @@ public class ApplicationsPage extends HomePage {
     @Step("Click on Capture link")
     public void clickOnCapture() {
         captureLink.click();
+    }
+
+
+    @Step("Click on Vault link")
+    public void clickOnVault() {
+        vaultLink.click();
     }
 
     @Step("Click on Digital Handover link")
