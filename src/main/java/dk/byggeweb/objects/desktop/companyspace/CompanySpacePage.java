@@ -14,6 +14,7 @@ public class CompanySpacePage extends HomePage {
     private final SelenideElement sharedFoldersLink = $(byXpath("//*[@id='company_folders']"));
     private final SelenideElement companyInfoLink = $(byXpath("//*[@id='company_information']"));
     private final SelenideElement companyUsersLink = $(byXpath("//*[@id='company_users']"));
+    private final SelenideElement vaultUsers = $(byXpath("//*[@id='vault_users']"));
     private final SelenideElement companyContactsLink = $(byXpath("//*[@id='contacts']"));
     private final SelenideElement websiteTemplatesLink = $(byXpath("//*[@id='webtemplate_list']"));
     private final SelenideElement backgroundImageLink = $(byXpath("//*[@id='background_image']"));
@@ -31,6 +32,11 @@ public class CompanySpacePage extends HomePage {
     @Step("Navigate to Company Space > Company Users")
     public void navigateToCompanyUsers() {
         companyUsersLink.click();
+    }
+
+    @Step("Navigate to Company Space > Vault Users")
+    public void navigateToVaultUsers() {
+        vaultUsers.click();
     }
 
     @Step("Navigate to Company Space > Company Contacts")

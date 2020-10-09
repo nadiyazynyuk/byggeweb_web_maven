@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class DSQuickSearchResultContentPanel extends DistributionSpaceContentPanel {
 
-    private SelenideElement panelTitle = $(byXpath("//div[contains(@class, 'x-title-text x-title-text-default') and contains(text(), 'Quick search')]"));
+    private final SelenideElement panelTitle = $(byXpath("//div[contains(@class, 'x-title-text x-title-text-default') and contains(text(), 'Quick search')]"));
 
     public DSQuickSearchResultContentPanel() {
         panelTitle.shouldBe(visible);

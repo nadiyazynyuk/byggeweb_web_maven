@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class DSSearchResultContentPanel extends DistributionSpaceContentPanel {
 
-    private SelenideElement panelTitle = $(byXpath("//div[contains(@class, 'x-title-text x-title-text-default') and contains(text(), 'Search')]"));
+    private final SelenideElement panelTitle = $(byXpath("//div[contains(@class, 'x-title-text x-title-text-default') and contains(text(), 'Search')]"));
 
     public DSSearchResultContentPanel() {
         panelTitle.shouldBe(visible);

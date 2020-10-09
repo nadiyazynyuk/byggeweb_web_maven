@@ -14,28 +14,28 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public class DistributionSpaceNodesPanel extends ProjectHomePage {
 
-    private SelenideElement distributionSpaceParentNode = $(byXpath("//td[contains(@class, 'WMP_50')]"));
-    private SelenideElement rootDistributionListNode = $(byXpath("//td[contains(@class, 'WMP_51')]"));
-    private SelenideElement versionSetsNode = $(byXpath("//td[contains(@class, 'WMP_140')]"));
-    private SelenideElement recipientsNode = $(byXpath("//td[contains(@class, 'WMP_61')]"));
-    private SelenideElement invitedUsersNode = $(byXpath("//td[contains(@class, 'WMP_62')]"));
-    private SelenideElement recentlyReleasedFileVersionsNode = $(byXpath("//td[contains(@class, 'WMP_63')]"));
-    private SelenideElement printDistributionExceptionsNode = $(byXpath("//td[contains(@class, 'WMP_64')]"));
-    private SelenideElement monitoredFoldersNode = $(byXpath("//td[contains(@class, 'WMP_73')]"));
-    private SelenideElement monitoredFilesNode = $(byXpath("//td[contains(@class, 'WMP_74')]"));
-    private SelenideElement searchResultNode = $(byXpath("//td[contains(@class, 'WMP_68')]"));
+    private final SelenideElement distributionSpaceParentNode = $(byXpath("//td[contains(@class, 'WMP_50')]"));
+    private final SelenideElement rootDistributionListNode = $(byXpath("//td[contains(@class, 'WMP_51')]"));
+    private final SelenideElement versionSetsNode = $(byXpath("//td[contains(@class, 'WMP_140')]"));
+    private final SelenideElement recipientsNode = $(byXpath("//td[contains(@class, 'WMP_61')]"));
+    private final SelenideElement invitedUsersNode = $(byXpath("//td[contains(@class, 'WMP_62')]"));
+    private final SelenideElement recentlyReleasedFileVersionsNode = $(byXpath("//td[contains(@class, 'WMP_63')]"));
+    private final SelenideElement printDistributionExceptionsNode = $(byXpath("//td[contains(@class, 'WMP_64')]"));
+    private final SelenideElement monitoredFoldersNode = $(byXpath("//td[contains(@class, 'WMP_73')]"));
+    private final SelenideElement monitoredFilesNode = $(byXpath("//td[contains(@class, 'WMP_74')]"));
+    private final SelenideElement searchResultNode = $(byXpath("//td[contains(@class, 'WMP_68')]"));
 
     public SelenideElement getDistributionListNodeByName(String name) {
         return $(By.xpath("//span[@class='x-tree-node-text ' and contains(text(), '" + name + "')]"));
     }
 
-    private SelenideElement createDistributionListButton = $(byXpath("//span[@data-locator='locator-btn-distlist_create']"));
-    private SelenideElement editDistributionListButton = $(byXpath("//span[@data-locator='locator-btn-distlist_edit']"));
-    private SelenideElement deleteDistributionListButton = $(byXpath("//span[@data-locator='locator-btn-distlist_delete']"));
-    private SelenideElement associateDocumentListButton = $(byXpath("//span[@data-locator='locator-btn-distlist_set_doclist']"));
-    private SelenideElement associateDistributionListButton = $(byXpath("//span[@data-locator='locator-btn-distlist_set_distr']"));
-    private SelenideElement monitorFolderButton = $(byXpath("//span[@data-locator='locator-btn-distlist_watch_dir']"));
-    private SelenideElement quickSearchInput = $(byXpath("//input[contains(@id, 'textfield')]"));
+    private final SelenideElement createDistributionListButton = $(byXpath("//span[@data-locator='locator-btn-distlist_create']"));
+    private final SelenideElement editDistributionListButton = $(byXpath("//span[@data-locator='locator-btn-distlist_edit']"));
+    private final SelenideElement deleteDistributionListButton = $(byXpath("//span[@data-locator='locator-btn-distlist_delete']"));
+    private final SelenideElement associateDocumentListButton = $(byXpath("//span[@data-locator='locator-btn-distlist_set_doclist']"));
+    private final SelenideElement associateDistributionListButton = $(byXpath("//span[@data-locator='locator-btn-distlist_set_distr']"));
+    private final SelenideElement monitorFolderButton = $(byXpath("//span[@data-locator='locator-btn-distlist_watch_dir']"));
+    private final SelenideElement quickSearchInput = $(byXpath("//input[contains(@id, 'textfield')]"));
 
     @Step("Navigate to Root Distribution list")
     public void navigateToRootDistributionList() {

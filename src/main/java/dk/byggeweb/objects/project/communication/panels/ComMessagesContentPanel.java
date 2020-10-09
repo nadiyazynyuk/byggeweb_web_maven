@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class ComMessagesContentPanel extends CommunicationContentPanel {
 
-    private SelenideElement panelTitle = $(byXpath("//span[@class='x-btn-inner x-btn-inner-default-toolbar-small' and contains(text(), 'All messages')]"));
+    private final SelenideElement panelTitle = $(byXpath("//span[@class='x-btn-inner x-btn-inner-default-toolbar-small' and contains(text(), 'All messages')]"));
 
     public ComMessagesContentPanel() {
         panelTitle.shouldBe(visible);

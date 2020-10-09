@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class PIAreasOfResponsibilityContentPanel extends ProjectInformationContentPanel {
 
-    private SelenideElement panelTitle = $(byXpath("//div[contains(@class, 'x-title-text x-title-text-default') and contains(text(), 'Areas of responsibility')]"));
+    private final SelenideElement panelTitle = $(byXpath("//div[contains(@class, 'x-title-text x-title-text-default') and contains(text(), 'Areas of responsibility')]"));
 
     public PIAreasOfResponsibilityContentPanel() {
         panelTitle.shouldBe(visible);

@@ -24,7 +24,8 @@ public class PublishNewFileVersionFromWorkspace extends ProjectTestBase {
     public void publishNewFileFromWorkspace() {
         uploadFileToWorkspaceFolder(data.getFileV1ToUploadPath());
         projectHomePage.navigateToPublicationSpace();
-        psFolderSteps.navigateToFolderInDocumentList(data.getDocumentListName(), data.getDocumentListFolderName());
+        psFolderSteps.openFolderInDocumentList(data.getDocumentListName(), data.getDocumentListFolderName());
+//        psFolderSteps.navigateToFolderInDocumentList(data.getDocumentListName(), data.getDocumentListFolderName());
         psFileSteps.publishFileFromWorkspace(data.getTestFileName(), data.getFolderName());
         psFileSteps.verifyFileIsPresent(data.getTestFileName());
     }
@@ -33,7 +34,8 @@ public class PublishNewFileVersionFromWorkspace extends ProjectTestBase {
     public void publishSecondFileVersionFromWorkspace() {
         uploadFileToWorkspaceFolder(data.getFileV2ToUploadPath());
         projectHomePage.navigateToPublicationSpace();
-        psFolderSteps.navigateToFolderInDocumentList(data.getDocumentListName(), data.getDocumentListFolderName());
+        psFolderSteps.openFolderInDocumentList(data.getDocumentListName(), data.getDocumentListFolderName());
+//        psFolderSteps.navigateToFolderInDocumentList(data.getDocumentListName(), data.getDocumentListFolderName());
         psFileSteps.publishFileFromWorkspace(data.getTestFileName(), data.getFolderName());
         psFileSteps.verifyFileIsPresent(data.getTestFileName());
     }

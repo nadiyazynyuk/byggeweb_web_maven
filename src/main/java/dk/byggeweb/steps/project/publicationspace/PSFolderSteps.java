@@ -54,6 +54,16 @@ public class PSFolderSteps {
         new PSFolderContentPanel(folderName);
     }
 
+    @Step("Open the Folder in Document list")
+    public void openFolderInDocumentList(String documentListName, String folderName) {
+        PublicationSpaceNodesPanel publicationSpaceNodesPanel = new PublicationSpaceNodesPanel();
+        publicationSpaceNodesPanel.getDocumentListNodeByName(documentListName).click();
+        PSFolderContentPanel psFolderContentPanel = new PSFolderContentPanel();
+        psFolderContentPanel.getDocumentListNodeByName(folderName).click();
+        log.info("Folder " + folderName + " in Document list " + documentListName + " was selected");
+        new PSFolderContentPanel(folderName);
+    }
+
     @Step("Create new Document list without approval procedure")
     public void createDocumentList(String createListName) {
         PublicationSpaceNodesPanel publicationSpaceNodesPanel = new PublicationSpaceNodesPanel();

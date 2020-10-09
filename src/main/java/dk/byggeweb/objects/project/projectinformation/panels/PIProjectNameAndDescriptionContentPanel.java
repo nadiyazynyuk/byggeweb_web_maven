@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class PIProjectNameAndDescriptionContentPanel extends ProjectInformationContentPanel {
 
-    private SelenideElement panelTitle = $(byXpath("//div[contains(@class, 'x-title-text x-title-text-default') and contains(text(), 'Project name')]"));
+    private final SelenideElement panelTitle = $(byXpath("//div[contains(@class, 'x-title-text x-title-text-default') and contains(text(), 'Project name')]"));
 
     public PIProjectNameAndDescriptionContentPanel() {
         panelTitle.shouldBe(visible);

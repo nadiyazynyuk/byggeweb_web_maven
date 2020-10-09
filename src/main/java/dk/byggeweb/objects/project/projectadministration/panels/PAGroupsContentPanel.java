@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class PAGroupsContentPanel extends ProjectAdministrationContentPanel {
 
-    private SelenideElement panelTitle = $(byXpath("//div[contains(@class, 'x-title-text x-title-text-default') and contains(text(), 'Groups')]"));
+    private final SelenideElement panelTitle = $(byXpath("//div[contains(@class, 'x-title-text x-title-text-default') and contains(text(), 'Groups')]"));
 
     public PAGroupsContentPanel() {
         panelTitle.shouldBe(visible);

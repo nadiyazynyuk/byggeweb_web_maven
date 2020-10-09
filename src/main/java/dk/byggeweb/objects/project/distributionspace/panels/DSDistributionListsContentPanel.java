@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class DSDistributionListsContentPanel extends DistributionSpaceContentPanel {
 
-    private SelenideElement panelTitle = $(byXpath("//div[contains(@class, 'x-title-text x-title-text-default') and contains(text(), 'Distribution lists')]"));
+    private final SelenideElement panelTitle = $(byXpath("//div[contains(@class, 'x-title-text x-title-text-default') and contains(text(), 'Distribution lists')]"));
 
     public DSDistributionListsContentPanel() {
         panelTitle.shouldBe(visible);

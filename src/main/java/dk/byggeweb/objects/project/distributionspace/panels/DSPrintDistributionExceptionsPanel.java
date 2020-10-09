@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class DSPrintDistributionExceptionsPanel extends DistributionSpaceContentPanel {
 
-    private SelenideElement panelTitle = $(byXpath("//div[contains(@class, 'x-title-text x-title-text-default') and contains(text(), 'Print distribution')]"));
+    private final SelenideElement panelTitle = $(byXpath("//div[contains(@class, 'x-title-text x-title-text-default') and contains(text(), 'Print distribution')]"));
 
     public DSPrintDistributionExceptionsPanel() {
         panelTitle.shouldBe(visible);

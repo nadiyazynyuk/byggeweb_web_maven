@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class ComAddressListContentPanel extends CommunicationContentPanel {
 
-    private SelenideElement panelTitle = $(byXpath("//div[contains(@class, 'x-title-text x-title-text-default') and contains(text(), 'Address list')]"));
+    private final SelenideElement panelTitle = $(byXpath("//div[contains(@class, 'x-title-text x-title-text-default') and contains(text(), 'Address list')]"));
 
     public ComAddressListContentPanel() {
         panelTitle.shouldBe(visible);

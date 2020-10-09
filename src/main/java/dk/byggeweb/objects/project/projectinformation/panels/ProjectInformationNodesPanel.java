@@ -12,10 +12,10 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public class ProjectInformationNodesPanel extends ProjectHomePage {
 
-    private SelenideElement projectInformationParentNode = $(byXpath("//td[contains(@class, 'WMP_1')]"));
-    private SelenideElement projectNameAndDescriptionNode = $(byXpath("//td[contains(@class, 'WMP_2')]"));
-    private SelenideElement administratorsNode = $(byXpath("//td[contains(@class, 'WMP_3')]"));
-    private SelenideElement areasOfResponsibilityNode = $(byXpath("//td[contains(@class, 'WMP_4')]"));
+    private final SelenideElement projectInformationParentNode = $(byXpath("//td[contains(@class, 'WMP_1')]"));
+    private final SelenideElement projectNameAndDescriptionNode = $(byXpath("//td[contains(@class, 'WMP_2')]"));
+    private final SelenideElement administratorsNode = $(byXpath("//td[contains(@class, 'WMP_3')]"));
+    private final SelenideElement areasOfResponsibilityNode = $(byXpath("//td[contains(@class, 'WMP_4')]"));
 
     @Step("Navigate to Project name and description")
     public void navigateToProjectDescription() {

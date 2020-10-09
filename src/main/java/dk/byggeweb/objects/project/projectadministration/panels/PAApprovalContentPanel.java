@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class PAApprovalContentPanel extends ProjectAdministrationContentPanel {
 
-    private SelenideElement panelTitle = $(byXpath("//div[contains(@class, 'x-title-text x-title-text-default') and contains(text(), 'Approval')]"));
+    private final SelenideElement panelTitle = $(byXpath("//div[contains(@class, 'x-title-text x-title-text-default') and contains(text(), 'Approval')]"));
 
     public PAApprovalContentPanel() {
         panelTitle.shouldBe(visible);

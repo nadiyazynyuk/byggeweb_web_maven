@@ -26,6 +26,10 @@ public class CompanySpaceNavigation extends DesktopTestBase {
         CompanyUsersPage companyUsersPage = new CompanyUsersPage();
         companyUsersPage.verifyPageIsLoaded(companyUsersPage.getCompanyUsersLabel());
 
+        companySpacePage.navigateToVaultUsers();
+        VaultUsersPage vaultUsersPage = new VaultUsersPage();
+        vaultUsersPage.verifyPageIsLoaded(vaultUsersPage.getVaultUsersLabel());
+
         companySpacePage.navigateToCompanyContacts();
         CompanyContactsPage companyContactsPage = new CompanyContactsPage();
         companyContactsPage.verifyPageIsLoaded(companyContactsPage.getCompanyContactsLabel());

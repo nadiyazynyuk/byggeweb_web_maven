@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class PAPrintOrdersContentPanel extends ProjectAdministrationContentPanel {
 
-    private SelenideElement panelTitle = $(byXpath("//div[contains(@class, 'x-title-text x-title-text-default') and contains(text(), 'Print orders')]"));
+    private final SelenideElement panelTitle = $(byXpath("//div[contains(@class, 'x-title-text x-title-text-default') and contains(text(), 'Print orders')]"));
 
     public PAPrintOrdersContentPanel() {
         panelTitle.shouldBe(visible);

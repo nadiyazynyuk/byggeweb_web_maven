@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class LogProjectLogContentPanel extends LogContentPanel {
 
-    private SelenideElement panelTitle = $(byXpath("//div[contains(@class, 'x-title-text x-title-text-default') and contains(text(), 'Project log')]"));
+    private final SelenideElement panelTitle = $(byXpath("//div[contains(@class, 'x-title-text x-title-text-default') and contains(text(), 'Project log')]"));
 
     public LogProjectLogContentPanel() {
         panelTitle.shouldBe(visible);

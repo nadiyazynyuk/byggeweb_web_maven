@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class DSMonitorFolderEditPopup extends ModalBase {
 
-    private SelenideElement popupTitle = $(byXpath("//h1[text()='Edit folder monitoring']"));
+    private final SelenideElement popupTitle = $(byXpath("//h1[text()='Edit folder monitoring']"));
 
     public DSMonitorFolderEditPopup() {
         popupTitle.shouldBe(visible);

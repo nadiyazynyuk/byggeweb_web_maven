@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class POProjectSettingsContentPanel extends PersonalOverviewsContentPanel {
 
-    private SelenideElement panelTitle = $(byXpath("//div[contains(@class, 'x-title-text x-title-text-default') and contains(text(), 'Project settings')]"));
+    private final SelenideElement panelTitle = $(byXpath("//div[contains(@class, 'x-title-text x-title-text-default') and contains(text(), 'Project settings')]"));
 
     public POProjectSettingsContentPanel() {
         panelTitle.shouldBe(visible);

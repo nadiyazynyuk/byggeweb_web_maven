@@ -12,10 +12,10 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public class LogNodesPanel extends ProjectHomePage {
 
-    private SelenideElement logParentNode = $(byXpath("//td[contains(@class, 'WMP_110')]"));
-    private SelenideElement predefinedLogFiltersNode = $(byXpath("//td[contains(@class, 'WMP_111')]"));
-    private SelenideElement projectLogFiltersNode = $(byXpath("//td[contains(@class, 'WMP_116')]"));
-    private SelenideElement userLogFiltersNode = $(byXpath("//td[contains(@class, 'WMP_118')]"));
+    private final SelenideElement logParentNode = $(byXpath("//td[contains(@class, 'WMP_110')]"));
+    private final SelenideElement predefinedLogFiltersNode = $(byXpath("//td[contains(@class, 'WMP_111')]"));
+    private final SelenideElement projectLogFiltersNode = $(byXpath("//td[contains(@class, 'WMP_116')]"));
+    private final SelenideElement userLogFiltersNode = $(byXpath("//td[contains(@class, 'WMP_118')]"));
 
     @Step("Navigate to Predefined log filters")
     public void navigateToPredefinedLog() {

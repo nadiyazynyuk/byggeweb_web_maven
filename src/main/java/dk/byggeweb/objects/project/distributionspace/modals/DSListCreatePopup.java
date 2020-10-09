@@ -9,10 +9,10 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class DSListCreatePopup extends ModalBase {
 
-    private SelenideElement nameInput = $(byXpath("//input[@name='DistributionList.Name']"));
-    private SelenideElement selectReservedListOption = $(byXpath("//select[@name='DistributionList.ListType']/option[@value='0']"));
-    private SelenideElement selectOpenListOption = $(byXpath("//select[@name='DistributionList.ListType']/option[@value='1']"));
-    private SelenideElement selectCoordinatorListOption = $(byXpath("//select[@name='DistributionList.ListType']/option[@value='2']"));
+    private final SelenideElement nameInput = $(byXpath("//input[@name='DistributionList.Name']"));
+    private final SelenideElement selectReservedListOption = $(byXpath("//select[@name='DistributionList.ListType']/option[@value='0']"));
+    private final SelenideElement selectOpenListOption = $(byXpath("//select[@name='DistributionList.ListType']/option[@value='1']"));
+    private final SelenideElement selectCoordinatorListOption = $(byXpath("//select[@name='DistributionList.ListType']/option[@value='2']"));
 
     @Step("Create Coordinator Distribution list")
     public void createCoordinatorDistributionList(String distributionListName) {
