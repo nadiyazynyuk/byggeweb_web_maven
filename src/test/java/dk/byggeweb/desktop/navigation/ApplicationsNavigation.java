@@ -18,6 +18,10 @@ public class ApplicationsNavigation extends DesktopTestBase {
         ProjectOverviewPage projectOverviewPage = new ProjectOverviewPage();
         projectOverviewPage.verifyPageIsLoaded(projectOverviewPage.getProjectsLabel());
 
+        applicationsPage.clickOnVault();
+        VaultOverviewPage vaultOverviewPage = new VaultOverviewPage();
+        vaultOverviewPage.verifyPageIsLoaded(vaultOverviewPage.getVaultLabel());
+
         applicationsPage.clickOnTender();
         TenderOverviewPage tenderOverviewPage = new TenderOverviewPage();
         tenderOverviewPage.verifyPageIsLoaded(tenderOverviewPage.getTendersLabel());
@@ -26,9 +30,13 @@ public class ApplicationsNavigation extends DesktopTestBase {
         CaptureOverviewPage captureOverviewPage = new CaptureOverviewPage();
         captureOverviewPage.verifyPageIsLoaded(captureOverviewPage.getCaptureLabel());
 
-        applicationsPage.clickOnVault();
-        VaultOverviewPage vaultOverviewPage = new VaultOverviewPage();
-        vaultOverviewPage.verifyPageIsLoaded(vaultOverviewPage.getVaultLabel());
+        applicationsPage.clickOnDocumentation();
+        DocumentationOverviewPage documentationOverviewPage = new DocumentationOverviewPage();
+        documentationOverviewPage.verifyPageIsLoaded(documentationOverviewPage.getDocumentationLabel());
+
+        applicationsPage.clickOnArchive();
+        ArchiveOverviewPage archiveOverviewPage = new ArchiveOverviewPage();
+        archiveOverviewPage.verifyPageIsLoaded(archiveOverviewPage.getArchiveLabel());
 
         applicationsPage.clickOnDigitalHandover();
         DigitalHandoverOverviewPage digitalHandoverOverviewPage = new DigitalHandoverOverviewPage();
@@ -38,31 +46,27 @@ public class ApplicationsNavigation extends DesktopTestBase {
         iTWOfmOverviewPage iTWOfmOverviewPage = new iTWOfmOverviewPage();
         iTWOfmOverviewPage.verifyPageIsLoaded(iTWOfmOverviewPage.getITWOfmLabel());
 
-        applicationsPage.clickOnHandoverDatabase();
-        HandoverDatabaseOverviewPage handoverDatabaseOverviewPage = new HandoverDatabaseOverviewPage();
-        handoverDatabaseOverviewPage.verifyPageIsLoaded(handoverDatabaseOverviewPage.getHandoverDatabaseLabel());
+        applicationsPage.clickOnMoreApplications();
+        MoreApplicationsPage moreApplicationsPage = new MoreApplicationsPage();
+        moreApplicationsPage.verifyPageIsLoaded(moreApplicationsPage.getHandoverDatabaseLink());
 
-        applicationsPage.clickOnArchive();
-        ArchiveOverviewPage archiveOverviewPage = new ArchiveOverviewPage();
-        archiveOverviewPage.verifyPageIsLoaded(archiveOverviewPage.getArchiveLabel());
-
-        applicationsPage.clickOnDocumentation();
-        DocumentationOverviewPage documentationOverviewPage = new DocumentationOverviewPage();
-        documentationOverviewPage.verifyPageIsLoaded(documentationOverviewPage.getDocumentationLabel());
-
-        applicationsPage.clickOnPhoto();
-        PhotoOverviewPage photoOverviewPage = new PhotoOverviewPage();
-        photoOverviewPage.verifyPageIsLoaded(photoOverviewPage.getPhotoLabel());
-
-        applicationsPage.clickOnBudget();
+        moreApplicationsPage.clickOnBudget();
         BudgetOverviewPage budgetOverviewPage = new BudgetOverviewPage();
         budgetOverviewPage.verifyPageIsLoaded(budgetOverviewPage.getBudgetLabel());
 
-        applicationsPage.clickOnProperty();
+        moreApplicationsPage.clickOnHandoverDatabase();
+        HandoverDatabaseOverviewPage handoverDatabaseOverviewPage = new HandoverDatabaseOverviewPage();
+        handoverDatabaseOverviewPage.verifyPageIsLoaded(handoverDatabaseOverviewPage.getHandoverDatabaseLabel());
+
+        moreApplicationsPage.clickOnProperty();
         PropertyOverviewPage propertyOverviewPage = new PropertyOverviewPage();
         propertyOverviewPage.verifyPageIsLoaded(propertyOverviewPage.getPropertyLabel());
 
-        applicationsPage.clickOnScribble();
+        moreApplicationsPage.clickOnPhoto();
+        PhotoOverviewPage photoOverviewPage = new PhotoOverviewPage();
+        photoOverviewPage.verifyPageIsLoaded(photoOverviewPage.getPhotoLabel());
+
+        moreApplicationsPage.clickOnScribble();
         ScribbleOverviewPage scribbleOverviewPage = new ScribbleOverviewPage();
         scribbleOverviewPage.verifyPageIsLoaded(scribbleOverviewPage.getScribbleLabel());
 
