@@ -6,7 +6,6 @@ import dk.byggeweb.objects.desktop.applications.ApplicationsPage;
 import dk.byggeweb.objects.desktop.communication.CommunicationPage;
 import dk.byggeweb.objects.desktop.companyspace.CompanySpacePage;
 import dk.byggeweb.objects.desktop.personalspace.PersonalSpacePage;
-import dk.byggeweb.objects.desktop.portfolio.PortfolioPage;
 import dk.byggeweb.objects.desktop.support.SupportCenterPage;
 import io.qameta.allure.Link;
 import org.testng.annotations.Test;
@@ -29,11 +28,11 @@ public class BasicNavigation extends DesktopTestBase {
         ApplicationsPage applicationsPage = new ApplicationsPage();
         applicationsPage.verifyPageIsLoaded(applicationsPage.getProjectsLink());
 
-        applicationsPage.navigateToPortfolio();
-        PortfolioPage portfolioPage = new PortfolioPage();
-        portfolioPage.verifyPageIsLoaded(portfolioPage.getMasterProjectLink());
+//        applicationsPage.navigateToPortfolio();
+//        PortfolioPage portfolioPage = new PortfolioPage();
+//        portfolioPage.verifyPageIsLoaded(portfolioPage.getMasterProjectLink());
 
-        portfolioPage.navigateToCommunication();
+        applicationsPage.navigateToCommunication();
         CommunicationPage communicationPage = new CommunicationPage();
         communicationPage.verifyPageIsLoaded(communicationPage.getNotificationsLink());
 
