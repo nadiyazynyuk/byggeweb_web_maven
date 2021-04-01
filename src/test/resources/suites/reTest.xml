@@ -1,13 +1,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="One test">
-    <parameter name="environment" value="production"/>
-<!--    <parameter name="environment" value="testserver"/>-->
+<!--    <parameter name="environment" value="production"/>-->
+    <parameter name="environment" value="testserver"/>
 
-    <test name="[VersionSet][Publication space] Add and remove file from Version set tests">
-        <parameter name="testData" value="/project/versionsets/addRemoveFileFromPublicationSpaceTestData.xml"/>
+    <test name="[Desktop] Authorization test">
+        <parameter name="testData" value="/desktop/authorization/userLoginTestData.xml"/>
         <classes>
-            <class name="dk.byggeweb.project.versionsets.AddRemoveFileFromPublicationSpace"/>
+            <class name="dk.byggeweb.desktop.authorization.Logoff"/>
         </classes>
     </test>
 
