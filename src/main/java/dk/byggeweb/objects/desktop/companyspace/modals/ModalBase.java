@@ -13,6 +13,7 @@ public abstract class ModalBase {
 
     private SelenideElement iFrame = $(byXpath("//iframe[@id='window-iframe']"));
     private SelenideElement okButton = $(byXpath("//button[@type='button' and contains(text(), 'OK')]"));
+    private SelenideElement deleteButton = $(byXpath("//button[@type='button' and contains(text(), 'Delete')]"));
 
     @Step("Verify popup is loaded")
     public void verifyPopupIsLoaded(SelenideElement element) {

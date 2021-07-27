@@ -59,4 +59,8 @@ public class DesktopTestDataModel {
     @Getter
     private String secondVersion;
 
+    @XmlElement
+    @Getter
+    private String vaultUsername;
+
 }

@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Byggeweb Vault UI test">
+    <!--    <parameter name="environment" value="production"/>-->
+    <parameter name="environment" value="testserver"/>
+
+    <test name="[Desktop] Add and remove Company vault user test">
+        <parameter name="testData" value="/desktop/companyspace/addRemoveCompanyVaultUserTestData.xml"/>
+        <classes>
+            <class name="dk.byggeweb.desktop.companyspace.AddRemoveCompanyVaultUser"/>
+        </classes>
+    </test>
+
+</suite>
