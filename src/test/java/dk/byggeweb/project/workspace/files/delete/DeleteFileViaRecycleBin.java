@@ -12,6 +12,13 @@ public class DeleteFileViaRecycleBin extends ProjectTestBase {
     @BeforeClass
     public void prepareData() {
         projectHomePage.navigateToWorkspaceModule();
+
+        projectHomePage.getWorkspaceNodesPanel().navigateToRecycleBin();
+        try {
+            wsRecycleBinSteps.deleteFileFromRecycleBin(data.getTestFileName());
+        } catch (com.codeborne.selenide.ex.ElementNotFound ignored) {
+        }
+
         wsFolderSteps.navigateToFolder(data.getFolderName());
         uploadFileIfNotPresentInWorkspaceFolder(getAbsolutePath(data.getFileToUploadPath()), data.getTestFileName());
     }
