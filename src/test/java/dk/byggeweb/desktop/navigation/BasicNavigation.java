@@ -36,11 +36,11 @@ public class BasicNavigation extends DesktopTestBase {
         CommunicationPage communicationPage = new CommunicationPage();
         communicationPage.verifyPageIsLoaded(communicationPage.getNotificationsLink());
 
-        communicationPage.navigateToSupport();
-        communicationPage.switchToNewWindow();
-        SupportCenterPage supportCenterPage = new SupportCenterPage();
-        supportCenterPage.verifyPageTitle(supportCenterPage, "SupportCenter");
-        WebDriverRunner.getWebDriver().close();
+//        communicationPage.navigateToSupport();
+//        communicationPage.switchToNewWindow();
+//        SupportCenterPage supportCenterPage = new SupportCenterPage();
+//        supportCenterPage.verifyPageTitle(supportCenterPage, "SupportCenter");
+//        WebDriverRunner.getWebDriver().close();
     }
 
 }

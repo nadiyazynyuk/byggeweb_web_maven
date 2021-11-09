@@ -73,12 +73,4 @@ public abstract class TestBase {
         }
     }
 
-    private void setInternetExplorerConfiguration() {
-        if (EnvironmentProperties.getInstance().getProperty("browser").equals("ie")) {
-            DesiredCapabilities caps = DesiredCapabilities.internetExplorer();
-            caps.setCapability("initialBrowserUrl", Configuration.baseUrl);
-            Configuration.browserCapabilities.merge(caps);
-        }
-    }
-
 }

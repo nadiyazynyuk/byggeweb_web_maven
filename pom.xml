@@ -9,17 +9,17 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <selenide.version>5.5.0</selenide.version>
-        <testng.version>7.0.0</testng.version>
+        <selenide.version>6.0.3</selenide.version>
+        <testng.version>7.4.0</testng.version>
         <slf4j.version>1.7.28</slf4j.version>
         <log4j.version>1.2.17</log4j.version>
         <allure.maven.version>2.9</allure.maven.version>
-        <allure.testng.version>2.13.0</allure.testng.version>
-        <allure.selenide.version>2.13.2</allure.selenide.version>
+        <allure.testng.version>2.16.1</allure.testng.version>
+        <allure.selenide.version>2.16.1</allure.selenide.version>
         <aspectj.version>1.9.4</aspectj.version>
-        <maven.surefire.version>2.20</maven.surefire.version>
+        <maven.surefire.version>3.0.0-M5</maven.surefire.version>
         <maven.compiler.version>3.8.1</maven.compiler.version>
-        <lombok.version>1.16.18</lombok.version>
+        <lombok.version>1.18.22</lombok.version>
         <suiteXmlFile>provided</suiteXmlFile>
     </properties>
 
@@ -106,6 +106,11 @@
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
             <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>jaxb-runtime</artifactId>
+            <version>2.3.2</version>
         </dependency>
     </dependencies>
 
