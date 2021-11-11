@@ -8,7 +8,7 @@ import dk.byggeweb.objects.project.versionsets.panels.*;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j;
 
-import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 
 @Log4j
 public class VersionSetsSteps {
@@ -155,24 +155,25 @@ public class VersionSetsSteps {
     @Step("Verify version set is present in the list")
     public void verifyVersionSetIsPresent(String name) {
         VersionSetsContentPanel versionSetsContentPanel = new VersionSetsContentPanel(name);
-        versionSetsContentPanel.getVersionSetByName(name).shouldHave(text(name));
+        versionSetsContentPanel.getVersionSetByName(name).shouldBe(visible);
     }
 
     @Step("Verify version set is not present in the list")
     public void verifyVersionSetIsNotPresent(String name) {
         VersionSetsOverviewPanel versionSetsOverviewPanel = new VersionSetsOverviewPanel();
-        versionSetsOverviewPanel.getVersionSetByName(name).shouldNotHave(text(name));
+        versionSetsOverviewPanel.getVersionSetByName(name).shouldNotBe(visible);
     }
 
     @Step("Verify file is present in version set")
     public void verifyFileIsPresent(String path, String name) {
         VSSpaceContentPanel vsSpaceContentPanel = new VSSpaceContentPanel();
-        vsSpaceContentPanel.getFileByFolderAndName(path, name).shouldHave(text(name));
+        vsSpaceContentPanel.getFileByFolderAndName(path, name).shouldBe(visible);
     }
 
     @Step("Verify file is not present in version set")
     public void verifyFileIsNotPresent(String path, String name) {
         VSSpaceContentPanel vsSpaceContentPanel = new VSSpaceContentPanel();
-        vsSpaceContentPanel.getFileByFolderAndName(path, name).shouldNotHave(text(name));
+        vsSpaceContentPanel.getFileByFolderAndName(path, name).shouldBe(visible);
     }
+
 }
