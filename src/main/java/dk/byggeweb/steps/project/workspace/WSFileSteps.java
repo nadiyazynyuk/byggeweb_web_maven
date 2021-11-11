@@ -9,7 +9,6 @@ import dk.byggeweb.steps.GeneralSteps;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j;
 
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 
 @Log4j
@@ -195,17 +194,17 @@ public class WSFileSteps {
 
     @Step("Verify file is present in the list")
     public void verifyFileIsPresent(String name) {
-        new WSFolderContentPanel().getFileByName(name).shouldHave(text(name));
+        new WSFolderContentPanel().getFileByName(name).shouldBe(visible);
     }
 
     @Step("Verify file is not present in the list")
     public void verifyFileIsNotPresent(String name) {
-        new WSFolderContentPanel().getFileByName(name).shouldNotHave(text(name));
+        new WSFolderContentPanel().getFileByName(name).shouldNotBe(visible);
     }
 
     @Step("Verify data is present in table")
     public void verifyDataIsPresentInTable(String name) {
-        new WSFolderContentPanel().getFileByName(name).shouldHave(text(name));
+        new WSFolderContentPanel().getFileByName(name).shouldBe(visible);
     }
 
 }

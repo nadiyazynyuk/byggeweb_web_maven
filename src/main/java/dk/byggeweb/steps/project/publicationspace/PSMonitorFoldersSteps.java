@@ -5,7 +5,7 @@ import dk.byggeweb.objects.project.publicationspace.modals.PSMonitorFolderEditPo
 import dk.byggeweb.objects.project.publicationspace.panels.PSMonitoredFoldersContentPanel;
 import io.qameta.allure.Step;
 
-import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 
 public class PSMonitorFoldersSteps {
 
@@ -23,13 +23,13 @@ public class PSMonitorFoldersSteps {
     @Step("Verify folder is not present in the list in Publication space")
     public void verifyFolderIsNotPresent(String name) {
         PSMonitoredFoldersContentPanel psMonitoredFoldersContentPanel = new PSMonitoredFoldersContentPanel();
-        psMonitoredFoldersContentPanel.getFolderByName(name).shouldNotHave(text(name));
+        psMonitoredFoldersContentPanel.getFolderByName(name).shouldNotBe(visible);
     }
 
     @Step("Verify folder is present in the list in Publication space")
     public void verifyFolderIsPresent(String name) {
         PSMonitoredFoldersContentPanel psMonitoredFoldersContentPanel = new PSMonitoredFoldersContentPanel();
-        psMonitoredFoldersContentPanel.getFolderByName(name).shouldHave(text(name));
+        psMonitoredFoldersContentPanel.getFolderByName(name).shouldBe(visible);
     }
 
 }

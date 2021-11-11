@@ -6,7 +6,7 @@ import dk.byggeweb.objects.project.distributionspace.panels.*;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j;
 
-import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 
 @Log4j
 public class DSFolderSteps {
@@ -177,13 +177,13 @@ public class DSFolderSteps {
     @Step("Verify list is present")
     public void verifyListIsPresent(String name) {
         DistributionSpaceNodesPanel distributionSpaceNodesPanel = new DistributionSpaceNodesPanel();
-        distributionSpaceNodesPanel.getDistributionListNodeByName(name).shouldHave(text(name));
+        distributionSpaceNodesPanel.getDistributionListNodeByName(name).shouldBe(visible);
     }
 
     @Step("Verify list is not present")
     public void verifyListIsNotPresent(String name) {
         DistributionSpaceNodesPanel distributionSpaceNodesPanel = new DistributionSpaceNodesPanel();
-        distributionSpaceNodesPanel.getDistributionListNodeByName(name).shouldNotHave(text(name));
+        distributionSpaceNodesPanel.getDistributionListNodeByName(name).shouldNotBe(visible);
     }
 
 }

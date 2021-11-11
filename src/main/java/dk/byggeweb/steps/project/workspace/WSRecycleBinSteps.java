@@ -6,7 +6,7 @@ import dk.byggeweb.objects.project.workspace.panels.WSFileInformationPanel;
 import dk.byggeweb.objects.project.workspace.panels.WSRecycleBinContentPanel;
 import io.qameta.allure.Step;
 
-import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 
 public class WSRecycleBinSteps {
 
@@ -43,6 +43,6 @@ public class WSRecycleBinSteps {
     @Step("Verify file is not present in the list")
     public void verifyFileIsNotPresent(String name) {
         WSRecycleBinContentPanel panel = new WSRecycleBinContentPanel();
-        panel.getFileByName(name).shouldNotHave(text(name));
+        panel.getFileByName(name).shouldNotBe(visible);
     }
 }

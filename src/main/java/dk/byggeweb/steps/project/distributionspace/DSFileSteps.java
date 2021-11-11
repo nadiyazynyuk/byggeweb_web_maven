@@ -9,7 +9,6 @@ import dk.byggeweb.steps.GeneralSteps;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j;
 
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 
 @Log4j
@@ -79,13 +78,13 @@ public class DSFileSteps {
     @Step("Verify file is present in the list")
     public void verifyFileIsPresent(String name) {
         DSFolderContentPanel dsFolderContentPanel = new DSFolderContentPanel();
-        dsFolderContentPanel.getFileByName(name).shouldHave(text(name));
+        dsFolderContentPanel.getFileByName(name).shouldBe(visible);
     }
 
     @Step("Verify file is not present in the list")
     public void verifyFileIsNotPresent(String name) {
         DSFolderContentPanel dsFolderContentPanel = new DSFolderContentPanel();
-        dsFolderContentPanel.getFileByName(name).shouldNotHave(text(name));
+        dsFolderContentPanel.getFileByName(name).shouldNotBe(visible);
     }
 
 }

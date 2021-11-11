@@ -1,11 +1,13 @@
 package dk.byggeweb.steps.project.workspace;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
 import dk.byggeweb.objects.project.common.TxtFileViewPage;
 import dk.byggeweb.objects.project.workspace.panels.WSFileInformationPanel;
 import io.qameta.allure.Step;
+
+import static com.codeborne.selenide.Condition.empty;
+import static com.codeborne.selenide.Condition.enabled;
 
 public class WSFileInformationSteps {
 
@@ -46,10 +48,10 @@ public class WSFileInformationSteps {
     public void editMetadataTextField(String fileName, SelenideElement element, String data) {
         WSFileInformationPanel wsFileInformationPanel = new WSFileInformationPanel(fileName);
         wsFileInformationPanel.pleaseWait(1000);
-        wsFileInformationPanel.getSaveButton().shouldBe(Condition.enabled);
+        wsFileInformationPanel.getSaveButton().shouldBe(enabled);
         element.click();
         element.clear();
-        element.shouldBe(Condition.empty);
+        element.shouldBe(empty);
         element.setValue(data);
         wsFileInformationPanel.getSaveButton().click();;
     }

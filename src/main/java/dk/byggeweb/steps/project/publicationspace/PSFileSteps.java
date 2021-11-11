@@ -12,7 +12,6 @@ import dk.byggeweb.steps.GeneralSteps;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j;
 
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 
 @Log4j
@@ -243,23 +242,23 @@ public class PSFileSteps {
     @Step("Verify file is present in the list")
     public void verifyFileIsPresent(String name) {
         PSFolderContentPanel psFolderContentPanel = new PSFolderContentPanel();
-        psFolderContentPanel.getFileByName(name).shouldHave(text(name));
+        psFolderContentPanel.getFileByName(name).shouldBe(visible);
     }
 
     @Step("Verify file is present in the list")
     public void verifyFileIsNotPresent(String name) {
         PSFolderContentPanel psFolderContentPanel = new PSFolderContentPanel();
-        psFolderContentPanel.getFileByName(name).shouldNotHave(text(name));
+        psFolderContentPanel.getFileByName(name).shouldNotBe(visible);
     }
 
     @Step("Verify file is discontinued")
     public void verifyFileIsDiscontinued(String name) {
         PSFolderContentPanel psFolderContentPanel = new PSFolderContentPanel();
-        psFolderContentPanel.getDiscontinuedFileByName(name).shouldHave(text(name));
+        psFolderContentPanel.getDiscontinuedFileByName(name).shouldBe(visible);
     }
 
     @Step("Verify data is present in table")
     public void verifyDataIsPresentInTable(String name) {
-        new PSFolderContentPanel().getFileByName(name).shouldHave(text(name));
+        new PSFolderContentPanel().getFileByName(name).shouldBe(visible);
     }
 }

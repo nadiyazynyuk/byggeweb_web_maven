@@ -7,7 +7,7 @@ import dk.byggeweb.objects.project.publicationspace.panels.*;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j;
 
-import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 
 @Log4j
 public class PSFolderSteps {
@@ -185,26 +185,25 @@ public class PSFolderSteps {
     @Step("Verify list is present")
     public void verifyListIsPresent(String name) {
         PublicationSpaceNodesPanel publicationSpaceNodesPanel = new PublicationSpaceNodesPanel();
-        publicationSpaceNodesPanel.getDocumentListNodeByName(name).shouldHave(text(name));
+        publicationSpaceNodesPanel.getDocumentListNodeByName(name).shouldBe(visible);
     }
 
     @Step("Verify list is not present")
     public void verifyListIsNotPresent(String name) {
         PublicationSpaceNodesPanel publicationSpaceNodesPanel = new PublicationSpaceNodesPanel();
-        publicationSpaceNodesPanel.getDocumentListNodeByName(name).shouldNotHave(text(name));
+        publicationSpaceNodesPanel.getDocumentListNodeByName(name).shouldNotBe(visible);
     }
 
     @Step("Verify folder is present")
     public void verifyFolderIsPresent(String name) {
         PublicationSpaceNodesPanel publicationSpaceNodesPanel = new PublicationSpaceNodesPanel();
-        publicationSpaceNodesPanel.getDocumentListNodeByName(name).shouldHave(text(name));
+        publicationSpaceNodesPanel.getDocumentListNodeByName(name).shouldBe(visible);
     }
 
     @Step("Verify folder is not present")
     public void verifyFolderIsNotPresent(String name) {
         PublicationSpaceNodesPanel publicationSpaceNodesPanel = new PublicationSpaceNodesPanel();
-        publicationSpaceNodesPanel.getDocumentListNodeByName(name).shouldNotHave(text(name));
+        publicationSpaceNodesPanel.getDocumentListNodeByName(name).shouldNotBe(visible);
     }
-
 
 }

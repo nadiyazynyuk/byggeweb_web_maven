@@ -4,7 +4,7 @@ import dk.byggeweb.objects.project.publicationspace.panels.PSFileInformationPane
 import dk.byggeweb.objects.project.publicationspace.panels.PSMonitoredFilesContentPanel;
 import io.qameta.allure.Step;
 
-import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 
 public class PSMonitorFilesSteps {
 
@@ -25,13 +25,13 @@ public class PSMonitorFilesSteps {
     @Step("Verify file is not present in the list")
     public void verifyFileIsNotPresent(String name) {
         PSMonitoredFilesContentPanel psMonitoredFilesContentPanel = new PSMonitoredFilesContentPanel();
-        psMonitoredFilesContentPanel.getFileByName(name).shouldNotHave(text(name));
+        psMonitoredFilesContentPanel.getFileByName(name).shouldNotBe(visible);
     }
 
     @Step("Verify file is present in the list")
     public void verifyFileIsPresent(String name) {
         PSMonitoredFilesContentPanel psMonitoredFilesContentPanel = new PSMonitoredFilesContentPanel();
-        psMonitoredFilesContentPanel.getFileByName(name).shouldHave(text(name));
+        psMonitoredFilesContentPanel.getFileByName(name).shouldBe(visible);
     }
 
 }

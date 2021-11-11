@@ -5,7 +5,7 @@ import dk.byggeweb.objects.project.workspace.modals.WSMonitorFolderEditPopup;
 import dk.byggeweb.objects.project.workspace.panels.WSMonitoredFoldersContentPanel;
 import io.qameta.allure.Step;
 
-import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 
 public class WSMonitorFoldersSteps {
 
@@ -23,13 +23,13 @@ public class WSMonitorFoldersSteps {
     @Step("Verify folder is not present in the list")
     public void verifyFolderIsNotPresent(String name) {
         WSMonitoredFoldersContentPanel panel = new WSMonitoredFoldersContentPanel();
-        panel.getFolderByName(name).shouldNotHave(text(name));
+        panel.getFolderByName(name).shouldNotBe(visible);
     }
 
     @Step("Verify folder is present in the list")
     public void verifyFolderIsPresent(String name) {
         WSMonitoredFoldersContentPanel panel = new WSMonitoredFoldersContentPanel();
-        panel.getFolderByName(name).shouldHave(text(name));
+        panel.getFolderByName(name).shouldBe(visible);
     }
 
 }

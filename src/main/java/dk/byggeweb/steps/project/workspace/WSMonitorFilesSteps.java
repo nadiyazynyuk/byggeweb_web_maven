@@ -4,7 +4,7 @@ import dk.byggeweb.objects.project.workspace.panels.WSFileInformationPanel;
 import dk.byggeweb.objects.project.workspace.panels.WSMonitoredFilesContentPanel;
 import io.qameta.allure.Step;
 
-import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 
 public class WSMonitorFilesSteps {
 
@@ -25,13 +25,13 @@ public class WSMonitorFilesSteps {
     @Step("Verify file is not present in the list")
     public void verifyFileIsNotPresent(String name) {
         WSMonitoredFilesContentPanel panel = new WSMonitoredFilesContentPanel();
-        panel.getFileByName(name).shouldNotHave(text(name));
+        panel.getFileByName(name).shouldNotBe(visible);
     }
 
     @Step("Verify file is present in the list")
     public void verifyFileIsPresent(String name) {
         WSMonitoredFilesContentPanel panel = new WSMonitoredFilesContentPanel();
-        panel.getFileByName(name).shouldHave(text(name));
+        panel.getFileByName(name).shouldBe(visible);
     }
 
 }

@@ -4,7 +4,7 @@ import dk.byggeweb.objects.project.distributionspace.panels.DSFileInformationPan
 import dk.byggeweb.objects.project.distributionspace.panels.DSMonitoredFilesContentPanel;
 import io.qameta.allure.Step;
 
-import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 
 public class DSMonitorFilesSteps {
 
@@ -25,13 +25,13 @@ public class DSMonitorFilesSteps {
     @Step("Verify file is not present in the list")
     public void verifyFileIsNotPresent(String name) {
         DSMonitoredFilesContentPanel dsMonitoredFilesContentPanel = new DSMonitoredFilesContentPanel();
-        dsMonitoredFilesContentPanel.getFileByName(name).shouldNotHave(text(name));
+        dsMonitoredFilesContentPanel.getFileByName(name).shouldNotBe(visible);
     }
 
     @Step("Verify file is present in the list")
     public void verifyFileIsPresent(String name) {
         DSMonitoredFilesContentPanel dsMonitoredFilesContentPanel = new DSMonitoredFilesContentPanel();
-        dsMonitoredFilesContentPanel.getFileByName(name).shouldHave(text(name));
+        dsMonitoredFilesContentPanel.getFileByName(name).shouldBe(visible);
     }
 
 }
