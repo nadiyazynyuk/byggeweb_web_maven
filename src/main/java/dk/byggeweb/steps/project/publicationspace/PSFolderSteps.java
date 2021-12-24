@@ -5,11 +5,11 @@ import dk.byggeweb.objects.project.publicationspace.modals.PSMonitorFolderPopup;
 import dk.byggeweb.objects.project.publicationspace.modals.*;
 import dk.byggeweb.objects.project.publicationspace.panels.*;
 import io.qameta.allure.Step;
-import lombok.extern.log4j.Log4j;
+import lombok.extern.log4j.Log4j2;
 
 import static com.codeborne.selenide.Condition.visible;
 
-@Log4j
+@Log4j2
 public class PSFolderSteps {
 
     @Step("Navigate to Document list")

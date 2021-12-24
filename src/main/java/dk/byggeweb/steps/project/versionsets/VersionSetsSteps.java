@@ -6,11 +6,11 @@ import dk.byggeweb.objects.project.versionsets.modals.VSDeletePopup;
 import dk.byggeweb.objects.project.versionsets.modals.VSRemoveFilePopup;
 import dk.byggeweb.objects.project.versionsets.panels.*;
 import io.qameta.allure.Step;
-import lombok.extern.log4j.Log4j;
+import lombok.extern.log4j.Log4j2;
 
 import static com.codeborne.selenide.Condition.visible;
 
-@Log4j
+@Log4j2
 public class VersionSetsSteps {
 
     @Step("Select file in Version set Workspace")

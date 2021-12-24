@@ -4,11 +4,11 @@ import com.codeborne.selenide.WebDriverRunner;
 import dk.byggeweb.objects.project.distributionspace.modals.*;
 import dk.byggeweb.objects.project.distributionspace.panels.*;
 import io.qameta.allure.Step;
-import lombok.extern.log4j.Log4j;
+import lombok.extern.log4j.Log4j2;
 
 import static com.codeborne.selenide.Condition.visible;
 
-@Log4j
+@Log4j2
 public class DSFolderSteps {
 
     @Step("Navigate to Distribution list")

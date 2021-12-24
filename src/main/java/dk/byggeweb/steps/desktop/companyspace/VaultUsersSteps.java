@@ -6,13 +6,13 @@ import dk.byggeweb.objects.desktop.companyspace.VaultUsersPage;
 import dk.byggeweb.objects.desktop.companyspace.modals.AddVaultUserPopup;
 import dk.byggeweb.objects.desktop.companyspace.modals.EditVaultUserPopup;
 import io.qameta.allure.Step;
-import lombok.extern.log4j.Log4j;
+import lombok.extern.log4j.Log4j2;
 
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.switchTo;
 
-@Log4j
+@Log4j2
 public class VaultUsersSteps {
 
     private SelenideElement getRowByName(String name) {

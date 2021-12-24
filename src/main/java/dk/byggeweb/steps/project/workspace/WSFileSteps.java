@@ -7,11 +7,11 @@ import dk.byggeweb.objects.project.workspace.panels.WSFileInformationPanel;
 import dk.byggeweb.objects.project.workspace.panels.WSFolderContentPanel;
 import dk.byggeweb.steps.GeneralSteps;
 import io.qameta.allure.Step;
-import lombok.extern.log4j.Log4j;
+import lombok.extern.log4j.Log4j2;
 
 import static com.codeborne.selenide.Condition.visible;
 
-@Log4j
+@Log4j2
 public class WSFileSteps {
 
     @Step("Select file")

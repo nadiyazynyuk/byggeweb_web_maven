@@ -9,9 +9,9 @@ import dk.byggeweb.objects.project.workspace.modals.WSMonitorFolderPopup;
 import dk.byggeweb.objects.project.workspace.panels.WSFolderContentPanel;
 import dk.byggeweb.objects.project.workspace.panels.WSFolderInformationPanel;
 import io.qameta.allure.Step;
-import lombok.extern.log4j.Log4j;
+import lombok.extern.log4j.Log4j2;
 
-@Log4j
+@Log4j2
 public class WSFolderSteps {
 
     @Step("Select folder")
