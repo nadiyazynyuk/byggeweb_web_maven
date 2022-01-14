@@ -34,10 +34,6 @@ public class CompanySpaceNavigation extends DesktopTestBase {
         CompanyContactsPage companyContactsPage = new CompanyContactsPage();
         companyContactsPage.verifyPageIsLoaded(companyContactsPage.getCompanyContactsLabel());
 
-        companySpacePage.navigateToWebsiteTemplates();
-        WebsiteTemplatesPage websiteTemplatesPage = new WebsiteTemplatesPage();
-        websiteTemplatesPage.verifyPageIsLoaded(websiteTemplatesPage.getWebsiteTemplatesLabel());
-
         companySpacePage.navigateToBackgroundImage();
         BackgroundImagePage backgroundImagePage = new BackgroundImagePage();
         backgroundImagePage.verifyPageIsLoaded(backgroundImagePage.getBackgroundImageLabel());

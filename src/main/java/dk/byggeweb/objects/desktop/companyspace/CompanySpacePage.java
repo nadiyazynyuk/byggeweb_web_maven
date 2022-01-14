@@ -44,11 +44,6 @@ public class CompanySpacePage extends HomePage {
         companyContactsLink.click();
     }
 
-    @Step("Navigate to Company Space > Website Templates")
-    public void navigateToWebsiteTemplates() {
-        websiteTemplatesLink.click();
-    }
-
     @Step("Navigate to Company Space > Background Image")
     public void navigateToBackgroundImage() {
         backgroundImageLink.click();
