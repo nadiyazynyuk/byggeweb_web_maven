@@ -43,6 +43,7 @@ public class CreateNewFolder extends ProjectTestBase {
 
     @Test(dependsOnMethods = "renameFolder", description = "Delete folder in Document list")
     void deleteFolder() {
+        psFolderSteps.navigateToFolderInsideDocumentList(data.getRenameFolderName());
         psFolderSteps.deleteFolder();
         psFolderSteps.verifyFolderIsNotPresent(data.getRenameFolderName());
     }
